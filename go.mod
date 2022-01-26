@@ -121,12 +121,8 @@ require (
 )
 
 replace (
-	// use cosmos protobufs
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
-	// cosmos-flavored keychain
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
-	// fix rocksdb
 	github.com/tecbot/gorocksdb => github.com/cosmos/gorocksdb v1.2.0
-	// cosmos protobufs compatible grpc version
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
 )
