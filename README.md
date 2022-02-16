@@ -17,7 +17,7 @@ https://github.com/BitCannaGlobal/bcna/blob/main/instructions.md
 
 # Compile instructions: install GoLang
 
-Install Go 1.16.x 
+Install Go 1.17.x 
 The official instructions can be found here: https://golang.org/doc/install
 
 First remove any existing old Go installation as root
@@ -27,7 +27,7 @@ sudo rm -rf /usr/local/go
 
 Download the software:
 ```
-curl https://dl.google.com/go/go1.16.8.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
+curl https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz | sudo tar -C/usr/local -zxvf -
 ```
 Update environment variables to include go (copy everything and paste)
 ```
@@ -44,21 +44,21 @@ To verify that Go is installed:
 ``` 
 go version
 ```
-Should return go version go1.16.8 linux/amd64
+Should return go version go1.17.7 linux/amd64
 
 # Compile BCNAD source code by yourself
 ## Download source code and compile
 ```
 git clone https://github.com/BitCannaGlobal/bcna.git
 cd bcna
-git checkout v1.2
+git checkout v1.3.1.pre1
 make build   #it build the binary in build/ folder
 ```
 To know the version:
 ```
 build/bcnad version
 ```
-The output must be `1.2`
+The output must be `1.3.1.pre1`
 
 Is the versión match, now you have two options
 * Move the binary to the /usr/local/bin path with: `sudo mv build/bcnad /usr/local/bin/`
