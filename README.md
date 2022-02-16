@@ -66,12 +66,15 @@ Is the versión match, now you have two options
 * If you are using Cosmovisor you need to perform extra steps to move the binary to the proper Cosmovisor folder.
 
 # Cosmosvisor Quick Start
-Cosmovisor is a small process manager for Cosmos SDK binaries that monitors the governance module via stdout for incoming chain upgrade proposals. If it sees a proposal that gets approved, it can be run manually or automatically to download the new binary, stop the current binary, run the migration script, replace the old node binary with the new one, and finally restart the node with the new genesis file.
+Cosmovisor is a small process manager for Cosmos SDK binaries that monitors the governance module via stdout for incoming chain upgrade proposals. If it sees a proposal that gets approved, it can be run manually or automatically to download the new binary, stop the current binary, replace the old node binary with the new one, and finally restart the node.
 
 ## Installation
-To install cosmovisor, run the following command (it takes some minutes):
+To install cosmovisor, compile the source:
 ```
-go get github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor
+git clone git@github.com:cosmos/cosmos-sdk
+cd cosmos-sdk
+git checkout cosmovisor/v1.1.0
+make cosmovisor
 ```
 * [more info about Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor#readme)
 * [how BitCanna implements Cosmovisor](https://github.com/BitCannaGlobal/testnet-bcna-cosmos/blob/main/instructions/invitational-testnet/stage4/task4.4.md)
