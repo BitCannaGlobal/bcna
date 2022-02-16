@@ -79,7 +79,7 @@ git checkout cosmovisor/v1.1.0
 make cosmovisor
 ```
 * [more info about Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/master/cosmovisor#readme)
-* [how BitCanna implements Cosmovisor](https://github.com/BitCannaGlobal/testnet-bcna-cosmos/blob/main/instructions/invitational-testnet/stage4/task4.4.md)
+* [how BitCanna implements Cosmovisor](https://hackmd.io/PXmANfhUSGS5YlKcHcc3GA?view)
 
 # Join our MainNet: `bitcanna-1`
 * Proceed from step 1 in [this guide](https://github.com/BitCannaGlobal/bcna/blob/main/instructions.md)
