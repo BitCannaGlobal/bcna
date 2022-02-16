@@ -51,7 +51,7 @@ Should return go version go1.17.7 linux/amd64
 ```
 git clone https://github.com/BitCannaGlobal/bcna.git
 cd bcna
-git checkout v1.3.1.pre1
+git checkout v.1.3.1.pre1
 make build   #it build the binary in build/ folder
 ```
 To know the version:
