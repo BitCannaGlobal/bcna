@@ -62,8 +62,8 @@ Steps are:
 3. Replace binary in linux path or cosmovisor folder
     3.1. For Cosmovisor
     ```
-    mv ./bcnad $HOME/.bcnad/cosmovisor/current/  #dowloaded
-    mv $HOME/bcna/build/bcnad $HOME/.bcnad/cosmovisor/current/ #compiled
+    mv ./bcnad $HOME/.bcna/cosmovisor/current/bin/  #dowloaded
+    mv $HOME/bcna/build/bcnad $HOME/.bcna/cosmovisor/current/bin #compiled
     ```    
     3.2. Without Cosmovisor 
     ```
