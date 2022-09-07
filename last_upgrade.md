@@ -7,7 +7,7 @@ We've developed a new version with some updates (regarding SDK, Tendermint & IBC
 * IBC/go v.3.2.0
 * Ledger-go v0.9.3 (now support Ledger Nano Plus)
 
-> Note: this is not a planed upgrade, chain won't be halted
+> Note: this is not a planned upgrade, chain won't be halted
 
 Steps are: 
 - Download or compile the new binary
