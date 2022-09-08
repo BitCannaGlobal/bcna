@@ -1,5 +1,85 @@
 #  MAINNET `bitcanna-1` Upgrade
-## v.1.4.1 codename `strangeBuddheads`
+
+## v1.4.2 from v1.4.1 (from Sept. 7th 2022)
+We've developed a new version with some updates (regarding SDK, Tendermint & IBC/go) to improve the security and stability in our chain.
+* Cosmos SDK v.0.45.8 
+* Tendermint v.0.34.21 (fixed `unsafe-reset-all` subcommand of `tendermint` command
+* IBC/go v.3.2.0
+* Ledger-go v0.9.3 (now support Ledger Nano Plus)
+
+> Note: this is not a planned upgrade, chain won't be halted
+
+Steps are: 
+- Download or compile the new binary
+- Stop the daemon (bcnad or cosmovisor)
+- Replace binary in linux path or cosmovisor folder
+- Start the daemo again
+
+1. Download or compile the new binary
+
+    *1.1. Download the new binary*
+    ```
+    cd $HOME
+    wget -nc https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.2/bcna_linux_amd64.tar.gz
+    ```
+    1.1.2. Check the sha256sum for the downloaded file. 
+    ```
+    sha256sum bcna_linux_amd64.tar.gz
+    ```
+    It must return: `903c63b9f668bf5208566955648279bdf0c15e73aab415d5ea5efc09ec1fc890`
+
+    1.1.3. Verify that the version is `1.4.2`
+    ```
+    rm -f ./bcnad #delete old file if exist
+    tar zxvf  bcna_linux_amd64.tar.gz
+    rm bcna_linux_amd64.tar.gz
+    chmod +x bcnad
+    ./bcnad version
+    ```
+
+    *1.2. Alternatively you can compile the new binary, GoLang v1.18 required*
+    
+    1.2.1. Download the source code using `git`
+    ```
+    git clone https://github.com/BitCannaGlobal/bcna.git
+    cd bcna
+    git checkout v1.4.2
+    make build   #it build the binary in build/ folder
+    ```
+    1.2.2. Verify the version:
+    ```
+    build/bcnad version
+    ```
+    The output must be `1.4.2`
+
+
+2. Stop the daemon (bcnad or cosmovisor)
+    ```
+    sudo service bcnad stop  # for bcnad service
+    sudo service cosmovisor stop #for cosmovisor
+    ```
+
+3. Replace binary in linux path or cosmovisor folder
+    3.1. For Cosmovisor
+    ```
+    mv ./bcnad $HOME/.bcna/cosmovisor/current/bin/  #dowloaded
+    mv $HOME/bcna/build/bcnad $HOME/.bcna/cosmovisor/current/bin #compiled
+    ```    
+    3.2. Without Cosmovisor 
+    ```
+    sudo mv bcnad $(which bcnad)   #downloaed
+    sudo mv $HOME/bcna/build/bcnad $(which bcnad) #compiled
+    ```  
+4. Start the daemon again
+    ```
+    sudo service bcnad start  # for bcnad service
+    sudo service cosmovisor start #for cosmovisor
+    ```
+
+
+
+## v1.4.1 codename `strangeBuddheads` (halt chain on 11th of August 2022)
+>Outdated: this was a planed upgrade
 
 We've developed a new version with some updates (regarding SDK, Tendermint & IBC/go) called `strangeBuddheads` to improve the security and stability in our chain.
 * Cosmos SDK v.0.45.7 
