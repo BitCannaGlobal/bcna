@@ -59,6 +59,8 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
   * https://bcna-rpc.3tekos.fr:443
 ## Panthea EU StateSync Server
   * https://bitcannarpc.panthea.eu:443
+## mintthemoon
+  * https://docs.mintthemoon.xyz/bitcanna/statesync
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -79,6 +81,10 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 ### DappLocker: Stats service
 * https://dapplooker.com/dapp/bitcanna-mainnet-120038
 
+### mintthemoon
+* Resource list: https://docs.mintthemoon.xyz/bitcanna/resources
+* Node setup guide: https://docs.mintthemoon.xyz/bitcanna/node-guide
+* Validator setup guide: https://docs.mintthemoon.xyz/bitcanna/validator-guide
 
 
 # RPCs, LCD, GRPC and other endpoints/services 
@@ -175,6 +181,14 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "address": "https://bitcannarpc.panthea.eu",
         "provider": "Panthea EU"
       }
+      {
+        "address": "https://rpc.bitcanna.sgtstake.com/",
+        "provider": "SGTstake"
+      },
+      {
+        "address": "https://rpc-bitcanna.mintthemoon.xyz",
+        "provider": "mintthemoon"
+      }
     ],
     "grpc": [
       {
@@ -202,6 +216,14 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
       {
         "address": "https://bitcannaapi.panthea.eu",
         "provider": "Panthea EU"
+      }
+      {
+        "address": "https://api.bitcanna.sgtstake.com/",
+        "provider": "SGTstake"
+      },
+      {
+        "address": "https://lcd-bitcanna.mintthemoon.xyz",
+        "provider": "mintthemoon"
       }
     ]
   }

@@ -93,6 +93,11 @@ commission:
   denom: ubcna
 
 ```
+**Claim commissions:** only apply to validators.
+```
+bcnad tx distribution  withdraw-rewards YOURVALADD --commission --from WALLET_NAME --fees 420ubcna
+
+```
 
 ## What about the fees and gas?
 Transactions on the Cosmos Hub network need to include a transaction fee in order to be processed. This fee pays for the gas required to run the transaction. The formula is the following:
