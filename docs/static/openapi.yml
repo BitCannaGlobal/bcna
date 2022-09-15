@@ -4,6 +4,182 @@ info:
   name: ''
   description: ''
 paths:
+  /BitCannaGlobal/bcna/bcna/bitcannaid:
+    get:
+      summary: Queries a list of Bitcannaid items.
+      operationId: BitcannaglobalBcnaBcnaBitcannaidAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              Bitcannaid:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: uint64
+                    bcnaid:
+                      type: string
+                    address:
+                      type: string
+                    creator:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the
+
+                  corresponding request message has used PageRequest.
+
+                   message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  '/BitCannaGlobal/bcna/bcna/bitcannaid/{id}':
+    get:
+      summary: Queries a Bitcannaid by id.
+      operationId: BitcannaglobalBcnaBcnaBitcannaid
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              Bitcannaid:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uint64
+                  bcnaid:
+                    type: string
+                  address:
+                    type: string
+                  creator:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          format: uint64
+      tags:
+        - Query
   /BitCannaGlobal/bcna/bcna/params:
     get:
       summary: Parameters queries the parameters of the module.
@@ -38,6 +214,190 @@ paths:
                     '@type':
                       type: string
                   additionalProperties: {}
+      tags:
+        - Query
+  /BitCannaGlobal/bcna/bcna/supplychain:
+    get:
+      summary: Queries a list of Supplychain items.
+      operationId: BitcannaglobalBcnaBcnaSupplychainAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              Supplychain:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: uint64
+                    product:
+                      type: string
+                    info:
+                      type: string
+                    supplyinfo:
+                      type: string
+                    supplyextra:
+                      type: string
+                    creator:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the
+
+                  corresponding request message has used PageRequest.
+
+                   message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  '/BitCannaGlobal/bcna/bcna/supplychain/{id}':
+    get:
+      summary: Queries a Supplychain by id.
+      operationId: BitcannaglobalBcnaBcnaSupplychain
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              Supplychain:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uint64
+                  product:
+                    type: string
+                  info:
+                    type: string
+                  supplyinfo:
+                    type: string
+                  supplyextra:
+                    type: string
+                  creator:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          format: uint64
       tags:
         - Query
   /cosmos/auth/v1beta1/accounts:
@@ -8349,6 +8709,371 @@ paths:
                         }
       parameters:
         - name: grantee
+          in: path
+          required: true
+          type: string
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  '/cosmos/feegrant/v1beta1/issued/{granter}':
+    get:
+      summary: |-
+        AllowancesByGranter returns all the grants given by an address
+        Since v0.46
+      operationId: CosmosFeegrantV1Beta1AllowancesByGranter
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              allowances:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    granter:
+                      type: string
+                      description: >-
+                        granter is the address of the user granting an allowance
+                        of their funds.
+                    grantee:
+                      type: string
+                      description: >-
+                        grantee is the address of the user being granted an
+                        allowance of another user's funds.
+                    allowance:
+                      description: >-
+                        allowance can be any of basic and filtered fee
+                        allowance.
+                      type: object
+                      properties:
+                        '@type':
+                          type: string
+                          description: >-
+                            A URL/resource name that uniquely identifies the
+                            type of the serialized
+
+                            protocol buffer message. This string must contain at
+                            least
+
+                            one "/" character. The last segment of the URL's
+                            path must represent
+
+                            the fully qualified name of the type (as in
+
+                            `path/google.protobuf.Duration`). The name should be
+                            in a canonical form
+
+                            (e.g., leading "." is not accepted).
+
+
+                            In practice, teams usually precompile into the
+                            binary all types that they
+
+                            expect it to use in the context of Any. However, for
+                            URLs which use the
+
+                            scheme `http`, `https`, or no scheme, one can
+                            optionally set up a type
+
+                            server that maps type URLs to message definitions as
+                            follows:
+
+
+                            * If no scheme is provided, `https` is assumed.
+
+                            * An HTTP GET on the URL must yield a
+                            [google.protobuf.Type][]
+                              value in binary format, or produce an error.
+                            * Applications are allowed to cache lookup results
+                            based on the
+                              URL, or have them precompiled into a binary to avoid any
+                              lookup. Therefore, binary compatibility needs to be preserved
+                              on changes to types. (Use versioned type names to manage
+                              breaking changes.)
+
+                            Note: this functionality is not currently available
+                            in the official
+
+                            protobuf release, and it is not used for type URLs
+                            beginning with
+
+                            type.googleapis.com.
+
+
+                            Schemes other than `http`, `https` (or the empty
+                            scheme) might be
+
+                            used with implementation specific semantics.
+                      additionalProperties: {}
+                  title: >-
+                    Grant is stored in the KVStore to record a grant with full
+                    context
+                description: allowances that have been issued by the granter.
+              pagination:
+                description: pagination defines an pagination for the response.
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+            description: >-
+              QueryAllowancesByGranterResponse is the response type for the
+              Query/AllowancesByGranter RPC method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                      description: >-
+                        A URL/resource name that uniquely identifies the type of
+                        the serialized
+
+                        protocol buffer message. This string must contain at
+                        least
+
+                        one "/" character. The last segment of the URL's path
+                        must represent
+
+                        the fully qualified name of the type (as in
+
+                        `path/google.protobuf.Duration`). The name should be in
+                        a canonical form
+
+                        (e.g., leading "." is not accepted).
+
+
+                        In practice, teams usually precompile into the binary
+                        all types that they
+
+                        expect it to use in the context of Any. However, for
+                        URLs which use the
+
+                        scheme `http`, `https`, or no scheme, one can optionally
+                        set up a type
+
+                        server that maps type URLs to message definitions as
+                        follows:
+
+
+                        * If no scheme is provided, `https` is assumed.
+
+                        * An HTTP GET on the URL must yield a
+                        [google.protobuf.Type][]
+                          value in binary format, or produce an error.
+                        * Applications are allowed to cache lookup results based
+                        on the
+                          URL, or have them precompiled into a binary to avoid any
+                          lookup. Therefore, binary compatibility needs to be preserved
+                          on changes to types. (Use versioned type names to manage
+                          breaking changes.)
+
+                        Note: this functionality is not currently available in
+                        the official
+
+                        protobuf release, and it is not used for type URLs
+                        beginning with
+
+                        type.googleapis.com.
+
+
+                        Schemes other than `http`, `https` (or the empty scheme)
+                        might be
+
+                        used with implementation specific semantics.
+                  additionalProperties: {}
+                  description: >-
+                    `Any` contains an arbitrary serialized protocol buffer
+                    message along with a
+
+                    URL that describes the type of the serialized message.
+
+
+                    Protobuf library provides support to pack/unpack Any values
+                    in the form
+
+                    of utility functions or additional generated methods of the
+                    Any type.
+
+
+                    Example 1: Pack and unpack a message in C++.
+
+                        Foo foo = ...;
+                        Any any;
+                        any.PackFrom(foo);
+                        ...
+                        if (any.UnpackTo(&foo)) {
+                          ...
+                        }
+
+                    Example 2: Pack and unpack a message in Java.
+
+                        Foo foo = ...;
+                        Any any = Any.pack(foo);
+                        ...
+                        if (any.is(Foo.class)) {
+                          foo = any.unpack(Foo.class);
+                        }
+
+                     Example 3: Pack and unpack a message in Python.
+
+                        foo = Foo(...)
+                        any = Any()
+                        any.Pack(foo)
+                        ...
+                        if any.Is(Foo.DESCRIPTOR):
+                          any.Unpack(foo)
+                          ...
+
+                     Example 4: Pack and unpack a message in Go
+
+                         foo := &pb.Foo{...}
+                         any, err := anypb.New(foo)
+                         if err != nil {
+                           ...
+                         }
+                         ...
+                         foo := &pb.Foo{}
+                         if err := any.UnmarshalTo(foo); err != nil {
+                           ...
+                         }
+
+                    The pack methods provided by protobuf library will by
+                    default use
+
+                    'type.googleapis.com/full.type.name' as the type URL and the
+                    unpack
+
+                    methods only use the fully qualified type name after the
+                    last '/'
+
+                    in the type URL, for example "foo.bar.com/x/y.z" will yield
+                    type
+
+                    name "y.z".
+
+
+
+                    JSON
+
+                    ====
+
+                    The JSON representation of an `Any` value uses the regular
+
+                    representation of the deserialized, embedded message, with
+                    an
+
+                    additional field `@type` which contains the type URL.
+                    Example:
+
+                        package google.profile;
+                        message Person {
+                          string first_name = 1;
+                          string last_name = 2;
+                        }
+
+                        {
+                          "@type": "type.googleapis.com/google.profile.Person",
+                          "firstName": <string>,
+                          "lastName": <string>
+                        }
+
+                    If the embedded message type is well-known and has a custom
+                    JSON
+
+                    representation, that representation will be embedded adding
+                    a field
+
+                    `value` which holds the custom JSON in addition to the
+                    `@type`
+
+                    field. Example (for message [google.protobuf.Duration][]):
+
+                        {
+                          "@type": "type.googleapis.com/google.protobuf.Duration",
+                          "value": "1.212s"
+                        }
+      parameters:
+        - name: granter
           in: path
           required: true
           type: string
@@ -19785,6 +20510,522 @@ paths:
           format: int64
       tags:
         - Query
+  /ibc/apps/interchain_accounts/controller/v1/params:
+    get:
+      summary: Params queries all parameters of the ICA controller submodule.
+      operationId: IbcApplicationsInterchainAccountsControllerV1Params
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              params:
+                description: params defines the parameters of the module.
+                type: object
+                properties:
+                  controller_enabled:
+                    type: boolean
+                    description: >-
+                      controller_enabled enables or disables the controller
+                      submodule.
+            description: >-
+              QueryParamsResponse is the response type for the Query/Params RPC
+              method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /ibc/apps/interchain_accounts/host/v1/params:
+    get:
+      summary: Params queries all parameters of the ICA host submodule.
+      operationId: IbcApplicationsInterchainAccountsHostV1Params
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              params:
+                description: params defines the parameters of the module.
+                type: object
+                properties:
+                  host_enabled:
+                    type: boolean
+                    description: host_enabled enables or disables the host submodule.
+                  allow_messages:
+                    type: array
+                    items:
+                      type: string
+                    description: >-
+                      allow_messages defines a list of sdk message typeURLs
+                      allowed to be executed on a host chain.
+            description: >-
+              QueryParamsResponse is the response type for the Query/Params RPC
+              method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  '/ibc/apps/transfer/v1/channels/{channel_id}/ports/{port_id}/escrow_address':
+    get:
+      summary: >-
+        EscrowAddress returns the escrow address for a particular port and
+        channel id.
+      operationId: IbcApplicationsTransferV1EscrowAddress
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              escrow_address:
+                type: string
+                title: the escrow account address
+            description: >-
+              QueryEscrowAddressResponse is the response type of the
+              EscrowAddress RPC method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                      description: >-
+                        A URL/resource name that uniquely identifies the type of
+                        the serialized
+
+                        protocol buffer message. This string must contain at
+                        least
+
+                        one "/" character. The last segment of the URL's path
+                        must represent
+
+                        the fully qualified name of the type (as in
+
+                        `path/google.protobuf.Duration`). The name should be in
+                        a canonical form
+
+                        (e.g., leading "." is not accepted).
+
+
+                        In practice, teams usually precompile into the binary
+                        all types that they
+
+                        expect it to use in the context of Any. However, for
+                        URLs which use the
+
+                        scheme `http`, `https`, or no scheme, one can optionally
+                        set up a type
+
+                        server that maps type URLs to message definitions as
+                        follows:
+
+
+                        * If no scheme is provided, `https` is assumed.
+
+                        * An HTTP GET on the URL must yield a
+                        [google.protobuf.Type][]
+                          value in binary format, or produce an error.
+                        * Applications are allowed to cache lookup results based
+                        on the
+                          URL, or have them precompiled into a binary to avoid any
+                          lookup. Therefore, binary compatibility needs to be preserved
+                          on changes to types. (Use versioned type names to manage
+                          breaking changes.)
+
+                        Note: this functionality is not currently available in
+                        the official
+
+                        protobuf release, and it is not used for type URLs
+                        beginning with
+
+                        type.googleapis.com.
+
+
+                        Schemes other than `http`, `https` (or the empty scheme)
+                        might be
+
+                        used with implementation specific semantics.
+                  additionalProperties: {}
+                  description: >-
+                    `Any` contains an arbitrary serialized protocol buffer
+                    message along with a
+
+                    URL that describes the type of the serialized message.
+
+
+                    Protobuf library provides support to pack/unpack Any values
+                    in the form
+
+                    of utility functions or additional generated methods of the
+                    Any type.
+
+
+                    Example 1: Pack and unpack a message in C++.
+
+                        Foo foo = ...;
+                        Any any;
+                        any.PackFrom(foo);
+                        ...
+                        if (any.UnpackTo(&foo)) {
+                          ...
+                        }
+
+                    Example 2: Pack and unpack a message in Java.
+
+                        Foo foo = ...;
+                        Any any = Any.pack(foo);
+                        ...
+                        if (any.is(Foo.class)) {
+                          foo = any.unpack(Foo.class);
+                        }
+
+                     Example 3: Pack and unpack a message in Python.
+
+                        foo = Foo(...)
+                        any = Any()
+                        any.Pack(foo)
+                        ...
+                        if any.Is(Foo.DESCRIPTOR):
+                          any.Unpack(foo)
+                          ...
+
+                     Example 4: Pack and unpack a message in Go
+
+                         foo := &pb.Foo{...}
+                         any, err := anypb.New(foo)
+                         if err != nil {
+                           ...
+                         }
+                         ...
+                         foo := &pb.Foo{}
+                         if err := any.UnmarshalTo(foo); err != nil {
+                           ...
+                         }
+
+                    The pack methods provided by protobuf library will by
+                    default use
+
+                    'type.googleapis.com/full.type.name' as the type URL and the
+                    unpack
+
+                    methods only use the fully qualified type name after the
+                    last '/'
+
+                    in the type URL, for example "foo.bar.com/x/y.z" will yield
+                    type
+
+                    name "y.z".
+
+
+
+                    JSON
+
+                    ====
+
+                    The JSON representation of an `Any` value uses the regular
+
+                    representation of the deserialized, embedded message, with
+                    an
+
+                    additional field `@type` which contains the type URL.
+                    Example:
+
+                        package google.profile;
+                        message Person {
+                          string first_name = 1;
+                          string last_name = 2;
+                        }
+
+                        {
+                          "@type": "type.googleapis.com/google.profile.Person",
+                          "firstName": <string>,
+                          "lastName": <string>
+                        }
+
+                    If the embedded message type is well-known and has a custom
+                    JSON
+
+                    representation, that representation will be embedded adding
+                    a field
+
+                    `value` which holds the custom JSON in addition to the
+                    `@type`
+
+                    field. Example (for message [google.protobuf.Duration][]):
+
+                        {
+                          "@type": "type.googleapis.com/google.protobuf.Duration",
+                          "value": "1.212s"
+                        }
+      parameters:
+        - name: channel_id
+          description: unique channel identifier
+          in: path
+          required: true
+          type: string
+        - name: port_id
+          description: unique port identifier
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  '/ibc/apps/transfer/v1/denom_hashes/{trace}':
+    get:
+      summary: DenomHash queries a denomination hash information.
+      operationId: IbcApplicationsTransferV1DenomHash
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              hash:
+                type: string
+                description: hash (in hex format) of the denomination trace information.
+            description: >-
+              QueryDenomHashResponse is the response type for the
+              Query/DenomHash RPC
+
+              method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                      description: >-
+                        A URL/resource name that uniquely identifies the type of
+                        the serialized
+
+                        protocol buffer message. This string must contain at
+                        least
+
+                        one "/" character. The last segment of the URL's path
+                        must represent
+
+                        the fully qualified name of the type (as in
+
+                        `path/google.protobuf.Duration`). The name should be in
+                        a canonical form
+
+                        (e.g., leading "." is not accepted).
+
+
+                        In practice, teams usually precompile into the binary
+                        all types that they
+
+                        expect it to use in the context of Any. However, for
+                        URLs which use the
+
+                        scheme `http`, `https`, or no scheme, one can optionally
+                        set up a type
+
+                        server that maps type URLs to message definitions as
+                        follows:
+
+
+                        * If no scheme is provided, `https` is assumed.
+
+                        * An HTTP GET on the URL must yield a
+                        [google.protobuf.Type][]
+                          value in binary format, or produce an error.
+                        * Applications are allowed to cache lookup results based
+                        on the
+                          URL, or have them precompiled into a binary to avoid any
+                          lookup. Therefore, binary compatibility needs to be preserved
+                          on changes to types. (Use versioned type names to manage
+                          breaking changes.)
+
+                        Note: this functionality is not currently available in
+                        the official
+
+                        protobuf release, and it is not used for type URLs
+                        beginning with
+
+                        type.googleapis.com.
+
+
+                        Schemes other than `http`, `https` (or the empty scheme)
+                        might be
+
+                        used with implementation specific semantics.
+                  additionalProperties: {}
+                  description: >-
+                    `Any` contains an arbitrary serialized protocol buffer
+                    message along with a
+
+                    URL that describes the type of the serialized message.
+
+
+                    Protobuf library provides support to pack/unpack Any values
+                    in the form
+
+                    of utility functions or additional generated methods of the
+                    Any type.
+
+
+                    Example 1: Pack and unpack a message in C++.
+
+                        Foo foo = ...;
+                        Any any;
+                        any.PackFrom(foo);
+                        ...
+                        if (any.UnpackTo(&foo)) {
+                          ...
+                        }
+
+                    Example 2: Pack and unpack a message in Java.
+
+                        Foo foo = ...;
+                        Any any = Any.pack(foo);
+                        ...
+                        if (any.is(Foo.class)) {
+                          foo = any.unpack(Foo.class);
+                        }
+
+                     Example 3: Pack and unpack a message in Python.
+
+                        foo = Foo(...)
+                        any = Any()
+                        any.Pack(foo)
+                        ...
+                        if any.Is(Foo.DESCRIPTOR):
+                          any.Unpack(foo)
+                          ...
+
+                     Example 4: Pack and unpack a message in Go
+
+                         foo := &pb.Foo{...}
+                         any, err := anypb.New(foo)
+                         if err != nil {
+                           ...
+                         }
+                         ...
+                         foo := &pb.Foo{}
+                         if err := any.UnmarshalTo(foo); err != nil {
+                           ...
+                         }
+
+                    The pack methods provided by protobuf library will by
+                    default use
+
+                    'type.googleapis.com/full.type.name' as the type URL and the
+                    unpack
+
+                    methods only use the fully qualified type name after the
+                    last '/'
+
+                    in the type URL, for example "foo.bar.com/x/y.z" will yield
+                    type
+
+                    name "y.z".
+
+
+
+                    JSON
+
+                    ====
+
+                    The JSON representation of an `Any` value uses the regular
+
+                    representation of the deserialized, embedded message, with
+                    an
+
+                    additional field `@type` which contains the type URL.
+                    Example:
+
+                        package google.profile;
+                        message Person {
+                          string first_name = 1;
+                          string last_name = 2;
+                        }
+
+                        {
+                          "@type": "type.googleapis.com/google.profile.Person",
+                          "firstName": <string>,
+                          "lastName": <string>
+                        }
+
+                    If the embedded message type is well-known and has a custom
+                    JSON
+
+                    representation, that representation will be embedded adding
+                    a field
+
+                    `value` which holds the custom JSON in addition to the
+                    `@type`
+
+                    field. Example (for message [google.protobuf.Duration][]):
+
+                        {
+                          "@type": "type.googleapis.com/google.protobuf.Duration",
+                          "value": "1.212s"
+                        }
+      parameters:
+        - name: trace
+          description: 'The denomination trace ([port_id]/[channel_id])+/[denom]'
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
   /ibc/apps/transfer/v1/denom_traces:
     get:
       summary: DenomTraces queries all denomination traces.
@@ -20293,7 +21534,9 @@ paths:
                         }
       parameters:
         - name: hash
-          description: hash (in hex format) of the denomination trace information.
+          description: >-
+            hash (in hex format) or denom (full denom with ibc prefix) of the
+            denomination trace information.
           in: path
           required: true
           type: string
@@ -26532,6 +27775,326 @@ paths:
           type: boolean
       tags:
         - Query
+  '/ibc/core/client/v1/consensus_states/{client_id}/heights':
+    get:
+      summary: >-
+        ConsensusStateHeights queries the height of every consensus states
+        associated with a given client.
+      operationId: IbcCoreClientV1ConsensusStateHeights
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              consensus_state_heights:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    revision_number:
+                      type: string
+                      format: uint64
+                      title: the revision that the client is currently on
+                    revision_height:
+                      type: string
+                      format: uint64
+                      title: the height within the given revision
+                  description: >-
+                    Normally the RevisionHeight is incremented at each height
+                    while keeping
+
+                    RevisionNumber the same. However some consensus algorithms
+                    may choose to
+
+                    reset the height in certain conditions e.g. hard forks,
+                    state-machine
+
+                    breaking changes In these cases, the RevisionNumber is
+                    incremented so that
+
+                    height continues to be monitonically increasing even as the
+                    RevisionHeight
+
+                    gets reset
+                  title: >-
+                    Height is a monotonically increasing data type
+
+                    that can be compared against another Height for the purposes
+                    of updating and
+
+                    freezing clients
+                title: consensus state heights
+              pagination:
+                title: pagination response
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the
+
+                  corresponding request message has used PageRequest.
+
+                   message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+            title: |-
+              QueryConsensusStateHeightsResponse is the response type for the
+              Query/ConsensusStateHeights RPC method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                      description: >-
+                        A URL/resource name that uniquely identifies the type of
+                        the serialized
+
+                        protocol buffer message. This string must contain at
+                        least
+
+                        one "/" character. The last segment of the URL's path
+                        must represent
+
+                        the fully qualified name of the type (as in
+
+                        `path/google.protobuf.Duration`). The name should be in
+                        a canonical form
+
+                        (e.g., leading "." is not accepted).
+
+
+                        In practice, teams usually precompile into the binary
+                        all types that they
+
+                        expect it to use in the context of Any. However, for
+                        URLs which use the
+
+                        scheme `http`, `https`, or no scheme, one can optionally
+                        set up a type
+
+                        server that maps type URLs to message definitions as
+                        follows:
+
+
+                        * If no scheme is provided, `https` is assumed.
+
+                        * An HTTP GET on the URL must yield a
+                        [google.protobuf.Type][]
+                          value in binary format, or produce an error.
+                        * Applications are allowed to cache lookup results based
+                        on the
+                          URL, or have them precompiled into a binary to avoid any
+                          lookup. Therefore, binary compatibility needs to be preserved
+                          on changes to types. (Use versioned type names to manage
+                          breaking changes.)
+
+                        Note: this functionality is not currently available in
+                        the official
+
+                        protobuf release, and it is not used for type URLs
+                        beginning with
+
+                        type.googleapis.com.
+
+
+                        Schemes other than `http`, `https` (or the empty scheme)
+                        might be
+
+                        used with implementation specific semantics.
+                  additionalProperties: {}
+                  description: >-
+                    `Any` contains an arbitrary serialized protocol buffer
+                    message along with a
+
+                    URL that describes the type of the serialized message.
+
+
+                    Protobuf library provides support to pack/unpack Any values
+                    in the form
+
+                    of utility functions or additional generated methods of the
+                    Any type.
+
+
+                    Example 1: Pack and unpack a message in C++.
+
+                        Foo foo = ...;
+                        Any any;
+                        any.PackFrom(foo);
+                        ...
+                        if (any.UnpackTo(&foo)) {
+                          ...
+                        }
+
+                    Example 2: Pack and unpack a message in Java.
+
+                        Foo foo = ...;
+                        Any any = Any.pack(foo);
+                        ...
+                        if (any.is(Foo.class)) {
+                          foo = any.unpack(Foo.class);
+                        }
+
+                     Example 3: Pack and unpack a message in Python.
+
+                        foo = Foo(...)
+                        any = Any()
+                        any.Pack(foo)
+                        ...
+                        if any.Is(Foo.DESCRIPTOR):
+                          any.Unpack(foo)
+                          ...
+
+                     Example 4: Pack and unpack a message in Go
+
+                         foo := &pb.Foo{...}
+                         any, err := anypb.New(foo)
+                         if err != nil {
+                           ...
+                         }
+                         ...
+                         foo := &pb.Foo{}
+                         if err := any.UnmarshalTo(foo); err != nil {
+                           ...
+                         }
+
+                    The pack methods provided by protobuf library will by
+                    default use
+
+                    'type.googleapis.com/full.type.name' as the type URL and the
+                    unpack
+
+                    methods only use the fully qualified type name after the
+                    last '/'
+
+                    in the type URL, for example "foo.bar.com/x/y.z" will yield
+                    type
+
+                    name "y.z".
+
+
+
+                    JSON
+
+                    ====
+
+                    The JSON representation of an `Any` value uses the regular
+
+                    representation of the deserialized, embedded message, with
+                    an
+
+                    additional field `@type` which contains the type URL.
+                    Example:
+
+                        package google.profile;
+                        message Person {
+                          string first_name = 1;
+                          string last_name = 2;
+                        }
+
+                        {
+                          "@type": "type.googleapis.com/google.profile.Person",
+                          "firstName": <string>,
+                          "lastName": <string>
+                        }
+
+                    If the embedded message type is well-known and has a custom
+                    JSON
+
+                    representation, that representation will be embedded adding
+                    a field
+
+                    `value` which holds the custom JSON in addition to the
+                    `@type`
+
+                    field. Example (for message [google.protobuf.Duration][]):
+
+                        {
+                          "@type": "type.googleapis.com/google.protobuf.Duration",
+                          "value": "1.212s"
+                        }
+      parameters:
+        - name: client_id
+          description: client identifier
+          in: path
+          required: true
+          type: string
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
   '/ibc/core/client/v1/consensus_states/{client_id}/revision/{revision_number}/height/{revision_height}':
     get:
       summary: >-
@@ -26723,7 +28286,6 @@ paths:
                 format: byte
                 title: merkle proof of existence
               proof_height:
-                title: height at which the proof was retrieved
                 type: object
                 properties:
                   revision_number:
@@ -26751,6 +28313,13 @@ paths:
                   RevisionHeight
 
                   gets reset
+                title: >-
+                  Height is a monotonically increasing data type
+
+                  that can be compared against another Height for the purposes
+                  of updating and
+
+                  freezing clients
             title: >-
               QueryConsensusStateResponse is the response type for the
               Query/ConsensusState
@@ -29537,11 +31106,164 @@ paths:
           format: uint64
       tags:
         - Query
-
 definitions:
+  bitcannaglobal.bcna.bcna.Bitcannaid:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+      bcnaid:
+        type: string
+      address:
+        type: string
+      creator:
+        type: string
+  bitcannaglobal.bcna.bcna.MsgCreateBitcannaidResponse:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+  bitcannaglobal.bcna.bcna.MsgCreateSupplychainResponse:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+  bitcannaglobal.bcna.bcna.MsgDeleteBitcannaidResponse:
+    type: object
+  bitcannaglobal.bcna.bcna.MsgDeleteSupplychainResponse:
+    type: object
+  bitcannaglobal.bcna.bcna.MsgUpdateBitcannaidResponse:
+    type: object
+  bitcannaglobal.bcna.bcna.MsgUpdateSupplychainResponse:
+    type: object
   bitcannaglobal.bcna.bcna.Params:
     type: object
     description: Params defines the parameters for the module.
+  bitcannaglobal.bcna.bcna.QueryAllBitcannaidResponse:
+    type: object
+    properties:
+      Bitcannaid:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uint64
+            bcnaid:
+              type: string
+            address:
+              type: string
+            creator:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  bitcannaglobal.bcna.bcna.QueryAllSupplychainResponse:
+    type: object
+    properties:
+      Supplychain:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uint64
+            product:
+              type: string
+            info:
+              type: string
+            supplyinfo:
+              type: string
+            supplyextra:
+              type: string
+            creator:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  bitcannaglobal.bcna.bcna.QueryGetBitcannaidResponse:
+    type: object
+    properties:
+      Bitcannaid:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uint64
+          bcnaid:
+            type: string
+          address:
+            type: string
+          creator:
+            type: string
+  bitcannaglobal.bcna.bcna.QueryGetSupplychainResponse:
+    type: object
+    properties:
+      Supplychain:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uint64
+          product:
+            type: string
+          info:
+            type: string
+          supplyinfo:
+            type: string
+          supplyextra:
+            type: string
+          creator:
+            type: string
   bitcannaglobal.bcna.bcna.QueryParamsResponse:
     type: object
     properties:
@@ -29549,6 +31271,98 @@ definitions:
         description: params holds all the parameters of this module.
         type: object
     description: QueryParamsResponse is response type for the Query/Params RPC method.
+  bitcannaglobal.bcna.bcna.Supplychain:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+      product:
+        type: string
+      info:
+        type: string
+      supplyinfo:
+        type: string
+      supplyextra:
+        type: string
+      creator:
+        type: string
+  cosmos.base.query.v1beta1.PageRequest:
+    type: object
+    properties:
+      key:
+        type: string
+        format: byte
+        description: |-
+          key is a value returned in PageResponse.next_key to begin
+          querying the next page most efficiently. Only one of offset or key
+          should be set.
+      offset:
+        type: string
+        format: uint64
+        description: |-
+          offset is a numeric offset that can be used when key is unavailable.
+          It is less efficient than using key. Only one of offset or key should
+          be set.
+      limit:
+        type: string
+        format: uint64
+        description: >-
+          limit is the total number of results to be returned in the result
+          page.
+
+          If left empty it will default to a value to be set by each app.
+      count_total:
+        type: boolean
+        description: >-
+          count_total is set to true  to indicate that the result set should
+          include
+
+          a count of the total number of items available for pagination in UIs.
+
+          count_total is only respected when offset is used. It is ignored when
+          key
+
+          is set.
+      reverse:
+        type: boolean
+        description: >-
+          reverse is set to true if results are to be returned in the descending
+          order.
+
+
+          Since: cosmos-sdk 0.43
+    description: |-
+      message SomeRequest {
+               Foo some_parameter = 1;
+               PageRequest pagination = 2;
+       }
+    title: |-
+      PageRequest is to be embedded in gRPC request messages for efficient
+      pagination. Ex:
+  cosmos.base.query.v1beta1.PageResponse:
+    type: object
+    properties:
+      next_key:
+        type: string
+        format: byte
+        title: |-
+          next_key is the key to be passed to PageRequest.key to
+          query the next page most efficiently
+      total:
+        type: string
+        format: uint64
+        title: |-
+          total is total number of results available if PageRequest.count_total
+          was set, its value is undefined otherwise
+    description: |-
+      PageResponse is to be embedded in gRPC response messages where the
+      corresponding request message has used PageRequest.
+
+       message SomeResponse {
+               repeated Bar results = 1;
+               PageResponse page = 2;
+       }
   google.protobuf.Any:
     type: object
     properties:
@@ -30267,82 +32081,6 @@ definitions:
             type: string
             format: uint64
     description: QueryParamsResponse is the response type for the Query/Params RPC method.
-  cosmos.base.query.v1beta1.PageRequest:
-    type: object
-    properties:
-      key:
-        type: string
-        format: byte
-        description: |-
-          key is a value returned in PageResponse.next_key to begin
-          querying the next page most efficiently. Only one of offset or key
-          should be set.
-      offset:
-        type: string
-        format: uint64
-        description: |-
-          offset is a numeric offset that can be used when key is unavailable.
-          It is less efficient than using key. Only one of offset or key should
-          be set.
-      limit:
-        type: string
-        format: uint64
-        description: >-
-          limit is the total number of results to be returned in the result
-          page.
-
-          If left empty it will default to a value to be set by each app.
-      count_total:
-        type: boolean
-        description: >-
-          count_total is set to true  to indicate that the result set should
-          include
-
-          a count of the total number of items available for pagination in UIs.
-
-          count_total is only respected when offset is used. It is ignored when
-          key
-
-          is set.
-      reverse:
-        type: boolean
-        description: >-
-          reverse is set to true if results are to be returned in the descending
-          order.
-
-
-          Since: cosmos-sdk 0.43
-    description: |-
-      message SomeRequest {
-               Foo some_parameter = 1;
-               PageRequest pagination = 2;
-       }
-    title: |-
-      PageRequest is to be embedded in gRPC request messages for efficient
-      pagination. Ex:
-  cosmos.base.query.v1beta1.PageResponse:
-    type: object
-    properties:
-      next_key:
-        type: string
-        format: byte
-        title: |-
-          next_key is the key to be passed to PageRequest.key to
-          query the next page most efficiently
-      total:
-        type: string
-        format: uint64
-        title: |-
-          total is total number of results available if PageRequest.count_total
-          was set, its value is undefined otherwise
-    description: |-
-      PageResponse is to be embedded in gRPC response messages where the
-      corresponding request message has used PageRequest.
-
-       message SomeResponse {
-               repeated Bar results = 1;
-               PageResponse page = 2;
-       }
   cosmos.authz.v1beta1.Grant:
     type: object
     properties:
@@ -36941,6 +38679,109 @@ definitions:
     description: >-
       QueryAllowanceResponse is the response type for the Query/Allowance RPC
       method.
+  cosmos.feegrant.v1beta1.QueryAllowancesByGranterResponse:
+    type: object
+    properties:
+      allowances:
+        type: array
+        items:
+          type: object
+          properties:
+            granter:
+              type: string
+              description: >-
+                granter is the address of the user granting an allowance of
+                their funds.
+            grantee:
+              type: string
+              description: >-
+                grantee is the address of the user being granted an allowance of
+                another user's funds.
+            allowance:
+              description: allowance can be any of basic and filtered fee allowance.
+              type: object
+              properties:
+                '@type':
+                  type: string
+                  description: >-
+                    A URL/resource name that uniquely identifies the type of the
+                    serialized
+
+                    protocol buffer message. This string must contain at least
+
+                    one "/" character. The last segment of the URL's path must
+                    represent
+
+                    the fully qualified name of the type (as in
+
+                    `path/google.protobuf.Duration`). The name should be in a
+                    canonical form
+
+                    (e.g., leading "." is not accepted).
+
+
+                    In practice, teams usually precompile into the binary all
+                    types that they
+
+                    expect it to use in the context of Any. However, for URLs
+                    which use the
+
+                    scheme `http`, `https`, or no scheme, one can optionally set
+                    up a type
+
+                    server that maps type URLs to message definitions as
+                    follows:
+
+
+                    * If no scheme is provided, `https` is assumed.
+
+                    * An HTTP GET on the URL must yield a
+                    [google.protobuf.Type][]
+                      value in binary format, or produce an error.
+                    * Applications are allowed to cache lookup results based on
+                    the
+                      URL, or have them precompiled into a binary to avoid any
+                      lookup. Therefore, binary compatibility needs to be preserved
+                      on changes to types. (Use versioned type names to manage
+                      breaking changes.)
+
+                    Note: this functionality is not currently available in the
+                    official
+
+                    protobuf release, and it is not used for type URLs beginning
+                    with
+
+                    type.googleapis.com.
+
+
+                    Schemes other than `http`, `https` (or the empty scheme)
+                    might be
+
+                    used with implementation specific semantics.
+              additionalProperties: {}
+          title: Grant is stored in the KVStore to record a grant with full context
+        description: allowances that have been issued by the granter.
+      pagination:
+        description: pagination defines an pagination for the response.
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+    description: >-
+      QueryAllowancesByGranterResponse is the response type for the
+      Query/AllowancesByGranter RPC method.
   cosmos.feegrant.v1beta1.QueryAllowancesResponse:
     type: object
     properties:
@@ -46215,6 +48056,60 @@ definitions:
     description: >-
       MsgCreateVestingAccountResponse defines the Msg/CreateVestingAccount
       response type.
+  ibc.applications.interchain_accounts.controller.v1.Params:
+    type: object
+    properties:
+      controller_enabled:
+        type: boolean
+        description: controller_enabled enables or disables the controller submodule.
+    description: |-
+      Params defines the set of on-chain interchain accounts parameters.
+      The following parameters may be used to disable the controller submodule.
+  ibc.applications.interchain_accounts.controller.v1.QueryParamsResponse:
+    type: object
+    properties:
+      params:
+        description: params defines the parameters of the module.
+        type: object
+        properties:
+          controller_enabled:
+            type: boolean
+            description: controller_enabled enables or disables the controller submodule.
+    description: QueryParamsResponse is the response type for the Query/Params RPC method.
+  ibc.applications.interchain_accounts.host.v1.Params:
+    type: object
+    properties:
+      host_enabled:
+        type: boolean
+        description: host_enabled enables or disables the host submodule.
+      allow_messages:
+        type: array
+        items:
+          type: string
+        description: >-
+          allow_messages defines a list of sdk message typeURLs allowed to be
+          executed on a host chain.
+    description: |-
+      Params defines the set of on-chain interchain accounts parameters.
+      The following parameters may be used to disable the host submodule.
+  ibc.applications.interchain_accounts.host.v1.QueryParamsResponse:
+    type: object
+    properties:
+      params:
+        description: params defines the parameters of the module.
+        type: object
+        properties:
+          host_enabled:
+            type: boolean
+            description: host_enabled enables or disables the host submodule.
+          allow_messages:
+            type: array
+            items:
+              type: string
+            description: >-
+              allow_messages defines a list of sdk message typeURLs allowed to
+              be executed on a host chain.
+    description: QueryParamsResponse is the response type for the Query/Params RPC method.
   ibc.applications.transfer.v1.DenomTrace:
     type: object
     properties:
@@ -46262,6 +48157,15 @@ definitions:
       SendEnabled
 
       parameter for the denomination to false.
+  ibc.applications.transfer.v1.QueryDenomHashResponse:
+    type: object
+    properties:
+      hash:
+        type: string
+        description: hash (in hex format) of the denomination trace information.
+    description: |-
+      QueryDenomHashResponse is the response type for the Query/DenomHash RPC
+      method.
   ibc.applications.transfer.v1.QueryDenomTraceResponse:
     type: object
     properties:
@@ -46332,6 +48236,15 @@ definitions:
       QueryConnectionsResponse is the response type for the Query/DenomTraces
       RPC
 
+      method.
+  ibc.applications.transfer.v1.QueryEscrowAddressResponse:
+    type: object
+    properties:
+      escrow_address:
+        type: string
+        title: the escrow account address
+    description: >-
+      QueryEscrowAddressResponse is the response type of the EscrowAddress RPC
       method.
   ibc.applications.transfer.v1.QueryParamsResponse:
     type: object
@@ -46525,6 +48438,21 @@ definitions:
       identifier fields.
   ibc.core.channel.v1.MsgAcknowledgementResponse:
     type: object
+    properties:
+      result:
+        type: string
+        enum:
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED
+          - RESPONSE_RESULT_TYPE_NOOP
+          - RESPONSE_RESULT_TYPE_SUCCESS
+        default: RESPONSE_RESULT_TYPE_UNSPECIFIED
+        description: |-
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED: Default zero value enumeration
+           - RESPONSE_RESULT_TYPE_NOOP: The message did not call the IBC application callbacks (because, for example, the packet had already been relayed)
+           - RESPONSE_RESULT_TYPE_SUCCESS: The message was executed successfully
+        title: >-
+          ResponseResultType defines the possible outcomes of the execution of a
+          message
     description: MsgAcknowledgementResponse defines the Msg/Acknowledgement response type.
   ibc.core.channel.v1.MsgChannelCloseConfirmResponse:
     type: object
@@ -46548,18 +48476,71 @@ definitions:
       type.
   ibc.core.channel.v1.MsgChannelOpenInitResponse:
     type: object
+    properties:
+      channel_id:
+        type: string
+      version:
+        type: string
     description: MsgChannelOpenInitResponse defines the Msg/ChannelOpenInit response type.
   ibc.core.channel.v1.MsgChannelOpenTryResponse:
     type: object
+    properties:
+      version:
+        type: string
     description: MsgChannelOpenTryResponse defines the Msg/ChannelOpenTry response type.
   ibc.core.channel.v1.MsgRecvPacketResponse:
     type: object
+    properties:
+      result:
+        type: string
+        enum:
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED
+          - RESPONSE_RESULT_TYPE_NOOP
+          - RESPONSE_RESULT_TYPE_SUCCESS
+        default: RESPONSE_RESULT_TYPE_UNSPECIFIED
+        description: |-
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED: Default zero value enumeration
+           - RESPONSE_RESULT_TYPE_NOOP: The message did not call the IBC application callbacks (because, for example, the packet had already been relayed)
+           - RESPONSE_RESULT_TYPE_SUCCESS: The message was executed successfully
+        title: >-
+          ResponseResultType defines the possible outcomes of the execution of a
+          message
     description: MsgRecvPacketResponse defines the Msg/RecvPacket response type.
   ibc.core.channel.v1.MsgTimeoutOnCloseResponse:
     type: object
+    properties:
+      result:
+        type: string
+        enum:
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED
+          - RESPONSE_RESULT_TYPE_NOOP
+          - RESPONSE_RESULT_TYPE_SUCCESS
+        default: RESPONSE_RESULT_TYPE_UNSPECIFIED
+        description: |-
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED: Default zero value enumeration
+           - RESPONSE_RESULT_TYPE_NOOP: The message did not call the IBC application callbacks (because, for example, the packet had already been relayed)
+           - RESPONSE_RESULT_TYPE_SUCCESS: The message was executed successfully
+        title: >-
+          ResponseResultType defines the possible outcomes of the execution of a
+          message
     description: MsgTimeoutOnCloseResponse defines the Msg/TimeoutOnClose response type.
   ibc.core.channel.v1.MsgTimeoutResponse:
     type: object
+    properties:
+      result:
+        type: string
+        enum:
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED
+          - RESPONSE_RESULT_TYPE_NOOP
+          - RESPONSE_RESULT_TYPE_SUCCESS
+        default: RESPONSE_RESULT_TYPE_UNSPECIFIED
+        description: |-
+          - RESPONSE_RESULT_TYPE_UNSPECIFIED: Default zero value enumeration
+           - RESPONSE_RESULT_TYPE_NOOP: The message did not call the IBC application callbacks (because, for example, the packet had already been relayed)
+           - RESPONSE_RESULT_TYPE_SUCCESS: The message was executed successfully
+        title: >-
+          ResponseResultType defines the possible outcomes of the execution of a
+          message
     description: MsgTimeoutResponse defines the Msg/Timeout response type.
   ibc.core.channel.v1.Order:
     type: string
@@ -47884,6 +49865,20 @@ definitions:
     title: |-
       QueryUnreceivedPacketsResponse is the response type for the
       Query/UnreceivedPacketCommitments RPC method
+  ibc.core.channel.v1.ResponseResultType:
+    type: string
+    enum:
+      - RESPONSE_RESULT_TYPE_UNSPECIFIED
+      - RESPONSE_RESULT_TYPE_NOOP
+      - RESPONSE_RESULT_TYPE_SUCCESS
+    default: RESPONSE_RESULT_TYPE_UNSPECIFIED
+    description: |-
+      - RESPONSE_RESULT_TYPE_UNSPECIFIED: Default zero value enumeration
+       - RESPONSE_RESULT_TYPE_NOOP: The message did not call the IBC application callbacks (because, for example, the packet had already been relayed)
+       - RESPONSE_RESULT_TYPE_SUCCESS: The message was executed successfully
+    title: >-
+      ResponseResultType defines the possible outcomes of the execution of a
+      message
   ibc.core.channel.v1.State:
     type: string
     enum:
@@ -48731,6 +50726,76 @@ definitions:
       RPC
 
       method. It returns the current status of the IBC client.
+  ibc.core.client.v1.QueryConsensusStateHeightsResponse:
+    type: object
+    properties:
+      consensus_state_heights:
+        type: array
+        items:
+          type: object
+          properties:
+            revision_number:
+              type: string
+              format: uint64
+              title: the revision that the client is currently on
+            revision_height:
+              type: string
+              format: uint64
+              title: the height within the given revision
+          description: >-
+            Normally the RevisionHeight is incremented at each height while
+            keeping
+
+            RevisionNumber the same. However some consensus algorithms may
+            choose to
+
+            reset the height in certain conditions e.g. hard forks,
+            state-machine
+
+            breaking changes In these cases, the RevisionNumber is incremented
+            so that
+
+            height continues to be monitonically increasing even as the
+            RevisionHeight
+
+            gets reset
+          title: >-
+            Height is a monotonically increasing data type
+
+            that can be compared against another Height for the purposes of
+            updating and
+
+            freezing clients
+        title: consensus state heights
+      pagination:
+        title: pagination response
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+    title: |-
+      QueryConsensusStateHeightsResponse is the response type for the
+      Query/ConsensusStateHeights RPC method
   ibc.core.client.v1.QueryConsensusStateResponse:
     type: object
     properties:
@@ -48899,7 +50964,6 @@ definitions:
         format: byte
         title: merkle proof of existence
       proof_height:
-        title: height at which the proof was retrieved
         type: object
         properties:
           revision_number:
@@ -48926,6 +50990,13 @@ definitions:
           RevisionHeight
 
           gets reset
+        title: >-
+          Height is a monotonically increasing data type
+
+          that can be compared against another Height for the purposes of
+          updating and
+
+          freezing clients
     title: >-
       QueryConsensusStateResponse is the response type for the
       Query/ConsensusState
@@ -50491,76 +52562,3 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
-  ibc.core.port.v1.QueryAppVersionResponse:
-    type: object
-    properties:
-      port_id:
-        type: string
-        title: port id associated with the request identifiers
-      version:
-        type: string
-        title: supported app version
-    description: >-
-      QueryAppVersionResponse is the response type for the Query/AppVersion RPC
-      method.
-  tendermint.spn.types.ConsensusState:
-    type: object
-    properties:
-      nextValidatorsHash:
-        type: string
-      timestamp:
-        type: string
-      root:
-        type: object
-        properties:
-          hash:
-            type: string
-        title: MerkleRoot represents a Merkle Root in ConsensusState
-    title: >-
-      ConsensusState represents a Consensus State
-
-      it is compatible with the dumped state from `appd q ibc client
-      self-consensus-state` command
-  tendermint.spn.types.MerkleRoot:
-    type: object
-    properties:
-      hash:
-        type: string
-    title: MerkleRoot represents a Merkle Root in ConsensusState
-  tendermint.spn.types.SignatureCount:
-    type: object
-    properties:
-      opAddress:
-        type: string
-      RelativeSignatures:
-        type: string
-    title: >-
-      SignatureCount contains information of signature reporting for one
-      specific validator with consensus address
-
-      RelativeSignatures is the sum of all signatures relative to the validator
-      set size
-  tendermint.spn.types.SignatureCounts:
-    type: object
-    properties:
-      blockCount:
-        type: string
-        format: uint64
-      counts:
-        type: array
-        items:
-          type: object
-          properties:
-            opAddress:
-              type: string
-            RelativeSignatures:
-              type: string
-          title: >-
-            SignatureCount contains information of signature reporting for one
-            specific validator with consensus address
-
-            RelativeSignatures is the sum of all signatures relative to the
-            validator set size
-    title: >-
-      SignatureCounts contains information about signature reporting for a
-      number of blocks
