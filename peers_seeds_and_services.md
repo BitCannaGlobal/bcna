@@ -5,6 +5,9 @@ We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_pee
 
 # Persistent_peers
 
+## STAVR
+0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
+
 ## EZStaking
 bee230fb347722d7f87d22414f57bf9cbe37a410@sentry-1.bcna.ezstaking.io:26039
 90ee680b1738344354c48c23ba1e1fd68e071d80@sentry-2.bcna.ezstaking.io:26696
@@ -55,10 +58,12 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
   * https://github.com/BitCannaGlobal/bcna/blob/main/2.1.statesync.md
 ## Polkachu
   * https://polkachu.com/state_sync/bitcanna
+## STAVR StateSync
+  * https://github.com/obajay/StateSync-snapshots/tree/main/Bitcanna#statesync
 ## 3Tekos StateSync Server
-  * https://bcna-rpc.3tekos.fr:443
+  * https://bcna-rpc.3tekos.fr:443 inactive
 ## Panthea EU StateSync Server
-  * https://bitcannarpc.panthea.eu:443
+  * https://bitcannarpc.panthea.eu:443 inactive
 ## mintthemoon
   * https://docs.mintthemoon.xyz/bitcanna/statesync
 
@@ -74,6 +79,9 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 
 ### Polkachu: snapshot service info
 * https://polkachu.com/tendermint_snapshots/bitcanna
+
+### STAVR : snapshot and state sync services, installation scripts (manual/automation)
+* https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
 
 ### NodeJumper ⭐️| nodejumper.io: snapshot and state sync services, installation scripts (manual/automation), cheat sheet and more
 * https://nodejumper.io/bitcanna
