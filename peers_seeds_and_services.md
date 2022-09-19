@@ -63,7 +63,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 ## 3Tekos StateSync Server
   * https://bcna-rpc.3tekos.fr:443
 ## Panthea EU StateSync Server
-  * https://bitcannarpc.panthea.eu:443
+  * https://bitcanna-rpc.panthea.eu:443
 ## mintthemoon
   * https://docs.mintthemoon.xyz/bitcanna/statesync
 
@@ -186,7 +186,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "provider": "itastakers"
       },
       {
-        "address": "https://bitcannarpc.panthea.eu",
+        "address": "https://bitcanna-rpc.panthea.eu",
         "provider": "Panthea EU"
       }
       {
@@ -222,7 +222,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "provider": "stakelab"
       },
       {
-        "address": "https://bitcannaapi.panthea.eu",
+        "address": "https://bitcanna-api.panthea.eu",
         "provider": "Panthea EU"
       }
       {
