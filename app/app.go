@@ -399,7 +399,6 @@ func New(
 		app.IBCKeeper.ChannelKeeper, // may be replaced with middleware such as ics29 fee
 		app.IBCKeeper.ChannelKeeper,
 		&app.IBCKeeper.PortKeeper,
-		app.AccountKeeper,
 		scopedICAControllerKeeper,
 		app.MsgServiceRouter(),
 	)
@@ -415,7 +414,7 @@ func New(
 	)
 
 	// Create Interchain Accounts AppModule omitting the controller keeper
-	icaModule := ica.NewAppModule(nil, &app.ICAHostKeeper)
+	icaModule := ica.NewAppModule(&app.ICAControllerKeeper, &app.ICAHostKeeper)
 
 	// Create host IBC Module
 	icaHostIBCModule := icahost.NewIBCModule(app.ICAHostKeeper)
@@ -767,7 +766,9 @@ func (app *App) RegisterUpgradeHandlers() {
 		// Set Initial Consensus Version
 		fromVM[icatypes.ModuleName] = app.mm.Modules[icatypes.ModuleName].ConsensusVersion()
 		// create ICS27 Controller submodule params
-		controllerParams := icacontrollertypes.Params{}
+		controllerParams := icacontrollertypes.Params{
+			ControllerEnabled: false,
+		}
 		// create ICS27 Host submodule params
 		hostParams := icahosttypes.Params{
 			HostEnabled: true,
@@ -820,7 +821,7 @@ func (app *App) RegisterUpgradeHandlers() {
 
 	if upgradeInfo.Name == planName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
 		storeUpgrades := storetypes.StoreUpgrades{
-			Added: []string{icahosttypes.StoreKey},
+			Added: []string{icahosttypes.StoreKey, icacontrollertypes.StoreKey},
 		}
 
 		// Configure store loader that checks if version == upgradeHeight and applies store upgrades
