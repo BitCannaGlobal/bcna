@@ -178,7 +178,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "provider": "ezstaking.io"
       },
       {
-        "address": "https://bcna-rpc.ibs.team:443/",
+        "address": "https://bcna-rpc.ibs.team/",
         "provider": "Inter Blockchain Services (former 3Tekos)"
       },      
       {
@@ -234,7 +234,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "provider": "mintthemoon"
       },
       {
-        "address": "https://bcna-api.ibs.team:443/",
+        "address": "https://bcna-api.ibs.team/",
         "provider": "Inter Blockchain Services (former 3Tekos)"
       }
     ]
