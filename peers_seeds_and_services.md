@@ -41,7 +41,7 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 ## Polkachu
 282fe52546750ca86e92e3f567cbdb2897694b5b@207.244.225.205:26656
 
-## NodeJumper ⭐️| nodejumper.io
+## Nodejumper 🚀
 45589e6147e36dda9e429668484d7614fb25b142@bitcanna.nodejumper.io:27656
 
 ## 3Tekos
@@ -83,7 +83,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 ### STAVR : snapshot and state sync services, installation scripts (manual/automation)
 * https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
 
-### NodeJumper ⭐️| nodejumper.io: snapshot and state sync services, installation scripts (manual/automation), cheat sheet and more
+### Nodejumper 🚀: on-chain analytics, snapshot & state sync services, installation scripts (manual/automation), cheat sheet and more.
 * https://nodejumper.io/bitcanna
 
 ### DappLocker: Stats service
