@@ -89,11 +89,11 @@ If you are running a validator/peer, this script will save space in disk for you
 2. Clean the data folder to ensure a fresh resync and a new Address book.
     * Cosmovisor
     ```
-    cosmovisor run unsafe-reset-all
+    cosmovisor run tendermint unsafe-reset-all
     ```
     * Bcnad daemon
     ```
-    bcnad unsafe-reset-all
+    bcnad tendermint unsafe-reset-all
     ```
     
 3. Then launch the script to get the StateSync data:
