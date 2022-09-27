@@ -160,6 +160,7 @@ You can copy&paste the entire text above in a text file.
 * [MintScan based on Cosmostation](https://www.mintscan.io/bitcanna)
 * [Ping-Pub explorer](https://ping.pub/bitcanna/uptime)
 * [Old chain explorer](https://old-explorer.bitcanna.io)
+* [ATOMScan explorer](https://atomscan.com/bitcanna)
 
 ## Wallets
 * [BitCanna web wallet](https://wallet.bitcanna.io)
