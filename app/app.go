@@ -165,6 +165,7 @@ var (
 		vesting.AppModuleBasic{},
 		bcnamodule.AppModuleBasic{},
 		ica.AppModuleBasic{},
+		icaauth.AppModuleBasic{},
 	)
 
 	// module account permissions
