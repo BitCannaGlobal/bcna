@@ -11,11 +11,13 @@ import (
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 )
 
-var DefaultRelativePacketTimeoutTimestamp = uint64((time.Duration(10) * time.Minute).Nanoseconds())
+var (
+	DefaultRelativePacketTimeoutTimestamp = uint64((time.Duration(10) * time.Minute).Nanoseconds())
+)
 
 const (
-	flagPacketTimeoutTimestamp = "packet-timeout-timestamp" //nolint:unused,deadcode,varcheck // remove this if it does nothing
-	listSeparator              = ","                        //nolint:unused,deadcode,varcheck // remove this if it does nothing
+	flagPacketTimeoutTimestamp = "packet-timeout-timestamp"
+	listSeparator              = ","
 )
 
 // GetTxCmd returns the transaction commands for this module
