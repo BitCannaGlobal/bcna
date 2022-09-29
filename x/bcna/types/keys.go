@@ -19,11 +19,11 @@ func KeyPrefix(p string) []byte {
 }
 
 const (
-	BitcannaidKey      = "Bitcannaid/value/"
-	BitcannaidCountKey = "Bitcannaid/count/"
+	BitcannaidKey      = "Bitcannaid-value-"
+	BitcannaidCountKey = "Bitcannaid-count-"
 )
 
 const (
-	SupplychainKey      = "Supplychain/value/"
-	SupplychainCountKey = "Supplychain/count/"
+	SupplychainKey      = "Supplychain-value-"
+	SupplychainCountKey = "Supplychain-count-"
 )
