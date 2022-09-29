@@ -7,11 +7,8 @@ const (
 	// StoreKey defines the primary module store key
 	StoreKey = ModuleName
 
-	// RouterKey is the message route for slashing
+	// RouterKey defines the module's message routing key
 	RouterKey = ModuleName
-
-	// QuerierRoute defines the module's query routing key
-	QuerierRoute = ModuleName
 
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_bcna"
@@ -22,11 +19,11 @@ func KeyPrefix(p string) []byte {
 }
 
 const (
-	BitcannaidKey      = "Bitcannaid-value-"
-	BitcannaidCountKey = "Bitcannaid-count-"
+	BitcannaidKey      = "Bitcannaid/value/"
+	BitcannaidCountKey = "Bitcannaid/count/"
 )
 
 const (
-	SupplychainKey      = "Supplychain-value-"
-	SupplychainCountKey = "Supplychain-count-"
+	SupplychainKey      = "Supplychain/value/"
+	SupplychainCountKey = "Supplychain/count/"
 )
