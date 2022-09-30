@@ -64,6 +64,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/mint"
 	mintkeeper "github.com/cosmos/cosmos-sdk/x/mint/keeper"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
+	"github.com/cosmos/cosmos-sdk/x/nft"
+	nftkeeper "github.com/cosmos/cosmos-sdk/x/nft/keeper"
+	nftmodule "github.com/cosmos/cosmos-sdk/x/nft/module"
 	"github.com/cosmos/cosmos-sdk/x/params"
 	paramsclient "github.com/cosmos/cosmos-sdk/x/params/client"
 	paramskeeper "github.com/cosmos/cosmos-sdk/x/params/keeper"
@@ -160,6 +163,7 @@ var (
 		slashing.AppModuleBasic{},
 		feegrantmodule.AppModuleBasic{},
 		groupmodule.AppModuleBasic{},
+		nftmodule.AppModuleBasic{},
 		ibc.AppModuleBasic{},
 		upgrade.AppModuleBasic{},
 		evidence.AppModuleBasic{},
@@ -180,6 +184,7 @@ var (
 		stakingtypes.NotBondedPoolName: {authtypes.Burner, authtypes.Staking},
 		govtypes.ModuleName:            {authtypes.Burner},
 		ibctransfertypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
+		nft.ModuleName:                 nil,
 		// this line is used by starport scaffolding # stargate/app/maccPerms
 	}
 )
@@ -236,6 +241,7 @@ type App struct {
 	ICAControllerKeeper icacontrollerkeeper.Keeper
 	FeeGrantKeeper      feegrantkeeper.Keeper
 	GroupKeeper         groupkeeper.Keeper
+	NFTKeeper           nftkeeper.Keeper
 
 	// make scoped keepers public for test purposes
 	ScopedIBCKeeper      capabilitykeeper.ScopedKeeper
@@ -294,6 +300,7 @@ func New(
 		icacontrollertypes.StoreKey,
 		capabilitytypes.StoreKey,
 		group.StoreKey,
+		nftkeeper.StoreKey,
 		bcnamoduletypes.StoreKey,
 		// this line is used by starport scaffolding # stargate/app/storeKey
 	)
@@ -430,6 +437,13 @@ func New(
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 	)
 
+	app.NFTKeeper = nftkeeper.NewKeeper(
+		keys[nftkeeper.StoreKey],
+		appCodec,
+		app.AccountKeeper,
+		app.BankKeeper,
+	)
+
 	// register the staking hooks
 	// NOTE: stakingKeeper above is passed by reference, so that it will contain these hooks
 	app.StakingKeeper = *stakingKeeper.SetHooks(
@@ -564,6 +578,7 @@ func New(
 		ibc.NewAppModule(app.IBCKeeper),
 		params.NewAppModule(app.ParamsKeeper),
 		transferModule,
+		nftmodule.NewAppModule(appCodec, app.NFTKeeper, app.AccountKeeper, app.BankKeeper, app.interfaceRegistry),
 		icaModule,
 		bcnaModule,
 		// this line is used by starport scaffolding # stargate/app/appModule
@@ -593,6 +608,7 @@ func New(
 		authz.ModuleName,
 		feegrant.ModuleName,
 		group.ModuleName,
+		nft.ModuleName,
 		paramstypes.ModuleName,
 		vestingtypes.ModuleName,
 		bcnamoduletypes.ModuleName,
@@ -617,6 +633,7 @@ func New(
 		authz.ModuleName,
 		feegrant.ModuleName,
 		group.ModuleName,
+		nft.ModuleName,
 		paramstypes.ModuleName,
 		upgradetypes.ModuleName,
 		vestingtypes.ModuleName,
@@ -647,6 +664,7 @@ func New(
 		authz.ModuleName,
 		feegrant.ModuleName,
 		group.ModuleName,
+		nft.ModuleName,
 		paramstypes.ModuleName,
 		upgradetypes.ModuleName,
 		vestingtypes.ModuleName,
@@ -680,6 +698,8 @@ func New(
 		evidence.NewAppModule(app.EvidenceKeeper),
 		ibc.NewAppModule(app.IBCKeeper),
 		transferModule,
+		ica.NewAppModule(&app.ICAControllerKeeper, &app.ICAHostKeeper),
+		// NFT simulation
 		bcnaModule,
 		// this line is used by starport scaffolding # stargate/app/appModule
 	)
@@ -857,6 +877,33 @@ func (app *App) RegisterTendermintService(clientCtx client.Context) {
 	)
 }
 
+func (app *App) RegisterUpgradeHandlers() {
+	planName := "wakeandbake"
+	app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
+		ctx.Logger().Info("start to run module migrations...")
+
+		return app.mm.RunMigrations(ctx, app.configurator, fromVM)
+	})
+
+	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
+	if err != nil {
+		panic(err)
+	}
+
+	if upgradeInfo.Name == planName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
+		storeUpgrades := storetypes.StoreUpgrades{
+			Added: []string{
+				//group.ModuleName,
+				nft.ModuleName,
+				//liquiq stake
+			},
+		}
+
+		// Configure store loader that checks if version == upgradeHeight and applies store upgrades
+		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
+	}
+}
+
 // GetMaccPerms returns a copy of the module account permissions
 func GetMaccPerms() map[string][]string {
 	dupMaccPerms := make(map[string][]string)
@@ -883,6 +930,7 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(icahosttypes.SubModuleName)
 	paramsKeeper.Subspace(icacontrollertypes.SubModuleName)
 	paramsKeeper.Subspace(bcnamoduletypes.ModuleName)
+	paramsKeeper.Subspace(nft.ModuleName)
 	// this line is used by starport scaffolding # stargate/app/paramSubspace
 
 	return paramsKeeper
