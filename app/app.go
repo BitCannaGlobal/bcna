@@ -40,18 +40,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	crisiskeeper "github.com/cosmos/cosmos-sdk/x/crisis/keeper"
 	crisistypes "github.com/cosmos/cosmos-sdk/x/crisis/types"
-	distr "github.com/cosmos/cosmos-sdk/x/distribution"
-	distrclient "github.com/cosmos/cosmos-sdk/x/distribution/client"
-	distrkeeper "github.com/cosmos/cosmos-sdk/x/distribution/keeper"
-	distrtypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 	"github.com/cosmos/cosmos-sdk/x/evidence"
 	evidencekeeper "github.com/cosmos/cosmos-sdk/x/evidence/keeper"
 	evidencetypes "github.com/cosmos/cosmos-sdk/x/evidence/types"
 	"github.com/cosmos/cosmos-sdk/x/feegrant"
 	feegrantkeeper "github.com/cosmos/cosmos-sdk/x/feegrant/keeper"
 	feegrantmodule "github.com/cosmos/cosmos-sdk/x/feegrant/module"
-	"github.com/cosmos/cosmos-sdk/x/genutil"
-	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 	"github.com/cosmos/cosmos-sdk/x/gov"
 	govclient "github.com/cosmos/cosmos-sdk/x/gov/client"
 	govkeeper "github.com/cosmos/cosmos-sdk/x/gov/keeper"
@@ -72,12 +66,6 @@ import (
 	paramskeeper "github.com/cosmos/cosmos-sdk/x/params/keeper"
 	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	paramproposal "github.com/cosmos/cosmos-sdk/x/params/types/proposal"
-	"github.com/cosmos/cosmos-sdk/x/slashing"
-	slashingkeeper "github.com/cosmos/cosmos-sdk/x/slashing/keeper"
-	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
-	"github.com/cosmos/cosmos-sdk/x/staking"
-	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradeclient "github.com/cosmos/cosmos-sdk/x/upgrade/client"
 	upgradekeeper "github.com/cosmos/cosmos-sdk/x/upgrade/keeper"
@@ -99,6 +87,18 @@ import (
 	ibcporttypes "github.com/cosmos/ibc-go/v5/modules/core/05-port/types"
 	ibchost "github.com/cosmos/ibc-go/v5/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v5/modules/core/keeper"
+	distr "github.com/iqlusioninc/liquidity-staking-module/x/distribution"
+	distrclient "github.com/iqlusioninc/liquidity-staking-module/x/distribution/client"
+	distrkeeper "github.com/iqlusioninc/liquidity-staking-module/x/distribution/keeper"
+	distrtypes "github.com/iqlusioninc/liquidity-staking-module/x/distribution/types"
+	"github.com/iqlusioninc/liquidity-staking-module/x/genutil"
+	genutiltypes "github.com/iqlusioninc/liquidity-staking-module/x/genutil/types"
+	"github.com/iqlusioninc/liquidity-staking-module/x/slashing"
+	slashingkeeper "github.com/iqlusioninc/liquidity-staking-module/x/slashing/keeper"
+	slashingtypes "github.com/iqlusioninc/liquidity-staking-module/x/slashing/types"
+	"github.com/iqlusioninc/liquidity-staking-module/x/staking"
+	stakingkeeper "github.com/iqlusioninc/liquidity-staking-module/x/staking/keeper"
+	stakingtypes "github.com/iqlusioninc/liquidity-staking-module/x/staking/types"
 	"github.com/spf13/cast"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmjson "github.com/tendermint/tendermint/libs/json"
@@ -535,7 +535,15 @@ func New(
 		keys[bcnamoduletypes.MemStoreKey],
 		app.GetSubspace(bcnamoduletypes.ModuleName),
 	)
-	bcnaModule := bcnamodule.NewAppModule(appCodec, app.BcnaKeeper, app.AccountKeeper, app.BankKeeper)
+	bcnaModule := bcnamodule.NewAppModule(
+		appCodec,
+		app.BcnaKeeper,
+		app.AccountKeeper,
+		app.BankKeeper,
+	)
+
+	// Call Upgrade func
+	app.RegisterUpgradeHandlers()
 
 	// this line is used by starport scaffolding # stargate/app/keeperDefinition
 
