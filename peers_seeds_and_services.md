@@ -4,10 +4,6 @@ For the **Chain Registry** from Cosmos [GitHub](https://github.com/cosmos/chain-
 We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_peers*** that we can use. It is greatly appreciated!
 
 # Persistent_peers
-
-## STAVR
-0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
-
 ## EZStaking
 bee230fb347722d7f87d22414f57bf9cbe37a410@sentry-1.bcna.ezstaking.io:26039
 90ee680b1738344354c48c23ba1e1fd68e071d80@sentry-2.bcna.ezstaking.io:26696
@@ -16,11 +12,9 @@ bee230fb347722d7f87d22414f57bf9cbe37a410@sentry-1.bcna.ezstaking.io:26039
 5eb75c20a77ccf960df396b187b86d6324b40123@51.68.226.61:26656
 11612d58955e5f073a6e70ce83129d63b8f5c654@65.108.139.109:26666
 
-
 ## Stakely
 3cdfe02efd4432280707d2949e064a9d8db412b3@178.62.98.158:26656 
 d806bb39349751c142627a547c23c586a787ef26@138.68.78.210:26656
-
 
 ## Blockscope
 ddb620e7c7a6b5a8a53352037cde927681012ab4@65.21.229.209:37656
@@ -48,24 +42,38 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 79d9c3aa19f61e06c33c54d80d0cda4fa535b28a@161.97.156.216:26657
 
+## STAVR
+0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
+
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 23671067d0fd40aec523290585c7d8e91034a771@seed2.bitcanna.io:26656
 
+## Panthea EU
+0a658df9d9fab096983a12e6f878e87281a15ce6@seed2.panthea.eu:27656
+
+
 # StateSync Servers and instructions:
 ## BitCanna oficial:
   * https://github.com/BitCannaGlobal/bcna/blob/main/2.1.statesync.md
+
 ## Polkachu
   * https://polkachu.com/state_sync/bitcanna
+
 ## Panthea EU StateSync Server
   * https://bitcanna-rpc.panthea.eu:443
-## STAVR StateSync
-  * https://github.com/obajay/StateSync-snapshots/tree/main/Bitcanna#statesync
+
 ## Inter Blockchain Services (former 3Tekos) StateSync Server
   * https://bcna-rpc.ibs.team:443
+
 ## mintthemoon
   * https://docs.mintthemoon.xyz/bitcanna/statesync
+
+## STAVR StateSync
+  * https://github.com/obajay/StateSync-snapshots/tree/main/Bitcanna#statesync
+
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -80,9 +88,6 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 ### Polkachu: snapshot service info
 * https://polkachu.com/tendermint_snapshots/bitcanna
 
-### STAVR : snapshot and state sync services, installation scripts (manual/automation)
-* https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
-
 ### Nodejumper 🚀: on-chain analytics, snapshot & state sync services, installation scripts (manual/automation), cheat sheet and more.
 * https://nodejumper.io/bitcanna
 
@@ -93,6 +98,9 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 * Resource list: https://docs.mintthemoon.xyz/bitcanna/resources
 * Node setup guide: https://docs.mintthemoon.xyz/bitcanna/node-guide
 * Validator setup guide: https://docs.mintthemoon.xyz/bitcanna/validator-guide
+
+### STAVR : snapshot and state sync services, installation scripts (manual/automation)
+* https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
 
 
 # RPCs, LCD, GRPC and other endpoints/services 
@@ -108,6 +116,11 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "id": "23671067d0fd40aec523290585c7d8e91034a771",
         "address": "seed2.bitcanna.io: 26656",
         "provider": "bitcanna"
+      },
+      {
+        "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
+        "address": "seed2.panthea.eu:27656",
+        "provider": "Panthea EU"
       }
     ],
     "persistent_peers": [
