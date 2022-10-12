@@ -52,7 +52,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 23671067d0fd40aec523290585c7d8e91034a771@seed2.bitcanna.io:26656
 
 ## Panthea EU
-0a658df9d9fab096983a12e6f878e87281a15ce6@seed2.panthea.eu:27656
+0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
 
 
 # StateSync Servers and instructions:
@@ -119,7 +119,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
       },
       {
         "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
-        "address": "seed2.panthea.eu:27656",
+        "address": "bitcanna-peer.panthea.eu:27656",
         "provider": "Panthea EU"
       }
     ],
