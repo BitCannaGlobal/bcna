@@ -45,6 +45,8 @@ ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 ## STAVR
 0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
 
+## Panthea EU
+0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
 
 # Seeds
 ## BitCanna (reseted everyday)
@@ -52,7 +54,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 23671067d0fd40aec523290585c7d8e91034a771@seed2.bitcanna.io:26656
 
 ## Panthea EU
-0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
+0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-seed.panthea.eu:27656
 
 
 # StateSync Servers and instructions:
@@ -119,7 +121,7 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
       },
       {
         "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
-        "address": "bitcanna-peer.panthea.eu:27656",
+        "address": "bitcanna-seed.panthea.eu:27656",
         "provider": "Panthea EU"
       }
     ],
@@ -173,6 +175,11 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "id": "df99de6cec9152c517990317b340b8b9a307493c",
         "address": "193.34.144.156:26656",
         "provider": "ParanormalBrothers"
+      },
+      {
+        "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
+        "address": "bitcanna-peer.panthea.eu:27656",
+        "provider": "Panthea EU"
       }
     ]
   },
