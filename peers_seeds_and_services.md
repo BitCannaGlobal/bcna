@@ -4,9 +4,6 @@ For the **Chain Registry** from Cosmos [GitHub](https://github.com/cosmos/chain-
 We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_peers*** that we can use. It is greatly appreciated!
 
 # Persistent_peers
-## EZStaking
-bee230fb347722d7f87d22414f57bf9cbe37a410@sentry-1.bcna.ezstaking.io:26039
-90ee680b1738344354c48c23ba1e1fd68e071d80@sentry-2.bcna.ezstaking.io:26696
 
 ## StakeLab
 5eb75c20a77ccf960df396b187b86d6324b40123@51.68.226.61:26656
@@ -127,16 +124,6 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
     ],
     "persistent_peers": [
       {
-        "id": "bee230fb347722d7f87d22414f57bf9cbe37a410",
-        "address": "sentry-1.bcna.ezstaking.io:26039",
-        "provider": "EZStaking.io"
-      },
-      {
-        "id": "90ee680b1738344354c48c23ba1e1fd68e071d80",
-        "address": "sentry-2.bcna.ezstaking.io:26696",
-        "provider": "EZStaking.io"
-      },
-      {
         "id": "21484408a7bcf0134689ddf52a7d9c8299cb65b5",
         "address": "176.9.139.74:36656",
         "provider": "BitCanna"
@@ -194,17 +181,9 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "provider": "ParanormalBrothers"
       },
       {
-        "address": "https://rpc.bitcanna.ezstaking.io/",
-        "provider": "ezstaking.io"
-      },
-      {
         "address": "https://bcna-rpc.ibs.team/",
         "provider": "Inter Blockchain Services (former 3Tekos)"
       },      
-      {
-        "address": "https://rpc-bitcanna.itastakers.com/",
-        "provider": "itastakers"
-      },
       {
         "address": "https://bitcanna-rpc.panthea.eu",
         "provider": "Panthea EU"
@@ -228,14 +207,6 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
       {
         "address": "https://lcd.bitcanna.io",
         "provider": "bitcanna"
-      },
-      {
-        "address": "https://lcd.bitcanna.ezstaking.io/",
-        "provider": "ezstaking.io"
-      },
-      {
-        "address": "https://lcd-bitcanna.itastakers.com/",
-        "provider": "itastaker"
       },
       {
         "address": "http://bitcanna.stakelab.fr/",
