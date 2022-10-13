@@ -5,16 +5,9 @@ We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_pee
 
 # Persistent_peers
 
-## StakeLab
-5eb75c20a77ccf960df396b187b86d6324b40123@51.68.226.61:26656
-11612d58955e5f073a6e70ce83129d63b8f5c654@65.108.139.109:26666
-
 ## Stakely
 3cdfe02efd4432280707d2949e064a9d8db412b3@178.62.98.158:26656 
 d806bb39349751c142627a547c23c586a787ef26@138.68.78.210:26656
-
-## Blockscope
-ddb620e7c7a6b5a8a53352037cde927681012ab4@65.21.229.209:37656
 
 ## BloClick
 be87c9abf1c54e1cc2f37e68d21fcd61679abb4c@65.21.196.90:46656 
@@ -125,16 +118,6 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "provider": "BitCanna"
       },
       {
-        "id": "5eb75c20a77ccf960df396b187b86d6324b40123",
-        "address": "51.68.226.61:26656",
-        "provider": "StakeLab"
-      },
-      {
-        "id": "11612d58955e5f073a6e70ce83129d63b8f5c654",
-        "address": "65.108.139.109:26666",
-        "provider": "StakeLab"
-      },
-      {
         "id": "3cdfe02efd4432280707d2949e064a9d8db412b3",
         "address": "178.62.98.158:26656",
         "provider": "Stakely"
@@ -143,11 +126,6 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "id": "d806bb39349751c142627a547c23c586a787ef26",
         "address": "138.68.78.210:26656",
         "provider": "Stakely"
-      },
-      {
-        "id": "ddb620e7c7a6b5a8a53352037cde927681012ab4",
-        "address": "65.21.229.209:37656",
-        "provider": "Blockscope"
       },
       {
         "id": "df99de6cec9152c517990317b340b8b9a307493c",
@@ -198,10 +176,6 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
       {
         "address": "https://lcd.bitcanna.io",
         "provider": "bitcanna"
-      },
-      {
-        "address": "http://bitcanna.stakelab.fr/",
-        "provider": "stakelab"
       },
       {
         "address": "https://bitcanna-api.panthea.eu",
