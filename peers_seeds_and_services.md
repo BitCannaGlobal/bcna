@@ -42,6 +42,8 @@ ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 ## STAVR
 0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
 
+## Panthea
+bitcanna-peer.panthea.eu@0a658df9d9fab096983a12e6f878e87281a15ce6:27565
 
 # Seeds
 ## BitCanna (reseted everyday)
