@@ -43,6 +43,9 @@ ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 23671067d0fd40aec523290585c7d8e91034a771@seed2.bitcanna.io:26656
 
+## Panthea EU
+f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
+
 # StateSync Servers and instructions:
 ## BitCanna oficial:
   * https://github.com/BitCannaGlobal/bcna/blob/main/2.1.statesync.md
@@ -104,6 +107,11 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
         "id": "23671067d0fd40aec523290585c7d8e91034a771",
         "address": "seed2.bitcanna.io: 26656",
         "provider": "bitcanna"
+      },
+      {
+        "id": "f0e6c86d769bf5c52f78e01864091690e731643f",
+        "address": "bitcanna-seed.panthea.eu:37656",
+        "provider": "Panthea EU"
       }
     ],
     "persistent_peers": [
