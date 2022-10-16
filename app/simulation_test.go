@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/BitCannaGlobal/bcna/app"
+	bcnaappparams "github.com/BitCannaGlobal/bcna/app/params"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/simapp"
@@ -73,7 +74,7 @@ func BenchmarkSimulation(b *testing.B) {
 		require.NoError(b, err)
 	})
 
-	encoding := cosmoscmd.MakeEncodingConfig(app.ModuleBasics)
+	encoding := bcnaappparams.MakeTestEncodingConfig()
 
 	app := app.New(
 		logger,
