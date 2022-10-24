@@ -6,7 +6,6 @@ import (
 	"os"
 	"path/filepath"
 
-	bcnaappparams "github.com/BitCannaGlobal/bcna/app/params"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
@@ -182,6 +181,7 @@ var (
 )
 
 var (
+	_ cosmoscmd.App           = (*App)(nil)
 	_ servertypes.Application = (*App)(nil)
 	_ simapp.App              = (*App)(nil)
 )
@@ -259,11 +259,11 @@ func New(
 	skipUpgradeHeights map[int64]bool,
 	homePath string,
 	invCheckPeriod uint,
-	encodingConfig bcnaappparams.EncodingConfig,
+	encodingConfig cosmoscmd.EncodingConfig,
 	appOpts servertypes.AppOptions,
 	baseAppOptions ...func(*baseapp.BaseApp),
 ) cosmoscmd.App {
-	appCodec := encodingConfig.Codec
+	appCodec := encodingConfig.Marshaler
 	cdc := encodingConfig.Amino
 	interfaceRegistry := encodingConfig.InterfaceRegistry
 
@@ -445,7 +445,7 @@ func New(
 	// this line is used by starport scaffolding # stargate/app/keeperDefinition
 
 	// Create static IBC router, add transfer route, then set and seal it
-	ibcRouter := ibcporttypes.NewRouter() // rbg gaiad is different
+	ibcRouter := ibcporttypes.NewRouter() //rbg gaiad is different
 	ibcRouter.
 		AddRoute(icahosttypes.SubModuleName, icaHostIBCModule).
 		AddRoute(ibctransfertypes.ModuleName, transferIBCModule)
@@ -592,7 +592,7 @@ func New(
 		params.NewAppModule(app.ParamsKeeper),
 		evidence.NewAppModule(app.EvidenceKeeper),
 		ibc.NewAppModule(app.IBCKeeper),
-		// ica.NewAppModule(&app.ICAControllerKeeper, &app.ICAHostKeeper),
+		//ica.NewAppModule(&app.ICAControllerKeeper, &app.ICAHostKeeper),
 		transferModule,
 		bcnaModule,
 		// this line is used by starport scaffolding # stargate/app/appModule
