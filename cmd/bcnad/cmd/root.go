@@ -247,7 +247,7 @@ func (ac appCreator) appExport(
 		loadLatest = true
 	}
 
-	bcnaApp := bcna.New(
+	bcnaApp := bcna.NewbcnaApp(
 		logger,
 		db,
 		traceStore,
