@@ -5,7 +5,6 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -78,8 +77,8 @@ func NewRootCmd() (*cobra.Command, appparams.EncodingConfig) {
 	}
 	initRootCmd(rootCmd, encodingConfig)
 	overwriteFlagDefaults(rootCmd, map[string]string{
-		flags.FlagChainID:        strings.ReplaceAll(app.Name, "-", ""),
-		flags.FlagKeyringBackend: "test",
+		//	flags.FlagChainID:        strings.ReplaceAll(app.Name, "-", ""),
+		//	flags.FlagKeyringBackend: "test",
 	})
 	return rootCmd, encodingConfig
 }
@@ -130,7 +129,6 @@ func initRootCmd(
 		queryCommand(),
 		txCommand(),
 		keys.Commands(app.DefaultNodeHome),
-		nil,
 		// startWithTunnelingCommand(a, app.DefaultNodeHome),
 	)
 }
