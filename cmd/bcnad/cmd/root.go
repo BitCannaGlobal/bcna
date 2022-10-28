@@ -5,6 +5,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -77,8 +78,8 @@ func NewRootCmd() (*cobra.Command, appparams.EncodingConfig) {
 	}
 	initRootCmd(rootCmd, encodingConfig)
 	overwriteFlagDefaults(rootCmd, map[string]string{
-		//	flags.FlagChainID:        strings.ReplaceAll(app.Name, "-", ""),
-		//	flags.FlagKeyringBackend: "test",
+		flags.FlagChainID:        strings.ReplaceAll(app.Name, "-", ""),
+		flags.FlagKeyringBackend: "test",
 	})
 	return rootCmd, encodingConfig
 }
@@ -129,7 +130,6 @@ func initRootCmd(
 		queryCommand(),
 		txCommand(),
 		keys.Commands(app.DefaultNodeHome),
-		// startWithTunnelingCommand(a, app.DefaultNodeHome),
 	)
 }
 
@@ -178,30 +178,6 @@ func txCommand() *cobra.Command {
 	cmd.PersistentFlags().String(flags.FlagChainID, "", "The network chain ID")
 	return cmd
 }
-
-/*
-// startWithTunnelingCommand returns a new start command with http tunneling
-// enabled.
-func startWithTunnelingCommand(appCreator appCreator, defaultNodeHome string) *cobra.Command {
-	startCmd := server.StartCmd(appCreator.newApp, defaultNodeHome)
-	startCmd.Use = "start-with-http-tunneling"
-	startCmd.Short = "Run the full node with http tunneling"
-	// Backup existing PreRunE, since we'll override it.
-	startPreRunE := startCmd.PreRunE
-	startCmd.PreRunE = func(cmd *cobra.Command, args []string) error {
-		var (
-			ctx       = cmd.Context()
-			clientCtx = client.GetClientContextFromCmd(cmd)
-			serverCtx = server.GetServerContextFromCmd(cmd)
-		)
-		network.StartProxyForTunneledPeers(ctx, clientCtx, serverCtx)
-		if startPreRunE == nil {
-			return nil
-		}
-		return startPreRunE(cmd, args)
-	}
-	return startCmd
-} */
 func addModuleInitFlags(startCmd *cobra.Command) {
 	crisis.AddModuleInitFlags(startCmd)
 	// this line is used by starport scaffolding # root/arguments
@@ -258,11 +234,6 @@ func (a appCreator) newApp(
 		cast.ToUint64(appOpts.Get(server.FlagStateSyncSnapshotInterval)),
 		cast.ToUint32(appOpts.Get(server.FlagStateSyncSnapshotKeepRecent)),
 	)
-
-	iavlCacheSize := int(cast.ToUint64(appOpts.Get("iavl-cache-size")))
-	if iavlCacheSize == 0 {
-		iavlCacheSize = 390_625 // 50mb
-	}
 	return app.New(
 		logger,
 		db,
@@ -283,9 +254,7 @@ func (a appCreator) newApp(
 		baseapp.SetIndexEvents(cast.ToStringSlice(appOpts.Get(server.FlagIndexEvents))),
 		baseapp.SetSnapshot(snapshotStore, snapshotOptions),
 		baseapp.SetIAVLCacheSize(cast.ToInt(appOpts.Get(server.FlagIAVLCacheSize))),
-		/* rgb - cambiar para que lea la config:
-		baseapp.SetIAVLDisableFastNode(cast.ToBool(appOpts.Get(server.FlagIAVLFastNode))), */
-		baseapp.SetIAVLDisableFastNode(false),
+		baseapp.SetIAVLDisableFastNode(cast.ToBool(appOpts.Get(server.FlagIAVLFastNode))), 
 	)
 }
 
@@ -354,7 +323,6 @@ func initAppConfig() (string, interface{}) {
 	// In simapp, we set the min gas prices to 0.
 	srvCfg.MinGasPrices = "0.001ubcna"
 	srvCfg.BaseConfig.IAVLDisableFastNode = false // disable fastnode by default
-
 	customAppConfig := CustomAppConfig{
 		Config: *srvCfg,
 		WASM: WASMConfig{
