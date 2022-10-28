@@ -2,9 +2,9 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> Current version is v1.4.2 - strangeBuddheads (https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md)
+> Current version is v1.4.5 - strangeBuddheads (https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md)
 
-> Last version (v1.4.2 strangeBuddheads) of our development uses Cosmos SDK v0.45.8 & Tendermint v0.34.21 & IBC-go v3.2.0
+> Last version (v1.4.5 strangeBuddheads) of our development uses Cosmos SDK v0.45.10 & Tendermint v0.34.22 & IBC-go v3.3.1
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -16,7 +16,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 * 8GB RAM 
 * 4vCPUs (8vCPUs is recommended)
 * 200GB - 300GB SSD Disk space per year (NVMe disks are recommended)
-* 400 Mbit/s bandwidth
+* 400 Mbit/s bandwidth (800Mbit/s - 1Gbit/s recommended)
 
 ## Software Requirements
 * Linux server (Ubuntu 20/22 server recommended)
@@ -153,8 +153,6 @@ You can copy&paste the entire text above in a text file.
 
 # Links to important info
 
-## How to upgrade to v.1.4.2 (`strangeBuddheads` codename)
-* [How to perform an upgrade from v.1.3.1 to v.1.4.2](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md)
 ## Explorers:
 * [BitCanna based on Forbole](https://explorer.bitcanna.io)
 * [MintScan based on Cosmostation](https://www.mintscan.io/bitcanna)
