@@ -2,25 +2,21 @@ package main
 
 import (
 	"os"
-	"strings"
 
 	"github.com/BitCannaGlobal/bcna/app"
+	"github.com/BitCannaGlobal/bcna/cmd/bcnad/cmd"
+	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
-	"github.com/ignite/cli/ignite/pkg/cosmoscmd"
-	"github.com/ignite/cli/ignite/pkg/xstrings"
 )
 
 func main() {
-	rootCmd, _ := cosmoscmd.NewRootCmd(
-		app.Name,
-		app.AccountAddressPrefix,
-		app.DefaultNodeHome,
-		xstrings.NoDash(app.Name),
-		app.ModuleBasics,
-		app.New,
-		// this line is used by starport scaffolding # root/arguments
-	)
-	if err := svrcmd.Execute(rootCmd, strings.ToUpper(app.Name), app.DefaultNodeHome); err != nil {
-		os.Exit(1)
+	rootCmd, _ := cmd.NewRootCmd()
+	if err := svrcmd.Execute(rootCmd, "BCNAD", app.DefaultNodeHome); err != nil {
+		switch e := err.(type) {
+		case server.ErrorCode:
+			os.Exit(e.Code)
+		default:
+			os.Exit(1)
+		}
 	}
 }
