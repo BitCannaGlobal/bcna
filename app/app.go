@@ -17,7 +17,7 @@ import (
 	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	"github.com/cosmos/cosmos-sdk/simapp"
 
-	// 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
+	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/version"
@@ -93,7 +93,7 @@ import (
 	tmos "github.com/tendermint/tendermint/libs/os"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/ignite/cli/ignite/pkg/cosmoscmd"
+	appparams "github.com/BitCannaGlobal/bcna/app/params"
 	"github.com/ignite/cli/ignite/pkg/openapiconsole"
 
 	"github.com/BitCannaGlobal/bcna/docs"
@@ -114,10 +114,7 @@ import (
 	icatypes "github.com/cosmos/ibc-go/v3/modules/apps/27-interchain-accounts/types"
 )
 
-const (
-	AccountAddressPrefix = "bcna"
-	Name                 = "bcna"
-)
+const Name = "bcna"
 
 // this line is used by starport scaffolding # stargate/wasm/app/enabledProposals
 
@@ -182,7 +179,6 @@ var (
 )
 
 var (
-	_ cosmoscmd.App           = (*App)(nil)
 	_ servertypes.Application = (*App)(nil)
 	_ simapp.App              = (*App)(nil)
 )
@@ -260,15 +256,15 @@ func New(
 	skipUpgradeHeights map[int64]bool,
 	homePath string,
 	invCheckPeriod uint,
-	encodingConfig cosmoscmd.EncodingConfig,
+	encodingCfg appparams.EncodingConfig,
 	appOpts servertypes.AppOptions,
 	baseAppOptions ...func(*baseapp.BaseApp),
-) cosmoscmd.App {
-	appCodec := encodingConfig.Marshaler
-	cdc := encodingConfig.Amino
-	interfaceRegistry := encodingConfig.InterfaceRegistry
+) *App {
+	appCodec := encodingCfg.Marshaler
+	cdc := encodingCfg.Amino
+	interfaceRegistry := encodingCfg.InterfaceRegistry
 
-	bApp := baseapp.NewBaseApp(Name, logger, db, encodingConfig.TxConfig.TxDecoder(), baseAppOptions...)
+	bApp := baseapp.NewBaseApp(Name, logger, db, encodingCfg.TxConfig.TxDecoder(), baseAppOptions...)
 	bApp.SetCommitMultiStoreTracer(traceStore)
 	bApp.SetVersion(version.Version)
 	bApp.SetInterfaceRegistry(interfaceRegistry)
@@ -466,7 +462,7 @@ func New(
 	app.mm = module.NewManager(
 		genutil.NewAppModule(
 			app.AccountKeeper, app.StakingKeeper, app.BaseApp.DeliverTx,
-			encodingConfig.TxConfig,
+			encodingCfg.TxConfig,
 		),
 		auth.NewAppModule(appCodec, app.AccountKeeper, nil),
 		authzmodule.NewAppModule(appCodec, app.AuthzKeeper, app.AccountKeeper, app.BankKeeper, app.interfaceRegistry),
@@ -574,7 +570,7 @@ func New(
 	)
 
 	app.mm.RegisterInvariants(&app.CrisisKeeper)
-	app.mm.RegisterRoutes(app.Router(), app.QueryRouter(), encodingConfig.Amino)
+	app.mm.RegisterRoutes(app.Router(), app.QueryRouter(), encodingCfg.Amino)
 	app.configurator = module.NewConfigurator(app.appCodec, app.MsgServiceRouter(), app.GRPCQueryRouter())
 	app.mm.RegisterServices(app.configurator)
 
@@ -613,7 +609,7 @@ func New(
 		ante.HandlerOptions{
 			AccountKeeper:   app.AccountKeeper,
 			BankKeeper:      app.BankKeeper,
-			SignModeHandler: encodingConfig.TxConfig.SignModeHandler(),
+			SignModeHandler: encodingCfg.TxConfig.SignModeHandler(),
 			FeegrantKeeper:  app.FeeGrantKeeper,
 			SigGasConsumer:  ante.DefaultSigVerificationGasConsumer,
 		},
@@ -762,72 +758,72 @@ func (app *App) RegisterTendermintService(clientCtx client.Context) {
 }
 
 func (app *App) RegisterUpgradeHandlers() {
-	planName := "trichomemonster-ica-test"
+	planName := "trichomemonster-ica"
 	app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
-		/* 		// Set Initial Consensus Version
-		   		fromVM[icatypes.ModuleName] = app.mm.Modules[icatypes.ModuleName].ConsensusVersion()
-		   		// create ICS27 Controller submodule params
-		   		controllerParams := icacontrollertypes.Params{
-		   			ControllerEnabled: false,
-		   		}
-		   		// create ICS27 Host submodule params
-		   		hostParams := icahosttypes.Params{
-		   			HostEnabled: true,
-		   			AllowMessages: []string{
-		   				"/cosmos.authz.v1beta1.MsgExec",
-		   				"/cosmos.authz.v1beta1.MsgGrant",
-		   				"/cosmos.authz.v1beta1.MsgRevoke",
-		   				"/cosmos.bank.v1beta1.MsgSend",
-		   				"/cosmos.bank.v1beta1.MsgMultiSend",
-		   				"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress",
-		   				"/cosmos.distribution.v1beta1.MsgWithdrawValidatorCommission",
-		   				"/cosmos.distribution.v1beta1.MsgFundCommunityPool",
-		   				"/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward",
-		   				"/cosmos.feegrant.v1beta1.MsgGrantAllowance",
-		   				"/cosmos.feegrant.v1beta1.MsgRevokeAllowance",
-		   				"/cosmos.gov.v1beta1.MsgVoteWeighted",
-		   				"/cosmos.gov.v1beta1.MsgSubmitProposal",
-		   				"/cosmos.gov.v1beta1.MsgDeposit",
-		   				"/cosmos.gov.v1beta1.MsgVote",
-		   				"/cosmos.staking.v1beta1.MsgEditValidator",
-		   				"/cosmos.staking.v1beta1.MsgDelegate",
-		   				"/cosmos.staking.v1beta1.MsgUndelegate",
-		   				"/cosmos.staking.v1beta1.MsgBeginRedelegate",
-		   				"/cosmos.staking.v1beta1.MsgCreateValidator",
-		   				"/cosmos.vesting.v1beta1.MsgCreateVestingAccount",
-		   				"/ibc.applications.transfer.v1.MsgTransfer",
-		   				"/tendermint.liquidity.v1beta1.MsgCreatePool",
-		   				"/tendermint.liquidity.v1beta1.MsgSwapWithinBatch",
-		   				"/tendermint.liquidity.v1beta1.MsgDepositWithinBatch",
-		   				"/tendermint.liquidity.v1beta1.MsgWithdrawWithinBatch",
-		   			},
-		   		}
-		   		icaModule, ok := app.mm.Modules[icatypes.ModuleName].(ica.AppModule)
-		   		if !ok {
-		   			panic("module is not of type ica.AppModule")
-		   		}
-		   		ctx.Logger().Info("start to init interchainaccount module...")
-		   		// initialize ICS27 module
-		   		icaModule.InitModule(ctx, controllerParams, hostParams)
+		// Set Initial Consensus Version
+		fromVM[icatypes.ModuleName] = app.mm.Modules[icatypes.ModuleName].ConsensusVersion()
+		// create ICS27 Controller submodule params
+		controllerParams := icacontrollertypes.Params{
+			ControllerEnabled: false,
+		}
+		// create ICS27 Host submodule params
+		hostParams := icahosttypes.Params{
+			HostEnabled: true,
+			AllowMessages: []string{
+				"/cosmos.authz.v1beta1.MsgExec",
+				"/cosmos.authz.v1beta1.MsgGrant",
+				"/cosmos.authz.v1beta1.MsgRevoke",
+				"/cosmos.bank.v1beta1.MsgSend",
+				"/cosmos.bank.v1beta1.MsgMultiSend",
+				"/cosmos.distribution.v1beta1.MsgSetWithdrawAddress",
+				"/cosmos.distribution.v1beta1.MsgWithdrawValidatorCommission",
+				"/cosmos.distribution.v1beta1.MsgFundCommunityPool",
+				"/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward",
+				"/cosmos.feegrant.v1beta1.MsgGrantAllowance",
+				"/cosmos.feegrant.v1beta1.MsgRevokeAllowance",
+				"/cosmos.gov.v1beta1.MsgVoteWeighted",
+				"/cosmos.gov.v1beta1.MsgSubmitProposal",
+				"/cosmos.gov.v1beta1.MsgDeposit",
+				"/cosmos.gov.v1beta1.MsgVote",
+				"/cosmos.staking.v1beta1.MsgEditValidator",
+				"/cosmos.staking.v1beta1.MsgDelegate",
+				"/cosmos.staking.v1beta1.MsgUndelegate",
+				"/cosmos.staking.v1beta1.MsgBeginRedelegate",
+				"/cosmos.staking.v1beta1.MsgCreateValidator",
+				"/cosmos.vesting.v1beta1.MsgCreateVestingAccount",
+				"/ibc.applications.transfer.v1.MsgTransfer",
+				"/tendermint.liquidity.v1beta1.MsgCreatePool",
+				"/tendermint.liquidity.v1beta1.MsgSwapWithinBatch",
+				"/tendermint.liquidity.v1beta1.MsgDepositWithinBatch",
+				"/tendermint.liquidity.v1beta1.MsgWithdrawWithinBatch",
+			},
+		}
+		icaModule, ok := app.mm.Modules[icatypes.ModuleName].(ica.AppModule)
+		if !ok {
+			panic("module is not of type ica.AppModule")
+		}
+		ctx.Logger().Info("start to init interchainaccount module...")
+		// initialize ICS27 module
+		icaModule.InitModule(ctx, controllerParams, hostParams)
 
-		   		ctx.Logger().Info("start to run module migrations...")
-		*/
+		ctx.Logger().Info("start to run module migrations...")
+
 		return app.mm.RunMigrations(ctx, app.configurator, fromVM)
 	})
 
-	/* 	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
-	   	if err != nil {
-	   		panic(err)
-	   	}
+	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
+	if err != nil {
+		panic(err)
+	}
 
-	   	if upgradeInfo.Name == planName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
-	   		storeUpgrades := storetypes.StoreUpgrades{
-	   			Added: []string{icahosttypes.StoreKey, icacontrollertypes.StoreKey},
-	   		}
+	if upgradeInfo.Name == planName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
+		storeUpgrades := storetypes.StoreUpgrades{
+			Added: []string{icahosttypes.StoreKey, icacontrollertypes.StoreKey},
+		}
 
-	   		// Configure store loader that checks if version == upgradeHeight and applies store upgrades
-	   		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
-	   	} */
+		// Configure store loader that checks if version == upgradeHeight and applies store upgrades
+		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
+	}
 }
 
 // GetMaccPerms returns a copy of the module account permissions
