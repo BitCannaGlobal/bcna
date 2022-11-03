@@ -1,4 +1,17 @@
 #  MAINNET `bitcanna-1` Upgrade
+## v1.4.5 from v1.4.2 (from Oct. 31th 2022)
+We've developed a new version with some updates (regarding SDK, Tendermint & IBC/go) to improve the security (Dragonberry) and stability (forks in IAVL) in our chain.
+* Cosmos SDK v0.45.10 
+* Tendermint v0.34.22
+* IAVL v0.19.4
+* IBC/go v3.3.1
+* Ledger-go v0.9.3 (now support Ledger Nano Plus)
+* Source code refactored to deprecate `CosmosCMD` package from Ignite/CLI
+
+> Note: this is not a planned upgrade, chain won't be halted
+
+### For detailed instructions check the release doc:
+* https://github.com/BitCannaGlobal/bcna/releases/tag/v1.4.5
 
 ## v1.4.2 from v1.4.1 (from Sept. 7th 2022)
 We've developed a new version with some updates (regarding SDK, Tendermint & IBC/go) to improve the security and stability in our chain.
