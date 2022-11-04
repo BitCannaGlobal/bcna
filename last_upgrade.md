@@ -10,7 +10,6 @@
 ### For detailed instructions check the release doc:
 * https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3
 
-
 ## v1.4.5 from v1.4.2 (from Oct. 31th 2022)
 We've developed a new version with some updates (regarding SDK, Tendermint & IBC/go) to improve the security (Dragonberry) and stability (forks in IAVL) in our chain.
 * Cosmos SDK v0.45.10 

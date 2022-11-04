@@ -6,7 +6,6 @@ BitCanna provides a decentralized payment network, supply chain and trust networ
 
 > Next version: [Update scheduled for November 7th](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md)
 
-
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
 * Our docs platform: https://docs.bitcanna.io
