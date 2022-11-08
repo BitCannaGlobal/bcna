@@ -4,6 +4,7 @@
 - NFT module
 - Fix/Delete Ignite CLI
 - Upgrade handler for v0.45 -> v0.46 migration
+- Check refactor done in v45 branchs (v1.4.5 & main (v1.5.x) and apply to v2.0
 
 ## Pending:
-- Check refactor done in v45 branchs (v1.4.5 & main (v1.5.x) and apply to v2
+- ~~Check refactor done in v45 branchs (v1.4.5 & main (v1.5.x) and apply to v2.0~~
