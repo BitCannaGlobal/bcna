@@ -27,13 +27,11 @@ import (
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
-	"github.com/spf13/pflag"
 	tmcfg "github.com/tendermint/tendermint/config"
 	tmcli "github.com/tendermint/tendermint/libs/cli"
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	// this line is used by starport scaffolding # root/moduleImport
 	"github.com/BitCannaGlobal/bcna/app"
 	appparams "github.com/BitCannaGlobal/bcna/app/params"
 )
@@ -76,10 +74,7 @@ func NewRootCmd() (*cobra.Command, appparams.EncodingConfig) {
 		},
 	}
 	initRootCmd(rootCmd, encodingConfig)
-	overwriteFlagDefaults(rootCmd, map[string]string{
-		//	flags.FlagChainID:        strings.ReplaceAll(app.Name, "-", ""),
-		//	flags.FlagKeyringBackend: "test",
-	})
+
 	return rootCmd, encodingConfig
 }
 
@@ -87,6 +82,9 @@ func NewRootCmd() (*cobra.Command, appparams.EncodingConfig) {
 // return tmcfg.DefaultConfig if no custom configuration is required for the application.
 func initTendermintConfig() *tmcfg.Config {
 	cfg := tmcfg.DefaultConfig()
+	// these values put a higher strain on node memory
+	cfg.P2P.MaxNumInboundPeers = 100
+	cfg.P2P.MaxNumOutboundPeers = 40
 	return cfg
 }
 func initRootCmd(
@@ -110,7 +108,6 @@ func initRootCmd(
 		tmcli.NewCompletionCmd(rootCmd, true),
 		debug.Cmd(),
 		config.Cmd(),
-		// this line is used by starport scaffolding # root/commands
 	)
 	a := appCreator{
 		encodingConfig,
@@ -129,7 +126,6 @@ func initRootCmd(
 		queryCommand(),
 		txCommand(),
 		keys.Commands(app.DefaultNodeHome),
-		// startWithTunnelingCommand(a, app.DefaultNodeHome),
 	)
 }
 
@@ -179,34 +175,11 @@ func txCommand() *cobra.Command {
 	return cmd
 }
 
-/*
-// startWithTunnelingCommand returns a new start command with http tunneling
-// enabled.
-func startWithTunnelingCommand(appCreator appCreator, defaultNodeHome string) *cobra.Command {
-	startCmd := server.StartCmd(appCreator.newApp, defaultNodeHome)
-	startCmd.Use = "start-with-http-tunneling"
-	startCmd.Short = "Run the full node with http tunneling"
-	// Backup existing PreRunE, since we'll override it.
-	startPreRunE := startCmd.PreRunE
-	startCmd.PreRunE = func(cmd *cobra.Command, args []string) error {
-		var (
-			ctx       = cmd.Context()
-			clientCtx = client.GetClientContextFromCmd(cmd)
-			serverCtx = server.GetServerContextFromCmd(cmd)
-		)
-		network.StartProxyForTunneledPeers(ctx, clientCtx, serverCtx)
-		if startPreRunE == nil {
-			return nil
-		}
-		return startPreRunE(cmd, args)
-	}
-	return startCmd
-} */
 func addModuleInitFlags(startCmd *cobra.Command) {
 	crisis.AddModuleInitFlags(startCmd)
-	// this line is used by starport scaffolding # root/arguments
 }
-func overwriteFlagDefaults(c *cobra.Command, defaults map[string]string) {
+
+/* func overwriteFlagDefaults(c *cobra.Command, defaults map[string]string) {
 	set := func(s *pflag.FlagSet, key, val string) {
 		if f := s.Lookup(key); f != nil {
 			f.DefValue = val
@@ -220,7 +193,7 @@ func overwriteFlagDefaults(c *cobra.Command, defaults map[string]string) {
 	for _, c := range c.Commands() {
 		overwriteFlagDefaults(c, defaults)
 	}
-}
+} */
 
 type appCreator struct {
 	encodingConfig appparams.EncodingConfig
@@ -258,7 +231,6 @@ func (a appCreator) newApp(
 		cast.ToUint64(appOpts.Get(server.FlagStateSyncSnapshotInterval)),
 		cast.ToUint32(appOpts.Get(server.FlagStateSyncSnapshotKeepRecent)),
 	)
-
 	iavlCacheSize := int(cast.ToUint64(appOpts.Get("iavl-cache-size")))
 	if iavlCacheSize == 0 {
 		iavlCacheSize = 390_625 // 50mb
@@ -283,9 +255,7 @@ func (a appCreator) newApp(
 		baseapp.SetIndexEvents(cast.ToStringSlice(appOpts.Get(server.FlagIndexEvents))),
 		baseapp.SetSnapshot(snapshotStore, snapshotOptions),
 		baseapp.SetIAVLCacheSize(cast.ToInt(appOpts.Get(server.FlagIAVLCacheSize))),
-		/* rgb - cambiar para que lea la config:
-		baseapp.SetIAVLDisableFastNode(cast.ToBool(appOpts.Get(server.FlagIAVLFastNode))), */
-		baseapp.SetIAVLDisableFastNode(false),
+		baseapp.SetIAVLDisableFastNode(cast.ToBool(appOpts.Get(server.FlagDisableIAVLFastNode))),
 	)
 }
 

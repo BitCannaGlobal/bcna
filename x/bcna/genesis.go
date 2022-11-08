@@ -22,7 +22,6 @@ func InitGenesis(ctx sdk.Context, k keeper.Keeper, genState types.GenesisState) 
 
 	// Set supplychain count
 	k.SetSupplychainCount(ctx, genState.SupplychainCount)
-	// this line is used by starport scaffolding # genesis/module/init
 	k.SetParams(ctx, genState.Params)
 }
 
@@ -35,7 +34,6 @@ func ExportGenesis(ctx sdk.Context, k keeper.Keeper) *types.GenesisState {
 	genesis.BitcannaidCount = k.GetBitcannaidCount(ctx)
 	genesis.SupplychainList = k.GetAllSupplychain(ctx)
 	genesis.SupplychainCount = k.GetSupplychainCount(ctx)
-	// this line is used by starport scaffolding # genesis/module/export
 
 	return genesis
 }

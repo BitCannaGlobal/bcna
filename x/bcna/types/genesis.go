@@ -12,8 +12,7 @@ func DefaultGenesis() *GenesisState {
 	return &GenesisState{
 		BitcannaidList:  []Bitcannaid{},
 		SupplychainList: []Supplychain{},
-		// this line is used by starport scaffolding # genesis/types/default
-		Params: DefaultParams(),
+		Params:          DefaultParams(),
 	}
 }
 
@@ -44,7 +43,5 @@ func (gs GenesisState) Validate() error {
 		}
 		supplychainIdMap[elem.Id] = true
 	}
-	// this line is used by starport scaffolding # genesis/types/validate
-
 	return gs.Params.Validate()
 }
