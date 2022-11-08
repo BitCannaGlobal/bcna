@@ -3,7 +3,6 @@ package bitcannaglobal.bcna.bcna;
 
 import "bcna/bitcannaid.proto";
 import "bcna/supplychain.proto";
-// this line is used by starport scaffolding # proto/tx/import
 
 option go_package = "github.com/BitCannaGlobal/bcna/x/bcna/types";
 
@@ -15,7 +14,6 @@ service Msg {
 rpc CreateSupplychain(MsgCreateSupplychain) returns (MsgCreateSupplychainResponse);
   rpc UpdateSupplychain(MsgUpdateSupplychain) returns (MsgUpdateSupplychainResponse);
   rpc DeleteSupplychain(MsgDeleteSupplychain) returns (MsgDeleteSupplychainResponse);
-// this line is used by starport scaffolding # proto/tx/rpc
 }
 
 message MsgCreateBitcannaid {
@@ -73,5 +71,3 @@ message MsgDeleteSupplychain {
 }
 
 message MsgDeleteSupplychainResponse {}
-
-// this line is used by starport scaffolding # proto/tx/message

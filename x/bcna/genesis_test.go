@@ -32,7 +32,6 @@ func TestGenesis(t *testing.T) {
 			},
 		},
 		SupplychainCount: 2,
-		// this line is used by starport scaffolding # genesis/test/state
 	}
 
 	k, ctx := keepertest.BcnaKeeper(t)
@@ -47,5 +46,4 @@ func TestGenesis(t *testing.T) {
 	require.Equal(t, genesisState.BitcannaidCount, got.BitcannaidCount)
 	require.ElementsMatch(t, genesisState.SupplychainList, got.SupplychainList)
 	require.Equal(t, genesisState.SupplychainCount, got.SupplychainCount)
-	// this line is used by starport scaffolding # genesis/test/assert
 }
