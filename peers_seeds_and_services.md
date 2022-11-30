@@ -38,6 +38,9 @@ ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 ## Panthea EU
 0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
 
+## AlxVoy
+803fc66e3bd7b724921ef9c40636067f36e880c6@65.108.199.222:26357
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -65,6 +68,8 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## STAVR StateSync
   * https://github.com/obajay/StateSync-snapshots/tree/main/Bitcanna#statesync
 
+## AlxVoy StateSync
+  * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -92,6 +97,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ### STAVR : snapshot and state sync services, installation scripts (manual/automation)
 * https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
+
+### AlxVoy : snapshot and state sync services, guide, RPC, API, peer
+* https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md
 
 
 # RPCs, LCD, GRPC and other endpoints/services 
@@ -144,6 +152,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
         "address": "bitcanna-peer.panthea.eu:27656",
         "provider": "Panthea EU"
+      },
+      {
+        "id": "803fc66e3bd7b724921ef9c40636067f36e880c6",
+        "address": "65.108.199.222:26357",
+        "provider": "AlxVoy"
       }
     ]
   },
@@ -172,6 +185,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://rpc-bitcanna.mintthemoon.xyz",
         "provider": "mintthemoon"
+      },
+      {
+        "address": "https://bitcanna.rpc.m.anode.team",
+        "provider": "AlxVoy"
       }
     ],
     "grpc": [
@@ -200,6 +217,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bcna-api.ibs.team/",
         "provider": "Inter Blockchain Services (former 3Tekos)"
+      },
+      {
+        "address": "https://bitcanna.api.m.anode.team",
+        "provider": "AlxVoy"
       }
     ]
   }
