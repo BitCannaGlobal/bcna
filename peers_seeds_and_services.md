@@ -29,8 +29,8 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 45589e6147e36dda9e429668484d7614fb25b142@bitcanna.nodejumper.io:27656
 
 ## Inter Blockchain Services (former 3Tekos)
-ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
-79d9c3aa19f61e06c33c54d80d0cda4fa535b28a@161.97.156.216:26657
+57a3e858a5c860e6355683c88add28d52df6c24a@38.242.232.202:26656
+526e4529131070e39134d94edc0e7e48289a64b1@176.191.97.120:27656
 
 ## STAVR
 0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
@@ -43,6 +43,9 @@ ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 
 ## [NODERS]TEAM
 9425b897a9726efb1e56111a8b355026a1f3a497@65.108.238.203:46656
+
+## bonded.zone
+9532a13b05e5f68f2ca01f90b3d1ba9a762af817@team.bonded.zone:21956
 
 # Seeds
 ## BitCanna (reseted everyday)
@@ -64,6 +67,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## Inter Blockchain Services (former 3Tekos) StateSync Server
   * https://bcna-rpc.ibs.team:443
+  * https://github.com/Inter-Blockchain-Service/Cosmos-StateSync/tree/main/Bitcanna
 
 ## mintthemoon
   * https://docs.mintthemoon.xyz/bitcanna/statesync
@@ -76,6 +80,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## [NODERS]TEAM StateSync
   * http://bitcana.statesync.nodersteam.com:46657
+
+## bonded.zone StateSync
+  * https://sync.bonded.zone/mainnets/bitcanna
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -195,6 +202,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.rpc.m.anode.team",
         "provider": "AlxVoy"
+      },
+      {
+        "address": "https://rpc-bcna.kjinc.io/",
+        "provider": "KJINC.io"
       }
     ],
     "grpc": [
@@ -227,6 +238,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.api.m.anode.team",
         "provider": "AlxVoy"
+      },
+      {
+        "address": "https://api-bcna.kjinc.io/",
+        "provider": "KJINC.io"
       }
     ]
   }
