@@ -5,6 +5,9 @@ We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_pee
 
 # Persistent_peers
 
+## [NODERS]TEAM
+9425b897a9726efb1e56111a8b355026a1f3a497@65.108.238.203:46656
+
 ## Stakely
 3cdfe02efd4432280707d2949e064a9d8db412b3@178.62.98.158:26656 
 d806bb39349751c142627a547c23c586a787ef26@138.68.78.210:26656
@@ -70,6 +73,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## AlxVoy StateSync
   * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
+
+## [NODERS]TEAM StateSync
+  * http://bitcana.statesync.nodersteam.com:46657
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
