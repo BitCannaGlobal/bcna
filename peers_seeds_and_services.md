@@ -41,6 +41,9 @@ ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 ## AlxVoy
 803fc66e3bd7b724921ef9c40636067f36e880c6@65.108.199.222:26357
 
+## bonded.zone
+9532a13b05e5f68f2ca01f90b3d1ba9a762af817@team.bonded.zone:21956
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -70,6 +73,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## AlxVoy StateSync
   * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
+
+## bonded.zone StateSync
+  * https://sync.bonded.zone/mainnets/bitcanna
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
