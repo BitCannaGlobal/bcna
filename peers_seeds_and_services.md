@@ -5,9 +5,6 @@ We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_pee
 
 # Persistent_peers
 
-## [NODERS]TEAM
-9425b897a9726efb1e56111a8b355026a1f3a497@65.108.238.203:46656
-
 ## Stakely
 3cdfe02efd4432280707d2949e064a9d8db412b3@178.62.98.158:26656 
 d806bb39349751c142627a547c23c586a787ef26@138.68.78.210:26656
@@ -43,6 +40,9 @@ ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
 
 ## AlxVoy
 803fc66e3bd7b724921ef9c40636067f36e880c6@65.108.199.222:26357
+
+## [NODERS]TEAM
+9425b897a9726efb1e56111a8b355026a1f3a497@65.108.238.203:46656
 
 # Seeds
 ## BitCanna (reseted everyday)
