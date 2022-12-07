@@ -196,6 +196,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.rpc.m.anode.team",
         "provider": "AlxVoy"
+      },
+      {
+        "address": "https://rpc-bcna.kjinc.io/",
+        "provider": "KJINC.io"
       }
     ],
     "grpc": [
@@ -228,6 +232,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.api.m.anode.team",
         "provider": "AlxVoy"
+      },
+      {
+        "address": "https://api-bcna.kjinc.io/",
+        "provider": "KJINC.io"
       }
     ]
   }
