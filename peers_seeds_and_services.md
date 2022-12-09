@@ -47,6 +47,9 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 ## bonded.zone
 9532a13b05e5f68f2ca01f90b3d1ba9a762af817@team.bonded.zone:21956
 
+## KonsorTech
+5a048cab1d183de5c465c56b29a16fd93a8bf9bd@mainnet-bitcanna.konsortech.xyz:26656
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -84,6 +87,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## bonded.zone StateSync
   * https://sync.bonded.zone/mainnets/bitcanna
 
+## KonsorTech
+  * https://github.com/konsortech/Node/blob/main/Mainnet/Bitcanna/statesync.md
+
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
 * https://docs.bitcanna.io
@@ -113,6 +119,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ### AlxVoy : snapshot and state sync services, guide, RPC, API, peer
 * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md
+
+### KonsorTech : Guide, public_endpoint (RPC, API, Peer), state sync
+* https://github.com/konsortech/Node/tree/main/Mainnet/Bitcanna
 
 
 # RPCs, LCD, GRPC and other endpoints/services 
@@ -170,6 +179,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "id": "803fc66e3bd7b724921ef9c40636067f36e880c6",
         "address": "65.108.199.222:26357",
         "provider": "AlxVoy"
+      },
+      {
+        "id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
+        "address": "mainnet-bitcanna.konsortech.xyz:26656",
+        "provider": "KonsorTech"
       }
     ]
   },
@@ -206,6 +220,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://rpc-bcna.kjinc.io/",
         "provider": "KJINC.io"
+      },
+      {
+        "address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
+        "provider": "KonsorTech"
       }
     ],
     "grpc": [
@@ -242,6 +260,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://api-bcna.kjinc.io/",
         "provider": "KJINC.io"
+      },
+      {
+        "address": "https://mainnet-bitcanna-api.konsortech.xyz",
+        "provider": "KonsorTech"
       }
     ]
   }
