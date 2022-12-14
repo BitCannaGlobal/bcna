@@ -53,6 +53,9 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 ## kjnodes
 d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
 
+## cryptech
+21f58acd833e3160feb01a6d9a6a6f501e87da80@185.144.99.58:26656
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -98,6 +101,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## kjnodes
   * https://services.kjnodes.com/mainnet/bitcanna/state-sync
+
+## cryptech StateSync
+  * https://explorers.cryptech.com.ua/bitcanna/statesync
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
