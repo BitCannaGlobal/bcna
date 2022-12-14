@@ -50,6 +50,9 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 ## KonsorTech
 5a048cab1d183de5c465c56b29a16fd93a8bf9bd@mainnet-bitcanna.konsortech.xyz:26656
 
+## kjnodes
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -57,6 +60,9 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 
 ## Panthea EU
 f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
+
+## kjnodes
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.kjnodes.com:42659
 
 # StateSync Servers and instructions:
 ## BitCanna oficial:
@@ -89,6 +95,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## KonsorTech
   * https://github.com/konsortech/Node/blob/main/Mainnet/Bitcanna/statesync.md
+
+## kjnodes
+  * https://services.kjnodes.com/mainnet/bitcanna/state-sync
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -123,6 +132,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ### KonsorTech : Guide, public_endpoint (RPC, API, Peer), state sync
 * https://github.com/konsortech/Node/tree/main/Mainnet/Bitcanna
 
+### kjnodes: 
+* Peering Services, Public Endpoints, Daily Snapshots, State-Sync, Node Setup Guide, Useful Commands: https://services.kjnodes.com/mainnet/bitcanna
+* 🤖 Free Telegram Proposal Bot: https://services.kjnodes.com/bots/proposal-bot
 
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
@@ -184,6 +196,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
         "address": "mainnet-bitcanna.konsortech.xyz:26656",
         "provider": "KonsorTech"
+      },
+      {
+        "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
+        "address": "bitcanna.rpc.kjnodes.com:42656",
+        "provider": "kjnodes"
       }
     ]
   },
@@ -224,6 +241,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
         "provider": "KonsorTech"
+      },
+      {
+        "address": "https://bitcanna.rpc.kjnodes.com",
+        "provider": "kjnodes"
       }
     ],
     "grpc": [
@@ -264,6 +285,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://mainnet-bitcanna-api.konsortech.xyz",
         "provider": "KonsorTech"
+      },
+      {
+        "address": "https://bitcanna.api.kjnodes.com",
+        "provider": "kjnodes"
       }
     ]
   }
