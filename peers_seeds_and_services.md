@@ -91,7 +91,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
   * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
 
 ## [NODERS]TEAM StateSync
-  * http://bitcana.statesync.nodersteam.com:46657
+  * http://bitcanna.statesync.nodersteam.com:46657
 
 ## bonded.zone StateSync
   * https://sync.bonded.zone/mainnets/bitcanna
@@ -141,6 +141,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ### kjnodes: 
 * Peering Services, Public Endpoints, Daily Snapshots, State-Sync, Node Setup Guide, Useful Commands: https://services.kjnodes.com/mainnet/bitcanna
 * 🤖 Free Telegram Proposal Bot: https://services.kjnodes.com/bots/proposal-bot
+
+### [NODERS]TEAM: Guide, API, RPC, StateSync, Live peer, AdrBook, Useful Commands
+* https://nodeservice.nodersteam.com/title/mainnet/bitcanna
 
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
@@ -199,6 +202,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "provider": "AlxVoy"
       },
       {
+        "id": "9425b897a9726efb1e56111a8b355026a1f3a497",
+        "address": "65.108.238.203:46656",
+        "provider": "[NODERS]TEAM"
+      },
+      {
         "id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
         "address": "mainnet-bitcanna.konsortech.xyz:26656",
         "provider": "KonsorTech"
@@ -239,6 +247,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.rpc.m.anode.team",
         "provider": "AlxVoy"
+      },
+      {
+        "address": "http://bitcanna.statesync.nodersteam.com:46657",
+        "provider": "[NODERS]TEAM"
       },
       {
         "address": "https://rpc-bcna.kjinc.io/",
