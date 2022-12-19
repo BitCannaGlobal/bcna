@@ -163,6 +163,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "id": "f0e6c86d769bf5c52f78e01864091690e731643f",
         "address": "bitcanna-seed.panthea.eu:37656",
         "provider": "Panthea EU"
+      },
+      {
+        "id": "20e1000e88125698264454a884812746c2eb4807",
+        "address": "seeds.lavenderfive.com:13056",
+        "provider": "Lavender.Five Nodes 🐝"
       }
     ],
     "persistent_peers": [
@@ -263,12 +268,20 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.rpc.kjnodes.com",
         "provider": "kjnodes"
+      },
+      {
+        "address": "https://bitcanna-rpc.lavenderfive.com/",
+        "provider": "Lavender.Five Nodes 🐝"
       }
     ],
     "grpc": [
       {
         "address": "https://grpc.bitcanna.io",
         "provider": "bitcanna"
+      },
+      {
+        "address": "https://bitcanna-grpc.lavenderfive.com:443/",
+        "provider": "Lavender.Five Nodes 🐝"
       }
     ],
     "rest": [
@@ -307,6 +320,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.api.kjnodes.com",
         "provider": "kjnodes"
+      },
+      {
+        "address": "https://bitcanna-api.lavenderfive.com/",
+        "provider": "Lavender.Five Nodes 🐝"
       }
     ]
   }
