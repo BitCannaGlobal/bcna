@@ -6,8 +6,8 @@ We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_pee
 # Persistent_peers
 
 ## Stakely
-3cdfe02efd4432280707d2949e064a9d8db412b3@178.62.98.158:26656 
-d806bb39349751c142627a547c23c586a787ef26@138.68.78.210:26656
+8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7@65.108.142.81:26682 
+ad820cb2fa85e525538207bb24ee49a61a74eb45@93.115.25.15:26656
 
 ## BloClick
 be87c9abf1c54e1cc2f37e68d21fcd61679abb4c@65.21.196.90:46656 
@@ -177,13 +177,13 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "provider": "BitCanna"
       },
       {
-        "id": "3cdfe02efd4432280707d2949e064a9d8db412b3",
-        "address": "178.62.98.158:26656",
+        "id": "8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7",
+        "address": "65.108.142.81:26682",
         "provider": "Stakely"
       },
       {
-        "id": "d806bb39349751c142627a547c23c586a787ef26",
-        "address": "138.68.78.210:26656",
+        "id": "ad820cb2fa85e525538207bb24ee49a61a74eb45",
+        "address": "93.115.25.15:26656",
         "provider": "Stakely"
       },
       {
