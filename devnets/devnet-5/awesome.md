@@ -1,12 +1,12 @@
 # DevNet-5 peers and services
 
 ## Persistent Peers
-- 3912bbbe1beeab27c5050558d625ac6334b1e5e8@212.227.151.143:26656
+- 59fb9efed9c923f41a4b7dfec3889d4a018e850e@212.227.151.143:26656
 - 20ca909b49106aacbf516ba28fa8a2409f825a82@212.227.151.106:26656
 
 ## Seed Peer
 This will disconnect after passing P2P info so not include in your _persistent_peers_
-- bfeb1b8802eaa9f4c12d8a0ac55c0df4777e3adc@144.91.89.66:26656
+- 9f74dd2aba4acfb2c4206e178125eb8bca7bc877@144.91.89.66:26656
 
 # Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
