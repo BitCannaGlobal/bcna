@@ -157,7 +157,7 @@ bcnad tx staking create-validator \
 	--gas-prices 0.001ubcna
 ```
 
-You can check the list of validators (also in [Explorer](https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking)):
+You can check the list of validators (also in [Explorer](https://testnet.ping.pub/bitcanna/staking)):
 
    ```
    bcnad query staking validators --output json| jq
@@ -173,6 +173,4 @@ Another **IMPORTANT** but **optional** action is backup your Validator_priv_key:
    This will create a GPG encrypted file with both key files.
 
 # Upgrade Instructions
-You can get all the upgrade instructions (next and past ones [here](upgrade-instructions.md))
-
- [_Some useful commands_](https://github.com/BitCannaGlobal/testnet-bcna-cosmos/blob/main/instructions/public-testnet/validator-guides/useful.md) to help you navigate the `bcnad` CLI
+You can get all the upgrade instructions (next and past ones [here](https://github.com/BitCannaGlobal/bcna/blob/update_DEVNET-5_doc/devnets/devnet-5/upgrade_instructions.md))
