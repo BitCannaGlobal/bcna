@@ -39,6 +39,9 @@ In the next section you will find the params for P2P and a *step by step* guide 
 | 28th Nov 2022     | 1.032.049     | [v2.0.1-rc2](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc2/bcna_linux_amd64.tar.gz)    | [Upgrade doc](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc2) |
 | 22th Dec 2022     | 1.XXX.420     | [v2.0.1-rc3](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc3/bcna_linux_amd64.tar.gz)    | [Upgrade doc](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc3) |
 
+#### More DEVNET-5 resources
+* [Link to AWESOME doc](https://github.com/BitCannaGlobal/bcna/blob/update_DEVNET-5_doc/devnets/devnet-5/awesome.md)
+
 ## Running a validator on **bitcanna-dev-5**
 * Before you start, you want to ensure your system is updated.  Besides other utilities you can install `jq` which is a utility to read and navigate JSON files and output.
     ```
