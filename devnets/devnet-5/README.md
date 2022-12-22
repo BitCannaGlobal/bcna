@@ -8,9 +8,10 @@
 >
 > If StateSync script fails you need also to delete the downloaded binary `rm ./bcnad`
 
+> IMPORTANT NOTE 2: We were running DEVNET-5 and decided to reset to Genesis height 0 for our convenience. If you was participating please download the new genesis and replace the old. Also replace the binary `v2.0.1-rc2` by `v1.5.3` before proceed.
+
 ## Target of this DevNet.
-We created a new testnet that follows the exact upgrade cycle as the current Mainnet. In this devnet the participants can join the chain from version v.2.0.1-rc codename `wakeandbake`, using our statesync script. 
-We will prepare to upgrade to the newest version of the software, v2.0.1-rc3 codename `wakeandbakev46.7`, which includes the last improvements and bug fixing at Cosmos SDK and Tendermint.
+We created a new testnet that follows the exact upgrade cycle as the current Mainnet.
 
 ### We are going to work in three new testnets: 
 * `bitcanna-dev-5`
@@ -35,9 +36,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 
 | Upgrade Date | Upgrade Height | Binary Path | Release doc |
 | -------- | -------- | -------- | ------- |
-| 14th Nov 2022     | 765.273     | [v2.0.1-rc1](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc1/bcna_linux_amd64.tar.gz)    | [Upgrade doc](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc1) |
-| 28th Nov 2022     | 1.032.049     | [v2.0.1-rc2](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc2/bcna_linux_amd64.tar.gz)    | [Upgrade doc](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc2) |
-| 22th Dec 2022     | 1.398.420     | [v2.0.1-rc3](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc3/bcna_linux_amd64.tar.gz)    | [Upgrade doc](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc3) |
+| 22th Dec 2022     | 0    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | x |
 
 #### More DEVNET-5 resources
 * [Link to AWESOME doc](https://github.com/BitCannaGlobal/bcna/blob/update_DEVNET-5_doc/devnets/devnet-5/awesome.md)
@@ -54,7 +53,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
     sudo sysctl -p
     ```
 ## Step 1 - Download and run statesync script
-By running the statesync script we download the latest binary (v1.5.3-rc2) and sync the chain to the latest block.
+By running the statesync script we download the latest binary (v1.5.3) and sync the chain to the latest block.
 1. **Download the statesync script** for new peers from Github:
     ```
     cd ~
