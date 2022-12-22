@@ -56,6 +56,9 @@ d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
 ## cryptech
 21f58acd833e3160feb01a6d9a6a6f501e87da80@185.144.99.58:26656
 
+## Alkia
+2235f1e518c5ea4a412f9dece386348eda356916@bitcanna.alkia.net:26656
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
