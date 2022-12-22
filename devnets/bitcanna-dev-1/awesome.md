@@ -6,7 +6,7 @@
 
 ## Seed Peer
 This will disconnect after passing P2P info so not include in your _persistent_peers_
-- 9f74dd2aba4acfb2c4206e178125eb8bca7bc877@144.91.89.66:26656
+- 471341f9befeab582e845d5e9987b7a4889c202f@144.91.89.66:26656
 
 # Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
