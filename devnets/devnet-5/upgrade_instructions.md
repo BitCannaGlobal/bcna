@@ -1,6 +1,6 @@
 # Upgrade instructions for `wakeandbake46.6 v2.0.1-rc3`
 ## Governance proposal: 
-* halt-height `1.XXX.420` 
+* halt-height `1,398,420`
 * on December 22th 15:00h CET - 14:00h UTC
 
 https://testnet.ping.pub/bitcanna/gov/11
