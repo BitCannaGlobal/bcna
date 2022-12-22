@@ -1,7 +1,7 @@
 # bitcanna-dev-1 peers and services
 
 ## Persistent Peers
-- 59fb9efed9c923f41a4b7dfec3889d4a018e850e@212.227.151.143:26656
+- 80ee9ed689bfb329cf21b94aa12978e073226db4@212.227.151.143:26656
 - 20ca909b49106aacbf516ba28fa8a2409f825a82@212.227.151.106:26656
 
 ## Seed Peer
