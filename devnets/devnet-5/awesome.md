@@ -22,5 +22,4 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 # Docs
 - [Join `bitcanna-dev-5`](README.md)
 - [Upgrades - general](upgrade-instructions.md)
-- [Upgrade doc for TrichoMonster-ICA](https://hackmd.io/OfAoExSqQFeABhKGaEywdw)
 - [Setup Cosmovisor from zero](https://hackmd.io/jsJCqEyJSHKVOFKjScn3rw)
