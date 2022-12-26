@@ -36,6 +36,8 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 
 ### Manual-setup
 > This instructions was written by Avione Validators, thanks a lot!
+
+> Please remove `.bcna` folder and bcnad binary if you have participated in previous devnets
 ```
 #############################################################################
 ############
