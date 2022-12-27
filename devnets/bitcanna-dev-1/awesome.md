@@ -16,10 +16,12 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 ## RPC endpoints
 - https://rpc-testnet.bitcanna.io
 - https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/ (TX index = off)
+- https://testnet-bitcanna-rpc.konsortech.xyz/
 - 
 ## LCD Enpoints
 - http://lcd-testnet.bitcanna.io
 - https://api.bitcanna-dev-1.bitcanna.aviaone.com/
+- https://testnet-bitcanna-api.konsortech.xyz/
 
 ## Wallets / Dashboard
 - https://wallet-testnet.bitcanna.io
