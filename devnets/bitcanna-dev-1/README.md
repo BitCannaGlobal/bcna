@@ -41,6 +41,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
 * [Link to manual set-up by Aviaone Validator](awesome.md#Manual-setup)
+* [Link to setup and other tools by KonsorTech](https://github.com/konsortech/Node/tree/main/Testnet/Bitcanna)
 
 ## Running a validator on **bitcanna-dev-1** using StateSync
 * Before you start, you want to ensure your system is updated.  Besides other utilities you can install `jq` which is a utility to read and navigate JSON files and output. Also remove the `.bcna` folder, take in consideration first NOTES in this doc.
