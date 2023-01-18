@@ -26,7 +26,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 
 #### Persistent peers
 * `80ee9ed689bfb329cf21b94aa12978e073226db4@212.227.151.143:26656`
-* ~~`20ca909b49106aacbf516ba28fa8a2409f825a82@212.227.151.106:26656`~~
+* `ba6c17d707cb0c4f81e0ef590f2e36152ff7dd1a@212.227.151.106:26656`
 
 
 #### Genesis file
@@ -87,7 +87,7 @@ By running the statesync script we download the latest binary (v1.5.3) and sync 
     ```
     **Optionally:**
     ```
-    bcnad config chain-id bitacanna-dev-1
+    bcnad config chain-id bitcanna-dev-1
     ```
 ## Step 2 - Prepare the node
 To create a validator you need a funded wallet. Once the wallet is created, go to the **#devnet-faucet** channel on [Discord](https://discord.com/channels/805725188355260436/847019574662922260) and claim your devnet coins. For example: `!claim bcna14shzreglay98us0hep44hhhuy7dm43snv38plr`
