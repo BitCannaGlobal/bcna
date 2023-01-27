@@ -116,8 +116,6 @@ import (
 	bcnamodule "github.com/BitCannaGlobal/bcna/x/bcna"
 	bcnamodulekeeper "github.com/BitCannaGlobal/bcna/x/bcna/keeper"
 	bcnamoduletypes "github.com/BitCannaGlobal/bcna/x/bcna/types"
-
-	v046mig "github.com/cosmos/cosmos-sdk/x/gov/migrations/v046"
 )
 
 const (
@@ -878,14 +876,13 @@ func (app *App) RegisterTendermintService(clientCtx client.Context) {
 		app.Query,
 	)
 }
+
+// Upgrades
 func (app *App) RegisterUpgradeHandlersDevNet() {
-	planName := "wakeandbake46.7"
+	planName := "wakeandbake46.8"
 	app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
-		ctx.Logger().Info("start to run store migrations...")
-		err := v046mig.Migrate_V046_6_To_V046_7(ctx.KVStore(app.keys["gov"]), app.appCodec)
-		if err != nil {
-			return fromVM, err
-		}
+		ctx.Logger().Info("start to run module migrations...")
+
 		return app.mm.RunMigrations(ctx, app.configurator, fromVM)
 	})
 
@@ -898,16 +895,14 @@ func (app *App) RegisterUpgradeHandlersDevNet() {
 		storeUpgrades := storetypes.StoreUpgrades{
 			Added: []string{
 
-				//group.ModuleName,
-				//nft.ModuleName,
-				//liquiq stake
+				group.ModuleName,
+				nft.ModuleName,
 			},
 		}
 
 		// Configure store loader that checks if version == upgradeHeight and applies store upgrades
 		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
 	}
-
 }
 
 func (app *App) RegisterUpgradeHandlers() {
@@ -929,7 +924,6 @@ func (app *App) RegisterUpgradeHandlers() {
 
 				group.ModuleName,
 				nft.ModuleName,
-				//liquiq stake
 			},
 		}
 
