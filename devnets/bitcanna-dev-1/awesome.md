@@ -70,7 +70,7 @@ go version
 ===================================================
 # Install App and build
 cd $HOME
-git clone git clone https://github.com/BitCannaGlobal/bcna.git
+git clone https://github.com/BitCannaGlobal/bcna.git
 cd bcna
 git checkout v1.5.3
 make install
