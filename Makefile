@@ -15,7 +15,7 @@ HTTPS_GIT      := https://github.com/BitCannaGlobal/bcna.git
 ###############################################################################
 
 ifeq (,$(VERSION))
-  VERSION := $(shell git describe --exact-match 2>/dev/null)
+  VERSION := $(shell git describe --tags | sed 's/^v//')
   # if VERSION is empty, then populate it with branch's name and raw commit hash
   ifeq (,$(VERSION))
     VERSION := $(BRANCH)-$(COMMIT)
