@@ -220,6 +220,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "provider": "KonsorTech"
       },
       {
+        "id": "2235f1e518c5ea4a412f9dece386348eda356916",
+        "address": "bitcanna.alkia.net:26656",
+        "provider": "ALKIA"
+      },      
+      {
         "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
         "address": "bitcanna.rpc.kjnodes.com:42656",
         "provider": "kjnodes"
@@ -273,6 +278,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "provider": "kjnodes"
       },
       {
+        "address": "http://bitcanna.alkia.net:26657",
+        "provider": "ALKIA"
+      },
+      {
         "address": "https://bitcanna-rpc.lavenderfive.com/",
         "provider": "Lavender.Five Nodes 🐝"
       }
@@ -323,6 +332,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       {
         "address": "https://bitcanna.api.kjnodes.com",
         "provider": "kjnodes"
+      },
+      {
+        "address": "http://bitcanna.alkia.net:1317/",
+        "provider": "ALKIA"
       },
       {
         "address": "https://bitcanna-api.lavenderfive.com/",
