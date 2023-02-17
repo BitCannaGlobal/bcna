@@ -2,9 +2,9 @@ syntax = "proto3";
 package bitcannaglobal.bcna.bcna;
 
 import "gogoproto/gogo.proto";
-import "bcna/params.proto";
-import "bcna/bitcannaid.proto";
-import "bcna/supplychain.proto";
+import "bcna/bcna/params.proto";
+import "bcna/bcna/bitcannaid.proto";
+import "bcna/bcna/supplychain.proto";
 
 option go_package = "github.com/BitCannaGlobal/bcna/x/bcna/types";
 
