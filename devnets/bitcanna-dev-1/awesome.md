@@ -33,8 +33,8 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 ## Docs
 - [Automatic StateSync Join `bitcanna-dev-1`](README.md)
 - [Manually Join `bitcanna-dev-1` by Avione Validator](awesome.md#Manual-setup)
-- [Upgrades - general](upgrade-instructions.md)
-- To be revised: [Setup Cosmovisor from zero](https://hackmd.io/jsJCqEyJSHKVOFKjScn3rw)
+- [Upgrades - Last Upgrade](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md)
+- [Setup Cosmovisor from zero](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/cosmovisor_install.md)
 
 ### Manual-setup
 > This instructions was written by Avione Validators, thanks a lot!
