@@ -32,16 +32,18 @@ In the next section you will find the params for P2P and a *step by step* guide 
 #### Genesis file
 * [Link to Genesis file](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/devnets/bitcanna-dev-1/genesis.json)
 
-#### Binary / upgrades table
+#### Binary / Upgrades table
 
-| Upgrade Date | Upgrade Height | Binary Path | Release doc |
-| -------- | -------- | -------- | ------- |
-| 22th Dec 2022     | 0    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | x |
+| Upgrade Date | Upgrade Height | Binary Path | Release GitHub | Release doc |
+| -------- | -------- | -------- | ------- | ------- |
+| 22nd Dec 2022     | 0    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | x |
+| 22nd Feb 2023 15h UTC    | 956.837    | [v1.6.0-rc2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md)
 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
 * [Link to manual set-up by Aviaone Validator](awesome.md#Manual-setup)
 * [Link to setup and other tools by KonsorTech](https://github.com/konsortech/Node/tree/main/Testnet/Bitcanna)
+* [Link to setup Cosmovisor for DEVNET-1](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/cosmovisor_install.md)
 
 ## Running a validator on **bitcanna-dev-1** using StateSync
 * Before you start, you want to ensure your system is updated.  Besides other utilities you can install `jq` which is a utility to read and navigate JSON files and output. Also remove the `.bcna` folder, take in consideration first NOTES in this doc.
