@@ -10,7 +10,7 @@ Let's get started!
 ### Governance proposal
 
 The upgrade is scheduled to take place on **February 24nd around 16:00h CET / 15:00h UTC**
-* **Halt-height 9xx.xxx**
+* **Halt-height 987.757**
 
 https://testnet.ping.pub/bitcanna/gov/4
 
@@ -42,7 +42,7 @@ Watch your logs when we aproach the halt-height and open an extra terminal to ex
 ```
 sudo journalctl -fu bcnad -o cat
 ```
-1) Stop the bcnad service **after you see** `ERR UPGRADE "vigorous-grow-rc3" NEEDED at height: 9xx.xxx` in your logs.
+1) Stop the bcnad service **after you see** `ERR UPGRADE "vigorous-grow-rc3" NEEDED at height:  987.757` in your logs.
 ```
 sudo service bcnad stop
 ```
