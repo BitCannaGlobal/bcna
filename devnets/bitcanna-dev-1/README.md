@@ -15,7 +15,7 @@ We created a new testnet that follows the exact upgrade cycle as the current Mai
 
 ### We are going to work in three new testnets: 
 * `bitcanna-dev-1`
-* `innuendo-4` (with `quicksilverd` current version binary) YOU DON'T NEED TO RUN THIS CHAIN.
+* `innuendo-5` (with `quicksilverd` current version binary) YOU DON'T NEED TO RUN THIS CHAIN.
 * `axelar-testnet-lisbon-3` (with `axelard` current version binary) YOU DON'T NEED TO RUN THIS CHAIN.
 
 ## P2P Network INFO
@@ -37,7 +37,8 @@ In the next section you will find the params for P2P and a *step by step* guide 
 | Upgrade Date | Upgrade Height | Binary Path | Release GitHub | Release doc |
 | -------- | -------- | -------- | ------- | ------- |
 | 22nd Dec 2022     | 0    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | x |
-| 22nd Feb 2023 15h UTC    | 956.837    | [v1.6.0-rc2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md)
+| 22nd Feb 2023 15h UTC    | 956.837    | [v1.6.0-rc2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md) |
+| 24nd Feb 2023 15h UTC    | 987.757    | [v1.6.0-rc3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc3/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc3) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc3.md) |
 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
