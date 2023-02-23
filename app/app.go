@@ -602,13 +602,17 @@ func New(
 	app.SetInitChainer(app.InitChainer)
 	app.SetBeginBlocker(app.BeginBlocker)
 
-	anteHandler, err := ante.NewAnteHandler(
-		ante.HandlerOptions{
-			AccountKeeper:   app.AccountKeeper,
-			BankKeeper:      app.BankKeeper,
-			SignModeHandler: encodingCfg.TxConfig.SignModeHandler(),
-			FeegrantKeeper:  app.FeeGrantKeeper,
-			SigGasConsumer:  ante.DefaultSigVerificationGasConsumer,
+	anteHandler, err := NewAnteHandler(
+		HandlerOptions{
+			HandlerOptions: ante.HandlerOptions{
+				AccountKeeper:   app.AccountKeeper,
+				BankKeeper:      app.BankKeeper,
+				SignModeHandler: encodingCfg.TxConfig.SignModeHandler(),
+				FeegrantKeeper:  app.FeeGrantKeeper,
+				SigGasConsumer:  ante.DefaultSigVerificationGasConsumer,
+			},
+			GovKeeper: app.GovKeeper,
+			Cdc:       appCodec,
 		},
 	)
 	if err != nil {
@@ -754,10 +758,10 @@ func (app *App) RegisterTendermintService(clientCtx client.Context) {
 }
 
 func (app *App) RegisterUpgradeHandlers() {
-	planName := "vigorous-grow"
+	planName := "vigorous-grow-rc3"
 	app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
-		// no-op ... making a new consensus for IBC/go v3.4.0 upgrade
-		ctx.Logger().Info("no-op ... making a new consensus for IBC/go v3.4.0 upgrade...")
+		// no-op ... making a new consensus for IBC/go v3.4.0 upgrade & Gov anti-spam feature...
+		ctx.Logger().Info("no-op ... making a new consensus for IBC/go v3.4.0 upgrade & Gov anti-spam feature...")
 
 		return app.mm.RunMigrations(ctx, app.configurator, fromVM)
 	})
