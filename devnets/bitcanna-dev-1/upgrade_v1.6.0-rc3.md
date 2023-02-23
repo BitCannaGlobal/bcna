@@ -25,7 +25,7 @@ wget -nc https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc3/bcn
 ```
 sha256sum bcna_linux_amd64.tar.gz
 ```
-> It must return: `------------------`
+> It must return: `4ab89e9df3c340acc42b01d52167a676a6daa6749b70e3f0eee8f65808af8bc0`
 
 3) Verify that the version is `v1.6.0-rc3`
 ```
