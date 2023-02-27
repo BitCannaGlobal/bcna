@@ -20,9 +20,20 @@ Here are the minimal hardware configs required for running a validator/sentry no
 
 ## Software Requirements
 * Linux server (Ubuntu 20/22 server recommended)
-* go version go1.18.5
+* Go version v1.19.5
 
 > Please avoid cheap VPS providers as a main validator (we suggest using it as a cheap backup). We advise to use a shared dedicated server or a high-end NVMe VPS.
+
+## Genesis file
+* [Link to Genesis file](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/devnets/bitcanna-dev-1/genesis.json)
+
+## Binary / Upgrades table
+
+| Upgrade Date | Upgrade Height | Binary Path | Release GitHub | Release doc |
+| -------- | -------- | -------- | ------- | ------- |
+| 7th Nov 2022     | 5.787.420    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | x |
+| 2nd Mar 2023 16.20h CET    | 7.467.420   | [v1.6.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0.md) |
+
 
 # How to join `bitcanna-1` chain
 > Tip: At the end of this doc, you will find links with important info
