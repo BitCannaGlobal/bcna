@@ -29,10 +29,10 @@ Here are the minimal hardware configs required for running a validator/sentry no
 
 ## Binary / Upgrades table
 
-| Upgrade Date | Upgrade Height | Binary Path | Release GitHub | Release doc |
+| Upgrade Date | Upgrade Height | Binary Path | Release GitHub | Release notes |
 | -------- | -------- | -------- | ------- | ------- |
-| 7th Nov 2022     | 5.787.420    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | x |
-| 2nd Mar 2023 16.20h CET    | 7.467.420   | [v1.6.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0.md) |
+| 7th Nov 2022     | 5.787.420    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v153-codename-trichomemonster-ica---from-v145 |
+| 2nd Mar 2023 16.20h CET    | 7.467.420   | [v1.6.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v160-codename-vigorous-grow---from-v153) |
 
 
 # How to join `bitcanna-1` chain
