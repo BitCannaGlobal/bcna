@@ -6,8 +6,8 @@
 > Note: this is a planned upgrade, chain **will halts** at block **7467420**
 - Ante handler to prevent spam proposals at Gov module
 - Remove OpenAPI dep from Ignite; now included locally.
-- Bump Cosmos SDK version to v0.45.14 to mitigate a possible way to DDoS a node.
-- Bump Tendermint to v0.34.26 (InformalSystem fork). (https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.14)
+- Bump Cosmos SDK version to v0.45.14 to mitigate a possible way to [DDoS](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.14) a node.
+- Bump Tendermint to v0.34.26 ([InformalSystem fork](https://github.com/informalsystems/tendermint/blob/v0.34.26/CHANGELOG.md#v03426)). 
 - Bump IBC go version to v.3.4.0 (it will break consensus so a new start/stop is required)
 - Bump IAVL version to v0.19.5
 - Fixed BCNA module path & bug with CLI
