@@ -1,9 +1,13 @@
 #  MAINNET `bitcanna-1` Upgrades
 
-## v1.6.0 codename `Vigorous-grow`   from v1.5.3 
+## v1.6.0-fix codename `Vigorous-grow` from v1.5.3 
+
 > (Update scheduled for 2nd March 2023 ~ 16.20h CET - 15.20h UTC)
 >
 > Note: this is a planned upgrade, chain **will halts** at block **7467420**
+>
+> **Important note: The tag name required for the upgrade is v1.6.0-fix because tag v1.6.0 contains a typo and won't match the Plan Name**
+
 - Ante handler to prevent spam proposals at Gov module
 - Remove OpenAPI dep from Ignite; now included locally.
 - Bump Cosmos SDK version to v0.45.14 to mitigate a possible way to [DDoS](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.14) a node.
@@ -14,22 +18,9 @@
 - Using Cosmos Keyring v1.2.0
 
 ### For detailed instructions check the release doc:
-* https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0
+* https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-fix
 ### For detailed Cosmovisor install guide:
 * [Updated guide](https://github.com/BitCannaGlobal/bcna/blob/main/2.3.cosmovisor.md)
------------
-## v1.4.5 from v1.4.2 (from Oct. 31th 2022)
-We've developed a new version with some updates (regarding SDK, Tendermint & IBC/go) to improve the security (Dragonberry) and stability (forks in IAVL) in our chain.
-* Cosmos SDK v0.45.10 
-* Tendermint v0.34.22
-* IAVL v0.19.4
-* IBC/go v3.3.1
-* Ledger-go v0.9.3 (now support Ledger Nano Plus)
-
-> Note: this is not a planned upgrade, chain won't be halted
-
-### For detailed instructions check the release doc:
-* https://github.com/BitCannaGlobal/bcna/releases/tag/v1.4.5
 
 
 ----------
