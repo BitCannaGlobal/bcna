@@ -4,7 +4,7 @@ BitCanna provides a decentralized payment network, supply chain and trust networ
 
 > Current version (v1.5.3 TrichomeMonster-ica) of our development uses Cosmos SDK v0.45.10 & Tendermint v0.34.22 & IBC-go v3.3.1
 
-> Last upgrade info: [Update scheduled for November 7th 2022](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md)
+> New version info: [Update scheduled for 2nd March 2023](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) v1.6.0
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
