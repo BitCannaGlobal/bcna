@@ -4,9 +4,9 @@
 
 > (Update scheduled for 2nd March 2023 ~ 16.20h CET - 15.20h UTC)
 >
-> Note: this is a planned upgrade, chain **will halts** at block **7467420**
+> Note: this is a planned upgrade, the chain **will halt** at block **7467420**
 >
-> **Important note: The tag name required for the upgrade is v1.6.0-fix because tag v1.6.0 contains a typo and won't match the Plan Name**
+> **Important note: The tag name required for the upgrade is v1.6.0-fix because tag v1.6.0 contains a typo and won't match the Plan (Upgrade) Name**
 
 - Ante handler to prevent spam proposals at Gov module
 - Remove OpenAPI dep from Ignite; now included locally.
