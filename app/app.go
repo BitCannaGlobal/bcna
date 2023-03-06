@@ -758,10 +758,10 @@ func (app *App) RegisterTendermintService(clientCtx client.Context) {
 }
 
 func (app *App) RegisterUpgradeHandlers() {
-	planName := "vigorous-grow"
+	planName := "vigorous-grow-fix"
 	app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
 		// no-op ... making a new consensus for IBC/go v3.4.0 upgrade & Gov anti-spam feature...
-		ctx.Logger().Info("no-op ... making a new consensus for IBC/go v3.4.0 upgrade & Gov anti-spam feature...")
+		ctx.Logger().Info("no-op ... making a new consensus for IBC/go v3.4.0 upgrade & Gov anti-spam feature (fixed)...")
 
 		return app.mm.RunMigrations(ctx, app.configurator, fromVM)
 	})
