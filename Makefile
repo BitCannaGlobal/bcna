@@ -94,7 +94,7 @@ include contrib/devtools/Makefile
 check_version:
 ifneq ($(GO_MINOR_VERSION),19)
         @echo "ERROR: Go version 1.19 is required for building BCNAD. There are consensus breaking changes between binaries compiled with Go 1.18 and Go 1.19."
-        exit 1
+	exit 1
 endif
 
 all: install lint test
@@ -105,7 +105,7 @@ build: BUILD_ARGS=-o $(BUILDDIR)/
 
 $(BUILD_TARGETS): check_version go.sum $(BUILDDIR)/
         #go $@ -mod=readonly $(BUILD_FLAGS) $(BUILD_ARGS) ./... Don't overwrite go.sum
-        go $@ $(BUILD_FLAGS) $(BUILD_ARGS) ./...
+	go $@ $(BUILD_FLAGS) $(BUILD_ARGS) ./...
 
 $(BUILDDIR)/:
-        mkdir -p $(BUILDDIR)/
+	mkdir -p $(BUILDDIR)/
