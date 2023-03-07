@@ -1,5 +1,29 @@
 #  MAINNET `bitcanna-1` Upgrades
 
+## v1.6.1 codename `vigorous-grow-fix` from v1.6.0-fix 
+
+> (Update scheduled for 10th March 2023 ~ 18.40h CET - 17.40h UTC)
+>
+> Note: this is a planned upgrade, the chain **will halt** at block **[7585420](https://www.mintscan.io/bitcanna/blocks/7585420)**
+>
+> **Important note: The tag name required for the upgrade is v1.6.1**
+
+- Fix Ante handler to prevent spam proposals at Gov module
+- Remove OpenAPI dep from Ignite; now included locally.
+- Bump Cosmos SDK version to v0.45.14 to mitigate a possible way to [DDoS](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.14) a node.
+- Bump Tendermint to v0.34.26 ([InformalSystem fork](https://github.com/informalsystems/tendermint/blob/v0.34.26/CHANGELOG.md#v03426)). 
+- Bump IBC go version to v.3.4.0 (it will break consensus so a new start/stop is required)
+- Bump IAVL version to v0.19.5
+- Fixed BCNA module path & bug with CLI
+- Using Cosmos Keyring v1.2.0
+
+### For detailed instructions check the release doc:
+* https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1
+### For detailed Cosmovisor install guide:
+* [Updated guide](https://github.com/BitCannaGlobal/bcna/blob/main/2.3.cosmovisor.md)
+
+
+----------
 ## v1.6.0-fix codename `Vigorous-grow` from v1.5.3 
 
 > (Update scheduled for 2nd March 2023 ~ 16.20h CET - 15.20h UTC)
