@@ -12,11 +12,11 @@ import (
 var MiniumInitialDepositRate = sdk.NewDecWithPrec(20, 2)
 
 type GovPreventSpamDecorator struct {
-	govKeeper govkeeper.Keeper
+	govKeeper *govkeeper.Keeper
 	cdc       codec.BinaryCodec
 }
 
-func NewGovPreventSpamDecorator(cdc codec.BinaryCodec, govKeeper govkeeper.Keeper) GovPreventSpamDecorator {
+func NewGovPreventSpamDecorator(cdc codec.BinaryCodec, govKeeper *govkeeper.Keeper) GovPreventSpamDecorator {
 	return GovPreventSpamDecorator{
 		govKeeper: govKeeper,
 		cdc:       cdc,
@@ -27,6 +27,10 @@ func (gpsd GovPreventSpamDecorator) AnteHandle(
 	ctx sdk.Context, tx sdk.Tx,
 	simulate bool, next sdk.AnteHandler,
 ) (newCtx sdk.Context, err error) {
+	// run checks only on CheckTx or simulate
+	if !ctx.IsCheckTx() || simulate {
+		return next(ctx, tx, simulate)
+	}
 	msgs := tx.GetMsgs()
 
 	err = gpsd.checkSpamSubmitProposalMsg(ctx, msgs)
@@ -38,6 +42,7 @@ func (gpsd GovPreventSpamDecorator) AnteHandle(
 	return next(ctx, tx, simulate)
 }
 
+// validateGovMsgs checks if the InitialDeposit amounts are greater than the minimum initial deposit amount
 func (gpsd GovPreventSpamDecorator) checkSpamSubmitProposalMsg(ctx sdk.Context, msgs []sdk.Msg) error {
 	validMsg := func(m sdk.Msg) error {
 		switch msg := m.(type) {
@@ -46,7 +51,7 @@ func (gpsd GovPreventSpamDecorator) checkSpamSubmitProposalMsg(ctx sdk.Context, 
 			depositParams := gpsd.govKeeper.GetDepositParams(ctx)
 			miniumInitialDeposit := gpsd.calcMiniumInitialDeposit(depositParams.MinDeposit)
 			if msg.InitialDeposit.IsAllLT(miniumInitialDeposit) {
-				return sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "not enough initial deposit. required: %v", miniumInitialDeposit)
+				return sdkerrors.Wrapf(sdkerrors.ErrInsufficientFunds, "not enough initial deposit. required: %v", miniumInitialDeposit)
 			}
 		}
 

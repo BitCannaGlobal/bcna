@@ -611,7 +611,7 @@ func New(
 				FeegrantKeeper:  app.FeeGrantKeeper,
 				SigGasConsumer:  ante.DefaultSigVerificationGasConsumer,
 			},
-			GovKeeper: app.GovKeeper,
+			GovKeeper: &app.GovKeeper,
 			Cdc:       appCodec,
 		},
 	)

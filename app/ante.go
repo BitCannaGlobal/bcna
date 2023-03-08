@@ -14,7 +14,7 @@ import (
 type HandlerOptions struct {
 	ante.HandlerOptions
 
-	GovKeeper govkeeper.Keeper
+	GovKeeper *govkeeper.Keeper
 	Cdc       codec.BinaryCodec
 }
 
@@ -30,6 +30,9 @@ func NewAnteHandler(options HandlerOptions) (sdk.AnteHandler, error) {
 	}
 	if options.SignModeHandler == nil {
 		return nil, sdkerrors.Wrap(sdkerrors.ErrLogic, "sign mode handler is required for ante builder")
+	}
+	if options.GovKeeper == nil {
+		return nil, sdkerrors.Wrap(sdkerrors.ErrLogic, "gov keeper is required for AnteHandler")
 	}
 	sigGasConsumer := options.SigGasConsumer
 	if sigGasConsumer == nil {
@@ -51,7 +54,6 @@ func NewAnteHandler(options HandlerOptions) (sdk.AnteHandler, error) {
 		ante.NewSigGasConsumeDecorator(options.AccountKeeper, sigGasConsumer),
 		ante.NewSigVerificationDecorator(options.AccountKeeper, options.SignModeHandler),
 		ante.NewIncrementSequenceDecorator(options.AccountKeeper),
-
 	}
 	return sdk.ChainAnteDecorators(anteDecorators...), nil
 }
