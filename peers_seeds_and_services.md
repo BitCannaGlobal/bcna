@@ -48,7 +48,7 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 9532a13b05e5f68f2ca01f90b3d1ba9a762af817@team.bonded.zone:21956
 
 ## KonsorTech
-5a048cab1d183de5c465c56b29a16fd93a8bf9bd@mainnet-bitcanna.konsortech.xyz:26656
+5a048cab1d183de5c465c56b29a16fd93a8bf9bd@mainnet-bitcanna.konsortech.xyz:27656
 
 ## kjnodes
 d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
@@ -216,7 +216,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
       },
       {
         "id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
-        "address": "mainnet-bitcanna.konsortech.xyz:26656",
+        "address": "mainnet-bitcanna.konsortech.xyz:27656",
         "provider": "KonsorTech"
       },
       {
