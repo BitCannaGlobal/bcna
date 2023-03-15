@@ -62,7 +62,7 @@ d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
-23671067d0fd40aec523290585c7d8e91034a771@seed2.bitcanna.io:26656
+e2e7c704f766ef6b9e2c8dd61d963f8393b87966@seed3.bitcanna.io:26656
 
 ## Panthea EU
 f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
@@ -158,8 +158,8 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
         "provider": "bitcanna"
       },
       {
-        "id": "23671067d0fd40aec523290585c7d8e91034a771",
-        "address": "seed2.bitcanna.io: 26656",
+        "id": "e2e7c704f766ef6b9e2c8dd61d963f8393b87966",
+        "address": "seed3.bitcanna.io: 26656",
         "provider": "bitcanna"
       },
       {
