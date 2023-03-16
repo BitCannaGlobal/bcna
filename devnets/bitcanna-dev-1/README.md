@@ -8,7 +8,6 @@
 >
 > If StateSync script fails you need also to delete the downloaded binary `rm ./bcnad`
 
-> IMPORTANT NOTE 2: Our last DEVNET (bitcanna-dev-5) was based on SDK v0.46, so is also required to replace the binary `v2.0.1-rc2` by `v1.5.3` before proceed.
 
 ## Target of this DevNet.
 We created a new testnet that follows the exact upgrade cycle as the current Mainnet. Our target is to test new features here before apply them at MainNet.
@@ -40,6 +39,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 | 22nd Feb 2023 15h UTC    | 956.837    | [v1.6.0-rc2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md) |
 | 24nd Feb 2023 15h UTC    | 987.757    | [v1.6.0-rc3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc3/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc3) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc3.md) |
 | 7th Mar 2023 15h UTC    | 1.159.488   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.1.md) |
+| 16th Mar 2023 15h UTC    | x   | [v1.6.2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.2.md) |
 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
