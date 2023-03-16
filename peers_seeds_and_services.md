@@ -150,197 +150,222 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
-  "peers": {
-    "seeds": [
-      {
-        "id": "d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f",
-        "address": "seed1.bitcanna.io: 26656",
-        "provider": "bitcanna"
-      },
-      {
-        "id": "e2e7c704f766ef6b9e2c8dd61d963f8393b87966",
-        "address": "seed3.bitcanna.io: 26656",
-        "provider": "bitcanna"
-      },
-      {
-        "id": "f0e6c86d769bf5c52f78e01864091690e731643f",
-        "address": "bitcanna-seed.panthea.eu:37656",
-        "provider": "Panthea EU"
-      },
-      {
-        "id": "20e1000e88125698264454a884812746c2eb4807",
-        "address": "seeds.lavenderfive.com:13056",
-        "provider": "Lavender.Five Nodes 🐝"
-      }
-    ],
-    "persistent_peers": [
-      {
-        "id": "21484408a7bcf0134689ddf52a7d9c8299cb65b5",
-        "address": "176.9.139.74:36656",
-        "provider": "BitCanna"
-      },
-      {
-        "id": "a4c1e46441164c350f721cf142d52c136215e05c",
-        "address": "135.181.176.55:36656",
-        "provider": "BitCanna"
-      },
-      {
-        "id": "8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7",
-        "address": "65.108.142.81:26682",
-        "provider": "Stakely"
-      },
-      {
-        "id": "ad820cb2fa85e525538207bb24ee49a61a74eb45",
-        "address": "93.115.25.15:26656",
-        "provider": "Stakely"
-      },
-      {
-        "id": "df99de6cec9152c517990317b340b8b9a307493c",
-        "address": "193.34.144.156:26656",
-        "provider": "ParanormalBrothers"
-      },
-      {
-        "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
-        "address": "bitcanna-peer.panthea.eu:27656",
-        "provider": "Panthea EU"
-      },
-      {
-        "id": "803fc66e3bd7b724921ef9c40636067f36e880c6",
-        "address": "65.108.199.222:26357",
-        "provider": "AlxVoy"
-      },
-      {
-        "id": "9425b897a9726efb1e56111a8b355026a1f3a497",
-        "address": "65.108.238.203:46656",
-        "provider": "[NODERS]TEAM"
-      },
-      {
-        "id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
-        "address": "mainnet-bitcanna.konsortech.xyz:27656",
-        "provider": "KonsorTech"
-      },
-      {
-        "id": "2235f1e518c5ea4a412f9dece386348eda356916",
-        "address": "bitcanna.alkia.net:26656",
-        "provider": "ALKIA"
-      },      
-      {
-        "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
-        "address": "bitcanna.rpc.kjnodes.com:42656",
-        "provider": "kjnodes"
-      }
-    ]
-  },
-  "apis": {
-    "rpc": [
-      {
-        "address": "https://rpc.bitcanna.io/",
-        "provider": "bitcanna"
-      },
-      {
-        "address": "http://bcna.paranorm.pro/",
-        "provider": "ParanormalBrothers"
-      },
-      {
-        "address": "https://bcna-rpc.ibs.team/",
-        "provider": "Inter Blockchain Services (former 3Tekos)"
-      },      
-      {
-        "address": "https://bitcanna-rpc.panthea.eu",
-        "provider": "Panthea EU"
-      }
-      {
-        "address": "https://rpc.bitcanna.sgtstake.com/",
-        "provider": "SGTstake"
-      },
-      {
-        "address": "https://rpc-bitcanna.mintthemoon.xyz",
-        "provider": "mintthemoon"
-      },
-      {
-        "address": "https://bitcanna.rpc.m.anode.team",
-        "provider": "AlxVoy"
-      },
-      {
-        "address": "http://bitcanna.statesync.nodersteam.com:46657",
-        "provider": "[NODERS]TEAM"
-      },
-      {
-        "address": "https://rpc-bcna.kjinc.io/",
-        "provider": "KJINC.io"
-      },
-      {
-        "address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
-        "provider": "KonsorTech"
-      },
-      {
-        "address": "https://bitcanna.rpc.kjnodes.com",
-        "provider": "kjnodes"
-      },
-      {
-        "address": "http://bitcanna.alkia.net:26657",
-        "provider": "ALKIA"
-      },
-      {
-        "address": "https://bitcanna-rpc.lavenderfive.com/",
-        "provider": "Lavender.Five Nodes 🐝"
-      }
-    ],
-    "grpc": [
-      {
-        "address": "https://grpc.bitcanna.io",
-        "provider": "bitcanna"
-      },
-      {
-        "address": "https://bitcanna-grpc.lavenderfive.com:443/",
-        "provider": "Lavender.Five Nodes 🐝"
-      }
-    ],
-    "rest": [
-      {
-        "address": "https://lcd.bitcanna.io",
-        "provider": "bitcanna"
-      },
-      {
-        "address": "https://bitcanna-api.panthea.eu",
-        "provider": "Panthea EU"
-      }
-      {
-        "address": "https://api.bitcanna.sgtstake.com/",
-        "provider": "SGTstake"
-      },
-      {
-        "address": "https://lcd-bitcanna.mintthemoon.xyz",
-        "provider": "mintthemoon"
-      },
-      {
-        "address": "https://bcna-api.ibs.team/",
-        "provider": "Inter Blockchain Services (former 3Tekos)"
-      },
-      {
-        "address": "https://bitcanna.api.m.anode.team",
-        "provider": "AlxVoy"
-      },
-      {
-        "address": "https://api-bcna.kjinc.io/",
-        "provider": "KJINC.io"
-      },
-      {
-        "address": "https://mainnet-bitcanna-api.konsortech.xyz",
-        "provider": "KonsorTech"
-      },
-      {
-        "address": "https://bitcanna.api.kjnodes.com",
-        "provider": "kjnodes"
-      },
-      {
-        "address": "http://bitcanna.alkia.net:1317/",
-        "provider": "ALKIA"
-      },
-      {
-        "address": "https://bitcanna-api.lavenderfive.com/",
-        "provider": "Lavender.Five Nodes 🐝"
-      }
-    ]
-  }
-  ```
+
+	"peers": {
+		"seeds": [{
+				"id": "d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f",
+				"address": "seed1.bitcanna.io: 26656",
+				"provider": "bitcanna"
+			},
+			{
+				"id": "e2e7c704f766ef6b9e2c8dd61d963f8393b87966",
+				"address": "seed3.bitcanna.io: 26656",
+				"provider": "bitcanna"
+			},
+			{
+				"id": "f0e6c86d769bf5c52f78e01864091690e731643f",
+				"address": "bitcanna-seed.panthea.eu:37656",
+				"provider": "Panthea EU"
+			},
+			{
+				"id": "20e1000e88125698264454a884812746c2eb4807",
+				"address": "seeds.lavenderfive.com:13056",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		],
+		"persistent_peers": [{
+				"id": "21484408a7bcf0134689ddf52a7d9c8299cb65b5",
+				"address": "176.9.139.74:36656",
+				"provider": "BitCanna"
+			},
+			{
+				"id": "a4c1e46441164c350f721cf142d52c136215e05c",
+				"address": "135.181.176.55:36656",
+				"provider": "BitCanna"
+			},
+			{
+				"id": "8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7",
+				"address": "65.108.142.81:26682",
+				"provider": "Stakely"
+			},
+			{
+				"id": "ad820cb2fa85e525538207bb24ee49a61a74eb45",
+				"address": "93.115.25.15:26656",
+				"provider": "Stakely"
+			},
+			{
+				"id": "df99de6cec9152c517990317b340b8b9a307493c",
+				"address": "193.34.144.156:26656",
+				"provider": "ParanormalBrothers"
+			},
+			{
+				"id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
+				"address": "bitcanna-peer.panthea.eu:27656",
+				"provider": "Panthea EU"
+			},
+			{
+				"id": "803fc66e3bd7b724921ef9c40636067f36e880c6",
+				"address": "65.108.199.222:26357",
+				"provider": "AlxVoy"
+			},
+			{
+				"id": "9425b897a9726efb1e56111a8b355026a1f3a497",
+				"address": "65.108.238.203:46656",
+				"provider": "[NODERS]TEAM"
+			},
+			{
+				"id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
+				"address": "mainnet-bitcanna.konsortech.xyz:27656",
+				"provider": "KonsorTech"
+			},
+			{
+				"id": "2235f1e518c5ea4a412f9dece386348eda356916",
+				"address": "bitcanna.alkia.net:26656",
+				"provider": "ALKIA"
+			},
+			{
+				"id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
+				"address": "bitcanna.rpc.kjnodes.com:42656",
+				"provider": "kjnodes"
+			}
+		]
+	},
+	"apis": {
+		"rpc": [{
+				"address": "https://rpc.bitcanna.io/",
+				"provider": "bitcanna"
+			},
+			{
+				"address": "http://bcna.paranorm.pro/",
+				"provider": "ParanormalBrothers"
+			},
+			{
+				"address": "https://bcna-rpc.ibs.team/",
+				"provider": "Inter Blockchain Services (former 3Tekos)"
+			},
+			{
+				"address": "https://bitcanna-rpc.panthea.eu",
+				"provider": "Panthea EU"
+			},
+			{
+				"address": "https://rpc.bitcanna.sgtstake.com/",
+				"provider": "SGTstake"
+			},
+			{
+				"address": "https://rpc-bitcanna.mintthemoon.xyz",
+				"provider": "mintthemoon"
+			},
+			{
+				"address": "https://bitcanna.rpc.m.anode.team",
+				"provider": "AlxVoy"
+			},
+			{
+				"address": "http://bitcanna.statesync.nodersteam.com:46657",
+				"provider": "[NODERS]TEAM"
+			},
+			{
+				"address": "https://rpc-bcna.kjinc.io/",
+				"provider": "KJINC.io"
+			},
+			{
+				"address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
+				"provider": "KonsorTech"
+			},
+			{
+				"address": "https://bitcanna.rpc.kjnodes.com",
+				"provider": "kjnodes"
+			},
+			{
+				"address": "http://bitcanna.alkia.net:26657",
+				"provider": "ALKIA"
+			},
+			{
+				"address": "https://bitcanna-rpc.lavenderfive.com/",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		],
+		"grpc": [{
+				"address": "https://grpc.bitcanna.io",
+				"provider": "bitcanna"
+			},
+			{
+				"address": "https://bitcanna-grpc.lavenderfive.com:443/",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		],
+		"rest": [{
+				"address": "https://lcd.bitcanna.io",
+				"provider": "bitcanna"
+			},
+			{
+				"address": "https://bitcanna-api.panthea.eu",
+				"provider": "Panthea EU"
+			},
+			{
+				"address": "https://api.bitcanna.sgtstake.com/",
+				"provider": "SGTstake"
+			},
+			{
+				"address": "https://lcd-bitcanna.mintthemoon.xyz",
+				"provider": "mintthemoon"
+			},
+			{
+				"address": "https://bcna-api.ibs.team/",
+				"provider": "Inter Blockchain Services (former 3Tekos)"
+			},
+			{
+				"address": "https://bitcanna.api.m.anode.team",
+				"provider": "AlxVoy"
+			},
+			{
+				"address": "https://api-bcna.kjinc.io/",
+				"provider": "KJINC.io"
+			},
+			{
+				"address": "https://mainnet-bitcanna-api.konsortech.xyz",
+				"provider": "KonsorTech"
+			},
+			{
+				"address": "https://bitcanna.api.kjnodes.com",
+				"provider": "kjnodes"
+			},
+			{
+				"address": "http://bitcanna.alkia.net:1317/",
+				"provider": "ALKIA"
+			},
+			{
+				"address": "https://bitcanna-api.lavenderfive.com/",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		]
+	},
+	"explorers": [{
+			"kind": "EZStaking Tools",
+			"url": "https://ezstaking.tools/bitcanna",
+			"tx_page": "https://ezstaking.tools/bitcanna/txs/${txHash}",
+			"account_page": "https://ezstaking.tools/bitcanna/account/${accountAddress}"
+		},
+		{
+			"kind": "forbole",
+			"url": "https://cosmos-explorer.bitcanna.io",
+			"tx_page": "https://cosmos-explorer.bitcanna.io/transactions/${txHash}"
+		},
+		{
+			"kind": "ping.pub",
+			"url": "https://ping.pub/bitcanna",
+			"tx_page": "https://ping.pub/bitcanna/tx/${txHash}"
+		},
+		{
+			"kind": "mintscan",
+			"url": "https://www.mintscan.io/bitcanna/",
+			"tx_page": "https://www.mintscan.io/bitcanna/txs/${txHash}",
+			"account_page": "https://www.mintscan.io/bitcanna/account/${accountAddress}"
+		},
+		{
+			"kind": "atomscan",
+			"url": "https://atomscan.com/bitcanna",
+			"tx_page": "https://atomscan.com/bitcanna/transactions/${txHash}"
+		}
+	]
+}
+```
