@@ -1,8 +1,6 @@
 package decorators
 
 import (
-	"fmt"
-
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
@@ -60,15 +58,10 @@ func (gpsd GovPreventSpamDecorator) checkSpamSubmitProposalMsg(ctx sdk.Context, 
 				return sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "not enough initial deposit. required: %v", miniumInitialDeposit)
 			}
 		case *govv1.MsgSubmitProposal:
-			// // prevent spam gov msg at v1
+			// don't use Gov v1 Proposals:
+			message := "- Please don't use Gov v1 Proposals in SDK v0.46! "
 
-			// if msg.InitialDeposit.IsAllLT(miniumInitialDeposit) {
-			// 	return sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "not enough initial deposit. required: %v", miniumInitialDeposit)
-			// }
-			// panic: don't use Gov v1 messages:
-			message := "- Please don't use Gov v1 in SDK v0.46! "
-			panic(fmt.Errorf("failed to create AnteHandler: %s", message))
-
+			return sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "Failed to send a new proposal: %s", message)
 		}
 
 		return nil
