@@ -1,14 +1,5 @@
 # Devnet-1: Setup up your validator and join *bitcanna-dev-1*
 
-> IMPORTANT NOTE: If you participated in previous BitCanna testnets (OR StateSync scripts for this Devnet fails),  delete the bitcanna folders and start a fresh new installation:
-> 
-> ```sudo service bcnad stop``` 
-> 
-> `rm -rf ~/.bcna && sudo rm $(which bcnad)`
->
-> If StateSync script fails you need also to delete the downloaded binary `rm ./bcnad`
-
-
 ## Target of this DevNet.
 We created a new testnet that follows the exact upgrade cycle as the current Mainnet. Our target is to test new features here before apply them at MainNet.
 
@@ -40,6 +31,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 | 24nd Feb 2023 15h UTC    | 987.757    | [v1.6.0-rc3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc3/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc3) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc3.md) |
 | 7th Mar 2023 15h UTC    | 1.159.488   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.1.md) |
 | No break consensus   | x   | [v1.6.2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.2) | x |
+| No break consensus   | x   | v1.6.3-rc1   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3-rc1) | x |
 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
