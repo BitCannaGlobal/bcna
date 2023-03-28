@@ -3,6 +3,7 @@ package docs
 import (
 	"embed"
 	httptemplate "html/template"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -29,12 +30,18 @@ func handler(title string) http.HandlerFunc {
 	t, _ := httptemplate.ParseFS(template, indexFile)
 
 	return func(w http.ResponseWriter, req *http.Request) {
-		t.Execute(w, struct {
+		err := t.Execute(w, struct {
 			Title string
 			URL   string
 		}{
 			title,
 			apiFile,
 		})
+		if err != nil {
+			// manejar el error aquí
+			log.Println("Failed to process the template:", err)
+			http.Error(w, "Internal server error processing the template", http.StatusInternalServerError)
+			return
+		}
 	}
 }
