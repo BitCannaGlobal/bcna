@@ -2,11 +2,11 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> Current version (v1.6.2 Vigorous-Grow-fix) of our development uses Cosmos SDK v0.45.14 & Tendermint v0.34.26 & IBC-go v3.4.0
+> Current version (v1.6.3 Vigorous-Grow-fix) of our development uses Cosmos SDK v0.45.15 & Comet-BFT v0.34.27 & IBC-go v3.4.0
 
-> New version info: [Update scheduled for 10th March 2023](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) v1.6.1
+> Last breaking consensus upgrade info: [Update scheduled for 10th March 2023](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) v1.6.1
 
-> Compatible update is here ([v1.6.2](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.2))
+> Last compatible update is here ([v1.6.3](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3))
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -37,7 +37,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 2nd Mar 2023 16.20h CET    | 7.467.420   | [v1.6.0-fix](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-fix/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-fix) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v160-fix-codename-vigorous-grow---from-v153) |
 | 10th Mar 2023 18.40h CET    | 7.585.420   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v161-codename-vigorous-grow-fix---from-v161) |
 
-Current compatible release: https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.2
+Current compatible release: https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3
 
 
 # How to join `bitcanna-1` chain
