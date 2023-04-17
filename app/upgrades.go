@@ -5,7 +5,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/x/group"
-	"github.com/cosmos/cosmos-sdk/x/nft"
+
+	// "github.com/cosmos/cosmos-sdk/x/nft"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 )
 
@@ -48,7 +49,7 @@ func (app *App) wakeandbake46(_ upgradetypes.Plan) {
 			Added: []string{
 
 				group.ModuleName,
-				nft.ModuleName,
+				// nft.ModuleName,
 			},
 		}
 

@@ -64,9 +64,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/mint"
 	mintkeeper "github.com/cosmos/cosmos-sdk/x/mint/keeper"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/cosmos/cosmos-sdk/x/nft"
-	nftkeeper "github.com/cosmos/cosmos-sdk/x/nft/keeper"
-	nftmodule "github.com/cosmos/cosmos-sdk/x/nft/module"
+
+	// Let's comment the NFT feature
+	// "github.com/cosmos/cosmos-sdk/x/nft"
+	// nftkeeper "github.com/cosmos/cosmos-sdk/x/nft/keeper"
+	// nftmodule "github.com/cosmos/cosmos-sdk/x/nft/module"
 	"github.com/cosmos/cosmos-sdk/x/params"
 	paramsclient "github.com/cosmos/cosmos-sdk/x/params/client"
 	paramskeeper "github.com/cosmos/cosmos-sdk/x/params/keeper"
@@ -157,7 +159,7 @@ var (
 		slashing.AppModuleBasic{},
 		feegrantmodule.AppModuleBasic{},
 		groupmodule.AppModuleBasic{},
-		nftmodule.AppModuleBasic{},
+		// nftmodule.AppModuleBasic{},
 		ibc.AppModuleBasic{},
 		upgrade.AppModuleBasic{},
 		evidence.AppModuleBasic{},
@@ -177,7 +179,7 @@ var (
 		stakingtypes.NotBondedPoolName: {authtypes.Burner, authtypes.Staking},
 		govtypes.ModuleName:            {authtypes.Burner},
 		ibctransfertypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
-		nft.ModuleName:                 nil,
+		// nft.ModuleName:                 nil,
 	}
 )
 
@@ -232,7 +234,7 @@ type App struct {
 	ICAControllerKeeper icacontrollerkeeper.Keeper
 	FeeGrantKeeper      feegrantkeeper.Keeper
 	GroupKeeper         groupkeeper.Keeper
-	NFTKeeper           nftkeeper.Keeper
+	// NFTKeeper           nftkeeper.Keeper
 
 	// make scoped keepers public for test purposes
 	ScopedIBCKeeper      capabilitykeeper.ScopedKeeper
@@ -295,7 +297,7 @@ func New(
 		icacontrollertypes.StoreKey,
 		capabilitytypes.StoreKey,
 		group.StoreKey,
-		nftkeeper.StoreKey,
+		// nftkeeper.StoreKey,
 		bcnamoduletypes.StoreKey,
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey)
@@ -433,12 +435,12 @@ func New(
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 	)
 
-	app.NFTKeeper = nftkeeper.NewKeeper(
-		keys[nftkeeper.StoreKey],
-		appCodec,
-		app.AccountKeeper,
-		app.BankKeeper,
-	)
+	// app.NFTKeeper = nftkeeper.NewKeeper(
+	// 	keys[nftkeeper.StoreKey],
+	// 	appCodec,
+	// 	app.AccountKeeper,
+	// 	app.BankKeeper,
+	// )
 
 	// register the staking hooks
 	// NOTE: stakingKeeper above is passed by reference, so that it will contain these hooks
@@ -571,7 +573,7 @@ func New(
 		ibc.NewAppModule(app.IBCKeeper),
 		params.NewAppModule(app.ParamsKeeper),
 		transferModule,
-		nftmodule.NewAppModule(appCodec, app.NFTKeeper, app.AccountKeeper, app.BankKeeper, app.interfaceRegistry),
+		// nftmodule.NewAppModule(appCodec, app.NFTKeeper, app.AccountKeeper, app.BankKeeper, app.interfaceRegistry),
 		icaModule,
 		bcnaModule,
 	)
@@ -600,7 +602,7 @@ func New(
 		authz.ModuleName,
 		feegrant.ModuleName,
 		group.ModuleName,
-		nft.ModuleName,
+		// nft.ModuleName,
 		paramstypes.ModuleName,
 		vestingtypes.ModuleName,
 		bcnamoduletypes.ModuleName,
@@ -624,7 +626,7 @@ func New(
 		authz.ModuleName,
 		feegrant.ModuleName,
 		group.ModuleName,
-		nft.ModuleName,
+		// nft.ModuleName,
 		paramstypes.ModuleName,
 		upgradetypes.ModuleName,
 		vestingtypes.ModuleName,
@@ -654,7 +656,7 @@ func New(
 		authz.ModuleName,
 		feegrant.ModuleName,
 		group.ModuleName,
-		nft.ModuleName,
+		// nft.ModuleName,
 		paramstypes.ModuleName,
 		upgradetypes.ModuleName,
 		vestingtypes.ModuleName,
@@ -902,7 +904,7 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(icahosttypes.SubModuleName)
 	paramsKeeper.Subspace(icacontrollertypes.SubModuleName)
 	paramsKeeper.Subspace(bcnamoduletypes.ModuleName)
-	paramsKeeper.Subspace(nft.ModuleName)
+	// paramsKeeper.Subspace(nft.ModuleName)
 
 	return paramsKeeper
 }
