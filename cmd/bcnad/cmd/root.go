@@ -216,11 +216,6 @@ func (a appCreator) newApp(
 		cast.ToUint32(appOpts.Get(server.FlagStateSyncSnapshotKeepRecent)),
 	)
 
-	iavlCacheSize := int(cast.ToUint64(appOpts.Get("iavl-cache-size")))
-	if iavlCacheSize == 0 {
-		iavlCacheSize = 390_625 // 50mb
-	}
-
 	return app.New(
 		logger,
 		db,
