@@ -31,7 +31,8 @@ In the next section you will find the params for P2P and a *step by step* guide 
 | 24nd Feb 2023 15h UTC    | 987.757    | [v1.6.0-rc3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-rc3/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-rc3) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc3.md) |
 | 7th Mar 2023 15h UTC    | 1.159.488   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.1.md) |
 | No break consensus   | x   | [v1.6.2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.2) | x |
-| No break consensus   | x   | v1.6.3-rc1   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3-rc1) | x |
+| No break consensus   | x   | v1.6.3-rc1   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3-rc1/bcna_linux_amd64.tar.gz) | x |
+| 19th Apr 2023 14h UTC   | 1.831.901   | v2.0.1-rc6   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc6/bcna_linux_amd64.tar.gz) | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc6) |
 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
