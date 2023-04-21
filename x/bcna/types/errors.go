@@ -8,5 +8,5 @@ import (
 
 // x/bcna module sentinel errors
 var (
-	ErrSample = sdkerrors.Register(ModuleName, 1100, "sample error")
+	ErrDuplicateBitcannaid = sdkerrors.Register(ModuleName, 1101, "BitCannaID already exists")
 )
