@@ -133,6 +133,53 @@ paths:
           type: boolean
       tags:
         - Query
+  /BitCannaGlobal/bcna/bcna/bitcannaid/bcnaid/{bcnaid}:
+    get:
+      summary: Queries a Bitcannaid by bcnaid.
+      operationId: BitcannaglobalBcnaBcnaBitcannaidByBcnaid
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              Bitcannaid:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uint64
+                  bcnaid:
+                    type: string
+                  address:
+                    type: string
+                  creator:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: bcnaid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
   /BitCannaGlobal/bcna/bcna/bitcannaid/{id}:
     get:
       summary: Queries a Bitcannaid by id.
@@ -45670,6 +45717,21 @@ definitions:
                    repeated Bar results = 1;
                    PageResponse page = 2;
            }
+  bitcannaglobal.bcna.bcna.QueryGetBitcannaidByBcnaidResponse:
+    type: object
+    properties:
+      Bitcannaid:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uint64
+          bcnaid:
+            type: string
+          address:
+            type: string
+          creator:
+            type: string
   bitcannaglobal.bcna.bcna.QueryGetBitcannaidResponse:
     type: object
     properties:
