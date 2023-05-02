@@ -18,14 +18,14 @@ func (app App) RegisterUpgradeHandlers() {
 		panic(err)
 	}
 
-	app.wakeandbake_test1(upgradeInfo)
+	app.wakeandbake_test2(upgradeInfo)
 	app.wakeandbake46(upgradeInfo)
 }
 
-func (app *App) wakeandbake_test1(_ upgradetypes.Plan) {
-	planName := "wakeandbake_test1"
+func (app *App) wakeandbake_test2(_ upgradetypes.Plan) {
+	planName := "wakeandbake_test2"
 	app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
-		ctx.Logger().Info("BCNA module upgrade...")
+		ctx.Logger().Info("BCNA module upgrade... searching new consensus")
 		// no-op - only for consensus.
 		return app.mm.RunMigrations(ctx, app.configurator, fromVM)
 	})
