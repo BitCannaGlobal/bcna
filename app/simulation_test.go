@@ -4,12 +4,12 @@ import (
 	"os"
 	"testing"
 
+	app "github.com/BitCannaGlobal/bcna/app"
+
 	"github.com/cosmos/cosmos-sdk/simapp"
 	simulationtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 	"github.com/stretchr/testify/require"
-
-	bcnaapp "github.com/BitCannaGlobal/bcna/app"
 )
 
 func init() {
@@ -34,25 +34,23 @@ func BenchmarkSimulation(b *testing.B) {
 		require.NoError(b, err)
 	})
 
-	encCfg := bcnaapp.MakeEncodingConfig()
-
-	app := bcnaapp.New(
+	encoding := app.MakeEncodingConfig()
+	app := app.New(
 		logger,
 		db,
 		nil,
 		true,
 		map[int64]bool{},
-		bcnaapp.DefaultNodeHome,
+		app.DefaultNodeHome,
 		0,
-		encCfg,
+		encoding,
 		simapp.EmptyAppOptions{},
 	)
-
 	// Run randomized simulations
 	_, simParams, simErr := simulation.SimulateFromSeed(
 		b,
 		os.Stdout,
-		app.GetBaseApp(),
+		app.BaseApp,
 		simapp.AppStateFn(app.AppCodec(), app.SimulationManager()),
 		simulationtypes.RandomAccounts,
 		simapp.SimulationOperations(app, app.AppCodec(), config),
@@ -60,7 +58,6 @@ func BenchmarkSimulation(b *testing.B) {
 		config,
 		app.AppCodec(),
 	)
-
 	// export state and simParams before the simulation error is checked
 	err = simapp.CheckExportSimulation(app, config, simParams)
 	require.NoError(b, err)

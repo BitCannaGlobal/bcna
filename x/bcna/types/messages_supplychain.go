@@ -102,7 +102,6 @@ func NewMsgDeleteSupplychain(creator string, id uint64) *MsgDeleteSupplychain {
 		Creator: creator,
 	}
 }
-
 func (msg *MsgDeleteSupplychain) Route() string {
 	return RouterKey
 }

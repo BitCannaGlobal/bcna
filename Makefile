@@ -1,9 +1,19 @@
 #!/usr/bin/make -f
 
-BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
-COMMIT := $(shell git log -1 --format='%H')
+BRANCH         := $(shell git rev-parse --abbrev-ref HEAD)
+COMMIT         := $(shell git log -1 --format='%H')
+BUILD_DIR      ?= $(CURDIR)/build
+DIST_DIR       ?= $(CURDIR)/dist
+LEDGER_ENABLED ?= true
+TM_VERSION     := $(shell go list -m github.com/tendermint/tendermint | sed 's:.* ::')
+DOCKER         := $(shell which docker)
+PROJECT_NAME   := bitcanna
+HTTPS_GIT      := https://github.com/BitCannaGlobal/bcna.git
 
-# don't override user values
+###############################################################################
+##                                  Version                                  ##
+###############################################################################
+
 ifeq (,$(VERSION))
   VERSION := $(shell git describe --tags | sed 's/^v//')
   # if VERSION is empty, then populate it with branch's name and raw commit hash
@@ -12,19 +22,12 @@ ifeq (,$(VERSION))
   endif
 endif
 
-PACKAGES_SIMTEST=$(shell go list ./... | grep '/simulation')
-LEDGER_ENABLED ?= true
-SDK_PACK := $(shell go list -m github.com/cosmos/cosmos-sdk | sed  's/ /\@/g')
-TM_VERSION := $(shell go list -m github.com/tendermint/tendermint | sed 's:.* ::') # grab everything after the space in "github.com/tendermint/tendermint v0.34.7"
-DOCKER := $(shell which docker)
-BUILDDIR ?= $(CURDIR)/build
-TEST_DOCKER_REPO=jackzampolin/gaiatest
-
-export GO111MODULE = on
-
-# process build tags
+###############################################################################
+##                                   Build                                   ##
+###############################################################################
 
 build_tags = netgo
+
 ifeq ($(LEDGER_ENABLED),true)
   ifeq ($(OS),Windows_NT)
     GCCEXE = $(shell where gcc.exe 2> NUL)
@@ -48,64 +51,87 @@ ifeq ($(LEDGER_ENABLED),true)
   endif
 endif
 
-ifeq (cleveldb,$(findstring cleveldb,$(GAIA_BUILD_OPTIONS)))
-  build_tags += gcc cleveldb
-endif
-build_tags += $(BUILD_TAGS)
-build_tags := $(strip $(build_tags))
-
 whitespace :=
 whitespace += $(whitespace)
 comma := ,
 build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
-
-# process linker flags
 
 ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=bcna \
 		  -X github.com/cosmos/cosmos-sdk/version.AppName=bcnad \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
-			-X github.com/tendermint/tendermint/version.TMCoreSemVer=$(TM_VERSION)
+		  -X github.com/tendermint/tendermint/version.TMCoreSemVer=$(TM_VERSION)
 
-ifeq (cleveldb,$(findstring cleveldb,$(GAIA_BUILD_OPTIONS)))
-  ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=cleveldb
-endif
-ifeq (,$(findstring nostrip,$(GAIA_BUILD_OPTIONS)))
-  ldflags += -w -s
-endif
 ldflags += $(LDFLAGS)
 ldflags := $(strip $(ldflags))
 
 BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
-# check for nostrip option
-ifeq (,$(findstring nostrip,$(GAIA_BUILD_OPTIONS)))
-  BUILD_FLAGS += -trimpath
-endif
 
-#$(info $$BUILD_FLAGS is [$(BUILD_FLAGS)])
+build: go.sum
+	@echo "--> Building..."
+	go build -mod=readonly $(BUILD_FLAGS) -o $(BUILD_DIR)/ ./...
 
-# The below include contains the tools target.
-include contrib/devtools/Makefile
+install: go.sum
+	@echo "--> Installing..."
+	go install -mod=readonly $(BUILD_FLAGS) ./...
+
+build-linux: go.sum
+	LEDGER_ENABLED=false GOOS=linux GOARCH=amd64 $(MAKE) build
+
+go-mod-cache: go.sum
+	@echo "--> Download go modules to local cache"
+	@go mod download
+
+go.sum: go.mod
+	@echo "--> Ensure dependencies have not been modified"
+	@go mod verify
+
+go-mod-tidy:
+	@contrib/scripts/go-mod-tidy-all.sh
+
+clean:
+	@echo "--> Cleaning..."
+	@rm -rf $(BUILD_DIR)/**  $(DIST_DIR)/**
+
+.PHONY: install build build-linux clean
 
 ###############################################################################
-###                              Documentation                              ###
+##                                 Protobuf                                  ##
 ###############################################################################
-check_version:
-ifneq ($(GO_MINOR_VERSION),19)
-        @echo "ERROR: Go version 1.19 is required for building BCNAD. There are consensus breaking changes between binaries compiled with Go 1.18 and Go 1.19."
-	exit 1
-endif
 
-all: install lint test
+DOCKER_BUF := $(DOCKER) run --rm -v $(CURDIR):/workspace --workdir /workspace bufbuild/buf
 
-BUILD_TARGETS := build install
+containerProtoVer=v0.2
+containerProtoImage=tendermintdev/sdk-proto-gen:$(containerProtoVer)
+containerProtoGen=$(PROJECT_NAME)-proto-gen-$(containerProtoVer)
+containerProtoFmt=$(PROJECT_NAME)-proto-fmt-$(containerProtoVer)
+containerProtoGenSwagger=$(PROJECT_NAME)-proto-gen-swagger-$(containerProtoVer)
 
-build: BUILD_ARGS=-o $(BUILDDIR)/
+proto-all: proto-format proto-lint proto-gen proto-swagger-gen
 
-$(BUILD_TARGETS): check_version go.sum $(BUILDDIR)/
-        #go $@ -mod=readonly $(BUILD_FLAGS) $(BUILD_ARGS) ./... Don't overwrite go.sum
-	go $@ $(BUILD_FLAGS) $(BUILD_ARGS) ./...
+proto-gen:
+	@echo "Generating Protobuf files"
+	@if docker ps -a --format '{{.Names}}' | grep -Eq "^${containerProtoGen}$$"; then docker start -a $(containerProtoGen); else docker run --name $(containerProtoGen) -v $(CURDIR):/workspace --workdir /workspace $(containerProtoImage) \
+		sh ./scripts/protocgen.sh; fi
 
-$(BUILDDIR)/:
-	mkdir -p $(BUILDDIR)/
+proto-swagger-gen:
+	@echo "Generating Swagger of Protobuf"
+	@if docker ps -a --format '{{.Names}}' | grep -Eq "^${containerProtoGenSwagger}$$"; then docker start -a $(containerProtoGenSwagger); else docker run --name $(containerProtoGenSwagger) -v $(CURDIR):/workspace --workdir /workspace $(containerProtoImage) \
+		sh ./scripts/protoc-swagger-gen.sh; fi
+
+proto-format:
+	@echo "Formatting Protobuf files"
+	@if docker ps -a --format '{{.Names}}' | grep -Eq "^${containerProtoFmt}$$"; then docker start -a $(containerProtoFmt); else docker run --name $(containerProtoFmt) -v $(CURDIR):/workspace --workdir /workspace tendermintdev/docker-build-proto \
+		find ./ -name "*.proto" -exec sh -c 'clang-format -style=file -i {}' \; ; fi
+
+proto-lint:
+	@echo "Linting Protobuf files"
+	@$(DOCKER_BUF) lint --error-format=json
+
+proto-check-breaking:
+	@echo "Checking for breaking changes"
+	@$(DOCKER_BUF) breaking --against $(HTTPS_GIT)#branch=main
+
+
+.PHONY: proto-all proto-gen proto-lint proto-check-breaking proto-format proto-swagger-gen

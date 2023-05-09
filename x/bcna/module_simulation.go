@@ -47,8 +47,6 @@ const (
 	opWeightMsgDeleteSupplychain = "op_weight_msg_supplychain"
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgDeleteSupplychain int = 100
-
-	// this line is used by starport scaffolding # simapp/module/const
 )
 
 // GenerateGenesisState creates a randomized GenState of the module
@@ -81,7 +79,6 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 			},
 		},
 		SupplychainCount: 2,
-		// this line is used by starport scaffolding # simapp/module/genesisState
 	}
 	simState.GenState[types.ModuleName] = simState.Cdc.MustMarshalJSON(&bcnaGenesis)
 }
@@ -93,6 +90,7 @@ func (AppModule) ProposalContents(_ module.SimulationState) []simtypes.WeightedP
 
 // RandomizedParams creates randomized  param changes for the simulator
 func (am AppModule) RandomizedParams(_ *rand.Rand) []simtypes.ParamChange {
+
 	return []simtypes.ParamChange{}
 }
 
@@ -168,8 +166,6 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		weightMsgDeleteSupplychain,
 		bcnasimulation.SimulateMsgDeleteSupplychain(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
-
-	// this line is used by starport scaffolding # simapp/module/operation
 
 	return operations
 }

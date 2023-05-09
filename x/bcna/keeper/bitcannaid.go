@@ -8,6 +8,41 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
+// Check if the BitCannaID exist previously
+func (k Keeper) HasBitcannaidWithBcnaid(ctx sdk.Context, bcnaid string) bool {
+	store := ctx.KVStore(k.storeKey)
+	iterator := sdk.KVStorePrefixIterator(store, []byte(types.BitcannaidKey))
+
+	defer iterator.Close()
+	for ; iterator.Valid(); iterator.Next() {
+		var bitcannaid types.Bitcannaid
+		k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
+
+		if bitcannaid.Bcnaid == bcnaid {
+			return true
+		}
+	}
+
+	return false
+}
+
+func (k Keeper) GetBitcannaidByBcnaid(ctx sdk.Context, bcnaid string) (val *types.Bitcannaid, found bool) {
+	store := ctx.KVStore(k.storeKey)
+	iterator := sdk.KVStorePrefixIterator(store, []byte(types.BitcannaidKey))
+
+	defer iterator.Close()
+	for ; iterator.Valid(); iterator.Next() {
+		var bitcannaid types.Bitcannaid
+		k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
+
+		if bitcannaid.Bcnaid == bcnaid {
+			return &bitcannaid, true
+		}
+	}
+
+	return nil, false
+}
+
 // GetBitcannaidCount get the total number of bitcannaid
 func (k Keeper) GetBitcannaidCount(ctx sdk.Context) uint64 {
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), []byte{})

@@ -113,6 +113,94 @@ func (m *QueryParamsResponse) GetParams() Params {
 	return Params{}
 }
 
+type QueryGetBitcannaidByBcnaidRequest struct {
+	Bcnaid string `protobuf:"bytes,1,opt,name=bcnaid,proto3" json:"bcnaid,omitempty"`
+}
+
+func (m *QueryGetBitcannaidByBcnaidRequest) Reset()         { *m = QueryGetBitcannaidByBcnaidRequest{} }
+func (m *QueryGetBitcannaidByBcnaidRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryGetBitcannaidByBcnaidRequest) ProtoMessage()    {}
+func (*QueryGetBitcannaidByBcnaidRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_54c2980e3b72beb2, []int{2}
+}
+func (m *QueryGetBitcannaidByBcnaidRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetBitcannaidByBcnaidRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetBitcannaidByBcnaidRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetBitcannaidByBcnaidRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetBitcannaidByBcnaidRequest.Merge(m, src)
+}
+func (m *QueryGetBitcannaidByBcnaidRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetBitcannaidByBcnaidRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetBitcannaidByBcnaidRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetBitcannaidByBcnaidRequest proto.InternalMessageInfo
+
+func (m *QueryGetBitcannaidByBcnaidRequest) GetBcnaid() string {
+	if m != nil {
+		return m.Bcnaid
+	}
+	return ""
+}
+
+type QueryGetBitcannaidByBcnaidResponse struct {
+	Bitcannaid *Bitcannaid `protobuf:"bytes,1,opt,name=Bitcannaid,proto3" json:"Bitcannaid,omitempty"`
+}
+
+func (m *QueryGetBitcannaidByBcnaidResponse) Reset()         { *m = QueryGetBitcannaidByBcnaidResponse{} }
+func (m *QueryGetBitcannaidByBcnaidResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryGetBitcannaidByBcnaidResponse) ProtoMessage()    {}
+func (*QueryGetBitcannaidByBcnaidResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_54c2980e3b72beb2, []int{3}
+}
+func (m *QueryGetBitcannaidByBcnaidResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetBitcannaidByBcnaidResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetBitcannaidByBcnaidResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetBitcannaidByBcnaidResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetBitcannaidByBcnaidResponse.Merge(m, src)
+}
+func (m *QueryGetBitcannaidByBcnaidResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetBitcannaidByBcnaidResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetBitcannaidByBcnaidResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetBitcannaidByBcnaidResponse proto.InternalMessageInfo
+
+func (m *QueryGetBitcannaidByBcnaidResponse) GetBitcannaid() *Bitcannaid {
+	if m != nil {
+		return m.Bitcannaid
+	}
+	return nil
+}
+
 type QueryGetBitcannaidRequest struct {
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
@@ -121,7 +209,7 @@ func (m *QueryGetBitcannaidRequest) Reset()         { *m = QueryGetBitcannaidReq
 func (m *QueryGetBitcannaidRequest) String() string { return proto.CompactTextString(m) }
 func (*QueryGetBitcannaidRequest) ProtoMessage()    {}
 func (*QueryGetBitcannaidRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{2}
+	return fileDescriptor_54c2980e3b72beb2, []int{4}
 }
 func (m *QueryGetBitcannaidRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -165,7 +253,7 @@ func (m *QueryGetBitcannaidResponse) Reset()         { *m = QueryGetBitcannaidRe
 func (m *QueryGetBitcannaidResponse) String() string { return proto.CompactTextString(m) }
 func (*QueryGetBitcannaidResponse) ProtoMessage()    {}
 func (*QueryGetBitcannaidResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{3}
+	return fileDescriptor_54c2980e3b72beb2, []int{5}
 }
 func (m *QueryGetBitcannaidResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -209,7 +297,7 @@ func (m *QueryAllBitcannaidRequest) Reset()         { *m = QueryAllBitcannaidReq
 func (m *QueryAllBitcannaidRequest) String() string { return proto.CompactTextString(m) }
 func (*QueryAllBitcannaidRequest) ProtoMessage()    {}
 func (*QueryAllBitcannaidRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{4}
+	return fileDescriptor_54c2980e3b72beb2, []int{6}
 }
 func (m *QueryAllBitcannaidRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -254,7 +342,7 @@ func (m *QueryAllBitcannaidResponse) Reset()         { *m = QueryAllBitcannaidRe
 func (m *QueryAllBitcannaidResponse) String() string { return proto.CompactTextString(m) }
 func (*QueryAllBitcannaidResponse) ProtoMessage()    {}
 func (*QueryAllBitcannaidResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{5}
+	return fileDescriptor_54c2980e3b72beb2, []int{7}
 }
 func (m *QueryAllBitcannaidResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -305,7 +393,7 @@ func (m *QueryGetSupplychainRequest) Reset()         { *m = QueryGetSupplychainR
 func (m *QueryGetSupplychainRequest) String() string { return proto.CompactTextString(m) }
 func (*QueryGetSupplychainRequest) ProtoMessage()    {}
 func (*QueryGetSupplychainRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{6}
+	return fileDescriptor_54c2980e3b72beb2, []int{8}
 }
 func (m *QueryGetSupplychainRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -349,7 +437,7 @@ func (m *QueryGetSupplychainResponse) Reset()         { *m = QueryGetSupplychain
 func (m *QueryGetSupplychainResponse) String() string { return proto.CompactTextString(m) }
 func (*QueryGetSupplychainResponse) ProtoMessage()    {}
 func (*QueryGetSupplychainResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{7}
+	return fileDescriptor_54c2980e3b72beb2, []int{9}
 }
 func (m *QueryGetSupplychainResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -393,7 +481,7 @@ func (m *QueryAllSupplychainRequest) Reset()         { *m = QueryAllSupplychainR
 func (m *QueryAllSupplychainRequest) String() string { return proto.CompactTextString(m) }
 func (*QueryAllSupplychainRequest) ProtoMessage()    {}
 func (*QueryAllSupplychainRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{8}
+	return fileDescriptor_54c2980e3b72beb2, []int{10}
 }
 func (m *QueryAllSupplychainRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -438,7 +526,7 @@ func (m *QueryAllSupplychainResponse) Reset()         { *m = QueryAllSupplychain
 func (m *QueryAllSupplychainResponse) String() string { return proto.CompactTextString(m) }
 func (*QueryAllSupplychainResponse) ProtoMessage()    {}
 func (*QueryAllSupplychainResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_54c2980e3b72beb2, []int{9}
+	return fileDescriptor_54c2980e3b72beb2, []int{11}
 }
 func (m *QueryAllSupplychainResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -484,6 +572,8 @@ func (m *QueryAllSupplychainResponse) GetPagination() *query.PageResponse {
 func init() {
 	proto.RegisterType((*QueryParamsRequest)(nil), "bitcannaglobal.bcna.bcna.QueryParamsRequest")
 	proto.RegisterType((*QueryParamsResponse)(nil), "bitcannaglobal.bcna.bcna.QueryParamsResponse")
+	proto.RegisterType((*QueryGetBitcannaidByBcnaidRequest)(nil), "bitcannaglobal.bcna.bcna.QueryGetBitcannaidByBcnaidRequest")
+	proto.RegisterType((*QueryGetBitcannaidByBcnaidResponse)(nil), "bitcannaglobal.bcna.bcna.QueryGetBitcannaidByBcnaidResponse")
 	proto.RegisterType((*QueryGetBitcannaidRequest)(nil), "bitcannaglobal.bcna.bcna.QueryGetBitcannaidRequest")
 	proto.RegisterType((*QueryGetBitcannaidResponse)(nil), "bitcannaglobal.bcna.bcna.QueryGetBitcannaidResponse")
 	proto.RegisterType((*QueryAllBitcannaidRequest)(nil), "bitcannaglobal.bcna.bcna.QueryAllBitcannaidRequest")
@@ -497,47 +587,51 @@ func init() {
 func init() { proto.RegisterFile("bcna/bcna/query.proto", fileDescriptor_54c2980e3b72beb2) }
 
 var fileDescriptor_54c2980e3b72beb2 = []byte{
-	// 625 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x95, 0xcf, 0x6b, 0x13, 0x41,
-	0x14, 0xc7, 0x33, 0x69, 0xcd, 0x61, 0x8a, 0x3d, 0x8c, 0x55, 0xea, 0x56, 0xd6, 0x30, 0xf4, 0x97,
-	0x4d, 0xba, 0x4b, 0x52, 0xbd, 0x0a, 0x8d, 0x68, 0x40, 0x10, 0x6a, 0xc4, 0x8b, 0xb7, 0xd9, 0xcd,
-	0xb2, 0x19, 0xd8, 0xec, 0x6c, 0xb3, 0x13, 0x31, 0x88, 0x17, 0xff, 0x01, 0x05, 0xff, 0x09, 0x11,
-	0x11, 0x3c, 0xf8, 0x3f, 0xf4, 0x58, 0xf1, 0xe2, 0x49, 0x24, 0xf1, 0x0f, 0x91, 0x9d, 0x99, 0x3a,
-	0x9b, 0x64, 0x97, 0x6c, 0x6b, 0x2f, 0x9b, 0x30, 0xf3, 0xbe, 0xef, 0x7d, 0xde, 0x7b, 0x33, 0x6f,
-	0xe0, 0x75, 0xc7, 0x0d, 0x89, 0x2d, 0x3e, 0xc7, 0x43, 0x6f, 0x30, 0xb2, 0xa2, 0x01, 0xe3, 0x0c,
-	0xad, 0x3b, 0x94, 0xbb, 0x24, 0x0c, 0x89, 0x1f, 0x30, 0x87, 0x04, 0x56, 0x62, 0x20, 0x3e, 0xc6,
-	0x9a, 0xcf, 0x7c, 0x26, 0x8c, 0xec, 0xe4, 0x9f, 0xb4, 0x37, 0x6e, 0xf9, 0x8c, 0xf9, 0x81, 0x67,
-	0x93, 0x88, 0xda, 0x24, 0x0c, 0x19, 0x27, 0x9c, 0xb2, 0x30, 0x56, 0xbb, 0x7b, 0x2e, 0x8b, 0xfb,
-	0x2c, 0xb6, 0x1d, 0x12, 0x7b, 0x32, 0x8c, 0xfd, 0xb2, 0xe1, 0x78, 0x9c, 0x34, 0xec, 0x88, 0xf8,
-	0x34, 0x14, 0xc6, 0xca, 0xf6, 0x86, 0x06, 0x8a, 0xc8, 0x80, 0xf4, 0xcf, 0x7c, 0x18, 0x7a, 0xfd,
-	0x8c, 0x8d, 0x76, 0xd5, 0xde, 0x86, 0xde, 0x8b, 0x87, 0x51, 0x14, 0x8c, 0xdc, 0x1e, 0xa1, 0xca,
-	0x21, 0x5e, 0x83, 0xe8, 0x69, 0x12, 0xf2, 0x48, 0x78, 0xeb, 0x78, 0xc7, 0x43, 0x2f, 0xe6, 0xf8,
-	0x39, 0xbc, 0x36, 0xb5, 0x1a, 0x47, 0x2c, 0x8c, 0x3d, 0x74, 0x1f, 0x56, 0x64, 0xd4, 0x75, 0x50,
-	0x05, 0xbb, 0x2b, 0xcd, 0xaa, 0x95, 0x57, 0x08, 0x4b, 0x2a, 0x5b, 0xcb, 0x27, 0xbf, 0x6e, 0x97,
-	0x3a, 0x4a, 0x85, 0x6b, 0xf0, 0xa6, 0x70, 0xdb, 0xf6, 0x78, 0xeb, 0x1f, 0xa5, 0x8a, 0x89, 0x56,
-	0x61, 0x99, 0x76, 0x85, 0xe3, 0xe5, 0x4e, 0x99, 0x76, 0x71, 0x0f, 0x1a, 0x59, 0xc6, 0x0a, 0xe5,
-	0x31, 0x84, 0x7a, 0x55, 0xe1, 0x6c, 0xe6, 0xe3, 0x68, 0x5b, 0x85, 0x94, 0x52, 0x63, 0x57, 0x61,
-	0x1d, 0x06, 0xc1, 0x3c, 0xd6, 0x23, 0x08, 0x75, 0x17, 0x54, 0xa0, 0x6d, 0x4b, 0xb6, 0xcc, 0x4a,
-	0x5a, 0x66, 0xc9, 0x93, 0xa1, 0x5a, 0x66, 0x1d, 0x11, 0xdf, 0x53, 0xda, 0x4e, 0x4a, 0x89, 0xbf,
-	0x02, 0x95, 0xcf, 0x4c, 0x94, 0x9c, 0x7c, 0x96, 0x2e, 0x9e, 0x0f, 0x6a, 0x4f, 0x21, 0x97, 0x05,
-	0xf2, 0xce, 0x42, 0x64, 0x09, 0x32, 0xc5, 0x5c, 0xd7, 0x2d, 0x78, 0xa6, 0x4f, 0x4e, 0x5e, 0xc3,
-	0x02, 0xb8, 0x91, 0x69, 0xad, 0x32, 0x7c, 0x02, 0x57, 0x52, 0xcb, 0xaa, 0x92, 0x5b, 0xf9, 0x29,
-	0xa6, 0x8c, 0x55, 0x8e, 0x69, 0x3d, 0xee, 0xea, 0x72, 0x66, 0xb0, 0x5d, 0x56, 0xd7, 0xbe, 0x01,
-	0x95, 0xd4, 0x6c, 0x98, 0xbc, 0xa4, 0x96, 0xfe, 0x27, 0xa9, 0x4b, 0xeb, 0x5c, 0xf3, 0x7b, 0x05,
-	0x5e, 0x11, 0xdc, 0xe8, 0x1d, 0x80, 0x15, 0x79, 0x19, 0x51, 0x3d, 0x9f, 0x6b, 0x7e, 0x06, 0x18,
-	0xfb, 0x05, 0xad, 0x65, 0x74, 0xbc, 0xfb, 0xf6, 0xc7, 0x9f, 0x0f, 0x65, 0x8c, 0xaa, 0x76, 0x8b,
-	0xf2, 0x07, 0x89, 0xac, 0x2d, 0x64, 0xf6, 0xec, 0xc4, 0x42, 0x9f, 0x40, 0xfa, 0xac, 0xa3, 0x83,
-	0x05, 0x71, 0xb2, 0x86, 0x85, 0x71, 0xf7, 0x7c, 0x22, 0xc5, 0xd8, 0x10, 0x8c, 0x35, 0x74, 0x27,
-	0x9f, 0x51, 0x4f, 0x4f, 0xfb, 0x35, 0xed, 0xbe, 0x41, 0x1f, 0x01, 0xbc, 0xaa, 0x3d, 0x1d, 0x06,
-	0xc1, 0x42, 0xde, 0xac, 0x29, 0xb2, 0x90, 0x37, 0x73, 0x28, 0xe0, 0xba, 0xe0, 0xdd, 0x46, 0x9b,
-	0x45, 0x78, 0xd1, 0x17, 0x30, 0x75, 0x18, 0x51, 0x81, 0x1a, 0xcd, 0xdf, 0x1c, 0xe3, 0xde, 0x39,
-	0x55, 0x0a, 0xb5, 0x29, 0x50, 0xeb, 0x68, 0x2f, 0x1f, 0x35, 0xf5, 0xf8, 0xc8, 0xda, 0x7e, 0x06,
-	0x70, 0x35, 0xe5, 0x2b, 0x29, 0x6e, 0x81, 0x3a, 0x5d, 0x80, 0x39, 0xfb, 0xf2, 0xe2, 0x7d, 0xc1,
-	0xbc, 0x83, 0xb6, 0x0a, 0x31, 0xb7, 0x1e, 0x9e, 0x8c, 0x4d, 0x70, 0x3a, 0x36, 0xc1, 0xef, 0xb1,
-	0x09, 0xde, 0x4f, 0xcc, 0xd2, 0xe9, 0xc4, 0x2c, 0xfd, 0x9c, 0x98, 0xa5, 0x17, 0x35, 0x9f, 0xf2,
-	0xde, 0xd0, 0xb1, 0x5c, 0xd6, 0xcf, 0x74, 0xf5, 0x4a, 0xfe, 0xf0, 0x51, 0xe4, 0xc5, 0x4e, 0x45,
-	0x3c, 0xbc, 0x07, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0xe0, 0xff, 0xd4, 0xed, 0x5c, 0x08, 0x00,
-	0x00,
+	// 698 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0xcd, 0x6e, 0xd3, 0x40,
+	0x10, 0xc7, 0xb3, 0x69, 0x89, 0x60, 0x2b, 0x7a, 0x58, 0x4a, 0x55, 0x5c, 0x64, 0xca, 0xaa, 0x5f,
+	0xb4, 0xa9, 0xad, 0xa6, 0x85, 0x4b, 0x2b, 0xa4, 0x1a, 0x41, 0x24, 0x24, 0xa4, 0x62, 0xc4, 0x85,
+	0xdb, 0xda, 0xb1, 0x1c, 0x4b, 0x8e, 0xd7, 0x8d, 0x1d, 0x44, 0x54, 0xf5, 0xc2, 0x0b, 0x80, 0xc4,
+	0x13, 0x70, 0x43, 0x08, 0x21, 0x71, 0xe0, 0x1d, 0x7a, 0x41, 0xaa, 0xc4, 0x85, 0x13, 0x42, 0x09,
+	0x0f, 0x82, 0xbc, 0xbb, 0xc1, 0x4e, 0x62, 0x13, 0x27, 0xe4, 0x62, 0x27, 0xbb, 0x33, 0xf3, 0xff,
+	0xcd, 0xce, 0x64, 0x36, 0xf0, 0xba, 0x61, 0x7a, 0x44, 0x65, 0x8f, 0x93, 0x96, 0xd5, 0x6c, 0x2b,
+	0x7e, 0x93, 0x86, 0x14, 0x2d, 0x19, 0x4e, 0x68, 0x12, 0xcf, 0x23, 0xb6, 0x4b, 0x0d, 0xe2, 0x2a,
+	0x91, 0x01, 0x7b, 0x48, 0x0b, 0x36, 0xb5, 0x29, 0x33, 0x52, 0xa3, 0x4f, 0xdc, 0x5e, 0xba, 0x69,
+	0x53, 0x6a, 0xbb, 0x96, 0x4a, 0x7c, 0x47, 0x25, 0x9e, 0x47, 0x43, 0x12, 0x3a, 0xd4, 0x0b, 0xc4,
+	0xee, 0x96, 0x49, 0x83, 0x06, 0x0d, 0x54, 0x83, 0x04, 0x16, 0x97, 0x51, 0x5f, 0xee, 0x1a, 0x56,
+	0x48, 0x76, 0x55, 0x9f, 0xd8, 0x8e, 0xc7, 0x8c, 0x85, 0xed, 0x62, 0x0c, 0xe4, 0x93, 0x26, 0x69,
+	0xf4, 0x62, 0x48, 0xf1, 0x7a, 0x8f, 0xcd, 0xa9, 0x89, 0xbd, 0xe5, 0x78, 0x2f, 0x68, 0xf9, 0xbe,
+	0xdb, 0x36, 0xeb, 0xc4, 0x11, 0x01, 0xf1, 0x02, 0x44, 0x4f, 0x23, 0xc9, 0x63, 0x16, 0x4d, 0xb7,
+	0x4e, 0x5a, 0x56, 0x10, 0xe2, 0xe7, 0xf0, 0x5a, 0xdf, 0x6a, 0xe0, 0x53, 0x2f, 0xb0, 0xd0, 0x7d,
+	0x58, 0xe2, 0xaa, 0x4b, 0x60, 0x05, 0x6c, 0xce, 0x55, 0x56, 0x94, 0xac, 0x83, 0x50, 0xb8, 0xa7,
+	0x36, 0x7b, 0xfe, 0xf3, 0x56, 0x41, 0x17, 0x5e, 0xf8, 0x00, 0xde, 0x66, 0x61, 0xab, 0x56, 0xa8,
+	0xfd, 0xa5, 0xd4, 0xda, 0x9a, 0x19, 0xbd, 0x85, 0x36, 0x5a, 0x84, 0x25, 0x83, 0x2d, 0x30, 0x91,
+	0x2b, 0xba, 0xf8, 0x86, 0x7d, 0x88, 0xff, 0xe5, 0x2c, 0x10, 0x1f, 0x43, 0x18, 0xef, 0x0a, 0xcc,
+	0xd5, 0x6c, 0xcc, 0x44, 0xa4, 0x08, 0x15, 0xe8, 0x09, 0x6f, 0xbc, 0x0d, 0x6f, 0x0c, 0x2b, 0xf6,
+	0x30, 0xe7, 0x61, 0x51, 0x08, 0xcc, 0xea, 0x45, 0xa7, 0x86, 0xeb, 0x50, 0x4a, 0x33, 0x9e, 0x0a,
+	0x56, 0xa1, 0x0f, 0xcb, 0x14, 0x58, 0x47, 0xae, 0x3b, 0x8c, 0xf5, 0x08, 0xc2, 0xb8, 0x69, 0x84,
+	0xd0, 0xba, 0xc2, 0x3b, 0x4c, 0x89, 0x3a, 0x4c, 0xe1, 0x8d, 0x2c, 0x3a, 0x4c, 0x39, 0x26, 0xb6,
+	0x25, 0x7c, 0xf5, 0x84, 0x27, 0xfe, 0x02, 0x44, 0x3e, 0x03, 0x2a, 0x19, 0xf9, 0xcc, 0x4c, 0x9e,
+	0x0f, 0xaa, 0xf6, 0x21, 0x17, 0x19, 0xf2, 0xc6, 0x48, 0x64, 0x0e, 0xd2, 0xc7, 0x5c, 0x8e, 0x4b,
+	0xf0, 0x2c, 0x6e, 0xf4, 0xac, 0x82, 0xb9, 0x70, 0x39, 0xd5, 0x5a, 0x64, 0xf8, 0x04, 0xce, 0x25,
+	0x96, 0xc5, 0x49, 0xae, 0x65, 0xa7, 0x98, 0x30, 0x16, 0x39, 0x26, 0xfd, 0x71, 0x2d, 0x3e, 0xce,
+	0x14, 0xb6, 0x69, 0x55, 0xed, 0x2b, 0x10, 0x49, 0x0d, 0xca, 0x64, 0x25, 0x35, 0xf3, 0x3f, 0x49,
+	0x4d, 0xad, 0x72, 0x95, 0xf7, 0x97, 0xe1, 0x25, 0xc6, 0x8d, 0xde, 0x00, 0x58, 0xe2, 0xb3, 0x03,
+	0x95, 0xb3, 0xb9, 0x86, 0x47, 0x96, 0xb4, 0x93, 0xd3, 0x9a, 0xab, 0xe3, 0xcd, 0xd7, 0xdf, 0x7f,
+	0xbf, 0x2b, 0x62, 0xb4, 0xa2, 0x6a, 0x4e, 0xf8, 0x20, 0x72, 0xab, 0x32, 0x37, 0x75, 0x70, 0xc0,
+	0xa2, 0x8f, 0x20, 0xd9, 0xeb, 0x68, 0x6f, 0x84, 0x4e, 0xda, 0xb0, 0x90, 0xf6, 0xc7, 0x73, 0x12,
+	0x8c, 0xbb, 0x8c, 0x71, 0x1b, 0xdd, 0xc9, 0x66, 0x8c, 0x87, 0xbd, 0x7a, 0xea, 0xd4, 0xce, 0xd0,
+	0x07, 0x00, 0xaf, 0xc6, 0x91, 0x8e, 0x5c, 0x77, 0x24, 0x6f, 0xda, 0x14, 0x19, 0xc9, 0x9b, 0x3a,
+	0x14, 0x70, 0x99, 0xf1, 0xae, 0xa3, 0xd5, 0x3c, 0xbc, 0xe8, 0x1b, 0x80, 0x68, 0x78, 0x90, 0xa3,
+	0x83, 0x71, 0x8e, 0x6a, 0xe0, 0xee, 0x90, 0x0e, 0x27, 0x73, 0x16, 0xfc, 0x87, 0x8c, 0xff, 0x1e,
+	0xda, 0xcf, 0x75, 0xde, 0xfc, 0x5a, 0x52, 0x4f, 0xf9, 0xfb, 0x0c, 0x7d, 0x06, 0x7d, 0x3f, 0x2e,
+	0x94, 0xa3, 0xe6, 0xc3, 0x93, 0x40, 0xba, 0x3b, 0xa6, 0x97, 0x40, 0xaf, 0x30, 0xf4, 0x32, 0xda,
+	0xca, 0x46, 0x4f, 0xdc, 0xfd, 0xbc, 0x57, 0x3e, 0x01, 0x38, 0x9f, 0x88, 0x15, 0x35, 0x4b, 0x8e,
+	0xba, 0x4f, 0xc0, 0x9c, 0x3e, 0x8c, 0xf0, 0x0e, 0x63, 0xde, 0x40, 0x6b, 0xb9, 0x98, 0xb5, 0x87,
+	0xe7, 0x1d, 0x19, 0x5c, 0x74, 0x64, 0xf0, 0xab, 0x23, 0x83, 0xb7, 0x5d, 0xb9, 0x70, 0xd1, 0x95,
+	0x0b, 0x3f, 0xba, 0x72, 0xe1, 0xc5, 0xb6, 0xed, 0x84, 0xf5, 0x96, 0xa1, 0x98, 0xb4, 0x91, 0x1a,
+	0xea, 0x15, 0x7f, 0x85, 0x6d, 0xdf, 0x0a, 0x8c, 0x12, 0xfb, 0xdf, 0xb3, 0xf7, 0x27, 0x00, 0x00,
+	0xff, 0xff, 0xe0, 0x8e, 0x6b, 0x6b, 0xdb, 0x09, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -558,6 +652,8 @@ type QueryClient interface {
 	Bitcannaid(ctx context.Context, in *QueryGetBitcannaidRequest, opts ...grpc.CallOption) (*QueryGetBitcannaidResponse, error)
 	// Queries a list of Bitcannaid items.
 	BitcannaidAll(ctx context.Context, in *QueryAllBitcannaidRequest, opts ...grpc.CallOption) (*QueryAllBitcannaidResponse, error)
+	// Queries a Bitcannaid by bcnaid.
+	BitcannaidByBcnaid(ctx context.Context, in *QueryGetBitcannaidByBcnaidRequest, opts ...grpc.CallOption) (*QueryGetBitcannaidByBcnaidResponse, error)
 	// Queries a Supplychain by id.
 	Supplychain(ctx context.Context, in *QueryGetSupplychainRequest, opts ...grpc.CallOption) (*QueryGetSupplychainResponse, error)
 	// Queries a list of Supplychain items.
@@ -599,6 +695,15 @@ func (c *queryClient) BitcannaidAll(ctx context.Context, in *QueryAllBitcannaidR
 	return out, nil
 }
 
+func (c *queryClient) BitcannaidByBcnaid(ctx context.Context, in *QueryGetBitcannaidByBcnaidRequest, opts ...grpc.CallOption) (*QueryGetBitcannaidByBcnaidResponse, error) {
+	out := new(QueryGetBitcannaidByBcnaidResponse)
+	err := c.cc.Invoke(ctx, "/bitcannaglobal.bcna.bcna.Query/BitcannaidByBcnaid", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *queryClient) Supplychain(ctx context.Context, in *QueryGetSupplychainRequest, opts ...grpc.CallOption) (*QueryGetSupplychainResponse, error) {
 	out := new(QueryGetSupplychainResponse)
 	err := c.cc.Invoke(ctx, "/bitcannaglobal.bcna.bcna.Query/Supplychain", in, out, opts...)
@@ -625,6 +730,8 @@ type QueryServer interface {
 	Bitcannaid(context.Context, *QueryGetBitcannaidRequest) (*QueryGetBitcannaidResponse, error)
 	// Queries a list of Bitcannaid items.
 	BitcannaidAll(context.Context, *QueryAllBitcannaidRequest) (*QueryAllBitcannaidResponse, error)
+	// Queries a Bitcannaid by bcnaid.
+	BitcannaidByBcnaid(context.Context, *QueryGetBitcannaidByBcnaidRequest) (*QueryGetBitcannaidByBcnaidResponse, error)
 	// Queries a Supplychain by id.
 	Supplychain(context.Context, *QueryGetSupplychainRequest) (*QueryGetSupplychainResponse, error)
 	// Queries a list of Supplychain items.
@@ -643,6 +750,9 @@ func (*UnimplementedQueryServer) Bitcannaid(ctx context.Context, req *QueryGetBi
 }
 func (*UnimplementedQueryServer) BitcannaidAll(ctx context.Context, req *QueryAllBitcannaidRequest) (*QueryAllBitcannaidResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BitcannaidAll not implemented")
+}
+func (*UnimplementedQueryServer) BitcannaidByBcnaid(ctx context.Context, req *QueryGetBitcannaidByBcnaidRequest) (*QueryGetBitcannaidByBcnaidResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BitcannaidByBcnaid not implemented")
 }
 func (*UnimplementedQueryServer) Supplychain(ctx context.Context, req *QueryGetSupplychainRequest) (*QueryGetSupplychainResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Supplychain not implemented")
@@ -709,6 +819,24 @@ func _Query_BitcannaidAll_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_BitcannaidByBcnaid_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetBitcannaidByBcnaidRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).BitcannaidByBcnaid(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bitcannaglobal.bcna.bcna.Query/BitcannaidByBcnaid",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).BitcannaidByBcnaid(ctx, req.(*QueryGetBitcannaidByBcnaidRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Query_Supplychain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(QueryGetSupplychainRequest)
 	if err := dec(in); err != nil {
@@ -760,6 +888,10 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BitcannaidAll",
 			Handler:    _Query_BitcannaidAll_Handler,
+		},
+		{
+			MethodName: "BitcannaidByBcnaid",
+			Handler:    _Query_BitcannaidByBcnaid_Handler,
 		},
 		{
 			MethodName: "Supplychain",
@@ -827,6 +959,71 @@ func (m *QueryParamsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	i--
 	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetBitcannaidByBcnaidRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetBitcannaidByBcnaidRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetBitcannaidByBcnaidRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Bcnaid) > 0 {
+		i -= len(m.Bcnaid)
+		copy(dAtA[i:], m.Bcnaid)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Bcnaid)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetBitcannaidByBcnaidResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetBitcannaidByBcnaidResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetBitcannaidByBcnaidResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Bitcannaid != nil {
+		{
+			size, err := m.Bitcannaid.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -1151,6 +1348,32 @@ func (m *QueryParamsResponse) Size() (n int) {
 	return n
 }
 
+func (m *QueryGetBitcannaidByBcnaidRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Bcnaid)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryGetBitcannaidByBcnaidResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Bitcannaid != nil {
+		l = m.Bitcannaid.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
 func (m *QueryGetBitcannaidRequest) Size() (n int) {
 	if m == nil {
 		return 0
@@ -1376,6 +1599,174 @@ func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if err := m.Params.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetBitcannaidByBcnaidRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetBitcannaidByBcnaidRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetBitcannaidByBcnaidRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Bcnaid", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Bcnaid = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetBitcannaidByBcnaidResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetBitcannaidByBcnaidResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetBitcannaidByBcnaidResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Bitcannaid", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Bitcannaid == nil {
+				m.Bitcannaid = &Bitcannaid{}
+			}
+			if err := m.Bitcannaid.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
