@@ -52,7 +52,7 @@ func (k msgServer) UpdateBitcannaid(goCtx context.Context, msg *types.MsgUpdateB
 
 	// Checks if the msg creator is the same as the current owner
 	if msg.Creator != val.Creator {
-		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %d,", msg.Creator)
+		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %s,", msg.Creator)
 	}
 
 	k.SetBitcannaid(ctx, bitcannaid)
@@ -71,7 +71,7 @@ func (k msgServer) DeleteBitcannaid(goCtx context.Context, msg *types.MsgDeleteB
 
 	// Checks if the msg creator is the same as the current owner
 	if msg.Creator != val.Creator {
-		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %d,", msg.Creator)
+		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %s,", msg.Creator)
 	}
 
 	k.RemoveBitcannaid(ctx, msg.Id)

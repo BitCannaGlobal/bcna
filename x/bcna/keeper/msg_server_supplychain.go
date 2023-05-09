@@ -43,7 +43,7 @@ func (k msgServer) UpdateSupplychain(goCtx context.Context, msg *types.MsgUpdate
 	// Checks that the element exists
 	val, found := k.GetSupplychain(ctx, msg.Id)
 	if !found {
-		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %d", msg.Id)
+		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %s", msg.Id)
 	}
 
 	// Checks if the msg creator is the same as the current owner
