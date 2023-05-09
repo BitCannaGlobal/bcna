@@ -2,11 +2,9 @@ package keeper
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
 func (k msgServer) CreateSupplychain(goCtx context.Context, msg *types.MsgCreateSupplychain) (*types.MsgCreateSupplychainResponse, error) {
@@ -45,12 +43,12 @@ func (k msgServer) UpdateSupplychain(goCtx context.Context, msg *types.MsgUpdate
 	// Checks that the element exists
 	val, found := k.GetSupplychain(ctx, msg.Id)
 	if !found {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrKeyNotFound, fmt.Sprintf("key %d doesn't exist", msg.Id))
+		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %d", msg.Id)
 	}
 
 	// Checks if the msg creator is the same as the current owner
 	if msg.Creator != val.Creator {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
+		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %d,", msg.Creator)
 	}
 
 	k.SetSupplychain(ctx, supplychain)
@@ -64,12 +62,12 @@ func (k msgServer) DeleteSupplychain(goCtx context.Context, msg *types.MsgDelete
 	// Checks that the element exists
 	val, found := k.GetSupplychain(ctx, msg.Id)
 	if !found {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrKeyNotFound, fmt.Sprintf("key %d doesn't exist", msg.Id))
+		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %d", msg.Id)
 	}
 
 	// Checks if the msg creator is the same as the current owner
 	if msg.Creator != val.Creator {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
+		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %d,", msg.Creator)
 	}
 
 	k.RemoveSupplychain(ctx, msg.Id)

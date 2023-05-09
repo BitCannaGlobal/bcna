@@ -1,9 +1,11 @@
 package decorators
 
 import (
+	"errors"
+	"fmt"
+
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/x/authz"
 	govkeeper "github.com/cosmos/cosmos-sdk/x/gov/keeper"
 	govv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
@@ -55,13 +57,12 @@ func (gpsd GovPreventSpamDecorator) checkSpamSubmitProposalMsg(ctx sdk.Context, 
 			// // prevent spam gov msg
 
 			if msg.InitialDeposit.IsAllLT(miniumInitialDeposit) {
-				return sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "not enough initial deposit. required: %v", miniumInitialDeposit)
+				return fmt.Errorf("not enough initial deposit. required: %v: %w", miniumInitialDeposit, errors.New("insufficient funds"))
 			}
 		case *govv1.MsgSubmitProposal:
 			// don't use Gov v1 Proposals:
 			message := "- Please don't use Gov v1 Proposals in SDK v0.46! "
-
-			return sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "Failed to send a new proposal: %s", message)
+			return fmt.Errorf("Failed to send a new proposal: %v: %w", message, errors.New("Not allowed"))
 		}
 
 		return nil
@@ -74,7 +75,7 @@ func (gpsd GovPreventSpamDecorator) checkSpamSubmitProposalMsg(ctx sdk.Context, 
 			var innerMsg sdk.Msg
 			err := gpsd.cdc.UnpackAny(v, &innerMsg)
 			if err != nil {
-				return sdkerrors.Wrapf(sdkerrors.ErrInsufficientFunds, "not enough initial deposit. required: %v", miniumInitialDeposit)
+				return fmt.Errorf("not enough initial deposit. required: %v: %w", miniumInitialDeposit, errors.New("insufficient funds"))
 			}
 
 			err = validMsg(innerMsg)

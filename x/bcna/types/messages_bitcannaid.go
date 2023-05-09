@@ -1,8 +1,10 @@
 package types
 
 import (
+	"errors"
+	"fmt"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
 const (
@@ -45,7 +47,7 @@ func (msg *MsgCreateBitcannaid) GetSignBytes() []byte {
 func (msg *MsgCreateBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
 	return nil
 }
@@ -85,7 +87,7 @@ func (msg *MsgUpdateBitcannaid) GetSignBytes() []byte {
 func (msg *MsgUpdateBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
 	return nil
 }
@@ -122,7 +124,7 @@ func (msg *MsgDeleteBitcannaid) GetSignBytes() []byte {
 func (msg *MsgDeleteBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
 	return nil
 }
