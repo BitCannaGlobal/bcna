@@ -13,7 +13,6 @@ import (
 func CmdListSupplychain() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "list-supplychain",
-		Args:  cobra.NoArgs,
 		Short: "list all supplychain",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
