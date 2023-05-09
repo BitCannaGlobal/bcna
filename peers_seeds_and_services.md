@@ -5,25 +5,9 @@ We'd like to ask you to provide us your ***endpoints*** and/or ***persistent_pee
 
 # Persistent_peers
 
-## STAVR
-0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
-
-## EZStaking
-bee230fb347722d7f87d22414f57bf9cbe37a410@sentry-1.bcna.ezstaking.io:26039
-90ee680b1738344354c48c23ba1e1fd68e071d80@sentry-2.bcna.ezstaking.io:26696
-
-## StakeLab
-5eb75c20a77ccf960df396b187b86d6324b40123@51.68.226.61:26656
-11612d58955e5f073a6e70ce83129d63b8f5c654@65.108.139.109:26666
-
-
 ## Stakely
-3cdfe02efd4432280707d2949e064a9d8db412b3@178.62.98.158:26656 
-d806bb39349751c142627a547c23c586a787ef26@138.68.78.210:26656
-
-
-## Blockscope
-ddb620e7c7a6b5a8a53352037cde927681012ab4@65.21.229.209:37656
+8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7@65.108.142.81:26682 
+ad820cb2fa85e525538207bb24ee49a61a74eb45@93.115.25.15:26656
 
 ## BloClick
 be87c9abf1c54e1cc2f37e68d21fcd61679abb4c@65.21.196.90:46656 
@@ -45,27 +29,84 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 45589e6147e36dda9e429668484d7614fb25b142@bitcanna.nodejumper.io:27656
 
 ## Inter Blockchain Services (former 3Tekos)
-ec12bf44fd3c64db457f45f7d0111735c559a37d@185.218.126.71:26657
-79d9c3aa19f61e06c33c54d80d0cda4fa535b28a@161.97.156.216:26657
+57a3e858a5c860e6355683c88add28d52df6c24a@38.242.232.202:26656
+526e4529131070e39134d94edc0e7e48289a64b1@176.191.97.120:27656
+
+## STAVR
+0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
+
+## Panthea EU
+0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
+
+## AlxVoy
+803fc66e3bd7b724921ef9c40636067f36e880c6@65.108.199.222:26357
+
+## [NODERS]TEAM
+9425b897a9726efb1e56111a8b355026a1f3a497@65.108.238.203:46656
+
+## bonded.zone
+9532a13b05e5f68f2ca01f90b3d1ba9a762af817@team.bonded.zone:21956
+
+## KonsorTech
+5a048cab1d183de5c465c56b29a16fd93a8bf9bd@mainnet-bitcanna.konsortech.xyz:27656
+
+## kjnodes
+d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
+
+## cryptech
+21f58acd833e3160feb01a6d9a6a6f501e87da80@185.144.99.58:26656
+
+## Alkia
+2235f1e518c5ea4a412f9dece386348eda356916@bitcanna.alkia.net:26656
 
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
-23671067d0fd40aec523290585c7d8e91034a771@seed2.bitcanna.io:26656
+e2e7c704f766ef6b9e2c8dd61d963f8393b87966@seed3.bitcanna.io:26656
+
+## Panthea EU
+f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
+
+## kjnodes
+400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.kjnodes.com:42659
 
 # StateSync Servers and instructions:
 ## BitCanna oficial:
   * https://github.com/BitCannaGlobal/bcna/blob/main/2.1.statesync.md
+
 ## Polkachu
   * https://polkachu.com/state_sync/bitcanna
+
 ## Panthea EU StateSync Server
   * https://bitcanna-rpc.panthea.eu:443
-## STAVR StateSync
-  * https://github.com/obajay/StateSync-snapshots/tree/main/Bitcanna#statesync
+
 ## Inter Blockchain Services (former 3Tekos) StateSync Server
   * https://bcna-rpc.ibs.team:443
+  * https://github.com/Inter-Blockchain-Service/Cosmos-StateSync/tree/main/Bitcanna
+
 ## mintthemoon
   * https://docs.mintthemoon.xyz/bitcanna/statesync
+
+## STAVR StateSync
+  * https://github.com/obajay/StateSync-snapshots/tree/main/Bitcanna#statesync
+
+## AlxVoy StateSync
+  * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
+
+## [NODERS]TEAM StateSync
+  * http://bitcanna.statesync.nodersteam.com:46657
+
+## bonded.zone StateSync
+  * https://sync.bonded.zone/mainnets/bitcanna
+
+## KonsorTech
+  * https://github.com/konsortech/Node/blob/main/Mainnet/Bitcanna/statesync.md
+
+## kjnodes
+  * https://services.kjnodes.com/mainnet/bitcanna/state-sync
+
+## cryptech StateSync
+  * https://explorers.cryptech.com.ua/bitcanna/statesync
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -80,9 +121,6 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 ### Polkachu: snapshot service info
 * https://polkachu.com/tendermint_snapshots/bitcanna
 
-### STAVR : snapshot and state sync services, installation scripts (manual/automation)
-* https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
-
 ### Nodejumper 🚀: on-chain analytics, snapshot & state sync services, installation scripts (manual/automation), cheat sheet and more.
 * https://nodejumper.io/bitcanna
 
@@ -94,149 +132,240 @@ d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
 * Node setup guide: https://docs.mintthemoon.xyz/bitcanna/node-guide
 * Validator setup guide: https://docs.mintthemoon.xyz/bitcanna/validator-guide
 
+### STAVR : snapshot and state sync services, installation scripts (manual/automation)
+* https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
+
+### AlxVoy : snapshot and state sync services, guide, RPC, API, peer
+* https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md
+
+### KonsorTech : Guide, public_endpoint (RPC, API, Peer), state sync
+* https://github.com/konsortech/Node/tree/main/Mainnet/Bitcanna
+
+### kjnodes: 
+* Peering Services, Public Endpoints, Daily Snapshots, State-Sync, Node Setup Guide, Useful Commands: https://services.kjnodes.com/mainnet/bitcanna
+* 🤖 Free Telegram Proposal Bot: https://services.kjnodes.com/bots/proposal-bot
+
+### [NODERS]TEAM: Guide, API, RPC, StateSync, Live peer, AdrBook, Useful Commands
+* https://nodeservice.nodersteam.com/title/mainnet/bitcanna
 
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
-  "peers": {
-    "seeds": [
-      {
-        "id": "d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f",
-        "address": "seed1.bitcanna.io: 26656",
-        "provider": "bitcanna"
-      },
-      {
-        "id": "23671067d0fd40aec523290585c7d8e91034a771",
-        "address": "seed2.bitcanna.io: 26656",
-        "provider": "bitcanna"
-      }
-    ],
-    "persistent_peers": [
-      {
-        "id": "bee230fb347722d7f87d22414f57bf9cbe37a410",
-        "address": "sentry-1.bcna.ezstaking.io:26039",
-        "provider": "EZStaking.io"
-      },
-      {
-        "id": "90ee680b1738344354c48c23ba1e1fd68e071d80",
-        "address": "sentry-2.bcna.ezstaking.io:26696",
-        "provider": "EZStaking.io"
-      },
-      {
-        "id": "21484408a7bcf0134689ddf52a7d9c8299cb65b5",
-        "address": "176.9.139.74:36656",
-        "provider": "BitCanna"
-      },
-      {
-        "id": "a4c1e46441164c350f721cf142d52c136215e05c",
-        "address": "135.181.176.55:36656",
-        "provider": "BitCanna"
-      },
-      {
-        "id": "5eb75c20a77ccf960df396b187b86d6324b40123",
-        "address": "51.68.226.61:26656",
-        "provider": "StakeLab"
-      },
-      {
-        "id": "11612d58955e5f073a6e70ce83129d63b8f5c654",
-        "address": "65.108.139.109:26666",
-        "provider": "StakeLab"
-      },
-      {
-        "id": "3cdfe02efd4432280707d2949e064a9d8db412b3",
-        "address": "178.62.98.158:26656",
-        "provider": "Stakely"
-      },
-      {
-        "id": "d806bb39349751c142627a547c23c586a787ef26",
-        "address": "138.68.78.210:26656",
-        "provider": "Stakely"
-      },
-      {
-        "id": "ddb620e7c7a6b5a8a53352037cde927681012ab4",
-        "address": "65.21.229.209:37656",
-        "provider": "Blockscope"
-      },
-      {
-        "id": "df99de6cec9152c517990317b340b8b9a307493c",
-        "address": "193.34.144.156:26656",
-        "provider": "ParanormalBrothers"
-      }
-    ]
-  },
-  "apis": {
-    "rpc": [
-      {
-        "address": "https://rpc.bitcanna.io/",
-        "provider": "bitcanna"
-      },
-      {
-        "address": "http://bcna.paranorm.pro/",
-        "provider": "ParanormalBrothers"
-      },
-      {
-        "address": "https://rpc.bitcanna.ezstaking.io/",
-        "provider": "ezstaking.io"
-      },
-      {
-        "address": "https://bcna-rpc.ibs.team/",
-        "provider": "Inter Blockchain Services (former 3Tekos)"
-      },      
-      {
-        "address": "https://rpc-bitcanna.itastakers.com/",
-        "provider": "itastakers"
-      },
-      {
-        "address": "https://bitcanna-rpc.panthea.eu",
-        "provider": "Panthea EU"
-      }
-      {
-        "address": "https://rpc.bitcanna.sgtstake.com/",
-        "provider": "SGTstake"
-      },
-      {
-        "address": "https://rpc-bitcanna.mintthemoon.xyz",
-        "provider": "mintthemoon"
-      }
-    ],
-    "grpc": [
-      {
-        "address": "https://grpc.bitcanna.io",
-        "provider": "bitcanna"
-      }
-    ],
-    "rest": [
-      {
-        "address": "https://lcd.bitcanna.io",
-        "provider": "bitcanna"
-      },
-      {
-        "address": "https://lcd.bitcanna.ezstaking.io/",
-        "provider": "ezstaking.io"
-      },
-      {
-        "address": "https://lcd-bitcanna.itastakers.com/",
-        "provider": "itastaker"
-      },
-      {
-        "address": "http://bitcanna.stakelab.fr/",
-        "provider": "stakelab"
-      },
-      {
-        "address": "https://bitcanna-api.panthea.eu",
-        "provider": "Panthea EU"
-      }
-      {
-        "address": "https://api.bitcanna.sgtstake.com/",
-        "provider": "SGTstake"
-      },
-      {
-        "address": "https://lcd-bitcanna.mintthemoon.xyz",
-        "provider": "mintthemoon"
-      },
-      {
-        "address": "https://bcna-api.ibs.team/",
-        "provider": "Inter Blockchain Services (former 3Tekos)"
-      }
-    ]
-  }
-  ```
+
+	"peers": {
+		"seeds": [{
+				"id": "d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f",
+				"address": "seed1.bitcanna.io: 26656",
+				"provider": "bitcanna"
+			},
+			{
+				"id": "e2e7c704f766ef6b9e2c8dd61d963f8393b87966",
+				"address": "seed3.bitcanna.io: 26656",
+				"provider": "bitcanna"
+			},
+			{
+				"id": "f0e6c86d769bf5c52f78e01864091690e731643f",
+				"address": "bitcanna-seed.panthea.eu:37656",
+				"provider": "Panthea EU"
+			},
+			{
+				"id": "20e1000e88125698264454a884812746c2eb4807",
+				"address": "seeds.lavenderfive.com:13056",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		],
+		"persistent_peers": [{
+				"id": "21484408a7bcf0134689ddf52a7d9c8299cb65b5",
+				"address": "176.9.139.74:36656",
+				"provider": "BitCanna"
+			},
+			{
+				"id": "a4c1e46441164c350f721cf142d52c136215e05c",
+				"address": "135.181.176.55:36656",
+				"provider": "BitCanna"
+			},
+			{
+				"id": "8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7",
+				"address": "65.108.142.81:26682",
+				"provider": "Stakely"
+			},
+			{
+				"id": "ad820cb2fa85e525538207bb24ee49a61a74eb45",
+				"address": "93.115.25.15:26656",
+				"provider": "Stakely"
+			},
+			{
+				"id": "df99de6cec9152c517990317b340b8b9a307493c",
+				"address": "193.34.144.156:26656",
+				"provider": "ParanormalBrothers"
+			},
+			{
+				"id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
+				"address": "bitcanna-peer.panthea.eu:27656",
+				"provider": "Panthea EU"
+			},
+			{
+				"id": "803fc66e3bd7b724921ef9c40636067f36e880c6",
+				"address": "65.108.199.222:26357",
+				"provider": "AlxVoy"
+			},
+			{
+				"id": "9425b897a9726efb1e56111a8b355026a1f3a497",
+				"address": "65.108.238.203:46656",
+				"provider": "[NODERS]TEAM"
+			},
+			{
+				"id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
+				"address": "mainnet-bitcanna.konsortech.xyz:27656",
+				"provider": "KonsorTech"
+			},
+			{
+				"id": "2235f1e518c5ea4a412f9dece386348eda356916",
+				"address": "bitcanna.alkia.net:26656",
+				"provider": "ALKIA"
+			},
+			{
+				"id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
+				"address": "bitcanna.rpc.kjnodes.com:42656",
+				"provider": "kjnodes"
+			}
+		]
+	},
+	"apis": {
+		"rpc": [{
+				"address": "https://rpc.bitcanna.io/",
+				"provider": "bitcanna"
+			},
+			{
+				"address": "http://bcna.paranorm.pro/",
+				"provider": "ParanormalBrothers"
+			},
+			{
+				"address": "https://bcna-rpc.ibs.team/",
+				"provider": "Inter Blockchain Services (former 3Tekos)"
+			},
+			{
+				"address": "https://bitcanna-rpc.panthea.eu",
+				"provider": "Panthea EU"
+			},
+			{
+				"address": "https://rpc.bitcanna.sgtstake.com/",
+				"provider": "SGTstake"
+			},
+			{
+				"address": "https://rpc-bitcanna.mintthemoon.xyz",
+				"provider": "mintthemoon"
+			},
+			{
+				"address": "https://bitcanna.rpc.m.anode.team",
+				"provider": "AlxVoy"
+			},
+			{
+				"address": "http://bitcanna.statesync.nodersteam.com:46657",
+				"provider": "[NODERS]TEAM"
+			},
+			{
+				"address": "https://rpc-bcna.kjinc.io/",
+				"provider": "KJINC.io"
+			},
+			{
+				"address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
+				"provider": "KonsorTech"
+			},
+			{
+				"address": "https://bitcanna.rpc.kjnodes.com",
+				"provider": "kjnodes"
+			},
+			{
+				"address": "http://bitcanna.alkia.net:26657",
+				"provider": "ALKIA"
+			},
+			{
+				"address": "https://bitcanna-rpc.lavenderfive.com/",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		],
+		"grpc": [{
+				"address": "https://grpc.bitcanna.io",
+				"provider": "bitcanna"
+			},
+			{
+				"address": "https://bitcanna-grpc.lavenderfive.com:443/",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		],
+		"rest": [{
+				"address": "https://lcd.bitcanna.io",
+				"provider": "bitcanna"
+			},
+			{
+				"address": "https://bitcanna-api.panthea.eu",
+				"provider": "Panthea EU"
+			},
+			{
+				"address": "https://api.bitcanna.sgtstake.com/",
+				"provider": "SGTstake"
+			},
+			{
+				"address": "https://lcd-bitcanna.mintthemoon.xyz",
+				"provider": "mintthemoon"
+			},
+			{
+				"address": "https://bcna-api.ibs.team/",
+				"provider": "Inter Blockchain Services (former 3Tekos)"
+			},
+			{
+				"address": "https://bitcanna.api.m.anode.team",
+				"provider": "AlxVoy"
+			},
+			{
+				"address": "https://api-bcna.kjinc.io/",
+				"provider": "KJINC.io"
+			},
+			{
+				"address": "https://mainnet-bitcanna-api.konsortech.xyz",
+				"provider": "KonsorTech"
+			},
+			{
+				"address": "https://bitcanna.api.kjnodes.com",
+				"provider": "kjnodes"
+			},
+			{
+				"address": "http://bitcanna.alkia.net:1317/",
+				"provider": "ALKIA"
+			},
+			{
+				"address": "https://bitcanna-api.lavenderfive.com/",
+				"provider": "Lavender.Five Nodes 🐝"
+			}
+		]
+	},
+	"explorers": [{
+			"kind": "EZStaking Tools",
+			"url": "https://ezstaking.tools/bitcanna",
+			"tx_page": "https://ezstaking.tools/bitcanna/txs/${txHash}",
+			"account_page": "https://ezstaking.tools/bitcanna/account/${accountAddress}"
+		},
+		{
+			"kind": "forbole",
+			"url": "https://cosmos-explorer.bitcanna.io",
+			"tx_page": "https://cosmos-explorer.bitcanna.io/transactions/${txHash}"
+		},
+		{
+			"kind": "ping.pub",
+			"url": "https://ping.pub/bitcanna",
+			"tx_page": "https://ping.pub/bitcanna/tx/${txHash}"
+		},
+		{
+			"kind": "mintscan",
+			"url": "https://www.mintscan.io/bitcanna/",
+			"tx_page": "https://www.mintscan.io/bitcanna/txs/${txHash}",
+			"account_page": "https://www.mintscan.io/bitcanna/account/${accountAddress}"
+		},
+		{
+			"kind": "atomscan",
+			"url": "https://atomscan.com/bitcanna",
+			"tx_page": "https://atomscan.com/bitcanna/transactions/${txHash}"
+		}
+	]
+}
+```
