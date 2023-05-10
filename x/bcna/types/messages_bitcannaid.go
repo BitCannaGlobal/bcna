@@ -47,7 +47,8 @@ func (msg *MsgCreateBitcannaid) GetSignBytes() []byte {
 func (msg *MsgCreateBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address")) //test
+		//return fmt.Errorf("invalid creator address: %v: %s", err, "invalid address")
 	}
 	return nil
 }

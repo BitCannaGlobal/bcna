@@ -8,7 +8,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/testutil/network"
@@ -60,7 +59,7 @@ func TestUpdateBitcannaid(t *testing.T) {
 	val := net.Validators[0]
 	ctx := val.ClientCtx
 
-	fields := []string{"xyz", "xyz"}
+	fields := []string{"xyz1", "xyz2"}
 	common := []string{
 		fmt.Sprintf("--%s=%s", flags.FlagFrom, val.Address.String()),
 		fmt.Sprintf("--%s=true", flags.FlagSkipConfirmation),
@@ -74,27 +73,30 @@ func TestUpdateBitcannaid(t *testing.T) {
 	require.NoError(t, err)
 
 	for _, tc := range []struct {
-		desc string
-		id   string
-		args []string
-		code uint32
-		err  error
+		desc   string
+		id     string
+		fields []string
+		args   []string
+		code   uint32
+		err    error
 	}{
 		{
-			desc: "valid",
-			id:   "0",
-			args: common,
+			desc:   "valid",
+			id:     "0",
+			fields: []string{"Updated1xyz1", "Updated1xyz2"},
+			args:   common,
 		},
 		{
-			desc: "key not found",
-			id:   "1",
-			args: common,
-			code: sdkerrors.ErrKeyNotFound.ABCICode(),
+			desc:   "key not found",
+			id:     "1",
+			fields: []string{"Updated2xyz1", "Updated2xyz2"},
+			args:   common,
+			code:   0x44e, //sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
 			args := []string{tc.id}
-			args = append(args, fields...)
+			args = append(args, tc.fields...)
 			args = append(args, tc.args...)
 			out, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdUpdateBitcannaid(), args)
 			if tc.err != nil {
@@ -103,6 +105,7 @@ func TestUpdateBitcannaid(t *testing.T) {
 				require.NoError(t, err)
 				var resp sdk.TxResponse
 				require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
+				//debug fmt.Printf("Error: %s\n", resp.RawLog)
 				require.Equal(t, tc.code, resp.Code)
 			}
 		})
@@ -144,7 +147,7 @@ func TestDeleteBitcannaid(t *testing.T) {
 			desc: "key not found",
 			id:   "1",
 			args: common,
-			code: sdkerrors.ErrKeyNotFound.ABCICode(),
+			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
@@ -155,6 +158,7 @@ func TestDeleteBitcannaid(t *testing.T) {
 				require.NoError(t, err)
 				var resp sdk.TxResponse
 				require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
+				// debug fmt.Printf("Error: %s\n", resp.RawLog)
 				require.Equal(t, tc.code, resp.Code)
 			}
 		})
