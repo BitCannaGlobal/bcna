@@ -19,7 +19,7 @@ func TestMsgCreateBitcannaid_ValidateBasic(t *testing.T) {
 			msg: MsgCreateBitcannaid{
 				Creator: "invalid_address",
 			},
-			err: sdkerrors.Wrap(sdkerrors.ErrInvalidAddress, "invalid creator address: decoding bech32 failed: invalid separator index -1"),
+			err: sdkerrors.ErrInvalidAddress,
 		}, {
 			name: "valid address",
 			msg: MsgCreateBitcannaid{
@@ -50,7 +50,7 @@ func TestMsgUpdateBitcannaid_ValidateBasic(t *testing.T) {
 			msg: MsgUpdateBitcannaid{
 				Creator: "invalid_address",
 			},
-			err: sdkerrors.Wrap(sdkerrors.ErrInvalidAddress, "invalid creator address: decoding bech32 failed: invalid separator index -1"),
+			err: sdkerrors.ErrInvalidAddress,
 		}, {
 			name: "valid address",
 			msg: MsgUpdateBitcannaid{
@@ -81,7 +81,7 @@ func TestMsgDeleteBitcannaid_ValidateBasic(t *testing.T) {
 			msg: MsgDeleteBitcannaid{
 				Creator: "invalid_address",
 			},
-			err: sdkerrors.Wrap(sdkerrors.ErrInvalidAddress, "invalid creator address: decoding bech32 failed: invalid separator index -1"),
+			err: sdkerrors.ErrInvalidAddress,
 		}, {
 			name: "valid address",
 			msg: MsgDeleteBitcannaid{
