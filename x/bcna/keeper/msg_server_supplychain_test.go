@@ -3,7 +3,6 @@ package keeper_test
 import (
 	"testing"
 
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
@@ -34,12 +33,12 @@ func TestSupplychainMsgServerUpdate(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateSupplychain{Creator: "B"},
-			err:     sdkerrors.ErrUnauthorized,
+			err:     types.ErrUnauthorized,
 		},
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateSupplychain{Creator: creator, Id: 10},
-			err:     sdkerrors.ErrKeyNotFound,
+			err:     types.ErrKeyNotFound,
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
@@ -72,12 +71,12 @@ func TestSupplychainMsgServerDelete(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgDeleteSupplychain{Creator: "B"},
-			err:     sdkerrors.ErrUnauthorized,
+			err:     types.ErrUnauthorized,
 		},
 		{
 			desc:    "KeyNotFound",
 			request: &types.MsgDeleteSupplychain{Creator: creator, Id: 10},
-			err:     sdkerrors.ErrKeyNotFound,
+			err:     types.ErrKeyNotFound,
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {

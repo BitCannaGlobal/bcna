@@ -8,7 +8,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/testutil/network"
@@ -89,7 +88,7 @@ func TestUpdateSupplychain(t *testing.T) {
 			desc: "key not found",
 			id:   "1",
 			args: common,
-			code: sdkerrors.ErrKeyNotFound.ABCICode(),
+			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
@@ -144,7 +143,7 @@ func TestDeleteSupplychain(t *testing.T) {
 			desc: "key not found",
 			id:   "1",
 			args: common,
-			code: sdkerrors.ErrKeyNotFound.ABCICode(),
+			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
