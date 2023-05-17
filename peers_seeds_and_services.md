@@ -60,7 +60,7 @@ d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
 2235f1e518c5ea4a412f9dece386348eda356916@bitcanna.alkia.net:26656
 
 ## genznodes
-fc1e91c5fcb699a83146588fd4b1790778bdc1f8@195.3.220.22:32656
+d435c2257256e12c697f0155edcd1695f2d9445d@95.214.53.218:32656
 
 # Seeds
 ## BitCanna (reseted everyday)
@@ -238,8 +238,8 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"provider": "kjnodes"
 			},
 			{
-				"id": "fc1e91c5fcb699a83146588fd4b1790778bdc1f8",
-				"address": "195.3.220.22:32656",
+				"id": "d435c2257256e12c697f0155edcd1695f2d9445d",
+				"address": "95.214.53.218:32656",
 				"provider": "genznodes"
 			}
 		]
