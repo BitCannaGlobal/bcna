@@ -2,11 +2,11 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> Current version (v1.6.3 Vigorous-Grow-fix) of our development uses Cosmos SDK v0.45.15 & Comet-BFT v0.34.27 & IBC-go v3.4.0
+> Current version (`v2.0.1` codename: `Wake And Bake`) of our development uses Cosmos SDK v0.46.12 & Comet-BFT v0.34.27 & IBC-go v6.1.0
 
-> Last breaking consensus upgrade info: [Update scheduled for 10th March 2023](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) v1.6.1
+> Last breaking consensus upgrade info: [Update scheduled for XYth June 2023](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) v2.0.1
 
-> Last compatible update is here ([v1.6.3](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3))
+> Last compatible update is here ([v2.0.1](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1))
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -22,7 +22,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 
 ## Software Requirements
 * Linux server (Ubuntu 20/22 server recommended)
-* Go version v1.19.5
+* Go version v1.20.x
 
 > Please avoid cheap VPS providers as a main validator (we suggest using it as a cheap backup). We advise to use a shared dedicated server or a high-end NVMe VPS.
 
@@ -36,8 +36,9 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 7th Nov 2022 15.00h CET    | 5.787.420    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v153-codename-trichomemonster-ica---from-v145) |
 | 2nd Mar 2023 16.20h CET    | 7.467.420   | [v1.6.0-fix](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-fix/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-fix) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v160-fix-codename-vigorous-grow---from-v153) |
 | 10th Mar 2023 18.40h CET    | 7.585.420   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v161-codename-vigorous-grow-fix---from-v161) |
+| XYth Jun 2023 16.20h CEST    | X.ABC.420   | [v2.0.1](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v201-codename-wakeandbake---from-v163) |
 
-Current compatible release: https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3
+Current compatible release: https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1
 
 
 # How to join `bitcanna-1` chain
