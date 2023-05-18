@@ -313,7 +313,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "bitcanna-grpc.genznodes.dev:32090",
 				"provider": "genznodes"
-			},
+			}
 		],
 		"rest": [{
 				"address": "https://lcd.bitcanna.io",
