@@ -59,8 +59,12 @@ d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
 ## Alkia
 2235f1e518c5ea4a412f9dece386348eda356916@bitcanna.alkia.net:26656
 
+## AVIAONE 🟢 
+a2856e17aef2ae9825f92ab93b8cc7d613526052@148.251.19.197:26696
+
 ## genznodes
 d435c2257256e12c697f0155edcd1695f2d9445d@95.214.53.218:32656
+
 
 # Seeds
 ## BitCanna (reseted everyday)
@@ -72,6 +76,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## kjnodes
 400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.kjnodes.com:42659
+
+## AVIAONE 🟢
+258f523c96efde50d5fe0a9faeea8a3e83be22ca@seed.bitcanna-1.bitcanna.aviaone.com:10263
 
 # StateSync Servers and instructions:
 ## BitCanna oficial:
@@ -110,6 +117,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ## cryptech StateSync
   * https://explorers.cryptech.com.ua/bitcanna/statesync
+
+## AVIAONE 🟢
+  * https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html
 
 ## genznodes
   * https://genznodes.dev/mainnet/bitcanna/statesync/
@@ -154,8 +164,12 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ### [NODERS]TEAM: Guide, API, RPC, StateSync, Live peer, AdrBook, Useful Commands
 * https://nodeservice.nodersteam.com/title/mainnet/bitcanna
 
+### AVIAONE 🟢
+* https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html
+
 ### genznodes: public endpoint, guide , cheat sheet, snapshot, statesync
 * https://genznodes.dev/mainnet/bitcanna
+
 
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
@@ -180,6 +194,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"id": "20e1000e88125698264454a884812746c2eb4807",
 				"address": "seeds.lavenderfive.com:13056",
 				"provider": "Lavender.Five Nodes 🐝"
+			},
+			{
+				"id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
+				"address": "seed.bitcanna-1.bitcanna.aviaone.com:10263",
+				"provider": "AVIAONE 🟢"
 			}
 		],
 		"persistent_peers": [{
@@ -241,6 +260,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"id": "d435c2257256e12c697f0155edcd1695f2d9445d",
 				"address": "95.214.53.218:32656",
 				"provider": "genznodes"
+			},
+			{
+				"id": "a2856e17aef2ae9825f92ab93b8cc7d613526052",
+				"address": "148.251.19.197:26696",
+				"provider": "AVIAONE 🟢"
 			}
 		]
 	},
@@ -300,6 +324,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://bitcanna-rpc.genznodes.dev",
 				"provider": "genznodes"
+			},
+			{
+				"address": "https://rpc.bitcanna-1.bitcanna.aviaone.com",
+				"provider": "AVIAONE 🟢"
 			}
 		],
 		"grpc": [{
@@ -313,6 +341,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "bitcanna-grpc.genznodes.dev:32090",
 				"provider": "genznodes"
+			},
+			{
+				"address": "grpc.bitcanna-1.bitcanna.aviaone.com:9092",
+				"provider": "AVIAONE 🟢"
 			}
 		],
 		"rest": [{
@@ -362,7 +394,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://bitcanna-api.genznodes.dev",
 				"provider": "genznodes"
-			}
+			},
+			{
+				"address": "https://api.bitcanna-1.bitcanna.aviaone.com/",
+				"provider": "AVIAONE 🟢"
+			}			
 		]
 	},
 	"explorers": [{
