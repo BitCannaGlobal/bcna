@@ -7,7 +7,6 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "bcna/bcna/params.proto";
 import "bcna/bcna/bitcannaid.proto";
 import "bcna/bcna/supplychain.proto";
-// this line is used by starport scaffolding # 1
 
 option go_package = "github.com/BitCannaGlobal/bcna/x/bcna/types";
 
@@ -27,6 +26,12 @@ service Query {
 		option (google.api.http).get = "/BitCannaGlobal/bcna/bcna/bitcannaid";
 	}
 
+	// Queries a Bitcannaid by bcnaid.
+	rpc BitcannaidByBcnaid(QueryGetBitcannaidByBcnaidRequest) returns (QueryGetBitcannaidByBcnaidResponse) {
+	option (google.api.http).get = "/BitCannaGlobal/bcna/bcna/bitcannaid/bcnaid/{bcnaid}";
+	}
+
+
 // Queries a Supplychain by id.
 	rpc Supplychain(QueryGetSupplychainRequest) returns (QueryGetSupplychainResponse) {
 		option (google.api.http).get = "/BitCannaGlobal/bcna/bcna/supplychain/{id}";
@@ -37,7 +42,6 @@ service Query {
 		option (google.api.http).get = "/BitCannaGlobal/bcna/bcna/supplychain";
 	}
 
-// this line is used by starport scaffolding # 2
 }
 
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -48,6 +52,15 @@ message QueryParamsResponse {
   // params holds all the parameters of this module.
   Params params = 1 [(gogoproto.nullable) = false];
 }
+
+message QueryGetBitcannaidByBcnaidRequest {
+  string bcnaid = 1;
+}
+
+message QueryGetBitcannaidByBcnaidResponse {
+  Bitcannaid Bitcannaid = 1 [(gogoproto.nullable) = true];
+}
+
 
 message QueryGetBitcannaidRequest {
 	uint64 id = 1;
@@ -82,5 +95,3 @@ message QueryAllSupplychainResponse {
 	repeated Supplychain Supplychain = 1 [(gogoproto.nullable) = false];
 	cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
-
-// this line is used by starport scaffolding # 3

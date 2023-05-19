@@ -4,16 +4,15 @@ import (
 	"fmt"
 )
 
-// DefaultIndex is the default capability global index
+// DefaultIndex is the default global index
 const DefaultIndex uint64 = 1
 
-// DefaultGenesis returns the default Capability genesis state
+// DefaultGenesis returns the default genesis state
 func DefaultGenesis() *GenesisState {
 	return &GenesisState{
 		BitcannaidList:  []Bitcannaid{},
 		SupplychainList: []Supplychain{},
-		// this line is used by starport scaffolding # genesis/types/default
-		Params: DefaultParams(),
+		Params:          DefaultParams(),
 	}
 }
 
@@ -44,7 +43,5 @@ func (gs GenesisState) Validate() error {
 		}
 		supplychainIdMap[elem.Id] = true
 	}
-	// this line is used by starport scaffolding # genesis/types/validate
-
 	return gs.Params.Validate()
 }

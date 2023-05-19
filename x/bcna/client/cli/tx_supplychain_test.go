@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"testing"
 
+	sdkmath "cosmossdk.io/math"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/testutil/network"
@@ -32,7 +32,7 @@ func TestCreateSupplychain(t *testing.T) {
 				fmt.Sprintf("--%s=%s", flags.FlagFrom, val.Address.String()),
 				fmt.Sprintf("--%s=true", flags.FlagSkipConfirmation),
 				fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastBlock),
-				fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdk.NewInt(10))).String()),
+				fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdkmath.NewInt(10))).String()),
 			},
 		},
 	} {
@@ -64,7 +64,7 @@ func TestUpdateSupplychain(t *testing.T) {
 		fmt.Sprintf("--%s=%s", flags.FlagFrom, val.Address.String()),
 		fmt.Sprintf("--%s=true", flags.FlagSkipConfirmation),
 		fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastBlock),
-		fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdk.NewInt(10))).String()),
+		fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdkmath.NewInt(10))).String()),
 	}
 	args := []string{}
 	args = append(args, fields...)
@@ -88,7 +88,7 @@ func TestUpdateSupplychain(t *testing.T) {
 			desc: "key not found",
 			id:   "1",
 			args: common,
-			code: sdkerrors.ErrKeyNotFound.ABCICode(),
+			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
@@ -119,7 +119,7 @@ func TestDeleteSupplychain(t *testing.T) {
 		fmt.Sprintf("--%s=%s", flags.FlagFrom, val.Address.String()),
 		fmt.Sprintf("--%s=true", flags.FlagSkipConfirmation),
 		fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastBlock),
-		fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdk.NewInt(10))).String()),
+		fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdkmath.NewInt(10))).String()),
 	}
 	args := []string{}
 	args = append(args, fields...)
@@ -143,7 +143,7 @@ func TestDeleteSupplychain(t *testing.T) {
 			desc: "key not found",
 			id:   "1",
 			args: common,
-			code: sdkerrors.ErrKeyNotFound.ABCICode(),
+			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {

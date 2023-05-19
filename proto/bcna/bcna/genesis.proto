@@ -5,7 +5,6 @@ import "gogoproto/gogo.proto";
 import "bcna/bcna/params.proto";
 import "bcna/bcna/bitcannaid.proto";
 import "bcna/bcna/supplychain.proto";
-// this line is used by starport scaffolding # genesis/proto/import
 
 option go_package = "github.com/BitCannaGlobal/bcna/x/bcna/types";
 
@@ -16,5 +15,4 @@ message GenesisState {
   uint64 bitcannaidCount = 3;
   repeated Supplychain supplychainList = 4 [(gogoproto.nullable) = false];
   uint64 supplychainCount = 5;
-  // this line is used by starport scaffolding # genesis/proto/state
 }

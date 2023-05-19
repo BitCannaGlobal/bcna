@@ -1,10 +1,12 @@
 package app
 
 import (
+	"errors"
+	"fmt"
+
 	decorators "github.com/BitCannaGlobal/bcna/app/decorators"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/x/auth/ante"
 	govkeeper "github.com/cosmos/cosmos-sdk/x/gov/keeper"
 )
@@ -23,16 +25,16 @@ type HandlerOptions struct {
 // signer.
 func NewAnteHandler(options HandlerOptions) (sdk.AnteHandler, error) {
 	if options.AccountKeeper == nil {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrLogic, "account keeper is required for ante builder")
+		return nil, fmt.Errorf("%w: account keeper is required for ante builder", errors.New("logic error"))
 	}
 	if options.BankKeeper == nil {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrLogic, "bank keeper is required for ante builder")
+		return nil, fmt.Errorf("%w: bank keeper is required for ante builder", errors.New("logic error"))
 	}
 	if options.SignModeHandler == nil {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrLogic, "sign mode handler is required for ante builder")
+		return nil, fmt.Errorf("%w:sign mode handler is required for ante builder", errors.New("logic error"))
 	}
 	if options.GovKeeper == nil {
-		return nil, sdkerrors.Wrap(sdkerrors.ErrLogic, "gov keeper is required for AnteHandler")
+		return nil, fmt.Errorf("%w:gov keeper is required for AnteHandler", errors.New("logic error"))
 	}
 	sigGasConsumer := options.SigGasConsumer
 	if sigGasConsumer == nil {
@@ -40,14 +42,14 @@ func NewAnteHandler(options HandlerOptions) (sdk.AnteHandler, error) {
 	}
 	anteDecorators := []sdk.AnteDecorator{
 		ante.NewSetUpContextDecorator(), // outermost AnteDecorator. SetUpContext must be called first
-		ante.NewRejectExtensionOptionsDecorator(),
+		ante.NewExtensionOptionsDecorator(options.ExtensionOptionChecker),
 		decorators.NewGovPreventSpamDecorator(options.Cdc, options.GovKeeper),
-		ante.NewMempoolFeeDecorator(),
+		// ante.NewMempoolFeeDecorator(),
 		ante.NewValidateBasicDecorator(),
 		ante.NewTxTimeoutHeightDecorator(),
 		ante.NewValidateMemoDecorator(options.AccountKeeper),
 		ante.NewConsumeGasForTxSizeDecorator(options.AccountKeeper),
-		ante.NewDeductFeeDecorator(options.AccountKeeper, options.BankKeeper, options.FeegrantKeeper),
+		ante.NewDeductFeeDecorator(options.AccountKeeper, options.BankKeeper, options.FeegrantKeeper, options.TxFeeChecker),
 		// SetPubKeyDecorator must be called before all signature verification decorators
 		ante.NewSetPubKeyDecorator(options.AccountKeeper),
 		ante.NewValidateSigCountDecorator(options.AccountKeeper),

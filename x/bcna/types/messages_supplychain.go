@@ -1,8 +1,10 @@
 package types
 
 import (
+	"errors"
+	"fmt"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
 const (
@@ -47,7 +49,7 @@ func (msg *MsgCreateSupplychain) GetSignBytes() []byte {
 func (msg *MsgCreateSupplychain) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
 	return nil
 }
@@ -89,7 +91,7 @@ func (msg *MsgUpdateSupplychain) GetSignBytes() []byte {
 func (msg *MsgUpdateSupplychain) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
 	return nil
 }
@@ -102,7 +104,6 @@ func NewMsgDeleteSupplychain(creator string, id uint64) *MsgDeleteSupplychain {
 		Creator: creator,
 	}
 }
-
 func (msg *MsgDeleteSupplychain) Route() string {
 	return RouterKey
 }
@@ -127,7 +128,7 @@ func (msg *MsgDeleteSupplychain) GetSignBytes() []byte {
 func (msg *MsgDeleteSupplychain) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
 	return nil
 }

@@ -32,6 +32,7 @@ func (k Keeper) BitcannaidAll(c context.Context, req *types.QueryAllBitcannaidRe
 		bitcannaids = append(bitcannaids, bitcannaid)
 		return nil
 	})
+
 	if err != nil {
 		return nil, status.Error(codes.Internal, err.Error())
 	}
@@ -51,4 +52,21 @@ func (k Keeper) Bitcannaid(c context.Context, req *types.QueryGetBitcannaidReque
 	}
 
 	return &types.QueryGetBitcannaidResponse{Bitcannaid: bitcannaid}, nil
+}
+
+func (k Keeper) BitcannaidByBcnaid(c context.Context, req *types.QueryGetBitcannaidByBcnaidRequest) (*types.QueryGetBitcannaidByBcnaidResponse, error) {
+	if req == nil {
+		return nil, status.Error(codes.InvalidArgument, "invalid request")
+	}
+
+	var bitcannaid *types.Bitcannaid
+	ctx := sdk.UnwrapSDKContext(c)
+
+	if found := k.HasBitcannaidWithBcnaid(ctx, req.Bcnaid); found {
+		bitcannaid, _ = k.GetBitcannaidByBcnaid(ctx, req.Bcnaid)
+	} else {
+		return nil, status.Error(codes.NotFound, "bitcannaid not found")
+	}
+
+	return &types.QueryGetBitcannaidByBcnaidResponse{Bitcannaid: bitcannaid}, nil
 }

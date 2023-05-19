@@ -6,16 +6,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	// "github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
+	"github.com/cosmos/cosmos-sdk/client"
 )
 
-var DefaultRelativePacketTimeoutTimestamp = uint64((time.Duration(10) * time.Minute).Nanoseconds())
-
-const (
-	flagPacketTimeoutTimestamp = "packet-timeout-timestamp" //nolint:unused,deadcode,varcheck // remove this if it does nothing
-	listSeparator              = ","                        //nolint:unused,deadcode,varcheck // remove this if it does nothing
+var (
+	DefaultRelativePacketTimeoutTimestamp = uint64((time.Duration(10) * time.Minute).Nanoseconds())
 )
 
 // GetTxCmd returns the transaction commands for this module
@@ -34,7 +30,6 @@ func GetTxCmd() *cobra.Command {
 	cmd.AddCommand(CmdCreateSupplychain())
 	cmd.AddCommand(CmdUpdateSupplychain())
 	cmd.AddCommand(CmdDeleteSupplychain())
-	// this line is used by starport scaffolding # 1
 
 	return cmd
 }

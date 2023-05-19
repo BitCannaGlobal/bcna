@@ -14,7 +14,6 @@ func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgCreateSupplychain{}, "bcna/CreateSupplychain", nil)
 	cdc.RegisterConcrete(&MsgUpdateSupplychain{}, "bcna/UpdateSupplychain", nil)
 	cdc.RegisterConcrete(&MsgDeleteSupplychain{}, "bcna/DeleteSupplychain", nil)
-	// this line is used by starport scaffolding # 2
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
@@ -28,7 +27,6 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 		&MsgUpdateSupplychain{},
 		&MsgDeleteSupplychain{},
 	)
-	// this line is used by starport scaffolding # 3
 
 	msgservice.RegisterMsgServiceDesc(registry, &_Msg_serviceDesc)
 }

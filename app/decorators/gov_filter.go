@@ -1,12 +1,15 @@
 package decorators
 
 import (
+	"errors"
+	"fmt"
+
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/x/authz"
 	govkeeper "github.com/cosmos/cosmos-sdk/x/gov/keeper"
-	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
+	govv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+	govv1beta1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 )
 
 var MiniumInitialDepositRate = sdk.NewDecWithPrec(20, 2)
@@ -44,26 +47,35 @@ func (gpsd GovPreventSpamDecorator) AnteHandle(
 
 // validateGovMsgs checks if the InitialDeposit amounts are greater than the minimum initial deposit amount
 func (gpsd GovPreventSpamDecorator) checkSpamSubmitProposalMsg(ctx sdk.Context, msgs []sdk.Msg) error {
+	// prevent spam gov msg
+	depositParams := gpsd.govKeeper.GetDepositParams(ctx)
+	miniumInitialDeposit := gpsd.calcMiniumInitialDeposit(depositParams.MinDeposit)
+
 	validMsg := func(m sdk.Msg) error {
 		switch msg := m.(type) {
-		case *govtypes.MsgSubmitProposal:
-			// prevent spam gov msg
-			depositParams := gpsd.govKeeper.GetDepositParams(ctx)
-			miniumInitialDeposit := gpsd.calcMiniumInitialDeposit(depositParams.MinDeposit)
+		case *govv1beta1.MsgSubmitProposal:
+			// // prevent spam gov msg
+
 			if msg.InitialDeposit.IsAllLT(miniumInitialDeposit) {
-				return sdkerrors.Wrapf(sdkerrors.ErrInsufficientFunds, "not enough initial deposit. required: %v", miniumInitialDeposit)
+				return fmt.Errorf("not enough initial deposit. required: %v: %w", miniumInitialDeposit, errors.New("insufficient funds"))
 			}
+		case *govv1.MsgSubmitProposal:
+			// don't use Gov v1 Proposals:
+			message := "- Please don't use Gov v1 Proposals in SDK v0.46! "
+			return fmt.Errorf("Failed to send a new proposal: %v: %w", message, errors.New("Not allowed"))
 		}
 
 		return nil
 	}
 
 	validAuthz := func(execMsg *authz.MsgExec) error {
+		// depositParams := gpsd.govKeeper.GetDepositParams(ctx)
+		// miniumInitialDeposit := gpsd.calcMiniumInitialDeposit(depositParams.MinDeposit)
 		for _, v := range execMsg.Msgs {
 			var innerMsg sdk.Msg
 			err := gpsd.cdc.UnpackAny(v, &innerMsg)
 			if err != nil {
-				return sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "cannot unmarshal authz exec msgs")
+				return fmt.Errorf("not enough initial deposit. required: %v: %w", miniumInitialDeposit, errors.New("insufficient funds"))
 			}
 
 			err = validMsg(innerMsg)
