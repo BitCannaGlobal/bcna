@@ -32,8 +32,8 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 57a3e858a5c860e6355683c88add28d52df6c24a@38.242.232.202:26656
 526e4529131070e39134d94edc0e7e48289a64b1@176.191.97.120:27656
 
-## STAVR
-0bf629f4e055af47f7c35bb444cb9013d18b9941@141.95.124.151:21326
+## 🔥STAVR🔥
+2ff33d346b1b0f19cd59018ceb62d06a6406d472@bitcanna.peers.stavr.tech:21326
 
 ## Panthea EU
 0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
@@ -97,8 +97,8 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## mintthemoon
   * https://docs.mintthemoon.xyz/bitcanna/statesync
 
-## STAVR StateSync
-  * https://github.com/obajay/StateSync-snapshots/tree/main/Bitcanna#statesync
+## 🔥STAVR🔥 StateSync/SnapShot
+  * https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Bitcanna
 
 ## AlxVoy StateSync
   * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
@@ -148,7 +148,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 * Node setup guide: https://docs.mintthemoon.xyz/bitcanna/node-guide
 * Validator setup guide: https://docs.mintthemoon.xyz/bitcanna/validator-guide
 
-### STAVR : snapshot and state sync services, installation scripts (manual/automation)
+### 🔥STAVR🔥 : SnapShot and StateSync services, genesis, addrbook, installation scripts (manual/automation)
 * https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
 
 ### AlxVoy : snapshot and state sync services, guide, RPC, API, peer
@@ -262,6 +262,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"provider": "genznodes"
 			},
 			{
+				"id": "2ff33d346b1b0f19cd59018ceb62d06a6406d472",
+				"address": "bitcanna.peers.stavr.tech:21326",
+				"provider": "🔥STAVR🔥"
+			},
+			{
 				"id": "a2856e17aef2ae9825f92ab93b8cc7d613526052",
 				"address": "148.251.19.197:26696",
 				"provider": "AVIAONE 🟢"
@@ -296,6 +301,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://bitcanna.rpc.m.anode.team",
 				"provider": "AlxVoy"
+			},
+			{
+				"address": "http://bitcanna.rpc.m.stavr.tech:21327",
+				"provider": "🔥STAVR🔥"
 			},
 			{
 				"address": "http://bitcanna.statesync.nodersteam.com:46657",
@@ -343,6 +352,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"provider": "genznodes"
 			},
 			{
+				"address": "http://bitcanna.grpc.m.stavr.tech:9081",
+				"provider": "🔥STAVR🔥"
+			},
+			{
 				"address": "grpc.bitcanna-1.bitcanna.aviaone.com:9092",
 				"provider": "AVIAONE 🟢"
 			}
@@ -362,6 +375,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://lcd-bitcanna.mintthemoon.xyz",
 				"provider": "mintthemoon"
+			},
+			{
+				"address": "https://bitcanna.api.m.stavr.tech",
+				"provider": "🔥STAVR🔥"
 			},
 			{
 				"address": "https://bcna-api.ibs.team/",
