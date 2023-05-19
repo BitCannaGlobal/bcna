@@ -59,6 +59,9 @@ d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b@bitcanna.rpc.kjnodes.com:42656
 ## Alkia
 2235f1e518c5ea4a412f9dece386348eda356916@bitcanna.alkia.net:26656
 
+## genznodes
+d435c2257256e12c697f0155edcd1695f2d9445d@95.214.53.218:32656
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -108,6 +111,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## cryptech StateSync
   * https://explorers.cryptech.com.ua/bitcanna/statesync
 
+## genznodes
+  * https://genznodes.dev/mainnet/bitcanna/statesync/
+
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
 * https://docs.bitcanna.io
@@ -147,6 +153,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 
 ### [NODERS]TEAM: Guide, API, RPC, StateSync, Live peer, AdrBook, Useful Commands
 * https://nodeservice.nodersteam.com/title/mainnet/bitcanna
+
+### genznodes: public endpoint, guide , cheat sheet, snapshot, statesync
+* https://genznodes.dev/mainnet/bitcanna
 
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
@@ -227,6 +236,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
 				"address": "bitcanna.rpc.kjnodes.com:42656",
 				"provider": "kjnodes"
+			},
+			{
+				"id": "d435c2257256e12c697f0155edcd1695f2d9445d",
+				"address": "95.214.53.218:32656",
+				"provider": "genznodes"
 			}
 		]
 	},
@@ -282,6 +296,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://bitcanna-rpc.lavenderfive.com/",
 				"provider": "Lavender.Five Nodes 🐝"
+			},
+			{
+				"address": "https://bitcanna-rpc.genznodes.dev",
+				"provider": "genznodes"
 			}
 		],
 		"grpc": [{
@@ -291,6 +309,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://bitcanna-grpc.lavenderfive.com:443/",
 				"provider": "Lavender.Five Nodes 🐝"
+			},
+			{
+				"address": "bitcanna-grpc.genznodes.dev:32090",
+				"provider": "genznodes"
 			}
 		],
 		"rest": [{
@@ -336,6 +358,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://bitcanna-api.lavenderfive.com/",
 				"provider": "Lavender.Five Nodes 🐝"
+			},
+			{
+				"address": "https://bitcanna-api.genznodes.dev",
+				"provider": "genznodes"
 			}
 		]
 	},
