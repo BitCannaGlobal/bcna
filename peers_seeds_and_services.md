@@ -82,6 +82,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## AVIAONE 🟢
 258f523c96efde50d5fe0a9faeea8a3e83be22ca@seed.bitcanna-1.bitcanna.aviaone.com:10263
 
+## maxfoton
+88497ab3bbbcc1e8545771f45020e738bcce590f@95.165.89.222:26756
+
 # StateSync Servers and instructions:
 ## BitCanna oficial:
   * https://github.com/BitCannaGlobal/bcna/blob/main/2.1.statesync.md
@@ -129,6 +132,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## Cryptosailors StateSync/Snapshot
   * Mainnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Mainnets/Bitcanna#choose-sync-mode-snapshot-or-state-sync
   * Devnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Testnets/BitcannaDevnet#choose-sync-mode-snapshot-or-state-sync
+
+## maxfoton
+  * https://github.com/MaxFoton/Bitcanna_mainnet
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -355,6 +361,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "http://88.99.33.248:12657/",
 				"provider": "Cryptosailors"
+			},
+			        "address": "http://95.165.89.222:26758/",
+			        "provider": "maxfoton"
 			}
 		],
 		"grpc": [{
