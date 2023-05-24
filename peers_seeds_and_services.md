@@ -65,6 +65,8 @@ a2856e17aef2ae9825f92ab93b8cc7d613526052@148.251.19.197:26696
 ## genznodes
 d435c2257256e12c697f0155edcd1695f2d9445d@95.214.53.218:32656
 
+## cryptosailors
+86e5fc5d80aed6a52bf89245bcc53c1b77641113@88.99.33.248:12656
 
 # Seeds
 ## BitCanna (reseted everyday)
@@ -124,6 +126,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## genznodes
   * https://genznodes.dev/mainnet/bitcanna/statesync/
 
+## Cryptosailors StateSync/Snapshot
+  * Mainnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Mainnets/Bitcanna#choose-sync-mode-snapshot-or-state-sync
+  * Devnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Testnets/BitcannaDevnet#choose-sync-mode-snapshot-or-state-sync
+
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
 * https://docs.bitcanna.io
@@ -170,6 +176,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ### genznodes: public endpoint, guide , cheat sheet, snapshot, statesync
 * https://genznodes.dev/mainnet/bitcanna
 
+### Cryptosailors: public endpoint, guide, snapshot, statesync
+* Mainnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Mainnets/Bitcanna
+* Devnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Testnets/BitcannaDevnet
 
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
@@ -270,6 +279,11 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"id": "a2856e17aef2ae9825f92ab93b8cc7d613526052",
 				"address": "148.251.19.197:26696",
 				"provider": "AVIAONE 🟢"
+			},
+			{
+				"id": "86e5fc5d80aed6a52bf89245bcc53c1b77641113",
+				"address": "88.99.33.248:12656",
+				"provider": "Cryptosailors"
 			}
 		]
 	},
@@ -337,6 +351,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://rpc.bitcanna-1.bitcanna.aviaone.com",
 				"provider": "AVIAONE 🟢"
+			},
+			{
+				"address": "http://88.99.33.248:12657/",
+				"provider": "Cryptosailors"
 			}
 		],
 		"grpc": [{
@@ -358,6 +376,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "grpc.bitcanna-1.bitcanna.aviaone.com:9092",
 				"provider": "AVIAONE 🟢"
+			},
+			{
+				"address": "http://88.99.33.248:12090/",
+				"provider": "Cryptosailors"
 			}
 		],
 		"rest": [{
@@ -415,6 +437,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "https://api.bitcanna-1.bitcanna.aviaone.com/",
 				"provider": "AVIAONE 🟢"
+			},
+			{
+				"address": "http://88.99.33.248:12317/",
+				"provider": "Cryptosailors"
 			}			
 		]
 	},
