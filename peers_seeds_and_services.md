@@ -38,7 +38,7 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 ## Panthea EU
 0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
 
-## AlxVoy
+## AlxVoy ⚡ ANODE.TEAM
 803fc66e3bd7b724921ef9c40636067f36e880c6@65.108.199.222:26357
 
 ## [NODERS]TEAM
@@ -102,8 +102,8 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## 🔥STAVR🔥 StateSync/SnapShot
   * https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Bitcanna
 
-## AlxVoy StateSync
-  * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
+## AlxVoy ⚡ ANODE.TEAM StateSync
+  * https://anode.team/BitCanna/#State-Sync
 
 ## [NODERS]TEAM StateSync
   * http://bitcanna.statesync.nodersteam.com:46657
@@ -157,8 +157,8 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ### 🔥STAVR🔥 : SnapShot and StateSync services, genesis, addrbook, installation scripts (manual/automation)
 * https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
 
-### AlxVoy : snapshot and state sync services, guide, RPC, API, peer
-* https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md
+### AlxVoy ⚡ ANODE.TEAM : snapshot and state sync services, guide, RPC, API, peer
+* https://anode.team/BitCanna/
 
 ### KonsorTech : Guide, public_endpoint (RPC, API, Peer), state sync
 * https://github.com/konsortech/Node/tree/main/Mainnet/Bitcanna
@@ -243,7 +243,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"id": "803fc66e3bd7b724921ef9c40636067f36e880c6",
 				"address": "65.108.199.222:26357",
-				"provider": "AlxVoy"
+				"provider": "AlxVoy ⚡ ANODE.TEAM"
 			},
 			{
 				"id": "9425b897a9726efb1e56111a8b355026a1f3a497",
@@ -314,7 +314,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			},
 			{
 				"address": "https://bitcanna.rpc.m.anode.team",
-				"provider": "AlxVoy"
+				"provider": "AlxVoy ⚡ ANODE.TEAM"
 			},
 			{
 				"address": "http://bitcanna.rpc.m.stavr.tech:21327",
@@ -408,7 +408,7 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			},
 			{
 				"address": "https://bitcanna.api.m.anode.team",
-				"provider": "AlxVoy"
+				"provider": "AlxVoy ⚡ ANODE.TEAM"
 			},
 			{
 				"address": "https://api-bcna.kjinc.io/",
