@@ -71,6 +71,9 @@ d435c2257256e12c697f0155edcd1695f2d9445d@95.214.53.218:32656
 ## maxfoton
 88497ab3bbbcc1e8545771f45020e738bcce590f@95.165.89.222:26756
 
+## L0vd.com
+6ae1dfa46884560e13962d73462e5bda0bb8c019@bitcanna-mainnet.peers.l0vd.com:17656
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -196,6 +199,9 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 ### Hexnodes : auto installation, public endpoints, daily snapshot, state sync
 * https://github.com/hexskrt/mainnet/tree/main/Bitcanna
 
+### L0vd.com services
+* Public RPC & API, Snapshots (every 4 hours), State-Sync, Node Installation Guide, Useful Commands, Monitoring Installation Guide: https://chain-services.l0vd.com/mainnets/bitcanna
+
 # RPCs, LCD, GRPC and other endpoints/services 
 ```
 
@@ -310,6 +316,11 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			        "id": "88497ab3bbbcc1e8545771f45020e738bcce590f",
 				"address": "95.165.89.222:26756",
 				"provider": "maxfoton"
+			},
+			{
+			        "id": "6ae1dfa46884560e13962d73462e5bda0bb8c019",
+				"address": "bitcanna-mainnet.peers.l0vd.com:17656",
+				"provider": "L0vd.com"
 			}
 		],
 		"apis": {
@@ -388,6 +399,10 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
       {
 			  "address": "http://95.165.89.222:26758/",
 			  "provider": "maxfoton"
+			},
+			{
+				"address": "https://bitcanna-mainnet.rpc.l0vd.com/",
+				"provider": "L0vd.com"
 			}
 		],
 		"grpc": [{
@@ -417,6 +432,10 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			{
 				"address": "https://grpc.bitcanna.hexnodes.co",
 				"provider": "Hexnodes"
+			},			
+			{
+				"address": "http://bitcanna-mainnet.grpc.l0vd.com:80",
+				"provider": "L0vd.com"
 			}
 		],
 		"rest": [{
@@ -482,6 +501,10 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			{
 				"address": "https://lcd.bitcanna.hexnodes.co",
 				"provider": "Hexnodes"
+			},
+			{
+				"address": "https://bitcanna-mainnet.api.l0vd.com",
+				"provider": "L0vd.com"
 			}
 		]
 	},
