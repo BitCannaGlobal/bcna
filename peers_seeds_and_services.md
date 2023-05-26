@@ -38,7 +38,7 @@ ec283da64f69f8c0dee4671021edc419bbeb4034@157.90.179.34:56656
 ## Panthea EU
 0a658df9d9fab096983a12e6f878e87281a15ce6@bitcanna-peer.panthea.eu:27656
 
-## AlxVoy
+## AlxVoy ⚡ ANODE.TEAM
 803fc66e3bd7b724921ef9c40636067f36e880c6@65.108.199.222:26357
 
 ## [NODERS]TEAM
@@ -67,6 +67,9 @@ d435c2257256e12c697f0155edcd1695f2d9445d@95.214.53.218:32656
 
 ## cryptosailors
 86e5fc5d80aed6a52bf89245bcc53c1b77641113@88.99.33.248:12656
+
+## maxfoton
+88497ab3bbbcc1e8545771f45020e738bcce590f@95.165.89.222:26756
 
 # Seeds
 ## BitCanna (reseted everyday)
@@ -105,8 +108,8 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 ## 🔥STAVR🔥 StateSync/SnapShot
   * https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Bitcanna
 
-## AlxVoy StateSync
-  * https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md#state-sync
+## AlxVoy ⚡ ANODE.TEAM StateSync
+  * https://anode.team/BitCanna/#State-Sync
 
 ## [NODERS]TEAM StateSync
   * http://bitcanna.statesync.nodersteam.com:46657
@@ -136,6 +139,10 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 ## Hexnodes
   * https://github.com/hexskrt/mainnet/tree/main/Bitcanna
 
+## maxfoton
+  * https://github.com/maxfoton/Bitcanna_mainnet
+
+
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
 * https://docs.bitcanna.io
@@ -163,8 +170,8 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 ### 🔥STAVR🔥 : SnapShot and StateSync services, genesis, addrbook, installation scripts (manual/automation)
 * https://github.com/obajay/nodes-Guides/blob/main/Bitcanna/README.md#1-auto_install-script
 
-### AlxVoy : snapshot and state sync services, guide, RPC, API, peer
-* https://github.com/Voynitskiy/Voynitskiy/blob/main/mainnet/BitCanna/README.md
+### AlxVoy ⚡ ANODE.TEAM : snapshot and state sync services, guide, RPC, API, peer
+* https://anode.team/BitCanna/
 
 ### KonsorTech : Guide, public_endpoint (RPC, API, Peer), state sync
 * https://github.com/konsortech/Node/tree/main/Mainnet/Bitcanna
@@ -257,7 +264,7 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			{
 				"id": "803fc66e3bd7b724921ef9c40636067f36e880c6",
 				"address": "65.108.199.222:26357",
-				"provider": "AlxVoy"
+				"provider": "AlxVoy ⚡ ANODE.TEAM"
 			},
 			{
 				"id": "9425b897a9726efb1e56111a8b355026a1f3a497",
@@ -298,10 +305,14 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 				"id": "86e5fc5d80aed6a52bf89245bcc53c1b77641113",
 				"address": "88.99.33.248:12656",
 				"provider": "Cryptosailors"
+			},
+			{
+			        "id": "88497ab3bbbcc1e8545771f45020e738bcce590f",
+				"address": "95.165.89.222:26756",
+				"provider": "maxfoton"
 			}
-		]
-	},
-	"apis": {
+		],
+		"apis": {
 		"rpc": [{
 				"address": "https://rpc.bitcanna.io/",
 				"provider": "bitcanna"
@@ -328,7 +339,7 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			},
 			{
 				"address": "https://bitcanna.rpc.m.anode.team",
-				"provider": "AlxVoy"
+				"provider": "AlxVoy ⚡ ANODE.TEAM"
 			},
 			{
 				"address": "http://bitcanna.rpc.m.stavr.tech:21327",
@@ -373,6 +384,10 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			{
 				"address": "https://rpc.bitcanna.hexnodes.co",
 				"provider": "Hexnodes"
+			},
+      {
+			  "address": "http://95.165.89.222:26758/",
+			  "provider": "maxfoton"
 			}
 		],
 		"grpc": [{
@@ -430,7 +445,7 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			},
 			{
 				"address": "https://bitcanna.api.m.anode.team",
-				"provider": "AlxVoy"
+				"provider": "AlxVoy ⚡ ANODE.TEAM"
 			},
 			{
 				"address": "https://api-bcna.kjinc.io/",
