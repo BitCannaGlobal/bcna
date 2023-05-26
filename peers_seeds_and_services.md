@@ -68,6 +68,9 @@ d435c2257256e12c697f0155edcd1695f2d9445d@95.214.53.218:32656
 ## cryptosailors
 86e5fc5d80aed6a52bf89245bcc53c1b77641113@88.99.33.248:12656
 
+## maxfoton
+88497ab3bbbcc1e8545771f45020e738bcce590f@95.165.89.222:26756
+
 # Seeds
 ## BitCanna (reseted everyday)
 d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f@seed1.bitcanna.io:26656
@@ -129,6 +132,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## Cryptosailors StateSync/Snapshot
   * Mainnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Mainnets/Bitcanna#choose-sync-mode-snapshot-or-state-sync
   * Devnet - https://github.com/CryptoSailors/cryptosailors-guides/tree/main/Testnets/BitcannaDevnet#choose-sync-mode-snapshot-or-state-sync
+
+## maxfoton
+  * https://github.com/MaxFoton/Bitcanna_mainnet
 
 # Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
 ### BitCanna Docs
@@ -284,10 +290,14 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 				"id": "86e5fc5d80aed6a52bf89245bcc53c1b77641113",
 				"address": "88.99.33.248:12656",
 				"provider": "Cryptosailors"
+			},
+			{
+			        "id": "88497ab3bbbcc1e8545771f45020e738bcce590f",
+				"address": "95.165.89.222:26756",
+				"provider": "maxfoton"
 			}
-		]
-	},
-	"apis": {
+		],
+		"apis": {
 		"rpc": [{
 				"address": "https://rpc.bitcanna.io/",
 				"provider": "bitcanna"
@@ -355,6 +365,10 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 			{
 				"address": "http://88.99.33.248:12657/",
 				"provider": "Cryptosailors"
+			},
+			{
+			        "address": "http://95.165.89.222:26758/",
+			        "provider": "maxfoton"
 			}
 		],
 		"grpc": [{
