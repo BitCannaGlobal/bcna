@@ -20758,6 +20758,9 @@ paths:
             type: object
             properties:
               denom_trace:
+                description: >-
+                  denom_trace returns the requested denomination trace
+                  information.
                 type: object
                 properties:
                   path:
@@ -20770,11 +20773,6 @@ paths:
                   base_denom:
                     type: string
                     description: base denomination of the relayed fungible token.
-                description: >-
-                  DenomTrace contains the base denomination for ICS20 fungible
-                  tokens and the
-
-                  source tracing information path.
             description: >-
               QueryDenomTraceResponse is the response type for the
               Query/DenomTrace RPC
@@ -21922,6 +21920,7 @@ paths:
                     type: string
                     title: client identifier
                   client_state:
+                    title: client state
                     type: object
                     properties:
                       '@type':
@@ -22094,7 +22093,6 @@ paths:
                             "@type": "type.googleapis.com/google.protobuf.Duration",
                             "value": "1.212s"
                           }
-                    title: client state
                 description: >-
                   IdentifiedClientState defines a client state with an
                   additional client
@@ -22347,6 +22345,7 @@ paths:
             type: object
             properties:
               consensus_state:
+                title: consensus state associated with the channel
                 type: object
                 properties:
                   '@type':
@@ -22515,7 +22514,6 @@ paths:
                         "@type": "type.googleapis.com/google.protobuf.Duration",
                         "value": "1.212s"
                       }
-                title: consensus state associated with the channel
               client_id:
                 type: string
                 title: client ID associated with the consensus state
@@ -25638,6 +25636,7 @@ paths:
                       type: string
                       title: client identifier
                     client_state:
+                      title: client state
                       type: object
                       properties:
                         '@type':
@@ -25812,7 +25811,6 @@ paths:
                               "@type": "type.googleapis.com/google.protobuf.Duration",
                               "value": "1.212s"
                             }
-                      title: client state
                   description: >-
                     IdentifiedClientState defines a client state with an
                     additional client
@@ -26097,6 +26095,7 @@ paths:
             type: object
             properties:
               client_state:
+                title: client state associated with the request identifier
                 type: object
                 properties:
                   '@type':
@@ -26265,7 +26264,6 @@ paths:
                         "@type": "type.googleapis.com/google.protobuf.Duration",
                         "value": "1.212s"
                       }
-                title: client state associated with the request identifier
               proof:
                 type: string
                 format: byte
@@ -26757,6 +26755,7 @@ paths:
 
                         gets reset
                     consensus_state:
+                      title: consensus state
                       type: object
                       properties:
                         '@type':
@@ -26931,7 +26930,6 @@ paths:
                               "@type": "type.googleapis.com/google.protobuf.Duration",
                               "value": "1.212s"
                             }
-                      title: consensus state
                   description: >-
                     ConsensusStateWithHeight defines a consensus state with an
                     additional height
@@ -27543,6 +27541,9 @@ paths:
             type: object
             properties:
               consensus_state:
+                title: >-
+                  consensus state associated with the client identifier at the
+                  given height
                 type: object
                 properties:
                   '@type':
@@ -27711,14 +27712,12 @@ paths:
                         "@type": "type.googleapis.com/google.protobuf.Duration",
                         "value": "1.212s"
                       }
-                title: >-
-                  consensus state associated with the client identifier at the
-                  given height
               proof:
                 type: string
                 format: byte
                 title: merkle proof of existence
               proof_height:
+                title: height at which the proof was retrieved
                 type: object
                 properties:
                   revision_number:
@@ -27746,13 +27745,6 @@ paths:
                   RevisionHeight
 
                   gets reset
-                title: >-
-                  Height is a monotonically increasing data type
-
-                  that can be compared against another Height for the purposes
-                  of updating and
-
-                  freezing clients
             title: >-
               QueryConsensusStateResponse is the response type for the
               Query/ConsensusState
@@ -27983,6 +27975,7 @@ paths:
             type: object
             properties:
               upgraded_client_state:
+                title: client state associated with the request identifier
                 type: object
                 properties:
                   '@type':
@@ -28151,7 +28144,6 @@ paths:
                         "@type": "type.googleapis.com/google.protobuf.Duration",
                         "value": "1.212s"
                       }
-                title: client state associated with the request identifier
             description: |-
               QueryUpgradedClientStateResponse is the response type for the
               Query/UpgradedClientState RPC method.
@@ -28353,6 +28345,7 @@ paths:
             type: object
             properties:
               upgraded_consensus_state:
+                title: Consensus state associated with the request identifier
                 type: object
                 properties:
                   '@type':
@@ -28521,7 +28514,6 @@ paths:
                         "@type": "type.googleapis.com/google.protobuf.Duration",
                         "value": "1.212s"
                       }
-                title: Consensus state associated with the request identifier
             description: |-
               QueryUpgradedConsensusStateResponse is the response type for the
               Query/UpgradedConsensusState RPC method.
@@ -29708,6 +29700,7 @@ paths:
                     type: string
                     title: client identifier
                   client_state:
+                    title: client state
                     type: object
                     properties:
                       '@type':
@@ -29880,7 +29873,6 @@ paths:
                             "@type": "type.googleapis.com/google.protobuf.Duration",
                             "value": "1.212s"
                           }
-                    title: client state
                 description: >-
                   IdentifiedClientState defines a client state with an
                   additional client
@@ -30128,6 +30120,7 @@ paths:
             type: object
             properties:
               consensus_state:
+                title: consensus state associated with the channel
                 type: object
                 properties:
                   '@type':
@@ -30296,7 +30289,6 @@ paths:
                         "@type": "type.googleapis.com/google.protobuf.Duration",
                         "value": "1.212s"
                       }
-                title: consensus state associated with the channel
               client_id:
                 type: string
                 title: client ID associated with the consensus state
@@ -46294,6 +46286,7 @@ definitions:
     type: object
     properties:
       denom_trace:
+        description: denom_trace returns the requested denomination trace information.
         type: object
         properties:
           path:
@@ -46306,11 +46299,6 @@ definitions:
           base_denom:
             type: string
             description: base denomination of the relayed fungible token.
-        description: >-
-          DenomTrace contains the base denomination for ICS20 fungible tokens
-          and the
-
-          source tracing information path.
     description: |-
       QueryDenomTraceResponse is the response type for the Query/DenomTrace RPC
       method.
@@ -46776,6 +46764,7 @@ definitions:
             type: string
             title: client identifier
           client_state:
+            title: client state
             type: object
             properties:
               '@type':
@@ -46938,7 +46927,6 @@ definitions:
                     "@type": "type.googleapis.com/google.protobuf.Duration",
                     "value": "1.212s"
                   }
-            title: client state
         description: |-
           IdentifiedClientState defines a client state with an additional client
           identifier field.
@@ -46981,6 +46969,7 @@ definitions:
     type: object
     properties:
       consensus_state:
+        title: consensus state associated with the channel
         type: object
         properties:
           '@type':
@@ -47137,7 +47126,6 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: consensus state associated with the channel
       client_id:
         type: string
         title: client ID associated with the consensus state
@@ -48030,6 +48018,7 @@ definitions:
         type: string
         title: client identifier
       client_state:
+        title: client state
         type: object
         properties:
           '@type':
@@ -48186,7 +48175,6 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: client state
     description: |-
       IdentifiedClientState defines a client state with an additional client
       identifier field.
@@ -48222,6 +48210,7 @@ definitions:
 
           gets reset
       consensus_state:
+        title: consensus state
         type: object
         properties:
           '@type':
@@ -48378,7 +48367,6 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: consensus state
     description: >-
       ConsensusStateWithHeight defines a consensus state with an additional
       height
@@ -48428,6 +48416,7 @@ definitions:
     type: object
     properties:
       client_state:
+        title: client state associated with the request identifier
         type: object
         properties:
           '@type':
@@ -48584,7 +48573,6 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: client state associated with the request identifier
       proof:
         type: string
         format: byte
@@ -48636,6 +48624,7 @@ definitions:
               type: string
               title: client identifier
             client_state:
+              title: client state
               type: object
               properties:
                 '@type':
@@ -48802,7 +48791,6 @@ definitions:
                       "@type": "type.googleapis.com/google.protobuf.Duration",
                       "value": "1.212s"
                     }
-              title: client state
           description: >-
             IdentifiedClientState defines a client state with an additional
             client
@@ -48924,6 +48912,9 @@ definitions:
     type: object
     properties:
       consensus_state:
+        title: >-
+          consensus state associated with the client identifier at the given
+          height
         type: object
         properties:
           '@type':
@@ -49080,14 +49071,12 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: >-
-          consensus state associated with the client identifier at the given
-          height
       proof:
         type: string
         format: byte
         title: merkle proof of existence
       proof_height:
+        title: height at which the proof was retrieved
         type: object
         properties:
           revision_number:
@@ -49114,13 +49103,6 @@ definitions:
           RevisionHeight
 
           gets reset
-        title: >-
-          Height is a monotonically increasing data type
-
-          that can be compared against another Height for the purposes of
-          updating and
-
-          freezing clients
     title: >-
       QueryConsensusStateResponse is the response type for the
       Query/ConsensusState
@@ -49164,6 +49146,7 @@ definitions:
 
                 gets reset
             consensus_state:
+              title: consensus state
               type: object
               properties:
                 '@type':
@@ -49330,7 +49313,6 @@ definitions:
                       "@type": "type.googleapis.com/google.protobuf.Duration",
                       "value": "1.212s"
                     }
-              title: consensus state
           description: >-
             ConsensusStateWithHeight defines a consensus state with an
             additional height
@@ -49370,6 +49352,7 @@ definitions:
     type: object
     properties:
       upgraded_client_state:
+        title: client state associated with the request identifier
         type: object
         properties:
           '@type':
@@ -49526,7 +49509,6 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: client state associated with the request identifier
     description: |-
       QueryUpgradedClientStateResponse is the response type for the
       Query/UpgradedClientState RPC method.
@@ -49534,6 +49516,7 @@ definitions:
     type: object
     properties:
       upgraded_consensus_state:
+        title: Consensus state associated with the request identifier
         type: object
         properties:
           '@type':
@@ -49690,7 +49673,6 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: Consensus state associated with the request identifier
     description: |-
       QueryUpgradedConsensusStateResponse is the response type for the
       Query/UpgradedConsensusState RPC method.
@@ -49977,6 +49959,7 @@ definitions:
             type: string
             title: client identifier
           client_state:
+            title: client state
             type: object
             properties:
               '@type':
@@ -50139,7 +50122,6 @@ definitions:
                     "@type": "type.googleapis.com/google.protobuf.Duration",
                     "value": "1.212s"
                   }
-            title: client state
         description: |-
           IdentifiedClientState defines a client state with an additional client
           identifier field.
@@ -50182,6 +50164,7 @@ definitions:
     type: object
     properties:
       consensus_state:
+        title: consensus state associated with the channel
         type: object
         properties:
           '@type':
@@ -50338,7 +50321,6 @@ definitions:
                 "@type": "type.googleapis.com/google.protobuf.Duration",
                 "value": "1.212s"
               }
-        title: consensus state associated with the channel
       client_id:
         type: string
         title: client ID associated with the consensus state
