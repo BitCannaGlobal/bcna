@@ -392,6 +392,10 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			{
 			        "address": "http://rpc.bitcanna.citizencosmos.space/",
 			        "provider": "Citizen Cosmos"
+			},
+			{
+			        "address": "[http://65.108.241.6:26657",
+			        "provider": "Artcryptorg"
 			}
 		],
 		"grpc": [{
