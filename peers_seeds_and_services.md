@@ -82,6 +82,9 @@ f0e6c86d769bf5c52f78e01864091690e731643f@bitcanna-seed.panthea.eu:37656
 ## kjnodes
 400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@bitcanna.rpc.kjnodes.com:42659
 
+## Alkia
+2235f1e518c5ea4a412f9dece386348eda356916@bitcanna.alkia.net:26656
+
 ## AVIAONE 🟢
 258f523c96efde50d5fe0a9faeea8a3e83be22ca@seed.bitcanna-1.bitcanna.aviaone.com:10263
 
@@ -125,6 +128,9 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 
 ## cryptech StateSync
   * https://explorers.cryptech.com.ua/bitcanna/statesync
+  
+## Alkia
+  * https://www.alkia.net/state-sync-for-bitcanna
 
 ## AVIAONE 🟢
   * https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html
@@ -183,6 +189,9 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 ### [NODERS]TEAM: Guide, API, RPC, StateSync, Live peer, AdrBook, Useful Commands
 * https://nodeservice.nodersteam.com/title/mainnet/bitcanna
 
+### Alkia
+* https://aviaone.com/blockchains-service/bitcanna-stake
+
 ### AVIAONE 🟢
 * https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html
 
@@ -219,6 +228,11 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 				"id": "20e1000e88125698264454a884812746c2eb4807",
 				"address": "seeds.lavenderfive.com:13056",
 				"provider": "Lavender.Five Nodes 🐝"
+			},
+			{
+				"id": "2235f1e518c5ea4a412f9dece386348eda356916",
+				"address": "bitcanna.alkia.net:26656",
+				"provider": "Alkia"
 			},
 			{
 				"id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
@@ -295,6 +309,11 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 				"id": "2ff33d346b1b0f19cd59018ceb62d06a6406d472",
 				"address": "bitcanna.peers.stavr.tech:21326",
 				"provider": "🔥STAVR🔥"
+			},
+			{
+				"id": "2235f1e518c5ea4a412f9dece386348eda356916",
+				"address": "bitcanna.alkia.net:26656",
+				"provider": "Alkia"
 			},
 			{
 				"id": "a2856e17aef2ae9825f92ab93b8cc7d613526052",
@@ -405,6 +424,11 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 			{
 				"address": "http://bitcanna.grpc.m.stavr.tech:9081",
 				"provider": "🔥STAVR🔥"
+			},
+			
+			{
+				"address": "bitcanna.alkia.net:9090",
+				"provider": "Alkia"
 			},
 			{
 				"address": "grpc.bitcanna-1.bitcanna.aviaone.com:9092",
