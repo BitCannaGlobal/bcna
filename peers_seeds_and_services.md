@@ -396,6 +396,14 @@ e5c8260f76b9d614ab20559ee8b8918d4cb75e84@seeds-bitcanna.hexnodes.co:21656
 				"address": "https://rpc.bitcanna.hexnodes.co",
 				"provider": "Hexnodes"
 			},
+			{
+        "address": "http://rpc.bitcanna.citizencosmos.space/",
+        "provider": "Citizen Cosmos"
+			},
+			{
+        "address": "[http://65.108.241.6:26657",
+        "provider": "Artcryptorg"
+      },
       {
 			  "address": "http://95.165.89.222:26758/",
 			  "provider": "maxfoton"
