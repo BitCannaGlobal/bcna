@@ -18,10 +18,11 @@ We'd like to ask you to provide us with the **extra services** you can provide. 
 ## Panthea EU StateSync Server
   * https://bitcanna-rpc.panthea.eu:443
 
-## Inter Blockchain Services (former 3Tekos) StateSync Server
+## Inter Blockchain Services StateSync / Snapshots Server
   * https://bcna-rpc.ibs.team:443
   * https://github.com/Inter-Blockchain-Service/Cosmos-StateSync/tree/main/Bitcanna
-
+  * https://snapshot.ibs.team/Bitcanna/
+  
 ## mintthemoon
   * https://docs.mintthemoon.xyz/bitcanna/statesync
 
