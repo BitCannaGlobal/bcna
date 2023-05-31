@@ -35,6 +35,11 @@
         "id": "e5c8260f76b9d614ab20559ee8b8918d4cb75e84",
         "address": "seeds-bitcanna.hexnodes.co:21656",
         "provider": "Hexnodes"
+      },
+      {
+        "id": "400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc",
+        "address": "bitcanna.rpc.kjnodes.com:14259",
+        "provider": "kjnodes"
       }
     ],
     "persistent_peers": [
@@ -264,6 +269,10 @@
         {
           "address": "https://grpc-bitcanna-ia.cosmosia.notional.ventures",
           "provider": "Notional"
+        },
+        {
+          "address": "bitcanna.grpc.kjnodes.com:14290",
+          "provider": "kjnodes"
         }
       ],
       "rest": [
