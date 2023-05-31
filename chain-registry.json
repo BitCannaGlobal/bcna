@@ -246,6 +246,10 @@
         {
           "address": "https://bitcanna-rpc.polkachu.com",
           "provider": "Polkachu"
+        },
+        {
+          "address": "https://rpc.bitcanna.safeblock.space",
+          "provider": "Safe Block"
         }
       ],
       "grpc": [
@@ -374,6 +378,10 @@
         {
           "address": "https://bitcanna-api.polkachu.com",
           "provider": "Polkachu"
+        },
+        {
+          "address": "https://api.bitcanna.safeblock.space",
+          "provider": "Safe Block"
         }
       ]
     },
