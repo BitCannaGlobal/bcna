@@ -222,7 +222,7 @@
         {
           "address": "https://rpc-bitcanna-ia.cosmosia.notional.ventures",
           "provider": "Notional"
-        },
+        }
       ],
       "grpc": [
         {
