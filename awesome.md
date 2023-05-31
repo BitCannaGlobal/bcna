@@ -134,3 +134,6 @@ The list found below includes:
 
 ### L0vd.com services
 * Public RPC & API, Snapshots (every 4 hours), State-Sync, Node Installation Guide, Useful Commands, Monitoring Installation Guide: https://chain-services.l0vd.com/mainnets/bitcanna
+
+### Panthea EU Docs
+* Public endpoints, Snapshots (Max. 4 hours old), State Sync, Addrbook and much more: https://docs.panthea.eu
