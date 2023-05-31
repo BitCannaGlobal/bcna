@@ -218,7 +218,11 @@
         {
           "address": "https://bitcanna-mainnet.rpc.l0vd.com/",
           "provider": "L0vd.com"
-        }
+        },
+        {
+          "address": "https://rpc-bitcanna-ia.cosmosia.notional.ventures",
+          "provider": "Notional"
+        },
       ],
       "grpc": [
         {
@@ -256,6 +260,10 @@
         {
           "address": "http://bitcanna-mainnet.grpc.l0vd.com:80",
           "provider": "L0vd.com"
+        },
+        {
+          "address": "https://grpc-bitcanna-ia.cosmosia.notional.ventures",
+          "provider": "Notional"
         }
       ],
       "rest": [
@@ -326,6 +334,10 @@
         {
           "address": "https://bitcanna-mainnet.api.l0vd.com",
           "provider": "L0vd.com"
+        },
+        {
+          "address": "https://api-bitcanna-ia.cosmosia.notional.ventures",
+          "provider": "Notional"
         }
       ]
     },
