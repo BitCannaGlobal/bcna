@@ -1,9 +1,9 @@
 # BitCanna awesome services
 For the **Chain Registry** from Cosmos [GitHub](https://github.com/cosmos/chain-registry/) we'd like to gather some endpoints and persistent peers from our validators.
 
-**You can fill in or update our local [JSON file](./chain_registry.json) and we will use that to upgrade the Cosmos Chain Registry from time to time**
+**You can fill in or update our local [JSON file](https://github.com/BitCannaGlobal/bcna/blob/main/chain-registry.json) and we will use that to upgrade the Cosmos Chain Registry from time to time**
 
-> Important note for the [Validators Incentive Program](https://docs.bitcanna.io/token-chain-parameters/validator-incentive-program) participants: as prerequisite for you to get a delegation, you need to keep your validation services updated at our local [JSON file](./chain_registry.json)
+> Important note for the [Validators Incentive Program](https://docs.bitcanna.io/token-chain-parameters/validator-incentive-program) participants: as prerequisite for you to get a delegation, you need to keep your validation services updated at our local [JSON file](https://github.com/BitCannaGlobal/bcna/blob/main/chain-registry.json)
 
 We'd like to ask you to provide us with the **extra services** you can provide. It is greatly appreciated!
 
