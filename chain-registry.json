@@ -132,6 +132,16 @@
         "id": "6ae1dfa46884560e13962d73462e5bda0bb8c019",
         "address": "bitcanna-mainnet.peers.l0vd.com:17656",
         "provider": "L0vd.com"
+      },
+      {
+        "id": "526e4529131070e39134d94edc0e7e48289a64b1",
+        "address": "176.191.97.120:28656",
+        "provider": "Inter Blockchain Services"
+      },
+      {
+        "id": "3cb7bc8d5c448eaa42558347fb6cb03cd414b223",
+        "address": "38.242.232.202:26656",
+        "provider": "Inter Blockchain Services"
       }
     ],
     "apis": {
@@ -146,7 +156,7 @@
         },
         {
           "address": "https://bcna-rpc.ibs.team/",
-          "provider": "Inter Blockchain Services (former 3Tekos)"
+          "provider": "Inter Blockchain Services"
         },
         {
           "address": "https://bitcanna-rpc.panthea.eu",
@@ -213,7 +223,7 @@
           "provider": "Citizen Cosmos"
         },
         {
-          "address": "[http://65.108.241.6:26657",
+          "address": "http://65.108.241.6:26657",
           "provider": "Artcryptorg"
         },
         {
@@ -298,7 +308,7 @@
         },
         {
           "address": "https://bcna-api.ibs.team/",
-          "provider": "Inter Blockchain Services (former 3Tekos)"
+          "provider": "Inter Blockchain Services"
         },
         {
           "address": "https://bitcanna.api.m.anode.team",
