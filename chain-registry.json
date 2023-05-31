@@ -365,6 +365,12 @@
         "account_page": "https://www.mintscan.io/bitcanna/account/${accountAddress}"
       },
       {
+        "kind": "🔥STAVR🔥 Explorer",
+        "url": "https://explorer.stavr.tech/bitcanna",
+        "tx_page": "https://explorer.stavr.tech/bitcanna/txs/${txHash}",
+        "account_page": "https://explorer.stavr.tech/bitcanna/account/${accountAddress}"
+      },
+      {
         "kind": "atomscan",
         "url": "https://atomscan.com/bitcanna",
         "tx_page": "https://atomscan.com/bitcanna/transactions/${txHash}"
