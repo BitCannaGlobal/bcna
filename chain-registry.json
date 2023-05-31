@@ -8,7 +8,7 @@
       },
       {
         "id": "e2e7c704f766ef6b9e2c8dd61d963f8393b87966",
-        "address": "seed3.bitcanna.io: 26656",
+        "address": "seed3.bitcanna.io:26656",
         "provider": "bitcanna"
       },
       {
@@ -142,6 +142,11 @@
         "id": "3cb7bc8d5c448eaa42558347fb6cb03cd414b223",
         "address": "38.242.232.202:26656",
         "provider": "Inter Blockchain Services"
+      },
+      {
+        "id": "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0",
+        "address": "seeds.polkachu.com:13056",
+        "provider": "Polkachu"
       }
     ],
     "apis": {
@@ -237,6 +242,10 @@
         {
           "address": "https://rpc-bitcanna-ia.cosmosia.notional.ventures",
           "provider": "Notional"
+        },
+        {
+          "address": "https://bitcanna-rpc.polkachu.com",
+          "provider": "Polkachu"
         }
       ],
       "grpc": [
@@ -283,6 +292,10 @@
         {
           "address": "bitcanna.grpc.kjnodes.com:14290",
           "provider": "kjnodes"
+        },
+        {
+          "address": "bitcanna-grpc.polkachu.com:13090",
+          "provider": "Polkachu"
         }
       ],
       "rest": [
@@ -357,6 +370,10 @@
         {
           "address": "https://api-bitcanna-ia.cosmosia.notional.ventures",
           "provider": "Notional"
+        },
+        {
+          "address": "https://bitcanna-api.polkachu.com",
+          "provider": "Polkachu"
         }
       ]
     },
