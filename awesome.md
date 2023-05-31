@@ -1,16 +1,15 @@
 # BitCanna awesome services
-For the **Chain Registry** from Cosmos [GitHub](https://github.com/cosmos/chain-registry/) we'd like to gather some endpoints and persistent peers from our most valuable users.
+For the **Chain Registry** from Cosmos [GitHub](https://github.com/cosmos/chain-registry/) we'd like to gather some endpoints and persistent peers from our validators.
 
-**You can fill in or update our local [JSON file](./chain_registry.json) and we will upgrade from time to time the Cosmos Chain Registry**
+**You can fill in or update our local [JSON file](./chain_registry.json) and we will use that to upgrade the Cosmos Chain Registry from time to time**
 
-> Important note for [Validators Incentive Program](https://docs.bitcanna.io/token-chain-parameters/validator-incentive-program) participants: as requisite for to get your delegation, you need to keep update your validation's services at our local [JSON file](./chain_registry.json)
+> Important note for the [Validators Incentive Program](https://docs.bitcanna.io/token-chain-parameters/validator-incentive-program) participants: as prerequisite for you to get a delegation, you need to keep your validation services updated at our local [JSON file](./chain_registry.json)
 
-
-We'd like to ask you to provide us your **extra services** that we can use. It is greatly appreciated!
+We'd like to ask you to provide us with the **extra services** you can provide. It is greatly appreciated!
 
 # StateSync Servers and instructions:
 
-## BitCanna oficial:
+## BitCanna official:
   * https://github.com/BitCannaGlobal/bcna/blob/main/2.1.statesync.md
 
 ## Polkachu
@@ -67,13 +66,15 @@ We'd like to ask you to provide us your **extra services** that we can use. It i
   * https://github.com/maxfoton/Bitcanna_mainnet
 
 
-# Info, doc and other services from BitCanna validators & partners (feel free to make a PR)
-Including: 
-* Docs & guides website
-* Faucets
+# Info, docs and other services from BitCanna validators & partners 
+If you would like to contribute, feel free to make a pull request.
+
+The list found below includes: 
+* Docs & guides
+* Faucet
 * Explorers
 * Snapshots service 
-* Addresses bocks 
+* Addresses books 
 * Any other valuable info
 
 ### BitCanna Docs
