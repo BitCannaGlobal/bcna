@@ -143,7 +143,7 @@ The list found below includes:
 * Public endpoints, Snapshots (Max. 4 hours old), State Sync, Addrbook and much more: https://docs.panthea.eu
 
 ### Safe Block
-## Pruned Snapshot and addrbook.json (every 12hours), Node Install, Snapshot Setup, Endpoints (API/RPC), Explorer. 
+#### Pruned Snapshot and addrbook.json (every 12hours), Node Install, Snapshot Setup, Endpoints (API/RPC), Explorer. 
 * SNAPSHOT: https://snapshot.safeblock.space
 * NODE INSTALL - SNAPSHOT SETUP: https://safeblock.space/bitcanna
 * API: https://api.bitcanna.safeblock.space
