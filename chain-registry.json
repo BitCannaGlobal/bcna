@@ -147,6 +147,11 @@
         "id": "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0",
         "address": "seeds.polkachu.com:13056",
         "provider": "Polkachu"
+      },
+      {
+        "id": "45589e6147e36dda9e429668484d7614fb25b142",
+        "address": "bitcanna.nodejumper.io:27656",
+        "provider": "NODEJUMPER"
       }
     ],
     "apis": {
@@ -250,6 +255,10 @@
         {
           "address": "https://rpc.bitcanna.safeblock.space",
           "provider": "Safe Block"
+        },
+        {
+          "address": "https://bitcanna.nodejumper.io:443",
+          "provider": "NODEJUMPER"
         }
       ],
       "grpc": [
@@ -300,6 +309,10 @@
         {
           "address": "bitcanna-grpc.polkachu.com:13090",
           "provider": "Polkachu"
+        },
+        {
+          "address": "65.109.106.172:9190",
+          "provider": "NODEJUMPER"
         }
       ],
       "rest": [
@@ -382,6 +395,10 @@
         {
           "address": "https://api.bitcanna.safeblock.space",
           "provider": "Safe Block"
+        },
+        {
+          "address": "https://bitcanna.nodejumper.io:1317",
+          "provider": "NODEJUMPER"
         }
       ]
     },

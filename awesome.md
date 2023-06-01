@@ -66,6 +66,9 @@ We'd like to ask you to provide us with the **extra services** you can provide. 
 ## maxfoton
   * https://github.com/maxfoton/Bitcanna_mainnet
 
+## NODEJUMPER StateSync/SnapShot
+  * https://app.nodejumper.io/bitcanna/sync
+
 
 # Info, docs and other services from BitCanna validators & partners 
 If you would like to contribute, feel free to make a pull request.
@@ -90,7 +93,7 @@ The list found below includes:
 ### Polkachu: snapshot service info
 * https://polkachu.com/tendermint_snapshots/bitcanna
 
-### Nodejumper 🚀: on-chain analytics, snapshot & state sync services, installation scripts (manual/automation), cheat sheet and more.
+### NODEJUMPER: on-chain analytics, snapshot & state sync services, installation scripts (manual/automation), cheat sheet and more.
 * https://nodejumper.io/bitcanna
 
 ### DappLocker: Stats service
