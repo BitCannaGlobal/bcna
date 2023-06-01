@@ -141,3 +141,6 @@ The list found below includes:
 
 ### Panthea EU Docs
 * Public endpoints, Snapshots (Max. 4 hours old), State Sync, Addrbook and much more: https://docs.panthea.eu
+
+### Indonode : Guide , Snapshot , RPC , API , GPRC , State-sync , Addrbook , Genesis , Live Peers , Explorer
+* https://www.indonode.net/mainnet/bitcanna
