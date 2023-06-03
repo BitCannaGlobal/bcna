@@ -152,6 +152,11 @@
         "id": "45589e6147e36dda9e429668484d7614fb25b142",
         "address": "bitcanna.nodejumper.io:27656",
         "provider": "NODEJUMPER"
+      },
+      {
+        "id": "9d8f4def69c13050f97990757b938343a53da0f5",
+        "address": "rpc.bitcanna.indonode.net:27656",
+        "provider": "Indonode"
       }
     ],
     "apis": {
@@ -259,6 +264,10 @@
         {
           "address": "https://bitcanna.nodejumper.io:443",
           "provider": "NODEJUMPER"
+        },
+        {
+          "address": "https://rpc.bitcanna.indonode.net/",
+          "provider": "Indonode"
         }
       ],
       "grpc": [
@@ -313,6 +322,10 @@
         {
           "address": "65.109.106.172:9190",
           "provider": "NODEJUMPER"
+        },
+        {
+          "address": "grpc.bitcanna.indonode.net:27090",
+          "provider": "Indonode"
         }
       ],
       "rest": [
@@ -399,6 +412,10 @@
         {
           "address": "https://bitcanna.nodejumper.io:1317",
           "provider": "NODEJUMPER"
+        },
+        {
+          "address": "https://api.bitcanna.indonode.net/",
+          "provider": "Indonode"
         }
       ]
     },
