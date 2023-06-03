@@ -149,3 +149,6 @@ The list found below includes:
 * API: https://api.bitcanna.safeblock.space
 * RPC: https://rpc.bitcanna.safeblock.space
 * EXPLORER: https://explorer.safeblock.space/bitcanna
+
+### Indonode : Guide , Snapshot , RPC , API , GPRC , State-sync , Addrbook , Genesis , Live Peers , Explorer
+* https://www.indonode.net/mainnet/bitcanna
