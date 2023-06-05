@@ -69,6 +69,8 @@ We'd like to ask you to provide us with the **extra services** you can provide. 
 ## NODEJUMPER StateSync/SnapShot
   * https://app.nodejumper.io/bitcanna/sync
 
+## MMS Snapshot/StateSync/Endpoints
+  * https://mms.team/portfolios/bitcanna-snapshot-service
 
 # Info, docs and other services from BitCanna validators & partners 
 If you would like to contribute, feel free to make a pull request.
