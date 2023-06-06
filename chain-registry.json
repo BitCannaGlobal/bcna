@@ -268,6 +268,14 @@
         {
           "address": "https://rpc.bitcanna.indonode.net/",
           "provider": "Indonode"
+        },
+        {
+          "address": "https://65.108.142.81:26683",
+          "provider": "Stakely"
+        },
+        {
+          "address": "https://93.115.25.15:26657",
+          "provider": "Stakely"
         }
       ],
       "grpc": [
@@ -416,6 +424,14 @@
         {
           "address": "https://api.bitcanna.indonode.net/",
           "provider": "Indonode"
+        },
+        {
+          "address": "https://65.108.142.81:1325",
+          "provider": "Stakely"
+        },
+        {
+          "address": "https://93.115.25.15:1317",
+          "provider": "Stakely"
         }
       ]
     },
