@@ -42,6 +42,11 @@
         "provider": "kjnodes"
       },
       {
+        "id": "d5ed854872ad96f114737889ac9521ea3a29e3a3",
+        "address": "bitcanna-seed.oldcat.io:26656",
+        "provider": "Oldcat"
+      },
+      {
         "id": "d37062587a2aba2a5256b7363f722f4acb4b8e2f",
         "address": "seed-node.mms.team:30656",
         "provider": "MMS"
