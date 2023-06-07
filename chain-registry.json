@@ -292,6 +292,7 @@
           "address": "https://93.115.25.15:26657",
           "provider": "Stakely"
         },
+        {
           "address": "https://rpc-bitcanna.mms.team:443",
           "provider": "MMS"
         }
