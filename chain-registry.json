@@ -45,6 +45,11 @@
         "id": "d5ed854872ad96f114737889ac9521ea3a29e3a3",
         "address": "bitcanna-seed.oldcat.io:26656",
         "provider": "Oldcat"
+      },
+      {
+        "id": "d37062587a2aba2a5256b7363f722f4acb4b8e2f",
+        "address": "seed-node.mms.team:30656",
+        "provider": "MMS"
       }
     ],
     "persistent_peers": [
@@ -162,6 +167,11 @@
         "id": "9d8f4def69c13050f97990757b938343a53da0f5",
         "address": "rpc.bitcanna.indonode.net:27656",
         "provider": "Indonode"
+      },
+      {
+        "id": "d2cb1f04b351e82dada97794d32a468dd71d6a84",
+        "address": "peer-bitcanna.mms.team:56104",
+        "provider": "MMS"
       }
     ],
     "apis": {
@@ -273,6 +283,10 @@
         {
           "address": "https://rpc.bitcanna.indonode.net/",
           "provider": "Indonode"
+        },
+        {
+          "address": "https://rpc-bitcanna.mms.team:443",
+          "provider": "MMS"
         }
       ],
       "grpc": [
@@ -331,6 +345,10 @@
         {
           "address": "grpc.bitcanna.indonode.net:27090",
           "provider": "Indonode"
+        },
+        {
+          "address": "https://grpc-bitcanna.mms.team:443",
+          "provider": "MMS"
         }
       ],
       "rest": [
@@ -421,6 +439,10 @@
         {
           "address": "https://api.bitcanna.indonode.net/",
           "provider": "Indonode"
+        },
+        {
+          "address": "https://api-bitcanna.mms.team:443",
+          "provider": "MMS"
         }
       ]
     },

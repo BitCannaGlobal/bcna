@@ -38,8 +38,9 @@ We'd like to ask you to provide us with the **extra services** you can provide. 
 ## bonded.zone StateSync
   * https://sync.bonded.zone/mainnets/bitcanna
 
-## KonsorTech
+## KonsorTech StateSync/SnapShot
   * https://github.com/konsortech/Node/blob/main/Mainnet/Bitcanna/statesync.md
+  * https://github.com/konsortech/Node/blob/main/Mainnet/Bitcanna/snapshot.md
 
 ## kjnodes
   * https://services.kjnodes.com/mainnet/bitcanna/state-sync
@@ -69,6 +70,8 @@ We'd like to ask you to provide us with the **extra services** you can provide. 
 ## NODEJUMPER StateSync/SnapShot
   * https://app.nodejumper.io/bitcanna/sync
 
+## MMS Snapshot/StateSync/Endpoints
+  * https://mms.team/portfolios/bitcanna-snapshot-service
 
 # Info, docs and other services from BitCanna validators & partners 
 If you would like to contribute, feel free to make a pull request.
@@ -110,8 +113,9 @@ The list found below includes:
 ### AlxVoy ⚡ ANODE.TEAM : snapshot and state sync services, guide, RPC, API, peer
 * https://anode.team/BitCanna/
 
-### KonsorTech : Guide, public_endpoint (RPC, API, Peer), state sync
+### KonsorTech : Guide, public_endpoint (RPC, API, Peer), StateSync, Snapshot, Explorer
 * https://github.com/konsortech/Node/tree/main/Mainnet/Bitcanna
+* https://explorer.konsortech.xyz/bitcanna
 
 ### kjnodes: 
 * Peering Services, Public Endpoints, Daily Snapshots, State-Sync, Node Setup Guide, Useful Commands: https://services.kjnodes.com/mainnet/bitcanna
