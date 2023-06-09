@@ -61,9 +61,6 @@ The script will setup your folder and config if you start a fresh install. If yo
 ###   2.2. Sync using a snapshot file
 This is an alternative way to get synced without having to download the entire chain block by block. Recommended for advanced users in Cosmos chains.
 * https://github.com/BitCannaGlobal/bcna/blob/main/2.2.snapshot.md
-###   2.3. Sync the whole chain using cosmovisor
-Start to sync from block 1. Automate the upgrades with Cosmovisor by putting the right binaries in the appropriate folder.
-* https://github.com/BitCannaGlobal/bcna/blob/main/2.3.cosmovisor.md
 
 
 
@@ -165,6 +162,12 @@ FYgEgITfk980jjUfDTE25BPfJR22csjJM/qzx0Y=
 -----END TENDERMINT PRIVATE KEY-----
 ```
 You can copy&paste the entire text above in a text file. 
+
+##   5. Cosmovisor
+Cosmovisor is a small process manager for Cosmos SDK application binaries to handle chain upgrades. It works for upgrades that has been approved through governance proposals. In these type of governance proposals the upgrade name and block height is included. If Cosmovisor finds the requirements for this upgrade in the logs of the chain binary, it stops the current binary, switch from the old binary to the new one, and finally restarts the node with the new binary.
+
+Follow this guide to install Cosmovisor on your node. 
+* https://github.com/BitCannaGlobal/bcna/blob/main/5.cosmovisor.md
 
 # Links to important info
 
