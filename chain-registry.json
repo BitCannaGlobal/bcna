@@ -257,6 +257,10 @@
           "provider": "Artcryptorg"
         },
         {
+          "address": "https://rpc.bitcanna.cosmowiz.com;",
+          "provider": "Cosmowiz"
+        },
+        {
           "address": "http://95.165.89.222:26758/",
           "provider": "maxfoton"
         },
@@ -407,6 +411,10 @@
         {
           "address": "https://bitcanna-api.lavenderfive.com/",
           "provider": "Lavender.Five Nodes 🐝"
+        },
+        {
+          "address": "https://api.bitcanna.cosmowiz.com",
+          "provider": "Panthea EU"
         },
         {
           "address": "https://bitcanna-api.genznodes.dev",
