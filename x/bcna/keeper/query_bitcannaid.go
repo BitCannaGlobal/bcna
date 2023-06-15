@@ -12,13 +12,13 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-func (k Keeper) BitcannaidAll(c context.Context, req *types.QueryAllBitcannaidRequest) (*types.QueryAllBitcannaidResponse, error) {
+func (k Keeper) BitcannaidAll(GoCtx context.Context, req *types.QueryAllBitcannaidRequest) (*types.QueryAllBitcannaidResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
 	var bitcannaids []types.Bitcannaid
-	ctx := sdk.UnwrapSDKContext(c)
+	ctx := sdk.UnwrapSDKContext(GoCtx)
 
 	store := ctx.KVStore(k.storeKey)
 	bitcannaidStore := prefix.NewStore(store, types.KeyPrefix(types.BitcannaidKey))
@@ -40,12 +40,12 @@ func (k Keeper) BitcannaidAll(c context.Context, req *types.QueryAllBitcannaidRe
 	return &types.QueryAllBitcannaidResponse{Bitcannaid: bitcannaids, Pagination: pageRes}, nil
 }
 
-func (k Keeper) Bitcannaid(c context.Context, req *types.QueryGetBitcannaidRequest) (*types.QueryGetBitcannaidResponse, error) {
+func (k Keeper) Bitcannaid(GoCtx context.Context, req *types.QueryGetBitcannaidRequest) (*types.QueryGetBitcannaidResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
-	ctx := sdk.UnwrapSDKContext(c)
+	ctx := sdk.UnwrapSDKContext(GoCtx)
 	bitcannaid, found := k.GetBitcannaid(ctx, req.Id)
 	if !found {
 		return nil, sdkerrors.ErrKeyNotFound

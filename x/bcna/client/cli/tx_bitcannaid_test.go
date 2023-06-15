@@ -20,7 +20,8 @@ func TestCreateBitcannaid(t *testing.T) {
 	ctx := val.ClientCtx
 
 	fields := []string{"xyz", "xyz"}
-	for _, tc := range []struct {
+	tests := []struct {
+		// for _, tc := range []struct { // RBG: do later and test: https://github.com/RaulBernal/bcna/pull/9/files?file-filters%5B%5D=.go&file-filters%5B%5D=.mod&show-viewed-files=true#diff-179d58c27c0bc5a922d22dd3cee46deeeb3e811ebb3d2fcd0367fa22833362adR25
 		desc string
 		args []string
 		err  error
@@ -31,24 +32,28 @@ func TestCreateBitcannaid(t *testing.T) {
 			args: []string{
 				fmt.Sprintf("--%s=%s", flags.FlagFrom, val.Address.String()),
 				fmt.Sprintf("--%s=true", flags.FlagSkipConfirmation),
-				fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastBlock),
+				fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastSync),
 				fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdkmath.NewInt(10))).String()),
 			},
 		},
-	} {
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
+			require.NoError(t, net.WaitForNextBlock())
+
 			args := []string{}
 			args = append(args, fields...)
 			args = append(args, tc.args...)
 			out, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdCreateBitcannaid(), args)
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
-			} else {
-				require.NoError(t, err)
-				var resp sdk.TxResponse
-				require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
-				require.Equal(t, tc.code, resp.Code)
+				return
 			}
+			require.NoError(t, err)
+
+			var resp sdk.TxResponse
+			require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
+			require.NoError(t, clitestutil.CheckTxCode(net, ctx, resp.TxHash, tc.code))
 		})
 	}
 }
@@ -63,7 +68,7 @@ func TestUpdateBitcannaid(t *testing.T) {
 	common := []string{
 		fmt.Sprintf("--%s=%s", flags.FlagFrom, val.Address.String()),
 		fmt.Sprintf("--%s=true", flags.FlagSkipConfirmation),
-		fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastBlock),
+		fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastSync),
 		fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdkmath.NewInt(10))).String()),
 	}
 	args := []string{}
@@ -72,7 +77,7 @@ func TestUpdateBitcannaid(t *testing.T) {
 	_, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdCreateBitcannaid(), args)
 	require.NoError(t, err)
 
-	for _, tc := range []struct {
+	tests := []struct {
 		desc   string
 		id     string
 		fields []string
@@ -93,21 +98,24 @@ func TestUpdateBitcannaid(t *testing.T) {
 			args:   common,
 			code:   0x44e, //sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
-	} {
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
+			require.NoError(t, net.WaitForNextBlock())
+
 			args := []string{tc.id}
-			args = append(args, tc.fields...)
+			args = append(args, fields...)
 			args = append(args, tc.args...)
 			out, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdUpdateBitcannaid(), args)
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
-			} else {
-				require.NoError(t, err)
-				var resp sdk.TxResponse
-				require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
-				//debug fmt.Printf("Error: %s\n", resp.RawLog)
-				require.Equal(t, tc.code, resp.Code)
+				return
 			}
+			require.NoError(t, err)
+
+			var resp sdk.TxResponse
+			require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
+			require.NoError(t, clitestutil.CheckTxCode(net, ctx, resp.TxHash, tc.code))
 		})
 	}
 }
@@ -122,7 +130,7 @@ func TestDeleteBitcannaid(t *testing.T) {
 	common := []string{
 		fmt.Sprintf("--%s=%s", flags.FlagFrom, val.Address.String()),
 		fmt.Sprintf("--%s=true", flags.FlagSkipConfirmation),
-		fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastBlock),
+		fmt.Sprintf("--%s=%s", flags.FlagBroadcastMode, flags.BroadcastSync),
 		fmt.Sprintf("--%s=%s", flags.FlagFees, sdk.NewCoins(sdk.NewCoin(net.Config.BondDenom, sdkmath.NewInt(10))).String()),
 	}
 	args := []string{}
@@ -131,7 +139,7 @@ func TestDeleteBitcannaid(t *testing.T) {
 	_, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdCreateBitcannaid(), args)
 	require.NoError(t, err)
 
-	for _, tc := range []struct {
+	tests := []struct {
 		desc string
 		id   string
 		args []string
@@ -149,18 +157,21 @@ func TestDeleteBitcannaid(t *testing.T) {
 			args: common,
 			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(),
 		},
-	} {
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
+			require.NoError(t, net.WaitForNextBlock())
+
 			out, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdDeleteBitcannaid(), append([]string{tc.id}, tc.args...))
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
-			} else {
-				require.NoError(t, err)
-				var resp sdk.TxResponse
-				require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
-				// debug fmt.Printf("Error: %s\n", resp.RawLog)
-				require.Equal(t, tc.code, resp.Code)
+				return
 			}
+			require.NoError(t, err)
+
+			var resp sdk.TxResponse
+			require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
+			require.NoError(t, clitestutil.CheckTxCode(net, ctx, resp.TxHash, tc.code))
 		})
 	}
 }

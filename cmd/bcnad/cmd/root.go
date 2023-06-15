@@ -6,6 +6,11 @@ import (
 	"os"
 	"path/filepath"
 
+	dbm "github.com/cometbft/cometbft-db"
+	tmcfg "github.com/cometbft/cometbft/config"
+	tmcli "github.com/cometbft/cometbft/libs/cli"
+	"github.com/cometbft/cometbft/libs/log"
+	tmtypes "github.com/cometbft/cometbft/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/config"
@@ -24,13 +29,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	"github.com/cosmos/cosmos-sdk/x/crisis"
+	"github.com/cosmos/cosmos-sdk/x/genutil"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
+	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 	"github.com/spf13/cast"
 	"github.com/spf13/cobra"
-	tmcfg "github.com/tendermint/tendermint/config"
-	tmcli "github.com/tendermint/tendermint/libs/cli"
-	"github.com/tendermint/tendermint/libs/log"
-	dbm "github.com/tendermint/tm-db"
 
 	"github.com/BitCannaGlobal/bcna/app"
 	appparams "github.com/BitCannaGlobal/bcna/app/params"
@@ -73,6 +76,7 @@ func NewRootCmd() (*cobra.Command, appparams.EncodingConfig) {
 			)
 		},
 	}
+
 	initRootCmd(rootCmd, encodingConfig)
 
 	return rootCmd, encodingConfig
@@ -84,7 +88,7 @@ func initTendermintConfig() *tmcfg.Config {
 	cfg := tmcfg.DefaultConfig()
 	// these values put a higher strain on node memory
 	cfg.P2P.MaxNumInboundPeers = 100
-	cfg.P2P.MaxNumOutboundPeers = 40
+	cfg.P2P.MaxNumOutboundPeers = 100
 	return cfg
 }
 func initRootCmd(
@@ -93,9 +97,10 @@ func initRootCmd(
 ) {
 	// Set config
 	initSDKConfig()
+	gentxModule := app.ModuleBasics[genutiltypes.ModuleName].(genutil.AppModuleBasic) // RBG
 	rootCmd.AddCommand(
 		genutilcli.InitCmd(app.ModuleBasics, app.DefaultNodeHome),
-		genutilcli.CollectGenTxsCmd(banktypes.GenesisBalancesIterator{}, app.DefaultNodeHome),
+		genutilcli.CollectGenTxsCmd(banktypes.GenesisBalancesIterator{}, app.DefaultNodeHome, gentxModule.GenTxValidator),
 		genutilcli.MigrateGenesisCmd(),
 		genutilcli.GenTxCmd(
 			app.ModuleBasics,
@@ -202,6 +207,19 @@ func (a appCreator) newApp(
 	if err != nil {
 		panic(err)
 	}
+
+	homeDir := cast.ToString(appOpts.Get(flags.FlagHome))
+	chainID := cast.ToString(appOpts.Get(flags.FlagChainID))
+	if chainID == "" {
+		// fallback to genesis chain-id
+		appGenesis, err := tmtypes.GenesisDocFromFile(filepath.Join(homeDir, "config", "genesis.json"))
+		if err != nil {
+			panic(err)
+		}
+
+		chainID = appGenesis.ChainID
+	}
+
 	snapshotDir := filepath.Join(cast.ToString(appOpts.Get(flags.FlagHome)), "data", "snapshots")
 	snapshotDB, err := dbm.NewDB("metadata", dbm.GoLevelDBBackend, snapshotDir)
 	if err != nil {
@@ -237,6 +255,7 @@ func (a appCreator) newApp(
 		baseapp.SetSnapshot(snapshotStore, snapshotOptions),
 		baseapp.SetIAVLCacheSize(cast.ToInt(appOpts.Get(server.FlagIAVLCacheSize))),
 		baseapp.SetIAVLDisableFastNode(cast.ToBool(appOpts.Get(server.FlagDisableIAVLFastNode))),
+		baseapp.SetChainID(chainID),
 	)
 }
 
@@ -249,6 +268,7 @@ func (a appCreator) appExport(
 	forZeroHeight bool,
 	jailAllowedAddrs []string,
 	appOpts servertypes.AppOptions,
+	modulesToExport []string,
 ) (servertypes.ExportedApp, error) {
 	homePath, ok := appOpts.Get(flags.FlagHome).(string)
 	if !ok || homePath == "" {
@@ -270,7 +290,7 @@ func (a appCreator) appExport(
 			return servertypes.ExportedApp{}, err
 		}
 	}
-	return app.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs)
+	return app.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs, modulesToExport)
 }
 
 // initAppConfig helps to override default appConfig template and configs.

@@ -8,6 +8,7 @@ import (
 
 	// "github.com/cosmos/cosmos-sdk/x/nft"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
+	ibctmmigrations "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint/migrations"
 )
 
 // RegisterUpgradeHandlers registers upgrade handlers.
@@ -20,6 +21,7 @@ func (app App) RegisterUpgradeHandlers() {
 
 	app.wakeandbake_test2(upgradeInfo)
 	app.wakeandbake46(upgradeInfo)
+	app.ibc7(upgradeInfo)
 }
 
 func (app *App) wakeandbake_test2(_ upgradetypes.Plan) {
@@ -56,4 +58,21 @@ func (app *App) wakeandbake46(_ upgradetypes.Plan) {
 		// Configure store loader that checks if version == upgradeHeight and applies store upgrades
 		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
 	}
+}
+
+func (app *App) ibc7(_ upgradetypes.Plan) {
+	planName := "ibc7"
+	// app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
+	app.UpgradeKeeper.SetUpgradeHandler(
+		planName,
+		func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
+			ctx.Logger().Info("IBC/go v7 module upgrade... let's prune expired tendermint consensus states to save storage space")
+			_, err := ibctmmigrations.PruneExpiredConsensusStates(ctx, app.appCodec, app.IBCKeeper.ClientKeeper)
+			if err != nil {
+				return nil, err
+			}
+
+			return app.mm.RunMigrations(ctx, app.configurator, fromVM)
+		},
+	)
 }

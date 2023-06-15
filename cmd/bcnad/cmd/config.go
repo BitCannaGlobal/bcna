@@ -3,9 +3,10 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/BitCannaGlobal/bcna/app"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/address"
+
+	"github.com/BitCannaGlobal/bcna/app"
 )
 
 func initSDKConfig() {
@@ -15,6 +16,7 @@ func initSDKConfig() {
 	validatorPubKeyPrefix := app.AccountAddressPrefix + "valoperpub"
 	consNodeAddressPrefix := app.AccountAddressPrefix + "valcons"
 	consNodePubKeyPrefix := app.AccountAddressPrefix + "valconspub"
+
 	// Set and seal config
 	config := sdk.GetConfig()
 	config.SetBech32PrefixForAccount(app.AccountAddressPrefix, accountPubKeyPrefix)

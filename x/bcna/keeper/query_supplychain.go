@@ -12,13 +12,13 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-func (k Keeper) SupplychainAll(c context.Context, req *types.QueryAllSupplychainRequest) (*types.QueryAllSupplychainResponse, error) {
+func (k Keeper) SupplychainAll(GoCtx context.Context, req *types.QueryAllSupplychainRequest) (*types.QueryAllSupplychainResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
 	var supplychains []types.Supplychain
-	ctx := sdk.UnwrapSDKContext(c)
+	ctx := sdk.UnwrapSDKContext(GoCtx)
 
 	store := ctx.KVStore(k.storeKey)
 	supplychainStore := prefix.NewStore(store, types.KeyPrefix(types.SupplychainKey))
@@ -40,12 +40,12 @@ func (k Keeper) SupplychainAll(c context.Context, req *types.QueryAllSupplychain
 	return &types.QueryAllSupplychainResponse{Supplychain: supplychains, Pagination: pageRes}, nil
 }
 
-func (k Keeper) Supplychain(c context.Context, req *types.QueryGetSupplychainRequest) (*types.QueryGetSupplychainResponse, error) {
+func (k Keeper) Supplychain(GoCtx context.Context, req *types.QueryGetSupplychainRequest) (*types.QueryGetSupplychainResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
-	ctx := sdk.UnwrapSDKContext(c)
+	ctx := sdk.UnwrapSDKContext(GoCtx)
 	supplychain, found := k.GetSupplychain(ctx, req.Id)
 	if !found {
 		return nil, sdkerrors.ErrKeyNotFound

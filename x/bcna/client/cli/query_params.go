@@ -1,12 +1,11 @@
 package cli
 
 import (
-	"context"
-
-	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
+
+	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 )
 
 func CmdQueryParams() *cobra.Command {
@@ -22,7 +21,7 @@ func CmdQueryParams() *cobra.Command {
 
 			queryClient := types.NewQueryClient(clientCtx)
 
-			res, err := queryClient.Params(context.Background(), &types.QueryParamsRequest{})
+			res, err := queryClient.Params(cmd.Context(), &types.QueryParamsRequest{})
 			if err != nil {
 				return err
 			}

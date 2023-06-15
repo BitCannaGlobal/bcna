@@ -19,7 +19,7 @@ func TestBitcannaidQuerySingle(t *testing.T) {
 	keeper, ctx := keepertest.BcnaKeeper(t)
 	wctx := sdk.WrapSDKContext(ctx)
 	msgs := createNBitcannaid(keeper, ctx, 2)
-	for _, tc := range []struct {
+	tests := []struct {
 		desc     string
 		request  *types.QueryGetBitcannaidRequest
 		response *types.QueryGetBitcannaidResponse
@@ -44,7 +44,8 @@ func TestBitcannaidQuerySingle(t *testing.T) {
 			desc: "InvalidRequest",
 			err:  status.Error(codes.InvalidArgument, "invalid request"),
 		},
-	} {
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
 			response, err := keeper.Bitcannaid(wctx, tc.request)
 			if tc.err != nil {
