@@ -50,6 +50,11 @@
         "id": "d37062587a2aba2a5256b7363f722f4acb4b8e2f",
         "address": "seed-node.mms.team:30656",
         "provider": "MMS"
+      },
+      {
+        "id": "10ed1e176d874c8bb3c7c065685d2da6a4b86475",
+        "address": "seed-bcna.ibs.team:16656",
+        "provider": "Inter Blockchain Services"
       }
     ],
     "persistent_peers": [
