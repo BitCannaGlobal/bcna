@@ -22,6 +22,8 @@ ifeq (,$(VERSION))
   endif
 endif
 
+GO_MAJOR_VERSION = $(shell go version | cut -c 14- | cut -d' ' -f1 | cut -d'.' -f1)
+GO_MINOR_VERSION = $(shell go version | cut -c 14- | cut -d' ' -f1 | cut -d'.' -f2)
 ###############################################################################
 ##                                   Build                                   ##
 ###############################################################################
@@ -74,22 +76,22 @@ ifneq ($(GO_MINOR_VERSION),20)
 	exit 1
 endif
 
-build: go.sum
+build: check_version go.sum
 	@echo "--> Building..."
 	go build -mod=readonly $(BUILD_FLAGS) -o $(BUILD_DIR)/ ./...
 
-install: go.sum
+install: check_version go.sum
 	@echo "--> Installing..."
 	go install -mod=readonly $(BUILD_FLAGS) ./...
 
-build-linux: go.sum
+build-linux: check_version go.sum
 	LEDGER_ENABLED=false GOOS=linux GOARCH=amd64 $(MAKE) build
 
-go-mod-cache: go.sum
+go-mod-cache: check_version go.sum
 	@echo "--> Download go modules to local cache"
 	@go mod download
 
-go.sum: go.mod
+go.sum: check_version go.mod
 	@echo "--> Ensure dependencies have not been modified"
 	@go mod verify
 
