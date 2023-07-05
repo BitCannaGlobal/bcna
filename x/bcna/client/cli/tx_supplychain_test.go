@@ -54,12 +54,6 @@ func TestCreateSupplychain(t *testing.T) {
 			var resp sdk.TxResponse
 			require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
 			require.NoError(t, clitestutil.CheckTxCode(net, ctx, resp.TxHash, tc.code))
-			// } else { RBG: Test here (it comes from https://github.com/RaulBernal/bcna/pull/9/files?file-filters%5B%5D=.go&file-filters%5B%5D=.mod&show-viewed-files=true#diff-785ce63961a15c387203a203fe1d6952bb68c11bdff523ce657b5801459b0abdL46)
-			// 	require.NoError(t, err)
-			// 	var resp sdk.TxResponse
-			// 	require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
-			// 	require.Equal(t, tc.code, resp.Code)
-			// }
 		})
 	}
 }
@@ -123,13 +117,12 @@ func TestUpdateSupplychain(t *testing.T) {
 
 			var resp sdk.TxResponse
 			require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
+			// debug RBG
+			fmt.Printf("Argumentos: %s\n", args)
+			fmt.Printf("Log1: %d\n", tc.code)
+			fmt.Printf("Log2: %d\n", resp.Code)
+			fmt.Printf("TXHash output: %s\n", resp.TxHash)
 			require.NoError(t, clitestutil.CheckTxCode(net, ctx, resp.TxHash, tc.code))
-			// } else {  RBG
-			// 	require.NoError(t, err)
-			// 	var resp sdk.TxResponse
-			// 	require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
-			// 	require.Equal(t, tc.code, resp.Code)
-			// }
 		})
 	}
 }
@@ -183,11 +176,6 @@ func TestDeleteSupplychain(t *testing.T) {
 			out, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdDeleteSupplychain(), append([]string{tc.id}, tc.args...))
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
-				// } else { RBG
-				// 	require.NoError(t, err)
-				// 	var resp sdk.TxResponse
-				// 	require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
-				// 	require.Equal(t, tc.code, resp.Code)
 				return
 			}
 			require.NoError(t, err)

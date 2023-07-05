@@ -21,7 +21,6 @@ func networkWithSupplychainObjects(t *testing.T, n int) (*network.Network, []typ
 	t.Helper()
 	cfg := network.DefaultConfig()
 	state := types.GenesisState{}
-	// RBG test: require.NoError(t, cfg.Codec.UnmarshalJSON(cfg.GenesisState[types.ModuleName], &state))
 
 	for i := 0; i < n; i++ {
 		supplychain := types.Supplychain{
@@ -64,7 +63,6 @@ func TestShowSupplychain(t *testing.T) {
 		},
 	}
 	for _, tc := range tests {
-		// RBG tc := tc
 		t.Run(tc.desc, func(t *testing.T) {
 			args := []string{tc.id}
 			args = append(args, tc.args...)

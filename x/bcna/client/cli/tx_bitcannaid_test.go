@@ -21,7 +21,6 @@ func TestCreateBitcannaid(t *testing.T) {
 
 	fields := []string{"xyz", "xyz"}
 	tests := []struct {
-		// for _, tc := range []struct { // RBG: do later and test: https://github.com/RaulBernal/bcna/pull/9/files?file-filters%5B%5D=.go&file-filters%5B%5D=.mod&show-viewed-files=true#diff-179d58c27c0bc5a922d22dd3cee46deeeb3e811ebb3d2fcd0367fa22833362adR25
 		desc string
 		args []string
 		err  error
@@ -77,6 +76,7 @@ func TestUpdateBitcannaid(t *testing.T) {
 	_, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdCreateBitcannaid(), args)
 	require.NoError(t, err)
 
+	// tc :=  []struct {
 	tests := []struct {
 		desc   string
 		id     string
@@ -93,10 +93,11 @@ func TestUpdateBitcannaid(t *testing.T) {
 		},
 		{
 			desc:   "key not found",
-			id:     "1",
+			id:     "420",
 			fields: []string{"Updated2xyz1", "Updated2xyz2"},
 			args:   common,
-			code:   0x44e, //sdkerrors.ErrKeyNotFound.ABCICode(),
+			code:   0x44e,
+			// err:    types.ErrKeyNotFound, commented then err = 0
 		},
 	}
 	for _, tc := range tests {
@@ -104,7 +105,7 @@ func TestUpdateBitcannaid(t *testing.T) {
 			require.NoError(t, net.WaitForNextBlock())
 
 			args := []string{tc.id}
-			args = append(args, fields...)
+			args = append(args, tc.fields...)
 			args = append(args, tc.args...)
 			out, err := clitestutil.ExecTestCLICmd(ctx, cli.CmdUpdateBitcannaid(), args)
 			if tc.err != nil {
@@ -115,6 +116,11 @@ func TestUpdateBitcannaid(t *testing.T) {
 
 			var resp sdk.TxResponse
 			require.NoError(t, ctx.Codec.UnmarshalJSON(out.Bytes(), &resp))
+			// debug RBG
+			fmt.Printf("Argumentos: %s\n", args)
+			fmt.Printf("Log1: %d\n", tc.code)
+			fmt.Printf("Log2: %d\n", resp.Code)
+
 			require.NoError(t, clitestutil.CheckTxCode(net, ctx, resp.TxHash, tc.code))
 		})
 	}
@@ -155,7 +161,7 @@ func TestDeleteBitcannaid(t *testing.T) {
 			desc: "key not found",
 			id:   "1",
 			args: common,
-			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(),
+			code: 0x44e, // sdkerrors.ErrKeyNotFound.ABCICode(), 1102
 		},
 	}
 	for _, tc := range tests {
