@@ -120,7 +120,6 @@ import (
 	bcnamoduletypes "github.com/BitCannaGlobal/bcna/x/bcna/types"
 
 	appparams "github.com/BitCannaGlobal/bcna/app/params"
-	// RBG "github.com/BitCannaGlobal/bcna/app/upgrades"
 	"github.com/BitCannaGlobal/bcna/docs"
 )
 

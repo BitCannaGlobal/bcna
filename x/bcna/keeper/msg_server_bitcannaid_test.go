@@ -12,10 +12,10 @@ import (
 
 func TestBitcannaidMsgServerCreate(t *testing.T) {
 	srv, ctx := setupMsgServer(t)
-	creator := "A"
+	creator := "BCNAID-"
 
-	for i := 0; i < 5; i++ { // RBG: test Bcnaid: concatenated
-		concatenated := strconv.Itoa(i) + creator
+	for i := 0; i < 5; i++ {
+		concatenated := creator + strconv.Itoa(i) // to produce a different Bcnaid each time
 		fmt.Println(concatenated)
 		resp, err := srv.CreateBitcannaid(ctx, &types.MsgCreateBitcannaid{Creator: creator, Bcnaid: concatenated})
 		require.NoError(t, err)

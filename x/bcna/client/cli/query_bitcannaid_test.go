@@ -21,7 +21,6 @@ func networkWithBitcannaidObjects(t *testing.T, n int) (*network.Network, []type
 	t.Helper()
 	cfg := network.DefaultConfig()
 	state := types.GenesisState{}
-	// RBG: require.NoError(t, cfg.Codec.UnmarshalJSON(cfg.GenesisState[types.ModuleName], &state))
 
 	for i := 0; i < n; i++ {
 		bitcannaid := types.Bitcannaid{
@@ -64,7 +63,6 @@ func TestShowBitcannaid(t *testing.T) {
 		},
 	}
 	for _, tc := range tests {
-		// RBG test   tc := tc
 		t.Run(tc.desc, func(t *testing.T) {
 			args := []string{tc.id}
 			args = append(args, tc.args...)
