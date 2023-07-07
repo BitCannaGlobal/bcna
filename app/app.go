@@ -128,7 +128,6 @@ const (
 	Name                 = "bcna"
 )
 
-// RBG: Should I remove the getGovProposalHandlers() function?
 func getGovProposalHandlers() []govclient.ProposalHandler {
 	var govProposalHandlers []govclient.ProposalHandler
 
@@ -467,7 +466,8 @@ func New(
 
 	// Create IBC Keeper
 	app.IBCKeeper = ibckeeper.NewKeeper(
-		appCodec, keys[ibcexported.StoreKey],
+		appCodec,
+		keys[ibcexported.StoreKey],
 		app.GetSubspace(ibcexported.ModuleName),
 		app.StakingKeeper,
 		app.UpgradeKeeper,
@@ -573,8 +573,6 @@ func New(
 	// register hooks after all modules have been initialized
 
 	// NOTE: stakingKeeper above is passed by reference, so that it will contain these hooks
-	// RBG: checked with Cosmos SDK v0.47 simapp
-	// https://github.com/cosmos/cosmos-sdk/blob/release/v0.47.x/simapp/app.go#L331
 	app.StakingKeeper.SetHooks(
 		stakingtypes.NewMultiStakingHooks(
 			// insert staking hooks receivers here
