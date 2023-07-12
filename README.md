@@ -2,7 +2,7 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> [Current version (v2.0.2)](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) of our development uses Cosmos SDK v0.46.13 & CometBFT v0.34.28 & IBC-go v4.4.1
+> [Current version (v2.0.2)](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) of our development uses Cosmos SDK v0.46.13 & CometBFT v0.34.28 & IBC-go v6.1.1
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
