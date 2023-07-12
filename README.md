@@ -186,6 +186,7 @@ Follow this guide to install Cosmovisor on your node.
 
 ## Peer, seeds and public service providers
 * [BitCanna service providers](https://github.com/BitCannaGlobal/bcna/blob/main/peers_seeds_and_services.md)
+* [BitCanna Chain Registry](https://github.com/BitCannaGlobal/bcna/blob/main/chain-registry.json) (Mandatory for Team's Delegation Program)
 * [Cosmos Chain Registry](https://github.com/cosmos/chain-registry/tree/master/bitcanna)
 
 ## Archived Guides, FAQs & docs
