@@ -18,7 +18,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 
 ## Software Requirements
 * Linux server (Ubuntu 20/22 server recommended)
-* Go version v1.19.5
+* Go version v1.20.5
 
 > Please avoid cheap VPS providers as a main validator (we suggest using it as a cheap backup). We advise to use a shared dedicated server or a high-end NVMe VPS.
 
