@@ -113,7 +113,7 @@ func initRootCmd(
 		tmcli.NewCompletionCmd(rootCmd, true),
 		debug.Cmd(),
 		config.Cmd(),
-		pruning.PruningCmd(a.newApp),
+		pruning.Cmd(a.newApp, app.DefaultNodeHome),
 		snapshot.Cmd(a.newApp),
 	)
 
