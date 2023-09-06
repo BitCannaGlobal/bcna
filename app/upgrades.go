@@ -129,15 +129,13 @@ func (app *App) GanjaRevolution47(_ upgradetypes.Plan) {
 		}
 		logger.Info(fmt.Sprintf("post migrate version map: %v", versionMap))
 
-		// Note: this migration is optional,
-		// You can include x/gov proposal migration documented in [UPGRADING.md](https://github.com/cosmos/cosmos-sdk/blob/main/UPGRADING.md)
-
 		// https://github.com/cosmos/ibc-go/blob/v7.1.0/docs/migrations/v7-to-v7_1.md
 		// explicitly update the IBC 02-client params, adding the localhost client type
 		params := app.IBCKeeper.ClientKeeper.GetParams(ctx)
 		params.AllowedClients = append(params.AllowedClients, exported.Localhost)
 		app.IBCKeeper.ClientKeeper.SetParams(ctx, params)
 
+		// ibc/go v7.0 migration
 		// OPTIONAL: prune expired tendermint consensus states to save storage space
 		if _, err := ibctmmigrations.PruneExpiredConsensusStates(ctx, app.appCodec, app.IBCKeeper.ClientKeeper); err != nil {
 			return nil, err
