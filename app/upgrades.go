@@ -121,6 +121,18 @@ func (app *App) GanjaRevolution47(_ upgradetypes.Plan) {
 		baseAppLegacySS := app.ParamsKeeper.Subspace(baseapp.Paramspace).WithKeyTable(paramstypes.ConsensusParamsKeyTable())
 		baseapp.MigrateParams(ctx, baseAppLegacySS, &app.ConsensusParamsKeeper)
 
+		// ibc/go v7.0 migration
+		// OPTIONAL: prune expired tendermint consensus states to save storage space
+		if _, err := ibctmmigrations.PruneExpiredConsensusStates(ctx, app.appCodec, app.IBCKeeper.ClientKeeper); err != nil {
+			return nil, err
+		}
+
+		// https://github.com/cosmos/ibc-go/blob/v7.1.0/docs/migrations/v7-to-v7_1.md
+		// explicitly update the IBC 02-client params, adding the localhost client type
+		params := app.IBCKeeper.ClientKeeper.GetParams(ctx)
+		params.AllowedClients = append(params.AllowedClients, exported.Localhost)
+		app.IBCKeeper.ClientKeeper.SetParams(ctx, params)
+
 		// Run migrations
 		logger.Info(fmt.Sprintf("pre migrate version map: %v", fromVM))
 		versionMap, err := app.mm.RunMigrations(ctx, app.configurator, fromVM)
@@ -129,26 +141,14 @@ func (app *App) GanjaRevolution47(_ upgradetypes.Plan) {
 		}
 		logger.Info(fmt.Sprintf("post migrate version map: %v", versionMap))
 
-		// https://github.com/cosmos/ibc-go/blob/v7.1.0/docs/migrations/v7-to-v7_1.md
-		// explicitly update the IBC 02-client params, adding the localhost client type
-		params := app.IBCKeeper.ClientKeeper.GetParams(ctx)
-		params.AllowedClients = append(params.AllowedClients, exported.Localhost)
-		app.IBCKeeper.ClientKeeper.SetParams(ctx, params)
-
-		// ibc/go v7.0 migration
-		// OPTIONAL: prune expired tendermint consensus states to save storage space
-		if _, err := ibctmmigrations.PruneExpiredConsensusStates(ctx, app.appCodec, app.IBCKeeper.ClientKeeper); err != nil {
-			return nil, err
-		}
-
-		// update gov params to use a 20% initial deposit ratio, allowing us to remote the ante handler
+		// Update gov params to use a 20% initial deposit ratio, allowing us to remote the ante handler
 		govParams := app.GovKeeper.GetParams(ctx)
 		govParams.MinInitialDepositRatio = sdk.NewDec(20).Quo(sdk.NewDec(100)).String()
 		if err := app.GovKeeper.SetParams(ctx, govParams); err != nil {
 			return nil, err
 		}
 
-		// x/Staking - set minimum commission to 4,20% 0.042000000000000000
+		// Update x/Staking - set minimum commission to 4,20% 0.042000000000000000
 		stakingParams := app.StakingKeeper.GetParams(ctx)
 		stakingParams.MinCommissionRate = sdk.NewDecWithPrec(420, 4)
 		err = app.StakingKeeper.SetParams(ctx, stakingParams)
