@@ -34,7 +34,7 @@ import (
 	ibctmmigrations "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint/migrations"
 )
 
-var keyTableAssigned bool
+var keyTableAssigned = false
 
 // RegisterUpgradeHandlers registers upgrade handlers.
 
