@@ -3,7 +3,7 @@
     "seeds": [
       {
         "id": "d6aa4c9f3ccecb0cc52109a95962b4618d69dd3f",
-        "address": "seed1.bitcanna.io: 26656",
+        "address": "seed1.bitcanna.io:26656",
         "provider": "bitcanna"
       },
       {
