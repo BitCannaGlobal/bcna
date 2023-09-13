@@ -518,5 +518,11 @@
       "url": "https://explorer.validatornode.com/bitcanna",
       "tx_page": "https://explorer.validatornode.com/bitcanna/tx/${txHash}"
     }
+  ],
+  "archive_nodes": [
+    {
+      "address": "https://rpc.bitcanna.sgtstake.com/",
+      "provider": "SGTstake"
+    }  
   ]
 }
