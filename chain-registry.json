@@ -258,7 +258,7 @@
         "provider": "Artcryptorg"
       },
       {
-        "address": "https://rpc.bitcanna.cosmowiz.com;",
+        "address": "https://rpc.bitcanna.cosmowiz.com",
         "provider": "Cosmowiz"
       },
       {
