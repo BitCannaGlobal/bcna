@@ -488,8 +488,9 @@
     },
     {
       "kind": "forbole",
-      "url": "https://cosmos-explorer.bitcanna.io",
-      "tx_page": "https://cosmos-explorer.bitcanna.io/transactions/${txHash}"
+      "url": "https://explorer.bitcanna.io",
+      "tx_page": "https://explorer.bitcanna.io/transactions/${txHash}",
+      "account_page": "https://explorer.bitcanna.io/accounts/${accountAddress}"
     },
     {
       "kind": "ping.pub",
