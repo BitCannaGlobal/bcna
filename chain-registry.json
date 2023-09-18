@@ -308,11 +308,11 @@
     ],
     "grpc": [
       {
-        "address": "https://grpc.bitcanna.io",
+        "address": "grpc.bitcanna.io:443",
         "provider": "bitcanna"
       },
       {
-        "address": "https://bitcanna-grpc.lavenderfive.com:443/",
+        "address": "bitcanna-grpc.lavenderfive.com:443",
         "provider": "Lavender.Five Nodes 🐝"
       },
       {
@@ -320,7 +320,7 @@
         "provider": "genznodes"
       },
       {
-        "address": "http://bitcanna.grpc.m.stavr.tech:9081",
+        "address": "bitcanna.grpc.m.stavr.tech:9081",
         "provider": "🔥STAVR🔥"
       },
       {
@@ -332,19 +332,16 @@
         "provider": "AVIAONE 🟢"
       },
       {
-        "address": "http://88.99.33.248:12090/",
+        "address": "88.99.33.248:12090",
         "provider": "Cryptosailors"
-          },
-          {
-        "address": "https://grpc.bitcanna.hexnodes.co",
-        "provider": "Hexnodes"
       },
+
       {
-        "address": "http://bitcanna-mainnet.grpc.l0vd.com:80",
+        "address": "bitcanna-mainnet.grpc.l0vd.com:80",
         "provider": "L0vd.com"
       },
       {
-        "address": "https://grpc-bitcanna-ia.cosmosia.notional.ventures",
+        "address": "grpc-bitcanna-ia.cosmosia.notional.ventures:443",
         "provider": "Notional"
       },
       {
@@ -364,7 +361,7 @@
         "provider": "Indonode"
       },
       {
-        "address": "https://grpc-bitcanna.mms.team:443",
+        "address": "grpc-bitcanna.mms.team:443",
         "provider": "MMS"
       }
     ],
