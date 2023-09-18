@@ -328,6 +328,10 @@
         "provider": "Alkia"
       },
       {
+        "address": "grpc.bitcanna.hexnodes.co:21090",
+        "provider": "HexNodes"
+      },
+      {
         "address": "grpc.bitcanna-1.bitcanna.aviaone.com:9092",
         "provider": "AVIAONE 🟢"
       },
