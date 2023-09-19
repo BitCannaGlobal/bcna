@@ -362,10 +362,6 @@
         "provider": "kjnodes"
       },
       {
-        "address": "http://bitcanna.alkia.net:1317/",
-        "provider": "ALKIA"
-      },
-      {
         "address": "https://bitcanna-api.lavenderfive.com/",
         "provider": "Lavender.Five Nodes 🐝"
       },
@@ -418,11 +414,11 @@
         "provider": "MMS"
       },
       {
-        "address": "https://65.108.142.81:1325",
+        "address": "http://65.108.142.81:1325",
         "provider": "Stakely"
       },
       {
-        "address": "https://93.115.25.15:1317",
+        "address": "http://93.115.25.15:1317",
         "provider": "Stakely"
       },
       {
