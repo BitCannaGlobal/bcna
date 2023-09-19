@@ -316,16 +316,8 @@
         "provider": "Lavender.Five Nodes 🐝"
       },
       {
-        "address": "bitcanna-grpc.genznodes.dev:32090",
-        "provider": "genznodes"
-      },
-      {
         "address": "bitcanna.grpc.m.stavr.tech:9081",
         "provider": "🔥STAVR🔥"
-      },
-      {
-        "address": "bitcanna.alkia.net:9090",
-        "provider": "Alkia"
       },
       {
         "address": "grpc.bitcanna.hexnodes.co:21090",
@@ -335,11 +327,6 @@
         "address": "grpc.bitcanna-1.bitcanna.aviaone.com:9092",
         "provider": "AVIAONE 🟢"
       },
-      {
-        "address": "88.99.33.248:12090",
-        "provider": "Cryptosailors"
-      },
-
       {
         "address": "bitcanna-mainnet.grpc.l0vd.com:80",
         "provider": "L0vd.com"
@@ -355,10 +342,6 @@
       {
         "address": "bitcanna-grpc.polkachu.com:13090",
         "provider": "Polkachu"
-      },
-      {
-        "address": "65.109.106.172:9190",
-        "provider": "NODEJUMPER"
       },
       {
         "address": "grpc.bitcanna.indonode.net:27090",
