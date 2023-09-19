@@ -22,18 +22,13 @@
         "provider": "Lavender.Five Nodes 🐝"
       },
       {
-        "id": "2235f1e518c5ea4a412f9dece386348eda356916",
-        "address": "bitcanna.alkia.net:26656",
-        "provider": "Alkia"
-      },
-      {
         "id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
         "address": "seed.bitcanna-1.bitcanna.aviaone.com:10263",
         "provider": "AVIAONE 🟢"
       },
       {
-      "id": "e5c8260f76b9d614ab20559ee8b8918d4cb75e84",
-      "address": "seeds-bitcanna.hexnodes.co:21656",
+      "id": "ee0f401697311bd1eb01653c1c7747ce32290569",
+      "address": "95.216.7.136:3656",
         "provider": "Hexnodes"
       },
       {
@@ -89,19 +84,9 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "id": "9425b897a9726efb1e56111a8b355026a1f3a497",
-        "address": "65.108.238.203:46656",
-        "provider": "[NODERS]TEAM"
-      },
-      {
         "id": "5a048cab1d183de5c465c56b29a16fd93a8bf9bd",
         "address": "mainnet-bitcanna.konsortech.xyz:27656",
         "provider": "KonsorTech"
-      },
-      {
-        "id": "2235f1e518c5ea4a412f9dece386348eda356916",
-        "address": "bitcanna.alkia.net:26656",
-        "provider": "ALKIA"
       },
       {
         "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
@@ -109,19 +94,14 @@
         "provider": "kjnodes"
       },
       {
-        "id": "d435c2257256e12c697f0155edcd1695f2d9445d",
-        "address": "95.214.53.218:32656",
+        "id": "50e4ad8f5847c1fc4d9cb3de2cb6356d1a14291b",
+        "address": "95.214.55.138:32656",
         "provider": "genznodes"
       },
       {
         "id": "2ff33d346b1b0f19cd59018ceb62d06a6406d472",
         "address": "bitcanna.peers.stavr.tech:21326",
         "provider": "🔥STAVR🔥"
-      },
-      {
-        "id": "2235f1e518c5ea4a412f9dece386348eda356916",
-        "address": "bitcanna.alkia.net:26656",
-        "provider": "Alkia"
       },
       {
         "id": "a2856e17aef2ae9825f92ab93b8cc7d613526052",
@@ -208,10 +188,6 @@
       {
         "address": "http://bitcanna.rpc.m.stavr.tech:21327",
         "provider": "🔥STAVR🔥"
-      },
-      {
-        "address": "http://bitcanna.statesync.nodersteam.com:46657",
-        "provider": "[NODERS]TEAM"
       },
       {
         "address": "https://rpc-bcna.kjinc.io/",
