@@ -202,10 +202,6 @@
         "provider": "kjnodes"
       },
       {
-        "address": "http://bitcanna.alkia.net:26657",
-        "provider": "ALKIA"
-      },
-      {
         "address": "https://bitcanna-rpc.lavenderfive.com/",
         "provider": "Lavender.Five Nodes 🐝"
       },
@@ -228,10 +224,6 @@
       {
         "address": "http://rpc.bitcanna.citizencosmos.space/",
         "provider": "Citizen Cosmos"
-      },
-      {
-        "address": "http://65.108.241.6:26657",
-        "provider": "Artcryptorg"
       },
       {
         "address": "https://rpc.bitcanna.cosmowiz.com",
@@ -270,11 +262,11 @@
         "provider": "MMS"
       },
       {
-        "address": "https://65.108.142.81:26683",
+        "address": "http://65.108.142.81:26683",
         "provider": "Stakely"
       },
       {
-        "address": "https://93.115.25.15:26657",
+        "address": "http://93.115.25.15:26657",
         "provider": "Stakely"
       },
       {
