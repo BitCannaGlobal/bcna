@@ -1,0 +1,95 @@
+{
+  "peers": {
+    "seeds": [
+      {
+        "id": "d6aa4c9f3cc--------962b4618d69dd3f",
+        "address": "testnet-seed.bitcanna.io:26656",
+        "provider": "example"
+      },
+      {
+        "id": "",
+        "address": "",
+        "provider": ""
+      }
+    ],
+    "persistent_peers": [
+      {
+        "id": "a4c1e46441164_____cf142d52c136215e05c",
+        "address": "212.227.151.143:26656",
+        "provider": "bitcanna-testnet"
+      },
+      {
+        "id": "",
+        "address": "",
+        "provider": ""
+      }
+    ]
+  },
+  "apis": {
+    "rpc": [
+      {
+        "address": "https://rpc-testnet.bitcanna.io/",
+        "provider": "bitcanna"
+      },
+      {
+        "address": "https://bitcanna-rpc.validatornode.com",
+        "provider": ""
+      }
+    ],
+    "grpc": [
+      {
+        "address": "grpc-testent.bitcanna.io:443",
+        "provider": "bitcanna"
+      },
+      {
+        "address": "ip-name:port",
+        "provider": ""
+      }
+    ],
+    "rest": [
+      {
+        "address": "https://lcd-testnet.bitcanna.io",
+        "provider": "bitcanna"
+      },
+      {
+        "address": "http-s usr",
+        "provider": "validator"
+      }
+    ]
+  },
+  "explorers": [
+    {
+      "kind": "Ping.pub fork",
+      "url": "url",
+      "tx_page": "url/tx/${txHash}",
+      "account_page": "url/account/${accountAddress}"
+    },
+    {
+      "kind": "",
+      "url": "",
+      "tx_page": "/tx/${txHash}"
+    }
+  ],
+  "archive_nodes": [
+    {
+      "address": "RPC url",
+      "provider": "validator"
+    },
+    {
+      "address": "https://rpc.example.com/",
+      "provider": "Example"
+    }
+  ],
+  "state_sync": [
+    {
+      "address": "RPC url",
+      "url_doc": "https://aviaone.com/blockchains-service/bitcanna-testnet-bitcanna-1.html",
+      "provider": "AVIAONE 🟢"
+    },
+    {
+      "address": "https://rpc.example.com/",
+      "url_doc": "https://www.doc.com",
+      "provider": "Example"
+    }    
+  ]
+}
