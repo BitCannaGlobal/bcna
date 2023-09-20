@@ -30,7 +30,7 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
 
 	// "github.com/cosmos/cosmos-sdk/x/nft"
-	exported "github.com/cosmos/ibc-go/v7/modules/core/exported"
+	ibcexported "github.com/cosmos/ibc-go/v7/modules/core/exported"
 	ibctmmigrations "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint/migrations"
 )
 
@@ -83,6 +83,9 @@ func (app *App) GanjaRevolution47(_ upgradetypes.Plan) {
 			keyTableAssigned = true
 
 		// ibc types
+		case ibcexported.ModuleName:
+			keyTable = icacontrollertypes.ParamKeyTable()
+			keyTableAssigned = true
 		case ibctransfertypes.ModuleName:
 			keyTable = ibctransfertypes.ParamKeyTable()
 			keyTableAssigned = true
@@ -130,7 +133,7 @@ func (app *App) GanjaRevolution47(_ upgradetypes.Plan) {
 		// https://github.com/cosmos/ibc-go/blob/v7.1.0/docs/migrations/v7-to-v7_1.md
 		// explicitly update the IBC 02-client params, adding the localhost client type
 		params := app.IBCKeeper.ClientKeeper.GetParams(ctx)
-		params.AllowedClients = append(params.AllowedClients, exported.Localhost)
+		params.AllowedClients = append(params.AllowedClients, ibcexported.Localhost)
 		app.IBCKeeper.ClientKeeper.SetParams(ctx, params)
 
 		// Run migrations
