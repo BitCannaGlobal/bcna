@@ -19,9 +19,9 @@
         "provider": "bitcanna-testnet"
       },
       {
-        "id": "",
-        "address": "",
-        "provider": ""
+        "id": "60fae2c5581622bb84eaf95878e85c9f339f1a2a",
+        "address": "212.227.151.106:26656",
+        "provider": "El-Jay's"
       }
     ]
   },
@@ -32,18 +32,18 @@
         "provider": "bitcanna"
       },
       {
-        "address": "https://bitcanna-rpc.validatornode.com",
-        "provider": ""
+        "address": "212.227.151.106:1317",
+        "provider": "El-Jay's"
       }
     ],
     "grpc": [
       {
-        "address": "grpc-testent.bitcanna.io:443",
+        "address": "grpc-testnet.bitcanna.io:443",
         "provider": "bitcanna"
       },
       {
-        "address": "ip-name:port",
-        "provider": ""
+        "address": "212.227.151.106:9090",
+        "provider": "El-Jay's"
       }
     ],
     "rest": [
