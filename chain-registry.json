@@ -393,7 +393,7 @@
         "provider": "Stakely"
       },
       {
-        "address": "https://bitcanna-api.validatonode.com",
+        "address": "https://bitcanna-api.validatornode.com",
         "provider": "ValidatorNode"
       }
     ]
