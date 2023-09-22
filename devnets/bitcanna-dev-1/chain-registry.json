@@ -2,9 +2,14 @@
   "peers": {
     "seeds": [
       {
-        "id": "",
-        "address": "",
-        "provider": ""
+        "id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
+        "address": "seed.bitcanna-dev-1.bitcanna.aviaone.com:20264",
+        "provider": "AVIAONE"
+      },
+      {
+        "id": "471341f9befeab582e845d5e9987b7a4889c202f",
+        "address": "144.91.89.66:26656",
+        "provider": "AVIAONE"
       }
     ],
     "persistent_peers": [
