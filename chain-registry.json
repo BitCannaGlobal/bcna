@@ -32,11 +32,6 @@
         "provider": "Hexnodes"
       },
       {
-        "id": "400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc",
-        "address": "bitcanna.rpc.kjnodes.com:14259",
-        "provider": "kjnodes"
-      },
-      {
         "id": "d5ed854872ad96f114737889ac9521ea3a29e3a3",
         "address": "bitcanna-seed.oldcat.io:26656",
         "provider": "Oldcat"
@@ -183,8 +178,8 @@
       {
         "address": "https://rpc-bcna.kjinc.io/",
         "provider": "KJINC.io"
-          },
-          {
+      },
+      {
         "address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
         "provider": "KonsorTech"
       },
@@ -341,10 +336,6 @@
         "provider": "kjnodes"
       },
       {
-        "address": "https://bitcanna-api.lavenderfive.com/",
-        "provider": "Lavender.Five Nodes 🐝"
-      },
-      {
         "address": "https://bitcanna-api.genznodes.dev",
         "provider": "genznodes"
       },
@@ -375,10 +366,6 @@
       {
         "address": "https://bitcanna.nodejumper.io:1317",
         "provider": "NODEJUMPER"
-      },
-      {
-        "address": "https://api.bitcanna.indonode.net/",
-        "provider": "Indonode"
       },
       {
         "address": "https://api-bitcanna.mms.team:443",
