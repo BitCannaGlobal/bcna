@@ -21,7 +21,7 @@
       {
         "id": "60fae2c5581622bb84eaf95878e85c9f339f1a2a",
         "address": "212.227.151.106:26656",
-        "provider": "El-Jay's"
+        "provider": "El-Jay"
       }
     ]
   },
@@ -33,7 +33,7 @@
       },
       {
         "address": "212.227.151.106:1317",
-        "provider": "El-Jay's"
+        "provider": "El-Jay"
       }
     ],
     "grpc": [
@@ -43,7 +43,7 @@
       },
       {
         "address": "212.227.151.106:9090",
-        "provider": "El-Jay's"
+        "provider": "El-Jay"
       }
     ],
     "rest": [
