@@ -188,10 +188,6 @@
         "provider": "kjnodes"
       },
       {
-        "address": "https://bitcanna-rpc.lavenderfive.com/",
-        "provider": "Lavender.Five Nodes 🐝"
-      },
-      {
         "address": "https://bitcanna-rpc.genznodes.dev",
         "provider": "genznodes"
       },
@@ -334,6 +330,10 @@
       {
         "address": "https://bitcanna.api.kjnodes.com",
         "provider": "kjnodes"
+      },
+      {
+        "address": "https://bitcanna-api.lavenderfive.com/",
+        "provider": "Lavender.Five Nodes 🐝"
       },
       {
         "address": "https://bitcanna-api.genznodes.dev",
