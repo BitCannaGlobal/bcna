@@ -84,11 +84,6 @@
         "provider": "KonsorTech"
       },
       {
-        "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
-        "address": "bitcanna.rpc.kjnodes.com:42656",
-        "provider": "kjnodes"
-      },
-      {
         "id": "50e4ad8f5847c1fc4d9cb3de2cb6356d1a14291b",
         "address": "95.214.55.138:32656",
         "provider": "genznodes"
@@ -102,11 +97,6 @@
         "id": "e69d68eae1f01baac83c1ed321ba1dca2379bdc2",
         "address": "144.91.65.13:26666",
         "provider": "AVIAONE 🟢"
-      },
-      {
-        "id": "88497ab3bbbcc1e8545771f45020e738bcce590f",
-        "address": "95.165.89.222:26756",
-        "provider": "maxfoton"
       },
       {
         "id": "6ae1dfa46884560e13962d73462e5bda0bb8c019",
@@ -204,10 +194,6 @@
         "provider": "Citizen Cosmos"
       },
       {
-        "address": "http://95.165.89.222:26758/",
-        "provider": "maxfoton"
-      },
-      {
         "address": "https://bitcanna-mainnet.rpc.l0vd.com/",
         "provider": "L0vd.com"
       },
@@ -284,10 +270,6 @@
       {
         "address": "bitcanna-grpc.polkachu.com:13090",
         "provider": "Polkachu"
-      },
-      {
-        "address": "grpc.bitcanna.indonode.net:27090",
-        "provider": "Indonode"
       },
       {
         "address": "grpc-bitcanna.mms.team:443",
