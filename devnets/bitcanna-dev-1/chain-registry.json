@@ -2,11 +2,6 @@
   "peers": {
     "seeds": [
       {
-        "id": "d6aa4c9f3cc--------962b4618d69dd3f",
-        "address": "testnet-seed.bitcanna.io:26656",
-        "provider": "example"
-      },
-      {
         "id": "",
         "address": "",
         "provider": ""
@@ -14,7 +9,7 @@
     ],
     "persistent_peers": [
       {
-        "id": "a4c1e46441164_____cf142d52c136215e05c",
+        "id": "80ee9ed689bfb329cf21b94aa12978e073226db4",
         "address": "212.227.151.143:26656",
         "provider": "bitcanna-testnet"
       },
@@ -28,11 +23,11 @@
   "apis": {
     "rpc": [
       {
-        "address": "https://rpc-testnet.bitcanna.io/",
-        "provider": "bitcanna"
+        "address": "https://rpc-testnet.bitcanna.io:443",
+        "provider": "bitcanna-testnet"
       },
       {
-        "address": "212.227.151.106:1317",
+        "address": "http://212.227.151.106:26657",
         "provider": "El-Jay"
       }
     ],
@@ -52,17 +47,17 @@
         "provider": "bitcanna"
       },
       {
-        "address": "http-s usr",
-        "provider": "validator"
+        "address": "http://212.227.151.106:1317",
+        "provider": "El-Jay"
       }
     ]
   },
   "explorers": [
     {
-      "kind": "Ping.pub fork",
-      "url": "url",
-      "tx_page": "url/tx/${txHash}",
-      "account_page": "url/account/${accountAddress}"
+      "kind": "Ping.pub",
+      "url": "https://testnet.ping.pub/bitcanna",
+      "tx_page": "https://testnet.ping.pub/bitcanna/tx/${txHash}",
+      "account_page": "https://testnet.ping.pub/bitcanna/account/${accountAddress}"
     },
     {
       "kind": "",
@@ -82,8 +77,8 @@
   ],
   "state_sync": [
     {
-      "address": "RPC url",
-      "url_doc": "https://aviaone.com/blockchains-service/bitcanna-testnet-bitcanna-1.html",
+      "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/",
+      "url_doc": "https://aviaone.com/blockchains-service/bitcanna-testnet-bitcanna-dev-1.html",
       "provider": "AVIAONE 🟢"
     },
     {
