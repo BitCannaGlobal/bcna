@@ -57,8 +57,6 @@ func fauxMerkleModeOpt(bapp *baseapp.BaseApp) {
 }
 
 // BenchmarkSimulation run the chain simulation
-// Running using starport command:
-// `starport chain simulate -v --numBlocks 200 --blockSize 50`
 // Running as go benchmark test:
 // `go test -benchmem -run=^$ -bench ^BenchmarkSimulation ./app -NumBlocks=200 -BlockSize 50 -Commit=true -Verbose=true -Enabled=true`
 func BenchmarkSimulation(b *testing.B) {
@@ -68,7 +66,7 @@ func BenchmarkSimulation(b *testing.B) {
 	simcli.FlagEnabledValue = true
 
 	config := simcli.NewConfigFromFlags()
-	config.ChainID = "mars-simapp"
+	config.ChainID = "bitcanna-sim"
 	db, dir, logger, _, err := simtestutil.SetupSimulation(
 		config,
 		"leveldb-bApp-sim",
