@@ -10,6 +10,11 @@
         "id": "471341f9befeab582e845d5e9987b7a4889c202f",
         "address": "144.91.89.66:26656",
         "provider": "AVIAONE"
+      },
+      {
+        "id": "24823f3d602136a213f9d93740193aed33de56a9",
+        "address": "seeds.bitcanna-dev.hexnodes.co:31656",
+        "provider": "Hexnodes"
       }
     ],
     "persistent_peers": [
@@ -34,6 +39,10 @@
       {
         "address": "http://212.227.151.106:26657",
         "provider": "El-Jay"
+      },
+      {
+        "address": "https://rpc.bitcanna-dev.hexnodes.co:443",
+        "provider": "Hexnodes"
       }
     ],
     "grpc": [
@@ -44,6 +53,10 @@
       {
         "address": "212.227.151.106:9090",
         "provider": "El-Jay"
+      },
+      {
+        "address": "grpc.bitcanna-dev.hexnodes.co:31090",
+        "provider": "Hexnodes"
       }
     ],
     "rest": [
@@ -54,6 +67,10 @@
       {
         "address": "http://212.227.151.106:1317",
         "provider": "El-Jay"
+      },
+      {
+        "address": "https://rest.bitcanna-dev.hexnodes.co",
+        "provider": "Hexnodes"
       }
     ]
   },
@@ -63,6 +80,12 @@
       "url": "https://testnet.ping.pub/bitcanna",
       "tx_page": "https://testnet.ping.pub/bitcanna/tx/${txHash}",
       "account_page": "https://testnet.ping.pub/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "Hexnodes",
+      "url": "https://explorer.hexnodes.co/bitcanna-testnet",
+      "tx_page": "https://explorer.hexnodes.co/bitcanna-testnet/tx/${txHash}",
+      "account_page": "hthttps://explorer.hexnodes.co/bitcanna-testnet/account/${accountAddress}"
     },
     {
       "kind": "",
@@ -85,6 +108,11 @@
       "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/",
       "url_doc": "https://aviaone.com/blockchains-service/bitcanna-testnet-bitcanna-dev-1.html",
       "provider": "AVIAONE 🟢"
+    },
+    {
+      "address": "https://rpc.bitcanna-de.hexnodes.co",
+      "url_doc": "https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna",
+      "provider": "Hexnodes"
     },
     {
       "address": "https://rpc.example.com/",
