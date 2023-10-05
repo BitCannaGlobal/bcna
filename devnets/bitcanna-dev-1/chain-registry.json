@@ -55,7 +55,7 @@
         "provider": "El-Jay"
       },
       {
-        "address": "grpc.bitcanna-dev.hexnodes.co:443",
+        "address": "grpc.bitcanna-dev.hexnodes.co:31090",
         "provider": "Hexnodes"
       }
     ],
