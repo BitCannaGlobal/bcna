@@ -2,7 +2,7 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> [Current version (v2.0.2)](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) of our development uses Cosmos SDK v0.46.13 & CometBFT v0.34.28 & IBC-go v6.1.1
+> [Current version (v2.0.3)](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.3) of our development uses Cosmos SDK v0.46.14 & CometBFT v0.34.29 & IBC-go v6.1.1
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -23,7 +23,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 > Please avoid cheap VPS providers as a main validator (we suggest using it as a cheap backup). We advise to use a shared dedicated server or a high-end NVMe VPS.
 
 ## Genesis file
-* [Link to Genesis file](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/devnets/bitcanna-dev-1/genesis.json)
+* [Link to Genesis file](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json)
 
 ## Binary / Upgrades table
 
@@ -35,7 +35,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 30th May 2023 15.40h CEST    | 8.771.420   | [v1.7.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.7.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.7.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v170-codename-vigorous-grow-huckleberry-from-v163) |
 | 29th Jun 2023 16.20h CEST    | 9.209.420   | [v2.0.2](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 
-> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2
+> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.3
 
 # How to join `bitcanna-1` chain
 > Tip: At the end of this doc, you will find links with important info
@@ -172,7 +172,6 @@ Follow this guide to install Cosmovisor on your node.
 * [BitCanna based on Forbole](https://explorer.bitcanna.io)
 * [MintScan based on Cosmostation](https://www.mintscan.io/bitcanna)
 * [Ping-Pub explorer](https://ping.pub/bitcanna/uptime)
-* [Old chain explorer](https://old-explorer.bitcanna.io)
 * [ATOMScan explorer](https://atomscan.com/bitcanna)
 
 ## Wallets
@@ -185,16 +184,16 @@ Follow this guide to install Cosmovisor on your node.
 * [bitcanna-1](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json)
 
 ## Peer, seeds and public service providers
-* [BitCanna service providers](https://github.com/BitCannaGlobal/bcna/blob/main/peers_seeds_and_services.md)
 * [BitCanna Chain Registry](https://github.com/BitCannaGlobal/bcna/blob/main/chain-registry.json) (Mandatory for Team's Delegation Program)
+* [BitCanna DEVET-1 Chain Registry](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/chain-registry.json) (Mandatory for Team's Delegation Program)
 * [Cosmos Chain Registry](https://github.com/cosmos/chain-registry/tree/master/bitcanna)
 
 ## Archived Guides, FAQs & docs
 * [BitCanna Docs](https://docs.bitcanna.io)
 * [GitHub Testnet & DevNet archive](https://github.com/BitCannaGlobal/testnet-bcna-cosmos/tree/main/instructions)
-* [Current DevNet](https://github.com/BitCannaGlobal/testnet-bcna-cosmos/tree/main/instructions/bitcanna-dev-4)
+* [Current DevNet](https://github.com/BitCannaGlobal/bcna/tree/main/devnets/bitcanna-dev-1)
 * [Old Instructions guide](https://github.com/BitCannaGlobal/bcna/blob/main/archived_guides/instructions.md)
 * [How to perform a manual upgrade](https://github.com/BitCannaGlobal/bcna/blob/main/archived_guides/manual_update.md)
-* [How to perform an upgrade with Cosmovisor (v.1.1)](https://github.com/BitCannaGlobal/bcna/blob/main/archived_guides/cosmovisor_config.md)
+* [How to perform an upgrade with Cosmovisor (v5.0)](https://github.com/BitCannaGlobal/bcna/blob/main/5.cosmovisor.md)
 
 ###### tags: `doc` `github`
