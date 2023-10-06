@@ -24,6 +24,11 @@
         "provider": "bitcanna-testnet"
       },
       {
+        "id": "b0c7e5c69aaf00626baaf7c59370029b587a91a4",
+        "address": "bitcannadev.peers.stavr.tech:30006",
+        "provider": "🔥STAVR🔥"
+      },
+      {
         "id": "60fae2c5581622bb84eaf95878e85c9f339f1a2a",
         "address": "212.227.151.106:26656",
         "provider": "El-Jay"
@@ -69,6 +74,10 @@
         "provider": "El-Jay"
       },
       {
+        "address": "https://bitcanna.api.dev.stavr.tech",
+        "provider": "🔥STAVR🔥"
+      },
+      {
         "address": "https://rest.bitcanna-dev.hexnodes.co",
         "provider": "Hexnodes"
       }
@@ -80,6 +89,12 @@
       "url": "https://testnet.ping.pub/bitcanna",
       "tx_page": "https://testnet.ping.pub/bitcanna/tx/${txHash}",
       "account_page": "https://testnet.ping.pub/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "🔥STAVR🔥",
+      "url": "https://explorer.stavr.tech/Bitcanna-DEV",
+      "tx_page": "https://explorer.stavr.tech/Bitcanna-DEV/tx/${txHash}",
+      "account_page": "https://explorer.stavr.tech/Bitcanna-DEV/account/${accountAddress}"
     },
     {
       "kind": "Hexnodes",
