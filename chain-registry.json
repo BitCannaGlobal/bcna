@@ -402,9 +402,9 @@
     },
     {
       "kind": "🔥STAVR🔥 Explorer",
-      "url": "https://explorer.stavr.tech/bitcanna",
-      "tx_page": "https://explorer.stavr.tech/bitcanna/txs/${txHash}",
-      "account_page": "https://explorer.stavr.tech/bitcanna/account/${accountAddress}"
+      "url": "https://explorer.stavr.tech/Bitcanna",
+      "tx_page": "https://explorer.stavr.tech/Bitcanna/txs/${txHash}",
+      "account_page": "https://explorer.stavr.tech/Bitcanna/account/${accountAddress}"
     },
     {
       "kind": "atomscan",
