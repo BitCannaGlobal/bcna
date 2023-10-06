@@ -3,6 +3,7 @@
 ## Persistent Peers
 - 80ee9ed689bfb329cf21b94aa12978e073226db4@212.227.151.143:26656
 - 20ca909b49106aacbf516ba28fa8a2409f825a82@212.227.151.106:26656
+- b0c7e5c69aaf00626baaf7c59370029b587a91a4@bitcannadev.peers.stavr.tech:30006
 
 ## Seed Peer
 This will disconnect after passing P2P info so not include in your _persistent_peers_
@@ -12,7 +13,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 ## Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
 - https://testnet.ping.pub/bitcanna/uptime
-- https://explorer.stavr.tech/bitcanna-dev/staking
+- https://explorer.stavr.tech/Bitcanna-DEV
 - https://explorer.kjnodes.com/bitcanna-testnet
 
 ## RPC endpoints
@@ -27,6 +28,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 ## LCD Enpoints
 - http://lcd-testnet.bitcanna.io
 - https://api.bitcanna-dev-1.bitcanna.aviaone.com/
+- https://bitcanna.api.dev.stavr.tech/
 - https://testnet-bitcanna-api.konsortech.xyz/
 - https://bitcanna-testnet.api.kjnodes.com
 
@@ -48,6 +50,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - [Upgrades - Last Upgrade](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md)
 - [Setup Cosmovisor from zero](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/cosmovisor_install.md)
 - [Node installation instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/installation)
+- [Node installation instructions Mainnet/DEVNET by 🔥STAVR🔥](https://github.com/obajay/nodes-Guides/tree/main/Projects/Bitcanna)
 - [Node upgrade instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/upgrade)
 - [Useful commands for node and wallet operation by kjnodes](https://services.kjnodes.com/testnet/bitcanna/useful-commands)
 
