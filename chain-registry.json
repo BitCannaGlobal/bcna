@@ -279,6 +279,10 @@
       {
         "address": "grpc-bitcanna.mms.team:443",
         "provider": "MMS"
+      },
+      {
+        "address": "grpc.bitcanna.safeblock.space:9090",
+        "provider": "Safe Block"
       }
     ],
     "rest": [
@@ -411,6 +415,11 @@
       "kind": "ValidatorNode Explorer",
       "url": "https://explorer.validatornode.com/bitcanna",
       "tx_page": "https://explorer.validatornode.com/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "Safe Block Explorer Pruned",
+      "url": "https://explorer.safeblock.space/bitcanna",
+      "tx_page": "https://explorer.safeblock.space/bitcanna/tx/${txHash}"
     }
   ],
   "archive_nodes": [
@@ -428,6 +437,11 @@
       "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com:443",
       "url_doc": "https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html",
       "provider": "AVIAONE 🟢"
+    },
+    {
+      "address": "http://rpc.bitcanna.safeblock.space:26657",
+      "url_doc": "https://safeblock.space/?elementor_library=bcna-statesync",
+      "provider": "Safe Block"
     },
     {
       "address": "https://rpc.example.com/",
