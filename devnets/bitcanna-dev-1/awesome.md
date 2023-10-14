@@ -9,6 +9,7 @@
 This will disconnect after passing P2P info so not include in your _persistent_peers_
 - 471341f9befeab582e845d5e9987b7a4889c202f@144.91.89.66:26656
 - 3f472746f46493309650e5a033076689996c8881@bitcanna-testnet.rpc.kjnodes.com:42659
+- 2a369fb20a5827104efafa901916e97516e829fb@testnet-bitcanna-seed.genznodes.dev:50656
 
 ## Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
@@ -53,6 +54,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - [Node installation instructions Mainnet/DEVNET by 🔥STAVR🔥](https://github.com/obajay/nodes-Guides/tree/main/Projects/Bitcanna)
 - [Node upgrade instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/upgrade)
 - [Useful commands for node and wallet operation by kjnodes](https://services.kjnodes.com/testnet/bitcanna/useful-commands)
+- [Testnet Service by genznodes](https://genznodes.dev/testnet_services/#bitcanna)
 
 ### Manual-setup
 > This instructions was written by Avione Validators, thanks a lot!
