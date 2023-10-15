@@ -420,6 +420,11 @@
       "kind": "Safe Block Explorer Pruned",
       "url": "https://explorer.safeblock.space/bitcanna",
       "tx_page": "https://explorer.safeblock.space/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "KitKat Explorer",
+      "url": "https://explorer.kitkat.zone/bitcanna",
+      "tx_page": "https://explorer.kitkat.zone/bitcanna/tx/${txHash}"
     }
   ],
   "archive_nodes": [
