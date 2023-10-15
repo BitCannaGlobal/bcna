@@ -383,7 +383,7 @@
         "provider": "ValidatorNode"
       },
       {
-        "address": "https://bitcanna-rpc.kitkat.zone",
+        "address": "https://bitcanna-api.kitkat.zone",
         "provider": "KitKat"
       }
     ]
