@@ -289,7 +289,7 @@
         "provider": "Safe Block"
       },
       {
-        "address": "bitcanna-rpc.kitkat.zone:13090",
+        "address": "bitcanna-grpc.kitkat.zone:13090",
         "provider": "KitKat"
       }
     ],
