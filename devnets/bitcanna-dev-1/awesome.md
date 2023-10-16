@@ -58,7 +58,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - [Node installation instructions Mainnet/DEVNET by 🔥STAVR🔥](https://github.com/obajay/nodes-Guides/tree/main/Projects/Bitcanna)
 - [Node upgrade instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/upgrade)
 - [Useful commands for node and wallet operation by kjnodes](https://services.kjnodes.com/testnet/bitcanna/useful-commands)
-- [Node Installation Instruction Devnet by KonsorTech](https://docs.konsortech.xyz/node/Testnet/Bitcanna)
+- [Node Installation Instructions Devnet by KonsorTech](https://docs.konsortech.xyz/node/Testnet/Bitcanna)
 
 ### Manual-setup
 > This instructions was written by Avione Validators, thanks a lot!
