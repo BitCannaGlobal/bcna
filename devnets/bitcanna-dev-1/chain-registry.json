@@ -27,6 +27,11 @@
         "id": "60fae2c5581622bb84eaf95878e85c9f339f1a2a",
         "address": "212.227.151.106:26656",
         "provider": "El-Jay"
+      },
+      {
+        "id": "c4277e884bbbf33ef1d8f13cbf26adb3b12336fd",
+        "address": "testnet-bitcanna.konsortech.xyz:26656",
+        "provider": "KonsorTech"
       }
     ]
   },
@@ -43,7 +48,11 @@
       {
         "address": "https://rpc.bitcanna-dev.hexnodes.co:443",
         "provider": "Hexnodes"
-      }
+      },
+      {
+        "address": "https://testnet-bitcanna-rpc.konsortech.xyz:443",
+        "provider": "KonsorTech"
+      },
     ],
     "grpc": [
       {
@@ -57,6 +66,10 @@
       {
         "address": "grpc.bitcanna-dev.hexnodes.co:31090",
         "provider": "Hexnodes"
+      },
+      {
+        "address": "testnet-bitcanna.konsortech.xyz:9090",
+        "provider": "KonsorTech"
       }
     ],
     "rest": [
@@ -75,6 +88,10 @@
       {
         "address": "https://rest.bitcanna-dev.hexnodes.co",
         "provider": "Hexnodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-api.konsortech.xyz/",
+        "provider": "KonsorTech"
       }
     ]
   },
@@ -96,6 +113,12 @@
       "url": "https://explorer.hexnodes.co/bitcanna-testnet",
       "tx_page": "https://explorer.hexnodes.co/bitcanna-testnet/tx/${txHash}",
       "account_page": "hthttps://explorer.hexnodes.co/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "KonsorTech",
+      "url": "https://testnet-explorer.konsortech.xyz/bitcanna",
+      "tx_page": "https://testnet-explorer.konsortech.xyz/bitcanna/tx/${txHash}",
+      "account_page": "https://testnet-explorer.konsortech.xyz/bitcanna/account/${accountAddress}"
     },
     {
       "kind": "",
@@ -123,6 +146,11 @@
       "address": "https://rpc.bitcanna-de.hexnodes.co",
       "url_doc": "https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna",
       "provider": "Hexnodes"
+    },
+    {
+      "address": "https://testnet-bitcanna-rpc.konsortech.xyz",
+      "url_doc": "https://docs.konsortech.xyz/node/Testnet/Bitcanna/statesync",
+      "provider": "KonsorTech"
     },
     {
       "address": "https://rpc.example.com/",
