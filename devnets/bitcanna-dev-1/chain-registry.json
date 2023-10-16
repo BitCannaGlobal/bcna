@@ -68,7 +68,7 @@
         "provider": "Hexnodes"
       },
       {
-        "address": "testnet-bitcanna.konsortech.xyz:9090",
+        "address": "testnet-bitcanna-grpc.konsortech.xyz:9090",
         "provider": "KonsorTech"
       }
     ],
