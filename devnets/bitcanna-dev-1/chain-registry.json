@@ -61,7 +61,7 @@
       {
         "address": "https://testnet-bitcanna-rpc.konsortech.xyz:443",
         "provider": "KonsorTech"
-      },
+      }
     ],
     "grpc": [
       {
