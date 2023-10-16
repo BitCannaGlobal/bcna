@@ -285,6 +285,10 @@
         "provider": "Safe Block"
       },
       {
+        "address": "bitcanna-grpc.kitkat.zone:13090",
+        "provider": "KitKat"
+      },
+      {
         "address": "mainnet-bitcanna-grpc:27090",
         "provider": "KonsorTech"
       }
