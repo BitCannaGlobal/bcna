@@ -237,6 +237,10 @@
       {
         "address": "https://bitcanna-rpc.validatornode.com",
         "provider": "ValidatorNode"
+      }, 
+      {
+        "address": "https://bitcanna-rpc.kitkat.zone/",
+        "provider": "KitKat"
       }
     ],
     "grpc": [
@@ -283,6 +287,10 @@
       {
         "address": "grpc.bitcanna.safeblock.space:9090",
         "provider": "Safe Block"
+      },
+      {
+        "address": "bitcanna-grpc.kitkat.zone:13090",
+        "provider": "KitKat"
       }
     ],
     "rest": [
@@ -373,6 +381,10 @@
       {
         "address": "https://bitcanna-api.validatornode.com",
         "provider": "ValidatorNode"
+      },
+      {
+        "address": "https://bitcanna-api.kitkat.zone",
+        "provider": "KitKat"
       }
     ]
   },
@@ -420,6 +432,11 @@
       "kind": "Safe Block Explorer Pruned",
       "url": "https://explorer.safeblock.space/bitcanna",
       "tx_page": "https://explorer.safeblock.space/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "KitKat Explorer",
+      "url": "https://explorer.kitkat.zone/bitcanna",
+      "tx_page": "https://explorer.kitkat.zone/bitcanna/tx/${txHash}"
     }
   ],
   "archive_nodes": [
@@ -442,6 +459,11 @@
       "address": "http://rpc.bitcanna.safeblock.space:26657",
       "url_doc": "https://safeblock.space/?elementor_library=bcna-statesync",
       "provider": "Safe Block"
+    },    
+    {
+      "address": "https://bitcanna-rpc.kitkat.zone:443",
+      "url_doc": "https://docs.kitkat.zone/chains/bitcanna/bitcanna-node-state-sync",
+      "provider": "KitKat"
     },
     {
       "address": "https://rpc.example.com/",
