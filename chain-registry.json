@@ -291,6 +291,10 @@
       {
         "address": "bitcanna-grpc.kitkat.zone:13090",
         "provider": "KitKat"
+      },
+      {
+        "address": "mainnet-bitcanna-grpc.konsortech.xyz:27090",
+        "provider": "KonsorTech"
       }
     ],
     "rest": [
