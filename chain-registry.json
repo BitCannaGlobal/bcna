@@ -283,6 +283,10 @@
       {
         "address": "grpc.bitcanna.safeblock.space:9090",
         "provider": "Safe Block"
+      },
+      {
+        "address": "mainnet-bitcanna-grpc:27090",
+        "provider": "KonsorTech"
       }
     ],
     "rest": [
