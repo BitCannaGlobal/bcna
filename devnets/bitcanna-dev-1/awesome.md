@@ -26,7 +26,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 
 ## GRPC endpoints
 - bitcanna-testnet.grpc.kjnodes.com:42090
-- testnet-bitcanna.konsortech.xyz:9090
+- testnet-bitcanna-grpc.konsortech.xyz:9090
 
 ## LCD Enpoints
 - http://lcd-testnet.bitcanna.io
