@@ -10,6 +10,11 @@
         "id": "24823f3d602136a213f9d93740193aed33de56a9",
         "address": "seeds.bitcanna-dev.hexnodes.co:31656",
         "provider": "Hexnodes"
+      },
+      {
+        "id": "2a369fb20a5827104efafa901916e97516e829fb",
+        "address": "testnet-bitcanna-seed.genznodes.dev:50656",
+        "provider": "genznodes"
       }
     ],
     "persistent_peers": [
@@ -27,6 +32,11 @@
         "id": "60fae2c5581622bb84eaf95878e85c9f339f1a2a",
         "address": "212.227.151.106:26656",
         "provider": "El-Jay"
+      },
+      {
+        "id": "8962e37cb1fd4f871440c9128832ff1f21322e62",
+        "address": "95.214.53.45:1656",
+        "provider": "genznodes"
       }
     ]
   },
@@ -43,6 +53,10 @@
       {
         "address": "https://rpc.bitcanna-dev.hexnodes.co:443",
         "provider": "Hexnodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-rpc.genznodes.dev",
+        "provider": "genznodes"
       }
     ],
     "grpc": [
@@ -57,6 +71,10 @@
       {
         "address": "grpc.bitcanna-dev.hexnodes.co:31090",
         "provider": "Hexnodes"
+      },
+      {
+        "address": "testnet-bitcanna-grpc.genznodes.dev:1090",
+        "provider": "genznodes"
       }
     ],
     "rest": [
@@ -75,6 +93,10 @@
       {
         "address": "https://rest.bitcanna-dev.hexnodes.co",
         "provider": "Hexnodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-api.genznodes.dev",
+        "provider": "genznodes"
       }
     ]
   },
@@ -123,6 +145,11 @@
       "address": "https://rpc.bitcanna-de.hexnodes.co",
       "url_doc": "https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna",
       "provider": "Hexnodes"
+    },
+    {
+      "address": "https://testnet-bitcanna-rpc.genznodes.dev",
+      "url_doc": "https://genznodes.dev/testnet_services/#bitcanna",
+      "provider": "genznodes"
     },
     {
       "address": "https://rpc.example.com/",
