@@ -45,6 +45,11 @@
         "id": "10ed1e176d874c8bb3c7c065685d2da6a4b86475",
         "address": "seed-bcna.ibs.team:16656",
         "provider": "Inter Blockchain Services"
+      },
+      {
+        "id": "951cadb1888c0360dce506c1eff925cb6eb47e06",
+        "address": "seeds-2.anode.team:10258",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ],
     "persistent_peers": [
@@ -291,6 +296,10 @@
       {
         "address": "bitcanna-grpc.kitkat.zone:13090",
         "provider": "KitKat"
+      },
+      {
+        "address": "https://bitcanna.grpc.m.anode.team:443",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ],
     "rest": [
@@ -437,6 +446,11 @@
       "kind": "KitKat Explorer",
       "url": "https://explorer.kitkat.zone/bitcanna",
       "tx_page": "https://explorer.kitkat.zone/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": AlxVoy ⚡ ANODE.TEAM",
+      "url": "https://main.anode.team/bitcanna",
+      "tx_page": "https://main.anode.team/bitcanna/tx/${txHash}"
     }
   ],
   "archive_nodes": [
@@ -466,9 +480,14 @@
       "provider": "KitKat"
     },
     {
+      "address": "https://bitcanna.api.m.anode.team",
+      "url_doc": "https://anode.team/BitCanna/#State-Sync",
+      "provider": "AlxVoy ⚡ ANODE.TEAM"
+    },
+    {
       "address": "https://rpc.example.com/",
       "url_doc": "https://www.doc.com",
       "provider": "Example"
-    }    
+    }
   ]
 }
