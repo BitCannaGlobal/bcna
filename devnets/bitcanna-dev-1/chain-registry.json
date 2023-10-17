@@ -15,6 +15,11 @@
         "id": "2a369fb20a5827104efafa901916e97516e829fb",
         "address": "testnet-bitcanna-seed.genznodes.dev:50656",
         "provider": "genznodes"
+      },
+      {
+        "id": "2175709bdd102641e9e4ddd38ba263b7f06214df",
+        "address": "65.109.28.177:26357",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ],
     "persistent_peers": [
@@ -37,6 +42,11 @@
         "id": "8962e37cb1fd4f871440c9128832ff1f21322e62",
         "address": "95.214.53.45:1656",
         "provider": "genznodes"
+      },
+      {
+        "id": "0044946a4ba72e44fbe044cd0ce7661a35e7308f",
+        "address": "seeds-4.anode.team:10259",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ]
   },
@@ -57,6 +67,10 @@
       {
         "address": "https://testnet-bitcanna-rpc.genznodes.dev",
         "provider": "genznodes"
+      },
+      {
+        "address": "https://bitcanna.rpc.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ],
     "grpc": [
@@ -75,6 +89,10 @@
       {
         "address": "testnet-bitcanna-grpc.genznodes.dev:1090",
         "provider": "genznodes"
+      },
+      {
+        "address": "bitcanna.rpc.t.anode.team:443",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ],
     "rest": [
@@ -97,6 +115,10 @@
       {
         "address": "https://testnet-bitcanna-api.genznodes.dev",
         "provider": "genznodes"
+      },
+      {
+        "address": "https://bitcanna.api.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ]
   },
@@ -118,6 +140,12 @@
       "url": "https://explorer.hexnodes.co/bitcanna-testnet",
       "tx_page": "https://explorer.hexnodes.co/bitcanna-testnet/tx/${txHash}",
       "account_page": "hthttps://explorer.hexnodes.co/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "AlxVoy ⚡ ANODE.TEAM",
+      "url": "https://test.anode.team/bitcanna-devnet",
+      "tx_page": "https://test.anode.team/bitcanna-devnet/tx/${txHash}",
+      "account_page": "https://test.anode.team/bitcanna-devnet/account/${accountAddress}"
     },
     {
       "kind": "",
@@ -150,6 +178,11 @@
       "address": "https://testnet-bitcanna-rpc.genznodes.dev",
       "url_doc": "https://genznodes.dev/testnet_services/#bitcanna",
       "provider": "genznodes"
+    },
+    {
+      "address": "https://bitcanna.rpc.t.anode.team",
+      "url_doc": "https://anode.team/BitCanna/#State-Sync_t",
+      "provider": "AlxVoy ⚡ ANODE.TEAM"
     },
     {
       "address": "https://rpc.example.com/",
