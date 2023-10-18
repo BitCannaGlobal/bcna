@@ -1,0 +1,193 @@
+{
+  "peers": {
+    "seeds": [
+      {
+        "id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
+        "address": "seed.bitcanna-dev-1.bitcanna.aviaone.com:20264",
+        "provider": "AVIAONE"
+      },
+      {
+        "id": "24823f3d602136a213f9d93740193aed33de56a9",
+        "address": "seeds.bitcanna-dev.hexnodes.co:31656",
+        "provider": "Hexnodes"
+      },
+      {
+        "id": "2a369fb20a5827104efafa901916e97516e829fb",
+        "address": "testnet-bitcanna-seed.genznodes.dev:50656",
+        "provider": "genznodes"
+      },
+      {
+        "id": "2175709bdd102641e9e4ddd38ba263b7f06214df",
+        "address": "65.109.28.177:26357",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      }
+    ],
+    "persistent_peers": [
+      {
+        "id": "80ee9ed689bfb329cf21b94aa12978e073226db4",
+        "address": "212.227.151.143:26656",
+        "provider": "bitcanna-testnet"
+      },
+      {
+        "id": "b0c7e5c69aaf00626baaf7c59370029b587a91a4",
+        "address": "bitcannadev.peers.stavr.tech:30006",
+        "provider": "🔥STAVR🔥"
+      },
+      {
+        "id": "60fae2c5581622bb84eaf95878e85c9f339f1a2a",
+        "address": "212.227.151.106:26656",
+        "provider": "El-Jay"
+      },
+      {
+        "id": "8962e37cb1fd4f871440c9128832ff1f21322e62",
+        "address": "95.214.53.45:1656",
+        "provider": "genznodes"
+      },
+      {
+        "id": "0044946a4ba72e44fbe044cd0ce7661a35e7308f",
+        "address": "seeds-4.anode.team:10259",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      }
+    ]
+  },
+  "apis": {
+    "rpc": [
+      {
+        "address": "https://rpc-testnet.bitcanna.io:443",
+        "provider": "bitcanna-testnet"
+      },
+      {
+        "address": "http://212.227.151.106:26657",
+        "provider": "El-Jay"
+      },
+      {
+        "address": "https://rpc.bitcanna-dev.hexnodes.co:443",
+        "provider": "Hexnodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-rpc.genznodes.dev",
+        "provider": "genznodes"
+      },
+      {
+        "address": "https://bitcanna.rpc.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      }
+    ],
+    "grpc": [
+      {
+        "address": "grpc-testnet.bitcanna.io:443",
+        "provider": "bitcanna"
+      },
+      {
+        "address": "212.227.151.106:9090",
+        "provider": "El-Jay"
+      },
+      {
+        "address": "grpc.bitcanna-dev.hexnodes.co:31090",
+        "provider": "Hexnodes"
+      },
+      {
+        "address": "testnet-bitcanna-grpc.genznodes.dev:1090",
+        "provider": "genznodes"
+      },
+      {
+        "address": "bitcanna.rpc.t.anode.team:443",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      }
+    ],
+    "rest": [
+      {
+        "address": "https://lcd-testnet.bitcanna.io",
+        "provider": "bitcanna"
+      },
+      {
+        "address": "http://212.227.151.106:1317",
+        "provider": "El-Jay"
+      },
+      {
+        "address": "https://bitcanna.api.dev.stavr.tech",
+        "provider": "🔥STAVR🔥"
+      },
+      {
+        "address": "https://rest.bitcanna-dev.hexnodes.co",
+        "provider": "Hexnodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-api.genznodes.dev",
+        "provider": "genznodes"
+      },
+      {
+        "address": "https://bitcanna.api.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      }
+    ]
+  },
+  "explorers": [
+    {
+      "kind": "Ping.pub",
+      "url": "https://testnet.ping.pub/bitcanna",
+      "tx_page": "https://testnet.ping.pub/bitcanna/tx/${txHash}",
+      "account_page": "https://testnet.ping.pub/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "🔥STAVR🔥",
+      "url": "https://explorer.stavr.tech/Bitcanna-DEV",
+      "tx_page": "https://explorer.stavr.tech/Bitcanna-DEV/tx/${txHash}",
+      "account_page": "https://explorer.stavr.tech/Bitcanna-DEV/account/${accountAddress}"
+    },
+    {
+      "kind": "Hexnodes",
+      "url": "https://explorer.hexnodes.co/bitcanna-testnet",
+      "tx_page": "https://explorer.hexnodes.co/bitcanna-testnet/tx/${txHash}",
+      "account_page": "hthttps://explorer.hexnodes.co/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "AlxVoy ⚡ ANODE.TEAM",
+      "url": "https://test.anode.team/bitcanna-devnet",
+      "tx_page": "https://test.anode.team/bitcanna-devnet/tx/${txHash}",
+      "account_page": "https://test.anode.team/bitcanna-devnet/account/${accountAddress}"
+    },
+    {
+      "kind": "",
+      "url": "",
+      "tx_page": "/tx/${txHash}"
+    }
+  ],
+  "archive_nodes": [
+    {
+      "address": "RPC url",
+      "provider": "validator"
+    },
+    {
+      "address": "https://rpc.example.com/",
+      "provider": "Example"
+    }
+  ],
+  "state_sync": [
+    {
+      "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/",
+      "url_doc": "https://aviaone.com/blockchains-service/bitcanna-testnet-bitcanna-dev-1.html",
+      "provider": "AVIAONE 🟢"
+    },
+    {
+      "address": "https://rpc.bitcanna-de.hexnodes.co",
+      "url_doc": "https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna",
+      "provider": "Hexnodes"
+    },
+    {
+      "address": "https://testnet-bitcanna-rpc.genznodes.dev",
+      "url_doc": "https://genznodes.dev/testnet_services/#bitcanna",
+      "provider": "genznodes"
+    },
+    {
+      "address": "https://bitcanna.rpc.t.anode.team",
+      "url_doc": "https://anode.team/BitCanna/#State-Sync_t",
+      "provider": "AlxVoy ⚡ ANODE.TEAM"
+    },
+    {
+      "address": "https://rpc.example.com/",
+      "url_doc": "https://www.doc.com",
+      "provider": "Example"
+    }    
+  ]
+}

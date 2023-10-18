@@ -3,17 +3,18 @@
 ## Persistent Peers
 - 80ee9ed689bfb329cf21b94aa12978e073226db4@212.227.151.143:26656
 - 20ca909b49106aacbf516ba28fa8a2409f825a82@212.227.151.106:26656
+- b0c7e5c69aaf00626baaf7c59370029b587a91a4@bitcannadev.peers.stavr.tech:30006
 
 ## Seed Peer
 This will disconnect after passing P2P info so not include in your _persistent_peers_
 - 471341f9befeab582e845d5e9987b7a4889c202f@144.91.89.66:26656
 - 3f472746f46493309650e5a033076689996c8881@bitcanna-testnet.rpc.kjnodes.com:42659
-- 496ac0ba20188f70f41e0a814dfd4d9a617338f8@bcnadev-seed.ibs.team:16656
+- 2a369fb20a5827104efafa901916e97516e829fb@testnet-bitcanna-seed.genznodes.dev:50656
 
 ## Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
 - https://testnet.ping.pub/bitcanna/uptime
-- https://explorer.stavr.tech/bitcanna-dev/staking
+- https://explorer.stavr.tech/Bitcanna-DEV
 - https://explorer.kjnodes.com/bitcanna-testnet
 
 ## RPC endpoints
@@ -21,16 +22,16 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/ (TX index = off)
 - https://testnet-bitcanna-rpc.konsortech.xyz/
 - https://bitcanna-testnet.rpc.kjnodes.com
-- https://bcnadev-rpc.ibs.team
+
 ## GRPC endpoints
 - bitcanna-testnet.grpc.kjnodes.com:42090
 
 ## LCD Enpoints
 - http://lcd-testnet.bitcanna.io
 - https://api.bitcanna-dev-1.bitcanna.aviaone.com/
+- https://bitcanna.api.dev.stavr.tech/
 - https://testnet-bitcanna-api.konsortech.xyz/
 - https://bitcanna-testnet.api.kjnodes.com
-- https://bcnadev-api.ibs.team
 
 ## Wallets / Dashboard
 - https://wallet-testnet.bitcanna.io
@@ -50,8 +51,10 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - [Upgrades - Last Upgrade](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md)
 - [Setup Cosmovisor from zero](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/cosmovisor_install.md)
 - [Node installation instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/installation)
+- [Node installation instructions Mainnet/DEVNET by 🔥STAVR🔥](https://github.com/obajay/nodes-Guides/tree/main/Projects/Bitcanna)
 - [Node upgrade instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/upgrade)
 - [Useful commands for node and wallet operation by kjnodes](https://services.kjnodes.com/testnet/bitcanna/useful-commands)
+- [Testnet Service by genznodes](https://genznodes.dev/testnet_services/#bitcanna)
 
 ### Manual-setup
 > This instructions was written by Avione Validators, thanks a lot!
