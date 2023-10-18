@@ -20,6 +20,11 @@
         "id": "2175709bdd102641e9e4ddd38ba263b7f06214df",
         "address": "65.109.28.177:26357",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "id": "496ac0ba20188f70f41e0a814dfd4d9a617338f8",
+        "address": "bcnadev-seed.ibs.team:16656",
+        "provider": "Inter Blockchain Services"
       }
     ],
     "persistent_peers": [
@@ -71,6 +76,10 @@
       {
         "address": "https://bitcanna.rpc.t.anode.team",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "https://bcnadev-rpc.ibs.team",
+        "provider": "Inter Blockchain Services"
       }
     ],
     "grpc": [
@@ -119,6 +128,10 @@
       {
         "address": "https://bitcanna.api.t.anode.team",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "https://bcnadev-api.ibs.team",
+        "provider": "Inter Blockchain Services"
       }
     ]
   },
@@ -185,9 +198,13 @@
       "provider": "AlxVoy ⚡ ANODE.TEAM"
     },
     {
-      "address": "https://rpc.example.com/",
-      "url_doc": "https://www.doc.com",
-      "provider": "Example"
+      "address": "https://bcnadev-rpc.ibs.team",
+      "provider": "Inter Blockchain Services"
+    },
+    {
+      "address": "https://bitcanna.rpc.t.anode.team",
+      "url_doc": "https://anode.team/BitCanna/#State-Sync_t",
+      "provider": "AlxVoy ⚡ ANODE.TEAM"
     }    
   ]
 }
