@@ -8,6 +8,7 @@
 This will disconnect after passing P2P info so not include in your _persistent_peers_
 - 471341f9befeab582e845d5e9987b7a4889c202f@144.91.89.66:26656
 - 3f472746f46493309650e5a033076689996c8881@bitcanna-testnet.rpc.kjnodes.com:42659
+- 496ac0ba20188f70f41e0a814dfd4d9a617338f8@bcnadev-seed.ibs.team:16656
 
 ## Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
@@ -20,7 +21,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/ (TX index = off)
 - https://testnet-bitcanna-rpc.konsortech.xyz/
 - https://bitcanna-testnet.rpc.kjnodes.com
-
+- https://bcnadev-rpc.ibs.team
 ## GRPC endpoints
 - bitcanna-testnet.grpc.kjnodes.com:42090
 
@@ -29,6 +30,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://api.bitcanna-dev-1.bitcanna.aviaone.com/
 - https://testnet-bitcanna-api.konsortech.xyz/
 - https://bitcanna-testnet.api.kjnodes.com
+- https://bcnadev-api.ibs.team
 
 ## Wallets / Dashboard
 - https://wallet-testnet.bitcanna.io
