@@ -71,6 +71,10 @@
       {
         "address": "https://bitcanna.rpc.t.anode.team",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "https://bitcanna-testnet.nodejumper.io:443",
+        "provider": "NODEJUMPER"
       }
     ],
     "grpc": [
@@ -93,6 +97,10 @@
       {
         "address": "bitcanna.rpc.t.anode.team:443",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "bitcanna-testnet.nodejumper.io:9090",
+        "provider": "NODEJUMPER"
       }
     ],
     "rest": [
@@ -119,6 +127,10 @@
       {
         "address": "https://bitcanna.api.t.anode.team",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "https://bitcanna-testnet.nodejumper.io:1317",
+        "provider": "NODEJUMPER"
       }
     ]
   },
@@ -188,6 +200,11 @@
       "address": "https://rpc.example.com/",
       "url_doc": "https://www.doc.com",
       "provider": "Example"
-    }    
+    },
+    {
+      "address": "https://bitcanna-testnet.nodejumper.io:443",
+      "url_doc": "https://app.nodejumper.io/bitcanna-testnet/sync",
+      "provider": "NODEJUMPER"
+    }
   ]
 }
