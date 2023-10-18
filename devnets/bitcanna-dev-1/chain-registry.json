@@ -15,6 +15,11 @@
         "id": "2a369fb20a5827104efafa901916e97516e829fb",
         "address": "testnet-bitcanna-seed.genznodes.dev:50656",
         "provider": "genznodes"
+      },
+      {
+        "id": "2175709bdd102641e9e4ddd38ba263b7f06214df",
+        "address": "65.109.28.177:26357",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ],
     "persistent_peers": [
@@ -42,6 +47,11 @@
         "id": "c4277e884bbbf33ef1d8f13cbf26adb3b12336fd",
         "address": "testnet-bitcanna.konsortech.xyz:26656",
         "provider": "KonsorTech"
+      },
+      {
+        "id": "0044946a4ba72e44fbe044cd0ce7661a35e7308f",
+        "address": "seeds-4.anode.team:10259",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ]
   },
@@ -66,6 +76,10 @@
       {
         "address": "https://testnet-bitcanna-rpc.konsortech.xyz",
         "provider": "KonsorTech"
+      },
+      {
+        "address": "https://bitcanna.rpc.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ],
     "grpc": [
@@ -88,6 +102,11 @@
       {
         "address": "testnet-bitcanna-grpc.konsortech.xyz:9090",
         "provider": "KonsorTech"
+      },
+      {
+        "address": "bitcanna.rpc.t.anode.team:443",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+
       }
     ],
     "rest": [
@@ -114,6 +133,10 @@
       {
         "address": "https://testnet-bitcanna-api.konsortech.xyz",
         "provider": "KonsorTech"
+      },
+      {
+        "address": "https://bitcanna.api.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
     ]
   },
@@ -141,6 +164,12 @@
       "url": "https://testnet-explorer.konsortech.xyz/bitcanna",
       "tx_page": "https://testnet-explorer.konsortech.xyz/bitcanna/tx/${txHash}",
       "account_page": "https://testnet-explorer.konsortech.xyz/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "AlxVoy ⚡ ANODE.TEAM",
+      "url": "https://test.anode.team/bitcanna-devnet",
+      "tx_page": "https://test.anode.team/bitcanna-devnet/tx/${txHash}",
+      "account_page": "https://test.anode.team/bitcanna-devnet/account/${accountAddress}"
     },
     {
       "kind": "",
@@ -178,6 +207,11 @@
       "address": "https://testnet-bitcanna-rpc.konsortech.xyz",
       "url_doc": "https://docs.konsortech.xyz/node/Testnet/Bitcanna/statesync",
       "provider": "KonsorTech"
+    },
+    {
+      "address": "https://bitcanna.rpc.t.anode.team",
+      "url_doc": "https://anode.team/BitCanna/#State-Sync_t",
+      "provider": "AlxVoy ⚡ ANODE.TEAM"
     },
     {
       "address": "https://rpc.example.com/",
