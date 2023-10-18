@@ -200,11 +200,6 @@
     {
       "address": "https://bcnadev-rpc.ibs.team",
       "provider": "Inter Blockchain Services"
-    },
-    {
-      "address": "https://bitcanna.rpc.t.anode.team",
-      "url_doc": "https://anode.team/BitCanna/#State-Sync_t",
-      "provider": "AlxVoy ⚡ ANODE.TEAM"
-    }    
+    }   
   ]
 }
