@@ -448,7 +448,7 @@
       "tx_page": "https://explorer.kitkat.zone/bitcanna/tx/${txHash}"
     },
     {
-      "kind": AlxVoy ⚡ ANODE.TEAM",
+      "kind": "AlxVoy ⚡ ANODE.TEAM",
       "url": "https://main.anode.team/bitcanna",
       "tx_page": "https://main.anode.team/bitcanna/tx/${txHash}"
     }
