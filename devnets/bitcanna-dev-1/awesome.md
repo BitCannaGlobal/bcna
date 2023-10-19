@@ -4,6 +4,7 @@
 - 80ee9ed689bfb329cf21b94aa12978e073226db4@212.227.151.143:26656
 - 20ca909b49106aacbf516ba28fa8a2409f825a82@212.227.151.106:26656
 - b0c7e5c69aaf00626baaf7c59370029b587a91a4@bitcannadev.peers.stavr.tech:30006
+- c4277e884bbbf33ef1d8f13cbf26adb3b12336fd@testnet-bitcanna.konsortech.xyz:26656
 
 ## Seed Peer
 This will disconnect after passing P2P info so not include in your _persistent_peers_
@@ -17,6 +18,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://testnet.ping.pub/bitcanna/uptime
 - https://explorer.stavr.tech/Bitcanna-DEV
 - https://explorer.kjnodes.com/bitcanna-testnet
+- https://testnet-explorer.konsortech.xyz/bitcanna
 
 ## RPC endpoints
 - https://rpc-testnet.bitcanna.io
@@ -24,9 +26,12 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://testnet-bitcanna-rpc.konsortech.xyz/
 - https://bitcanna-testnet.rpc.kjnodes.com
 - https://bcnadev-rpc.ibs.team ( StateSync enable)
+- https://testnet-bitcanna-rpc.konsortech.xyz
+
 
 ## GRPC endpoints
 - bitcanna-testnet.grpc.kjnodes.com:42090
+- testnet-bitcanna-grpc.konsortech.xyz:9090
 
 ## LCD Enpoints
 - http://lcd-testnet.bitcanna.io
@@ -35,6 +40,8 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://testnet-bitcanna-api.konsortech.xyz/
 - https://bitcanna-testnet.api.kjnodes.com
 - https://bcnadev-api.ibs.team
+- https://testnet-bitcanna-api.konsortech.xyz
+
 
 ## Wallets / Dashboard
 - https://wallet-testnet.bitcanna.io
@@ -44,9 +51,11 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 
 ## State sync
 - https://services.kjnodes.com/testnet/bitcanna/state-sync
+- https://docs.konsortech.xyz/node/Testnet/Bitcanna/statesync
 
 ## Snapshots
 - https://services.kjnodes.com/testnet/bitcanna/snapshot
+- https://docs.konsortech.xyz/node/Testnet/Bitcanna/snapshot
 
 ## Docs
 - [Automatic StateSync Join `bitcanna-dev-1`](README.md)
@@ -58,6 +67,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - [Node upgrade instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/upgrade)
 - [Useful commands for node and wallet operation by kjnodes](https://services.kjnodes.com/testnet/bitcanna/useful-commands)
 - [Testnet Service by genznodes](https://genznodes.dev/testnet_services/#bitcanna)
+- [Node Installation Guide Devnet by KonsorTech](https://docs.konsortech.xyz/node/Testnet/Bitcanna)
 
 ### Manual-setup
 > This instructions was written by Avione Validators, thanks a lot!

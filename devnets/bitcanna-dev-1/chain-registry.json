@@ -49,6 +49,11 @@
         "provider": "genznodes"
       },
       {
+        "id": "c4277e884bbbf33ef1d8f13cbf26adb3b12336fd",
+        "address": "testnet-bitcanna.konsortech.xyz:26656",
+        "provider": "KonsorTech"
+      },
+      {
         "id": "0044946a4ba72e44fbe044cd0ce7661a35e7308f",
         "address": "seeds-4.anode.team:10259",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
@@ -72,6 +77,10 @@
       {
         "address": "https://testnet-bitcanna-rpc.genznodes.dev",
         "provider": "genznodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-rpc.konsortech.xyz",
+        "provider": "KonsorTech"
       },
       {
         "address": "https://bitcanna.rpc.t.anode.team",
@@ -100,8 +109,13 @@
         "provider": "genznodes"
       },
       {
+        "address": "testnet-bitcanna-grpc.konsortech.xyz:9090",
+        "provider": "KonsorTech"
+      },
+      {
         "address": "bitcanna.rpc.t.anode.team:443",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+
       }
     ],
     "rest": [
@@ -124,6 +138,10 @@
       {
         "address": "https://testnet-bitcanna-api.genznodes.dev",
         "provider": "genznodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-api.konsortech.xyz",
+        "provider": "KonsorTech"
       },
       {
         "address": "https://bitcanna.api.t.anode.team",
@@ -153,6 +171,12 @@
       "url": "https://explorer.hexnodes.co/bitcanna-testnet",
       "tx_page": "https://explorer.hexnodes.co/bitcanna-testnet/tx/${txHash}",
       "account_page": "hthttps://explorer.hexnodes.co/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "KonsorTech",
+      "url": "https://testnet-explorer.konsortech.xyz/bitcanna",
+      "tx_page": "https://testnet-explorer.konsortech.xyz/bitcanna/tx/${txHash}",
+      "account_page": "https://testnet-explorer.konsortech.xyz/bitcanna/account/${accountAddress}"
     },
     {
       "kind": "AlxVoy ⚡ ANODE.TEAM",
@@ -191,6 +215,11 @@
       "address": "https://testnet-bitcanna-rpc.genznodes.dev",
       "url_doc": "https://genznodes.dev/testnet_services/#bitcanna",
       "provider": "genznodes"
+    },
+    {
+      "address": "https://testnet-bitcanna-rpc.konsortech.xyz",
+      "url_doc": "https://docs.konsortech.xyz/node/Testnet/Bitcanna/statesync",
+      "provider": "KonsorTech"
     },
     {
       "address": "https://bitcanna.rpc.t.anode.team",
