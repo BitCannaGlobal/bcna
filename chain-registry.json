@@ -467,6 +467,20 @@
       "provider": "Example"
     }
   ],
+   "docs": [
+     {
+        "address": "https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html",
+        "provider": "AVIAONE 🟢"
+     }
+    ]
+  },
+    "Snapshot": [
+      {
+        "address": "https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html",
+        "provider": "AVIAONE 🟢"
+      }
+    ]
+  },
   "state_sync": [
     {
       "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com:443",
