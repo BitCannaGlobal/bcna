@@ -489,6 +489,11 @@
       "provider": "AlxVoy ⚡ ANODE.TEAM"
     },
     {
+      "address": "http://team.bonded.zone:21957",
+      "url_doc": "https://www.bonded.zone/mainnets/bitcanna/state-sync",
+      "provider": "bonded.zone ⚡"
+    },
+    {
       "address": "https://rpc.example.com/",
       "url_doc": "https://www.doc.com",
       "provider": "Example"
