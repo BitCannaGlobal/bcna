@@ -187,6 +187,13 @@
       "provider": "Example"
     }
   ],
+  "docs": [
+     {
+        "address": "https://aviaone.com/blockchains-service/bitcanna-testnet-bitcanna-dev-1.html",
+        "provider": "AVIAONE 🟢"
+      }
+    ]
+  },
   "state_sync": [
     {
       "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/",
