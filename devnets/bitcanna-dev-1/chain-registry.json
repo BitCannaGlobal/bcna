@@ -4,7 +4,7 @@
       {
         "id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
         "address": "seed.bitcanna-dev-1.bitcanna.aviaone.com:20264",
-        "provider": "AVIAONE"
+        "provider": "AVIAONE 🟢"
       },
       {
         "id": "24823f3d602136a213f9d93740193aed33de56a9",
@@ -53,6 +53,11 @@
         "address": "seeds-4.anode.team:10259",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
+            {
+        "id": "570affccbeada2771a8209a238e0dd69b8753536",
+        "address": "194.163.174.231:26666",
+        "provider": "AVIAONE 🟢"
+      }
     ]
   },
   "apis": {
@@ -81,6 +86,10 @@
         "address": "https://bitcanna.rpc.t.anode.team",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
+      {
+        "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com",
+        "provider": "AVIAONE 🟢"
+      }
     ],
     "grpc": [
       {
@@ -106,6 +115,11 @@
       {
         "address": "bitcanna.rpc.t.anode.team:443",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+
+      }
+      {
+        "address": "grpc.bitcanna-dev-1.bitcanna.aviaone.com:9092",
+        "provider": "AVIAONE 🟢"
 
       }
     ],
@@ -137,6 +151,10 @@
       {
         "address": "https://bitcanna.api.t.anode.team",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      }
+      {
+        "address": "https://api.bitcanna-dev-1.bitcanna.aviaone.com",
+        "provider": "AVIAONE 🟢"
       }
     ]
   },
