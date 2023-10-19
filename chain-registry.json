@@ -298,6 +298,10 @@
         "provider": "KitKat"
       },
       {
+        "address": "mainnet-bitcanna-grpc.konsortech.xyz:27090",
+        "provider": "KonsorTech"
+      },
+      {
         "address": "https://bitcanna.grpc.m.anode.team:443",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       }
