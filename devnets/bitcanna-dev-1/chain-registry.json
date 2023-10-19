@@ -256,7 +256,7 @@
     },
     {
       "address": "https://bcnadev-rpc.ibs.team",
-      "url_doc": "https://www.ibs.team",
+      "url_doc": "https://github.com/Inter-Blockchain-Service/Cosmos-StateSync/tree/main/Testnet/Bitcanna",
       "provider": "Inter Blockchain Services"
     },
     {
