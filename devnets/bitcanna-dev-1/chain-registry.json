@@ -98,7 +98,11 @@
       {
         "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com",
         "provider": "AVIAONE 🟢"
-      }      
+      },
+      {
+        "address": "https://bitcanna-testnet.nodejumper.io:443",
+        "provider": "NODEJUMPER"
+      }
     ],
     "grpc": [
       {
@@ -128,6 +132,10 @@
       {
         "address": "grpc.bitcanna-dev-1.bitcanna.aviaone.com:9092",
         "provider": "AVIAONE 🟢"
+      },
+      {
+        "address": "bitcanna-testnet.nodejumper.io:9090",
+        "provider": "NODEJUMPER"
       }
     ],
     "rest": [
@@ -166,6 +174,10 @@
       {
         "address": "https://api.bitcanna-dev-1.bitcanna.aviaone.com",
         "provider": "AVIAONE 🟢"
+      },
+      {
+        "address": "https://bitcanna-testnet.nodejumper.io:1317",
+        "provider": "NODEJUMPER"
       }
     ]
   },
@@ -246,6 +258,11 @@
       "address": "https://bcnadev-rpc.ibs.team",
       "url_doc": "https://www.ibs.team",
       "provider": "Inter Blockchain Services"
-    }   
+    },
+    {
+      "address": "https://bitcanna-testnet.nodejumper.io:443",
+      "url_doc": "https://app.nodejumper.io/bitcanna-testnet/sync",
+      "provider": "NODEJUMPER"
+    }
   ]
 }
