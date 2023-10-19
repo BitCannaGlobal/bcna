@@ -199,6 +199,7 @@
     },
     {
       "address": "https://bcnadev-rpc.ibs.team",
+      "url_doc": "https://www.ibs.team",
       "provider": "Inter Blockchain Services"
     }   
   ]
