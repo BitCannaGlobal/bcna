@@ -20,7 +20,6 @@ func (k Keeper) HasBitcannaidWithBcnaid(ctx sdk.Context, bcnaid string) bool {
 	for ; iterator.Valid(); iterator.Next() {
 		var bitcannaid types.Bitcannaid
 		proto.Unmarshal(iterator.Value(), &bitcannaid)
-		// k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
 
 		if bitcannaid.Bcnaid == bcnaid {
 			return true
@@ -38,7 +37,6 @@ func (k Keeper) GetBitcannaidByBcnaid(ctx sdk.Context, bcnaid string) (val *type
 	for ; iterator.Valid(); iterator.Next() {
 		var bitcannaid types.Bitcannaid
 		proto.Unmarshal(iterator.Value(), &bitcannaid)
-		// k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
 
 		if bitcannaid.Bcnaid == bcnaid {
 			return &bitcannaid, true
@@ -84,7 +82,6 @@ func (k Keeper) AppendBitcannaid(
 	bitcannaid.Id = count
 
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.BitcannaidKey))
-	// appendedValue := k.cdc.MustMarshal(&bitcannaid)
 	appendedValue, err := proto.Marshal(&bitcannaid)
 	if err == nil {
 		store.Set(GetBitcannaidIDBytes(bitcannaid.Id), appendedValue)
@@ -103,7 +100,6 @@ func (k Keeper) AppendBitcannaid(
 // SetBitcannaid set a specific bitcannaid in the store
 func (k Keeper) SetBitcannaid(ctx sdk.Context, bitcannaid types.Bitcannaid) {
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.BitcannaidKey))
-	// b := k.cdc.MustMarshal(&bitcannaid)
 	b, err := proto.Marshal(&bitcannaid)
 	if err == nil {
 		store.Set(GetBitcannaidIDBytes(bitcannaid.Id), b)
@@ -119,7 +115,6 @@ func (k Keeper) GetBitcannaid(ctx sdk.Context, id uint64) (val types.Bitcannaid,
 	if b == nil {
 		return val, false
 	}
-	// k.cdc.MustUnmarshal(b, &val)
 	proto.Unmarshal(b, &val)
 	return val, true
 }
@@ -139,7 +134,6 @@ func (k Keeper) GetAllBitcannaid(ctx sdk.Context) (list []types.Bitcannaid) {
 
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Bitcannaid
-		// k.cdc.MustUnmarshal(iterator.Value(), &val)
 		proto.Unmarshal(iterator.Value(), &val)
 		list = append(list, val)
 	}

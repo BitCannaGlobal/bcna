@@ -46,7 +46,6 @@ func (k Keeper) AppendSupplychain(
 	supplychain.Id = count
 
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.SupplychainKey))
-	// appendedValue := k.cdc.MustMarshal(&supplychain)
 	appendedValue, err := proto.Marshal(&supplychain)
 	if err == nil {
 		store.Set(GetSupplychainIDBytes(supplychain.Id), appendedValue)
@@ -64,7 +63,6 @@ func (k Keeper) AppendSupplychain(
 // SetSupplychain set a specific supplychain in the store
 func (k Keeper) SetSupplychain(ctx sdk.Context, supplychain types.Supplychain) {
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.SupplychainKey))
-	// b := k.cdc.MustMarshal(&supplychain)
 	b, err := proto.Marshal(&supplychain)
 	if err == nil {
 		store.Set(GetSupplychainIDBytes(supplychain.Id), b)
@@ -80,7 +78,6 @@ func (k Keeper) GetSupplychain(ctx sdk.Context, id uint64) (val types.Supplychai
 	if b == nil {
 		return val, false
 	}
-	// k.cdc.MustUnmarshal(b, &val)
 	proto.Unmarshal(b, &val)
 	return val, true
 }
@@ -100,7 +97,6 @@ func (k Keeper) GetAllSupplychain(ctx sdk.Context) (list []types.Supplychain) {
 
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Supplychain
-		// k.cdc.MustUnmarshal(iterator.Value(), &val)
 		proto.Unmarshal(iterator.Value(), &val)
 		list = append(list, val)
 	}

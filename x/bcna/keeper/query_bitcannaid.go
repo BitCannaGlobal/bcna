@@ -26,7 +26,6 @@ func (k Keeper) BitcannaidAll(GoCtx context.Context, req *types.QueryAllBitcanna
 
 	pageRes, err := query.Paginate(bitcannaidStore, req.Pagination, func(key []byte, value []byte) error {
 		var bitcannaid types.Bitcannaid
-		// if err := k.cdc.Unmarshal(value, &bitcannaid); err != nil {
 		if err := proto.Unmarshal(value, &bitcannaid); err != nil {
 			return err
 		}

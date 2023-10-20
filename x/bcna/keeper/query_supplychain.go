@@ -26,7 +26,6 @@ func (k Keeper) SupplychainAll(GoCtx context.Context, req *types.QueryAllSupplyc
 
 	pageRes, err := query.Paginate(supplychainStore, req.Pagination, func(key []byte, value []byte) error {
 		var supplychain types.Supplychain
-		// if err := k.cdc.Unmarshal(value, &supplychain); err != nil {
 		if err := proto.Unmarshal(value, &supplychain); err != nil {
 			return err
 		}
