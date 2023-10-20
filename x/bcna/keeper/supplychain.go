@@ -102,7 +102,7 @@ func (k Keeper) GetAllSupplychain(ctx sdk.Context) (list []types.Supplychain) {
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Supplychain
 		if err := proto.Unmarshal(iterator.Value(), &val); err != nil {
-			fmt.Println(fmt.Errorf("failed to deserialize SupplyChainID: %v", err))
+			fmt.Errorf("failed to deserialize SupplyChainID: %w", err)
 			continue
 		}
 		list = append(list, val)

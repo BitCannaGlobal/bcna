@@ -147,7 +147,7 @@ func (k Keeper) GetAllBitcannaid(ctx sdk.Context) (list []types.Bitcannaid) {
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Bitcannaid
 		if err := proto.Unmarshal(iterator.Value(), &val); err != nil {
-			fmt.Println(fmt.Errorf("failed to deserialize BitCannaID: %v", err))
+			fmt.Errorf("failed to deserialize Bitcannaid: %v", err)
 			continue
 		}
 		list = append(list, val)
