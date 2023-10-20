@@ -19,7 +19,11 @@ func (k Keeper) HasBitcannaidWithBcnaid(ctx sdk.Context, bcnaid string) bool {
 	defer iterator.Close()
 	for ; iterator.Valid(); iterator.Next() {
 		var bitcannaid types.Bitcannaid
-		proto.Unmarshal(iterator.Value(), &bitcannaid)
+		err := proto.Unmarshal(iterator.Value(), &bitcannaid)
+		if err != nil {
+			fmt.Println("Error un-marshalling BitCannaID", err)
+			continue
+		}
 
 		if bitcannaid.Bcnaid == bcnaid {
 			return true
@@ -36,7 +40,11 @@ func (k Keeper) GetBitcannaidByBcnaid(ctx sdk.Context, bcnaid string) (val *type
 	defer iterator.Close()
 	for ; iterator.Valid(); iterator.Next() {
 		var bitcannaid types.Bitcannaid
-		proto.Unmarshal(iterator.Value(), &bitcannaid)
+		err := proto.Unmarshal(iterator.Value(), &bitcannaid)
+		if err != nil {
+			fmt.Println("Error un-marshalling BitCannaID")
+			continue
+		}
 
 		if bitcannaid.Bcnaid == bcnaid {
 			return &bitcannaid, true
@@ -115,7 +123,11 @@ func (k Keeper) GetBitcannaid(ctx sdk.Context, id uint64) (val types.Bitcannaid,
 	if b == nil {
 		return val, false
 	}
-	proto.Unmarshal(b, &val)
+	err := proto.Unmarshal(b, &val)
+	if err != nil {
+		fmt.Println("Error getting the BitCannaID with ID %d: %v\n", id, err)
+		return types.Bitcannaid{}, false
+	}
 	return val, true
 }
 
@@ -134,11 +146,14 @@ func (k Keeper) GetAllBitcannaid(ctx sdk.Context) (list []types.Bitcannaid) {
 
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Bitcannaid
-		proto.Unmarshal(iterator.Value(), &val)
+		if err := proto.Unmarshal(iterator.Value(), &val); err != nil {
+			fmt.Println(fmt.Errorf("failed to deserialize BitCannaID: %v", err))
+			continue
+		}
 		list = append(list, val)
 	}
 
-	return
+	return list
 }
 
 // GetBitcannaidIDBytes returns the byte representation of the ID
