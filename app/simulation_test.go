@@ -215,6 +215,11 @@ func TestAppStateDeterminism(t *testing.T) {
 }
 
 func TestAppImportExport(t *testing.T) {
+
+	simcli.FlagSeedValue = time.Now().Unix()
+	simcli.FlagVerboseValue = true
+	simcli.FlagCommitValue = true
+	simcli.FlagEnabledValue = true
 	config := simcli.NewConfigFromFlags()
 	config.ChainID = "mars-simapp-import"
 
@@ -369,6 +374,11 @@ func TestAppImportExport(t *testing.T) {
 }
 
 func TestAppSimulationAfterImport(t *testing.T) {
+	simcli.FlagSeedValue = time.Now().Unix()
+	simcli.FlagVerboseValue = true
+	simcli.FlagCommitValue = true
+	simcli.FlagEnabledValue = true
+
 	config := simcli.NewConfigFromFlags()
 	config.ChainID = "mars-simapp-after-import"
 
@@ -496,4 +506,70 @@ func TestAppSimulationAfterImport(t *testing.T) {
 		bApp.AppCodec(),
 	)
 	require.NoError(t, err)
+}
+
+func TestFullAppSimulation(t *testing.T) {
+
+	simcli.FlagSeedValue = time.Now().Unix()
+	simcli.FlagVerboseValue = true
+	simcli.FlagCommitValue = true
+	simcli.FlagEnabledValue = true
+
+	config := simcli.NewConfigFromFlags()
+	config.ChainID = "bitcanna-sim"
+
+	db, dir, logger, skip, err := simtestutil.SetupSimulation(config, "leveldb-app-sim", "Simulation", simcli.FlagVerboseValue, simcli.FlagEnabledValue)
+	if skip {
+		t.Skip("skipping application simulation")
+	}
+	require.NoError(t, err, "simulation setup failed")
+
+	defer func() {
+		require.NoError(t, db.Close())
+		require.NoError(t, os.RemoveAll(dir))
+	}()
+
+	appOptions := make(simtestutil.AppOptionsMap, 0)
+	appOptions[flags.FlagHome] = app.DefaultNodeHome
+	appOptions[server.FlagInvCheckPeriod] = simcli.FlagPeriodValue
+
+	bApp := app.New(
+		logger,
+		db,
+		nil,
+		true,
+		map[int64]bool{},
+		app.DefaultNodeHome,
+		0,
+		app.MakeEncodingConfig(),
+		appOptions,
+		baseapp.SetChainID(config.ChainID),
+	)
+	require.Equal(t, app.Name, bApp.Name())
+
+	// run randomized simulation
+	_, simParams, simErr := simulation.SimulateFromSeed(
+		t,
+		os.Stdout,
+		bApp.BaseApp,
+		simtestutil.AppStateFn(
+			bApp.AppCodec(),
+			bApp.SimulationManager(),
+			app.NewDefaultGenesisState(bApp.AppCodec()),
+		),
+		simulationtypes.RandomAccounts, // Replace with own random account function if using keys other than secp256k1
+		simtestutil.SimulationOperations(bApp, bApp.AppCodec(), config),
+		bApp.ModuleAccountAddrs(),
+		config,
+		bApp.AppCodec(),
+	)
+
+	// export state and simParams before the simulation error is checked
+	err = simtestutil.CheckExportSimulation(bApp, config, simParams)
+	require.NoError(t, err)
+	require.NoError(t, simErr)
+
+	if config.Commit {
+		simtestutil.PrintStats(db)
+	}
 }
