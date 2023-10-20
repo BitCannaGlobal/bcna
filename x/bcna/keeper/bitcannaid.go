@@ -2,6 +2,9 @@ package keeper
 
 import (
 	"encoding/binary"
+	"fmt"
+
+	"github.com/cosmos/gogoproto/proto"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
@@ -16,7 +19,11 @@ func (k Keeper) HasBitcannaidWithBcnaid(ctx sdk.Context, bcnaid string) bool {
 	defer iterator.Close()
 	for ; iterator.Valid(); iterator.Next() {
 		var bitcannaid types.Bitcannaid
-		k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
+		err := proto.Unmarshal(iterator.Value(), &bitcannaid)
+		if err != nil {
+			fmt.Println("Error un-marshalling BitCannaID", err)
+			continue
+		}
 
 		if bitcannaid.Bcnaid == bcnaid {
 			return true
@@ -33,7 +40,11 @@ func (k Keeper) GetBitcannaidByBcnaid(ctx sdk.Context, bcnaid string) (val *type
 	defer iterator.Close()
 	for ; iterator.Valid(); iterator.Next() {
 		var bitcannaid types.Bitcannaid
-		k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
+		err := proto.Unmarshal(iterator.Value(), &bitcannaid)
+		if err != nil {
+			fmt.Println("Error un-marshalling BitCannaID")
+			continue
+		}
 
 		if bitcannaid.Bcnaid == bcnaid {
 			return &bitcannaid, true
@@ -79,20 +90,30 @@ func (k Keeper) AppendBitcannaid(
 	bitcannaid.Id = count
 
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.BitcannaidKey))
-	appendedValue := k.cdc.MustMarshal(&bitcannaid)
-	store.Set(GetBitcannaidIDBytes(bitcannaid.Id), appendedValue)
+	appendedValue, err := proto.Marshal(&bitcannaid)
+	if err == nil {
+		store.Set(GetBitcannaidIDBytes(bitcannaid.Id), appendedValue)
 
-	// Update bitcannaid count
-	k.SetBitcannaidCount(ctx, count+1)
+		// Update bitcannaid count
+		k.SetBitcannaidCount(ctx, count+1)
 
-	return count
+		return count
+
+	} else {
+		fmt.Println("DEBUG: err marshaling BitCannaID")
+		return count
+	}
 }
 
 // SetBitcannaid set a specific bitcannaid in the store
 func (k Keeper) SetBitcannaid(ctx sdk.Context, bitcannaid types.Bitcannaid) {
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.BitcannaidKey))
-	b := k.cdc.MustMarshal(&bitcannaid)
-	store.Set(GetBitcannaidIDBytes(bitcannaid.Id), b)
+	b, err := proto.Marshal(&bitcannaid)
+	if err == nil {
+		store.Set(GetBitcannaidIDBytes(bitcannaid.Id), b)
+	} else {
+		fmt.Println("DEBUG: err setting BitCannaID")
+	}
 }
 
 // GetBitcannaid returns a bitcannaid from its id
@@ -102,7 +123,11 @@ func (k Keeper) GetBitcannaid(ctx sdk.Context, id uint64) (val types.Bitcannaid,
 	if b == nil {
 		return val, false
 	}
-	k.cdc.MustUnmarshal(b, &val)
+	err := proto.Unmarshal(b, &val)
+	if err != nil {
+		fmt.Printf("Error getting the BitCannaID with ID %d: %v\n", id, err)
+		return types.Bitcannaid{}, false
+	}
 	return val, true
 }
 
@@ -121,11 +146,14 @@ func (k Keeper) GetAllBitcannaid(ctx sdk.Context) (list []types.Bitcannaid) {
 
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Bitcannaid
-		k.cdc.MustUnmarshal(iterator.Value(), &val)
+		if err := proto.Unmarshal(iterator.Value(), &val); err != nil {
+			fmt.Printf("failed to deserialize BitCannaID: %v\n", err)
+			continue
+		}
 		list = append(list, val)
 	}
 
-	return
+	return list
 }
 
 // GetBitcannaidIDBytes returns the byte representation of the ID

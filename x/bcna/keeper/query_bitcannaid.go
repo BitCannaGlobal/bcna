@@ -8,6 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/types/query"
+	"github.com/cosmos/gogoproto/proto"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
@@ -25,7 +26,7 @@ func (k Keeper) BitcannaidAll(GoCtx context.Context, req *types.QueryAllBitcanna
 
 	pageRes, err := query.Paginate(bitcannaidStore, req.Pagination, func(key []byte, value []byte) error {
 		var bitcannaid types.Bitcannaid
-		if err := k.cdc.Unmarshal(value, &bitcannaid); err != nil {
+		if err := proto.Unmarshal(value, &bitcannaid); err != nil {
 			return err
 		}
 
