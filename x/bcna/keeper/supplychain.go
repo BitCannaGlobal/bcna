@@ -80,7 +80,7 @@ func (k Keeper) GetSupplychain(ctx sdk.Context, id uint64) (val types.Supplychai
 	}
 	err := proto.Unmarshal(b, &val)
 	if err != nil {
-		fmt.Println("Error getting the BitCannaID with ID %d: %v\n", id, err)
+		fmt.Printf("Error getting the SupplyChain with ID %d: %v\n", id, err)
 		return types.Supplychain{}, false
 	}
 	return val, true
@@ -102,7 +102,7 @@ func (k Keeper) GetAllSupplychain(ctx sdk.Context) (list []types.Supplychain) {
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Supplychain
 		if err := proto.Unmarshal(iterator.Value(), &val); err != nil {
-			fmt.Errorf("failed to deserialize SupplyChainID: %w", err)
+			fmt.Printf("failed to deserialize SupplyChainID: %v\n", err)
 			continue
 		}
 		list = append(list, val)
