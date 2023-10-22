@@ -102,6 +102,10 @@
       {
         "address": "https://bitcanna-testnet.nodejumper.io:443",
         "provider": "NODEJUMPER"
+      },
+      {
+        "address": "https://rpc-bcna-testnet.kjinc.io:443",
+        "provider": "KJINC.io"       
       }
     ],
     "grpc": [
@@ -178,6 +182,10 @@
       {
         "address": "https://bitcanna-testnet.nodejumper.io:1317",
         "provider": "NODEJUMPER"
+      },
+      {
+        "address": "https://api-bcna-testnet.kjinc.io",
+        "provider": "KJINC.io"        
       }
     ]
   },
