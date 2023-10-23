@@ -509,14 +509,14 @@
       "provider": "bonded.zone ⚡"
     },
     {
-      "address": "https://rpc.example.com/",
-      "url_doc": "https://www.doc.com",
-      "provider": "Example"
-    },
-    {
       "address": "https://bitcanna.rpc.kjnodes.com:443",
       "url_doc": "https://services.kjnodes.com/mainnet/bitcanna/state-sync/",
       "provider": "kjnodes"
+    },
+    {
+      "address": "https://rpc.example.com/",
+      "url_doc": "https://www.doc.com",
+      "provider": "Example"
     }
   ]
 }
