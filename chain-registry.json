@@ -50,6 +50,11 @@
         "id": "951cadb1888c0360dce506c1eff925cb6eb47e06",
         "address": "seeds-2.anode.team:10258",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "id": "400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc",
+        "address": "bitcanna.rpc.kjnodes.com:14259",
+        "provider": "kjnodes"
       }
     ],
     "persistent_peers": [
@@ -142,6 +147,11 @@
         "id": "a70da421632d3dbbb6de3712474bd564ac5653e1",
         "address": "p2p.bitcanna.safeblock.space:26656",
         "provider": "Safe Block"
+      },
+      {
+        "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
+        "address": "bitcanna.rpc.kjnodes.com:14256",
+        "provider": "kjnodes"
       }
     ]
   },
@@ -455,6 +465,11 @@
       "kind": "AlxVoy ⚡ ANODE.TEAM",
       "url": "https://main.anode.team/bitcanna",
       "tx_page": "https://main.anode.team/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "kjnodes",
+      "url": "https://explorer.kjnodes.com/bitcanna",
+      "tx_page": "https://explorer.kjnodes.com/bitcanna/tx/${txHash}"
     }
   ],
   "archive_nodes": [
@@ -497,6 +512,11 @@
       "address": "https://rpc.example.com/",
       "url_doc": "https://www.doc.com",
       "provider": "Example"
+    },
+    {
+      "address": "https://bitcanna.rpc.kjnodes.com:443",
+      "url_doc": "https://services.kjnodes.com/mainnet/bitcanna/state-sync/",
+      "provider": "kjnodes"
     }
   ]
 }
