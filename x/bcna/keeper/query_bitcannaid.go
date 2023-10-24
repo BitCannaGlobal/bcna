@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
@@ -14,6 +15,7 @@ import (
 )
 
 func (k Keeper) BitcannaidAll(GoCtx context.Context, req *types.QueryAllBitcannaidRequest) (*types.QueryAllBitcannaidResponse, error) {
+	// Check if the request is valid
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
@@ -27,7 +29,7 @@ func (k Keeper) BitcannaidAll(GoCtx context.Context, req *types.QueryAllBitcanna
 	pageRes, err := query.Paginate(bitcannaidStore, req.Pagination, func(key []byte, value []byte) error {
 		var bitcannaid types.Bitcannaid
 		if err := proto.Unmarshal(value, &bitcannaid); err != nil {
-			return err
+			return fmt.Errorf("failed to deserialize Bitcannaid: %w", err)
 		}
 
 		bitcannaids = append(bitcannaids, bitcannaid)
