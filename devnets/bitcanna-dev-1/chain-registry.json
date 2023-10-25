@@ -25,6 +25,11 @@
         "id": "496ac0ba20188f70f41e0a814dfd4d9a617338f8",
         "address": "bcnadev-seed.ibs.team:16656",
         "provider": "Inter Blockchain Services"
+      },
+      {
+        "id": "3f472746f46493309650e5a033076689996c8881",
+        "address": "bitcanna-testnet.rpc.kjnodes.com:14259",
+        "provider": "kjnodes"
       }
     ],
     "persistent_peers": [
@@ -62,6 +67,11 @@
         "id": "570affccbeada2771a8209a238e0dd69b8753536",
         "address": "194.163.174.231:26666",
         "provider": "AVIAONE 🟢"
+      },
+      {
+        "id": "d5519e378247dfb61dfe90652d1fe3e2b3005a5b",
+        "address": "bitcanna-testnet.rpc.kjnodes.com:14256",
+        "provider": "kjnodes"
       }
     ]
   },
@@ -102,6 +112,14 @@
       {
         "address": "https://bitcanna-testnet.nodejumper.io:443",
         "provider": "NODEJUMPER"
+      },
+      {
+        "address": "https://bitcanna-testnet.rpc.kjnodes.com",
+        "provider": "kjnodes"
+      },
+      {
+        "address": "https://rpc-bcna-testnet.kjinc.io:443",
+        "provider": "KJINC.io"       
       }
     ],
     "grpc": [
@@ -136,6 +154,10 @@
       {
         "address": "bitcanna-testnet.nodejumper.io:9090",
         "provider": "NODEJUMPER"
+      },
+      {
+        "address": "bitcanna-testnet.grpc.kjnodes.com:443",
+        "provider": "kjnodes"
       }
     ],
     "rest": [
@@ -178,6 +200,14 @@
       {
         "address": "https://bitcanna-testnet.nodejumper.io:1317",
         "provider": "NODEJUMPER"
+      },
+      {
+        "address": "https://bitcanna-testnet.api.kjnodes.com",
+        "provider": "kjnodes"
+      },
+      {
+        "address": "https://api-bcna-testnet.kjinc.io",
+        "provider": "KJINC.io"
       }
     ]
   },
@@ -211,6 +241,12 @@
       "url": "https://test.anode.team/bitcanna-devnet",
       "tx_page": "https://test.anode.team/bitcanna-devnet/tx/${txHash}",
       "account_page": "https://test.anode.team/bitcanna-devnet/account/${accountAddress}"
+    },
+    {
+      "kind": "kjnodes",
+      "url": "https://explorer.kjnodes.com/bitcanna-testnet",
+      "tx_page": "https://explorer.kjnodes.com/bitcanna-testnet/tx/${txHash}",
+      "account_page": "https://explorer.kjnodes.com/bitcanna-testnet/account/${accountAddress}"
     },
     {
       "kind": "",
@@ -263,6 +299,11 @@
       "address": "https://bitcanna-testnet.nodejumper.io:443",
       "url_doc": "https://app.nodejumper.io/bitcanna-testnet/sync",
       "provider": "NODEJUMPER"
+    },
+    {
+      "address": "https://bitcanna-testnet.rpc.kjnodes.com",
+      "url_doc": "https://services.kjnodes.com/testnet/bitcanna/state-sync/",
+      "provider": "kjnodes"
     }
   ]
 }
