@@ -508,7 +508,7 @@
       "provider": "KitKat"
     },
     {
-      "address": "https://bitcanna.api.m.anode.team",
+      "address": "https://bitcanna.rpc.m.anode.team",
       "url_doc": "https://anode.team/BitCanna/#State-Sync",
       "provider": "AlxVoy ⚡ ANODE.TEAM"
     },
