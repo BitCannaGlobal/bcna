@@ -7,8 +7,8 @@
         "provider": "AVIAONE 🟢"
       },
       {
-        "id": "24823f3d602136a213f9d93740193aed33de56a9",
-        "address": "seeds.bitcanna-dev.hexnodes.co:31656",
+        "id": "9f7ebc84e78187421e637627bbf608a54040fb17",
+        "address": "seeds.bitcanna-dev.hexnodes.co:04656",
         "provider": "Hexnodes"
       },
       {
@@ -132,7 +132,7 @@
         "provider": "El-Jay"
       },
       {
-        "address": "grpc.bitcanna-dev.hexnodes.co:31090",
+        "address": "grpc.bitcanna-dev.hexnodes.co:4090",
         "provider": "Hexnodes"
       },
       {
@@ -174,7 +174,7 @@
         "provider": "🔥STAVR🔥"
       },
       {
-        "address": "https://rest.bitcanna-dev.hexnodes.co",
+        "address": "https://lcd.bitcanna-dev.hexnodes.co",
         "provider": "Hexnodes"
       },
       {
