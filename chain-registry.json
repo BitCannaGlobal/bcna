@@ -60,6 +60,11 @@
         "id": "daa1e4a3d0f202109baea2a3be589f7eb6d9ea62",
         "address": "seeds-bcna.kjinc.io:26656",
         "provider": "KJINC.io"
+      },
+      {
+        "id": "5f5cfac5c38506fbb4275c19e87c4107ec48808d",
+        "address": "seeds.nodex.one:11710",
+        "provider": "NodeX Emperor ⚡ Bitcanna"
       }
     ],
     "persistent_peers": [
@@ -157,6 +162,11 @@
         "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
         "address": "bitcanna.rpc.kjnodes.com:14256",
         "provider": "kjnodes"
+      },
+      {
+        "id": "d1d43cc7c7aef715957289fd96a114ecaa7ba756",
+        "address": "bitcanna.rpc.nodex.one:11756",
+        "provider": "NodeX Emperor ⚡ Bitcanna"
       }
     ]
   },
@@ -261,6 +271,10 @@
       {
         "address": "https://bitcanna-rpc.kitkat.zone/",
         "provider": "KitKat"
+      },
+      {
+        "address": "https://bitcanna.rpc.nodex.one",
+        "provider": "NodeX Emperor ⚡ Bitcanna"
       }
     ],
     "grpc": [
@@ -323,6 +337,10 @@
       {
         "address": "grpc-bcna.kjinc.io:9090",
         "provider": "KJINC.io"        
+      },
+      {
+        "address": "https://bitcanna.grpc.nodex.one:443",
+        "provider": "NodeX Emperor ⚡ Bitcanna"    
       }
     ],
     "rest": [
@@ -421,6 +439,10 @@
       {
         "address": "https://bitcanna-api.kitkat.zone",
         "provider": "KitKat"
+      },
+      {
+        "address": "https://bitcanna.api.nodex.one",
+        "provider": "NodeX Emperor ⚡ Bitcanna"    
       }
     ]
   },
@@ -483,6 +505,11 @@
       "kind": "kjnodes",
       "url": "https://explorer.kjnodes.com/bitcanna",
       "tx_page": "https://explorer.kjnodes.com/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "NODEXPLORER",
+      "url": "https://explorer.nodex.one/bitcanna",
+      "tx_page": "https://explorer.nodex.one/bitcanna/tx/${txHash}"
     }
   ],
   "archive_nodes": [
@@ -535,6 +562,11 @@
       "address": "https://statesync-bcna.kjinc.io:443",
       "url_doc": "https://services.kjinc.io/mainnet-service/bitcanna/statesync",
       "provider": "KJINC.io"      
+    },
+    {
+      "address": "https://bitcanna.api.nodex.one:443",
+      "url_doc": "https://docs.nodex.one/networks/mainnet/bitcanna/statesync",
+      "provider": "NodeX Emperor ⚡ Bitcanna"      
     }
   ]
 }
