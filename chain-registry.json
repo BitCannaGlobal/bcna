@@ -60,6 +60,11 @@
         "id": "daa1e4a3d0f202109baea2a3be589f7eb6d9ea62",
         "address": "seeds-bcna.kjinc.io:26656",
         "provider": "KJINC.io"
+      },
+      {
+        "id": "39d10a2e6ba7acbd714d1fde9ba0f2f4b7346f67",
+        "address": "seed-bitcanna.sxlmnwb.xyz:11356",
+        "provider": "makimaprjkt°"
       }
     ],
     "persistent_peers": [
@@ -157,6 +162,11 @@
         "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
         "address": "bitcanna.rpc.kjnodes.com:14256",
         "provider": "kjnodes"
+      },
+      {
+        "id": "1bde35502e91374b5c06b843964c56050455aaef",
+        "address": "rpc-bitcanna.sxlmnwb.xyz:11356",
+        "provider": "makimaprjkt°"
       }
     ]
   },
@@ -261,6 +271,10 @@
       {
         "address": "https://bitcanna-rpc.kitkat.zone/",
         "provider": "KitKat"
+      },
+      {
+        "address": "https://rpc-bitcanna.sxlmnwb.xyz",
+        "provider": "makimaprjkt°"
       }
     ],
     "grpc": [
@@ -323,6 +337,10 @@
       {
         "address": "grpc-bcna.kjinc.io:9090",
         "provider": "KJINC.io"        
+      },
+      {
+        "address": "grpc-bitcanna.sxlmnwb.xyz:11390",
+        "provider": "makimaprjkt°"        
       }
     ],
     "rest": [
@@ -421,6 +439,10 @@
       {
         "address": "https://bitcanna-api.kitkat.zone",
         "provider": "KitKat"
+      },
+      {
+        "address": "https://api-bitcanna.sxlmnwb.xyz",
+        "provider": "makimaprjkt°"
       }
     ]
   },
@@ -535,6 +557,11 @@
       "address": "https://statesync-bcna.kjinc.io:443",
       "url_doc": "https://services.kjinc.io/mainnet-service/bitcanna/statesync",
       "provider": "KJINC.io"      
+    },
+    {
+      "address": "https://rpc-bitcanna.sxlmnwb.xyz:443",
+      "url_doc": "https://makima-services.sxlmnwb.xyz/mainnet/bitcanna/statesync",
+      "provider": "makimaprjkt°"      
     }
   ]
 }
