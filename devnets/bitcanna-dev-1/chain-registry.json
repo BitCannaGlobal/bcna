@@ -72,6 +72,11 @@
         "id": "d5519e378247dfb61dfe90652d1fe3e2b3005a5b",
         "address": "bitcanna-testnet.rpc.kjnodes.com:14256",
         "provider": "kjnodes"
+      },
+      {
+        "id": "74b83fd6b6661cc9c910b5c0dd5842843a62a3e5",
+        "address": "bitcanna-testnet.peers.l0vd.com:30656",
+        "provider": "L0vd.com ❤️"
       }
     ]
   },
@@ -120,6 +125,10 @@
       {
         "address": "https://rpc-bcna-testnet.kjinc.io:443",
         "provider": "KJINC.io"       
+      },
+      {
+        "address": "https://bitcanna-testnet.rpc.l0vd.com:443",
+        "provider": "L0vd.com ❤️"       
       }
     ],
     "grpc": [
@@ -158,6 +167,10 @@
       {
         "address": "bitcanna-testnet.grpc.kjnodes.com:443",
         "provider": "kjnodes"
+      },
+      {
+        "address": "bitcanna-testnet.grpc.l0vd.com:80",
+        "provider": "L0vd.com ❤️"
       }
     ],
     "rest": [
@@ -208,6 +221,10 @@
       {
         "address": "https://api-bcna-testnet.kjinc.io",
         "provider": "KJINC.io"
+      },
+      {
+        "address": "https://bitcanna-testnet.api.l0vd.com:443",
+        "provider": "L0vd.com ❤️"
       }
     ]
   },
@@ -247,6 +264,12 @@
       "url": "https://explorer.kjnodes.com/bitcanna-testnet",
       "tx_page": "https://explorer.kjnodes.com/bitcanna-testnet/tx/${txHash}",
       "account_page": "https://explorer.kjnodes.com/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "L0vd.com ❤️",
+      "url": "https://explorers.l0vd.com/bitcanna-testnet",
+      "tx_page": "https://explorers.l0vd.com/bitcanna-testnet/tx/${txHash}",
+      "account_page": "https://explorers.l0vd.com/bitcanna-testnet/account/${accountAddress}"
     },
     {
       "kind": "",
