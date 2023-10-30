@@ -275,6 +275,10 @@
       {
         "address": "https://bitcanna.rpc.nodex.one",
         "provider": "NodeX Emperor ⚡ Bitcanna"
+      },
+      {
+        "address": "https://bcna.rpc.arcturian.tech/",
+        "provider": "Arcturian Tech"
       }
     ],
     "grpc": [
@@ -443,6 +447,10 @@
       {
         "address": "https://bitcanna.api.nodex.one",
         "provider": "NodeX Emperor ⚡ Bitcanna"    
+      },
+      {
+        "address": "https://bcna.api.arcturian.tech/",
+        "provider": "Arcturian Tech"
       }
     ]
   },
@@ -510,6 +518,10 @@
       "kind": "NODEXPLORER",
       "url": "https://explorer.nodex.one/bitcanna",
       "tx_page": "https://explorer.nodex.one/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "Moonbys Dashboard",
+      "url": "https://explorer.moonbys.com"
     }
   ],
   "archive_nodes": [
