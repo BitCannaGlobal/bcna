@@ -261,7 +261,11 @@
       {
         "address": "https://bitcanna-rpc.kitkat.zone/",
         "provider": "KitKat"
-      }
+      },
+      {
+        "address": "https://bcna.rpc.arcturian.tech/",
+        "provider": "Arcturian Tech"
+      }  
     ],
     "grpc": [
       {
@@ -421,7 +425,11 @@
       {
         "address": "https://bitcanna-api.kitkat.zone",
         "provider": "KitKat"
-      }
+      },
+      {
+        "address": "https://bcna.api.arcturian.tech/",
+        "provider": "Arcturian Tech"
+      }  
     ]
   },
   "explorers": [
@@ -483,7 +491,11 @@
       "kind": "kjnodes",
       "url": "https://explorer.kjnodes.com/bitcanna",
       "tx_page": "https://explorer.kjnodes.com/bitcanna/tx/${txHash}"
-    }
+    },
+    {
+      "kind": "Moonbys Dashboard",
+      "url": "https://explorer.moonbys.com"
+    }  
   ],
   "archive_nodes": [
     {
