@@ -515,13 +515,19 @@
       "tx_page": "https://explorer.kjnodes.com/bitcanna/tx/${txHash}"
     },
     {
+      "kind": "L0vd.com ❤️",
+      "url": "https://explorers.l0vd.com/bitcanna-mainnet",
+      "tx_page": "https://explorers.l0vd.com/bitcanna-mainnet/tx/${txHash}"
+    },
+    {
       "kind": "NODEXPLORER",
       "url": "https://explorer.nodex.one/bitcanna",
       "tx_page": "https://explorer.nodex.one/bitcanna/tx/${txHash}"
     },
     {
       "kind": "Moonbys Dashboard",
-      "url": "https://explorer.moonbys.com"
+      "url": "https://explorer.moonbys.com",
+      "tx_page": "https://explorer.moonbys.com/${txHash}"
     }
   ],
   "archive_nodes": [
@@ -573,12 +579,17 @@
     {
       "address": "https://statesync-bcna.kjinc.io:443",
       "url_doc": "https://services.kjinc.io/mainnet-service/bitcanna/statesync",
-      "provider": "KJINC.io"      
+      "provider": "KJINC.io"
+    },
+    {
+      "address": "https://bitcanna-mainnet.rpc.l0vd.com:443",
+      "url_doc": "https://chain-services.l0vd.com/mainnets/bitcanna/state-sync",
+      "provider": "L0vd.com ❤️"
     },
     {
       "address": "https://bitcanna.api.nodex.one:443",
       "url_doc": "https://docs.nodex.one/networks/mainnet/bitcanna/statesync",
-      "provider": "NodeX Emperor ⚡ Bitcanna"      
+      "provider": "NodeX Emperor ⚡ Bitcanna"
     }
   ]
 }
