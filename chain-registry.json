@@ -70,6 +70,11 @@
         "id": "39d10a2e6ba7acbd714d1fde9ba0f2f4b7346f67",
         "address": "seed-bitcanna.sxlmnwb.xyz:11356",
         "provider": "makimaprjkt°"
+      },
+      {
+        "id": "1531b73fed2ad4eb55ea537fa7fd66f137c12934",
+        "address": "seeds.blockhunters.org:38656",
+        "provider": "BlockHunters 🎯"
       }
     ],
     "persistent_peers": [
@@ -177,6 +182,11 @@
         "id": "1bde35502e91374b5c06b843964c56050455aaef",
         "address": "rpc-bitcanna.sxlmnwb.xyz:11356",
         "provider": "makimaprjkt°"
+      },
+      {
+        "id": "7fef7708e4eb2f3a1245f00ca42ad56e446b3d66",
+        "address": "rpc.bitcanna.bh.rocks:42656",
+        "provider": "BlockHunters 🎯"
       }
     ]
   },
@@ -293,6 +303,10 @@
       {
         "address": "https://rpc-bitcanna.sxlmnwb.xyz",
         "provider": "makimaprjkt°"
+      },
+      {
+        "address": "https://rpc.bitcanna.bh.rocks",
+        "provider": "BlockHunters 🎯"
       }
     ],
     "grpc": [
@@ -363,6 +377,10 @@
       {
         "address": "grpc-bitcanna.sxlmnwb.xyz:11390",
         "provider": "makimaprjkt°"        
+      },
+      {
+        "address": "grpc.bitcanna.bh.rocks:42090",
+        "provider": "BlockHunters 🎯"
       }
     ],
     "rest": [
@@ -473,6 +491,10 @@
       {
         "address": "https://api-bitcanna.sxlmnwb.xyz",
         "provider": "makimaprjkt°"
+      },
+      {
+        "address": "https://api.bitcanna.bh.rocks",
+        "provider": "BlockHunters 🎯"
       }
     ]
   },
@@ -550,6 +572,11 @@
       "kind": "Moonbys Dashboard",
       "url": "https://explorer.moonbys.com",
       "tx_page": "https://explorer.moonbys.com/${txHash}"
+    },
+    {
+      "provider": "BlockHunters 🎯",
+      "url": "https://scan.bh.rocks/bitcanna",
+      "tx_page": "https://scan.bh.rocks/bitcanna/tx/${txHash}"
     }
   ],
   "archive_nodes": [
