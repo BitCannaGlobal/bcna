@@ -65,6 +65,11 @@
         "id": "5f5cfac5c38506fbb4275c19e87c4107ec48808d",
         "address": "seeds.nodex.one:11710",
         "provider": "NodeX Emperor ⚡ Bitcanna"
+      },
+      {
+        "id": "39d10a2e6ba7acbd714d1fde9ba0f2f4b7346f67",
+        "address": "seed-bitcanna.sxlmnwb.xyz:11356",
+        "provider": "makimaprjkt°"
       }
     ],
     "persistent_peers": [
@@ -167,6 +172,11 @@
         "id": "d1d43cc7c7aef715957289fd96a114ecaa7ba756",
         "address": "bitcanna.rpc.nodex.one:11756",
         "provider": "NodeX Emperor ⚡ Bitcanna"
+      },
+      {
+        "id": "1bde35502e91374b5c06b843964c56050455aaef",
+        "address": "rpc-bitcanna.sxlmnwb.xyz:11356",
+        "provider": "makimaprjkt°"
       }
     ]
   },
@@ -279,6 +289,10 @@
       {
         "address": "https://bcna.rpc.arcturian.tech/",
         "provider": "Arcturian Tech"
+      },
+      {
+        "address": "https://rpc-bitcanna.sxlmnwb.xyz",
+        "provider": "makimaprjkt°"
       }
     ],
     "grpc": [
@@ -345,6 +359,10 @@
       {
         "address": "https://bitcanna.grpc.nodex.one:443",
         "provider": "NodeX Emperor ⚡ Bitcanna"    
+      },
+      {
+        "address": "grpc-bitcanna.sxlmnwb.xyz:11390",
+        "provider": "makimaprjkt°"        
       }
     ],
     "rest": [
@@ -451,6 +469,10 @@
       {
         "address": "https://bcna.api.arcturian.tech/",
         "provider": "Arcturian Tech"
+      },
+      {
+        "address": "https://api-bitcanna.sxlmnwb.xyz",
+        "provider": "makimaprjkt°"
       }
     ]
   },
@@ -590,6 +612,11 @@
       "address": "https://bitcanna.api.nodex.one:443",
       "url_doc": "https://docs.nodex.one/networks/mainnet/bitcanna/statesync",
       "provider": "NodeX Emperor ⚡ Bitcanna"
+    },
+    {
+      "address": "https://rpc-bitcanna.sxlmnwb.xyz:443",
+      "url_doc": "https://makima-services.sxlmnwb.xyz/mainnet/bitcanna/statesync",
+      "provider": "makimaprjkt°"      
     }
   ]
 }
