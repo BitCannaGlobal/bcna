@@ -367,7 +367,7 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "grpc-bcna.kjinc.io:9090",
+        "address": "grpc-bcna.kjinc.io:443",
         "provider": "KJINC.io"        
       },
       {
