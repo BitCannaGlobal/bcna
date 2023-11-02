@@ -636,7 +636,7 @@
       "provider": "L0vd.com ❤️"
     },
     {
-      "address": "https://bitcanna.api.nodex.one:443",
+      "address": "https://bitcanna.rpc.nodex.one:443",
       "url_doc": "https://docs.nodex.one/networks/mainnet/bitcanna/statesync",
       "provider": "NodeX Emperor ⚡ Bitcanna"
     },
