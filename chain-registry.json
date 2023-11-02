@@ -574,7 +574,7 @@
       "tx_page": "https://explorer.moonbys.com/${txHash}"
     },
     {
-      "provider": "BlockHunters 🎯",
+      "kind": "BlockHunters 🎯",
       "url": "https://scan.bh.rocks/bitcanna",
       "tx_page": "https://scan.bh.rocks/bitcanna/tx/${txHash}"
     }
