@@ -11,4 +11,5 @@ var (
 	ErrUnauthorized        = sdkioerrors.Register(ModuleName, 1103, "Incorrect owner")
 	ErrUnrecognized        = sdkioerrors.Register(ModuleName, 1104, "Unrecognized messager")
 	ErrInvalidAddress      = sdkioerrors.Register(ModuleName, 1105, "invalid address")
+	ErrMaxCharacters       = sdkioerrors.Register(ModuleName, 1106, "input exceeds the permitted length limit")
 )
