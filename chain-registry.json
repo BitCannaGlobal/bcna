@@ -277,6 +277,10 @@
         "provider": "MMS"
       },
       {
+        "address": "http://51.159.223.25:33657",
+        "provider": "Citizen Cosmos"
+      },
+      {
         "address": "http://65.108.142.81:26683",
         "provider": "Stakely"
       },
