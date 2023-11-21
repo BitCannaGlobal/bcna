@@ -66,7 +66,7 @@ By running the statesync script we download the latest binary (v1.5.3) and sync 
     Watch the output of the logs. When the chain is synced (wait 1 minute), press ctrl+C to stop the script and proceed with the next step.
     
     This is an example of the output you see when you can stop the script by pressing ctrl+C
-    ```
+    ```go
     4:39PM INF indexed block height=2920 module=txindex
     4:39PM INF Timed out dur=4988.140195 height=2921 module=consensus round=0 step=1
     4:39PM INF commit is for a block we do not know about; set ProposalBlock=nil commit=3E75B8B4371324172A860BBBB4BE8B5C2A2C96A7FA5F5507BB8457D0B40F00D2 commit_round=0 height=2921 module=consensus proposal={}
@@ -78,15 +78,23 @@ By running the statesync script we download the latest binary (v1.5.3) and sync 
     4:39PM INF committed state app_hash=4149C95CAD0D395AB9403A7DDC8B74AA245C37766D41CFBC47877EF59437BBFA height=2921 module=state num_txs=0
     4:39PM INF indexed block height=2921 module=txindex
     ```
-
+    
 3. **Move the new `bcnad` binary** to your machine's PATH.
-    ```
+    ```bash
     sudo mv bcnad /usr/local/bin/ 
     ```
     **Optionally:**
-    ```
+    ```bash
     bcnad config chain-id bitcanna-dev-1
     ```
+	3.1. **MemPool security settings:**
+	Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset to apply)
+	* max_tx_bytes = 524288
+	* max_txs_bytes = 268435456
+	```
+	sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml
+	sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
+	```
 ## Step 2 - Prepare the node
 To create a validator you need a funded wallet. Once the wallet is created, go to the **#devnet-faucet** channel on [Discord](https://discord.com/channels/805725188355260436/847019574662922260) and claim your devnet coins. For example: `!claim bcna14shzreglay98us0hep44hhhuy7dm43snv38plr`
 
