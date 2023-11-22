@@ -77,8 +77,8 @@ Send coins to your new address, you will need roughly 2 BCNA to run the validato
 ```
     bcnad config chain-id bitcanna-1
 ```
-2. **MemPool customs settings**
-    Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset to apply)
+2. **MemPool custom settings**
+    Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset the binary to apply)
    * max_tx_bytes = 524288
    * max_txs_bytes = 268435456
      
@@ -86,7 +86,18 @@ Send coins to your new address, you will need roughly 2 BCNA to run the validato
     sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml && \
     sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
     ```
-3.  **Create a wallet**:
+
+    If you are running the binary as a service use:
+    ```bash
+    sudo service bcnad restart
+    ```
+    If you are running the binary without a service (note that it is always advised to run the binary as a service):
+    ```bash
+    bcnad stop (or use CTRL + C in the terminal window where the binary is running)
+    bcnad start
+    ```   
+   
+4.  **Create a wallet**:
 You may create a wallet with one or more keys (addresses) using `bcnad`; you can choose a name of your own liking (we strongly advice you use one word)
 ```
     bcnad keys add MyFirstAddress
