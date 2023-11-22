@@ -95,6 +95,16 @@ By running the statesync script we download the latest binary (v1.5.3) and sync 
 	sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml
 	sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
 	```
+
+     If you are running the binary as a service use:
+    ```bash
+    sudo service bcnad restart
+    ```
+    If you are running the binary without a service (note that it is always advised to run the binary as a service):
+    ```bash
+    bcnad stop (or use CTRL + C in the terminal window where the binary is running)
+    bcnad start
+    ```   
 ## Step 2 - Prepare the node
 To create a validator you need a funded wallet. Once the wallet is created, go to the **#devnet-faucet** channel on [Discord](https://discord.com/channels/805725188355260436/847019574662922260) and claim your devnet coins. For example: `!claim bcna14shzreglay98us0hep44hhhuy7dm43snv38plr`
 
