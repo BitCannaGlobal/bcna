@@ -77,7 +77,27 @@ Send coins to your new address, you will need roughly 2 BCNA to run the validato
 ```
     bcnad config chain-id bitcanna-1
 ```
-2.  **Create a wallet**:
+2. **MemPool custom settings**
+    Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset the binary to apply)
+   * max_tx_bytes = 524288
+   * max_txs_bytes = 268435456
+     
+    ```bash
+    sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml && \
+    sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
+    ```
+
+    If you are running the binary as a service use:
+    ```bash
+    sudo service bcnad restart
+    ```
+    If you are running the binary without a service (note that it is always advised to run the binary as a service):
+    ```bash
+    bcnad stop (or use CTRL + C in the terminal window where the binary is running)
+    bcnad start
+    ```   
+   
+4.  **Create a wallet**:
 You may create a wallet with one or more keys (addresses) using `bcnad`; you can choose a name of your own liking (we strongly advice you use one word)
 ```
     bcnad keys add MyFirstAddress
@@ -99,7 +119,7 @@ It is the only way to recover your account if you ever forget/lose your password
     deposit daring slim glide hello dolphin expire stoner cluster vivid orphan work pond section client friend yellow west hamster torch settle island opinion gloom
 ```
 
-3. **Send the _Create validator_ TX:**
+4. **Send the _Create validator_ TX:**
 
 > We recommend you read the [FAQ Chain's guide](https://github.com/BitCannaGlobal/bcna/blob/main/faq_chain.md) to understand all parameters - be aware that some values are permanent and cannot be changed at a later date.
 
