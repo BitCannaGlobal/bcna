@@ -35,7 +35,7 @@
     "persistent_peers": [
       {
         "id": "80ee9ed689bfb329cf21b94aa12978e073226db4",
-        "address": "212.227.151.143:26656",
+        "address": "81.0.247.144:26656",
         "provider": "bitcanna-testnet"
       },
       {
