@@ -15,7 +15,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 * `471341f9befeab582e845d5e9987b7a4889c202f@144.91.89.66:26656`
 
 #### Persistent peers
-* `80ee9ed689bfb329cf21b94aa12978e073226db4@212.227.151.143:26656`
+* `80ee9ed689bfb329cf21b94aa12978e073226db4@81.0.247.144:26656`
 * `ba6c17d707cb0c4f81e0ef590f2e36152ff7dd1a@212.227.151.106:26656`
 
 
