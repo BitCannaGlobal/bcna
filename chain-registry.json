@@ -154,7 +154,7 @@
         "provider": "NODEJUMPER"
       },
       {
-        "id": "d068226de69f0e14ff34e393a199137a44b0398d",
+        "id": "e8bbbe53969162a893ab67c1eeb40432d57edec6",
         "address": "rpc.bitcanna.indonode.net:11656",
         "provider": "Indonode"
       },
@@ -664,7 +664,7 @@
     },
     {
       "address": "https://rpc.bitcanna.indonode.net:443",
-      "url_doc": "https://docs.indonode.net/mainnet/bitcanna/statesync",
+      "url_doc": "https://indonode.net/services/mainnet/bitcanna/sync#statesync",
       "provider": "Indonode"      
     }
   ]
