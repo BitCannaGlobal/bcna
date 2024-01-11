@@ -69,27 +69,27 @@ ldflags := $(strip $(ldflags))
 BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
 
 check_version:
-ifneq ($(GO_MINOR_VERSION),20)
-	@echo "ERROR: Go version 1.20 is required for building BCNAD."
+ifneq ($(GO_MINOR_VERSION),21)
+	@echo "ERROR: Go version 1.21 is required for building BCNAD."
 	exit 1
 endif
 
-build: go.sum
+build: check_version go.sum
 	@echo "--> Building..."
 	go build -mod=readonly $(BUILD_FLAGS) -o $(BUILD_DIR)/ ./...
 
-install: go.sum
+install: check_version go.sum
 	@echo "--> Installing..."
 	go install -mod=readonly $(BUILD_FLAGS) ./...
 
-build-linux: go.sum
+build-linux: check_version go.sum
 	LEDGER_ENABLED=false GOOS=linux GOARCH=amd64 $(MAKE) build
 
-go-mod-cache: go.sum
+go-mod-cache: check_version go.sum
 	@echo "--> Download go modules to local cache"
 	@go mod download
 
-go.sum: go.mod
+go.sum: check_version go.mod
 	@echo "--> Ensure dependencies have not been modified"
 	@go mod verify
 
