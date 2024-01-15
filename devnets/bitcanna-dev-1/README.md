@@ -15,7 +15,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 * `471341f9befeab582e845d5e9987b7a4889c202f@144.91.89.66:26656`
 
 #### Persistent peers
-* `80ee9ed689bfb329cf21b94aa12978e073226db4@212.227.151.143:26656`
+* `80ee9ed689bfb329cf21b94aa12978e073226db4@81.0.247.144:26656`
 * `ba6c17d707cb0c4f81e0ef590f2e36152ff7dd1a@212.227.151.106:26656`
 
 
@@ -33,6 +33,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 | No break consensus   | x   | [v1.6.2](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.2) | x |
 | No break consensus   | x   | v1.6.3-rc1   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.3-rc1/bcna_linux_amd64.tar.gz) | x |
 | 19th Apr 2023 14h UTC   | 1.831.901   | v2.0.1-rc6   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc6/bcna_linux_amd64.tar.gz) | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc6) |
+| 9th Nov 2023 14h UTC   | xxxxxxx420   | v3.0.0-rc3   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.0-rc3/bcna_linux_amd64.tar.gz) | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.0-rc3) |
 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
@@ -65,7 +66,7 @@ By running the statesync script we download the latest binary (v1.5.3) and sync 
     Watch the output of the logs. When the chain is synced (wait 1 minute), press ctrl+C to stop the script and proceed with the next step.
     
     This is an example of the output you see when you can stop the script by pressing ctrl+C
-    ```
+    ```go
     4:39PM INF indexed block height=2920 module=txindex
     4:39PM INF Timed out dur=4988.140195 height=2921 module=consensus round=0 step=1
     4:39PM INF commit is for a block we do not know about; set ProposalBlock=nil commit=3E75B8B4371324172A860BBBB4BE8B5C2A2C96A7FA5F5507BB8457D0B40F00D2 commit_round=0 height=2921 module=consensus proposal={}
@@ -77,15 +78,33 @@ By running the statesync script we download the latest binary (v1.5.3) and sync 
     4:39PM INF committed state app_hash=4149C95CAD0D395AB9403A7DDC8B74AA245C37766D41CFBC47877EF59437BBFA height=2921 module=state num_txs=0
     4:39PM INF indexed block height=2921 module=txindex
     ```
-
+    
 3. **Move the new `bcnad` binary** to your machine's PATH.
-    ```
+    ```bash
     sudo mv bcnad /usr/local/bin/ 
     ```
     **Optionally:**
-    ```
+    ```bash
     bcnad config chain-id bitcanna-dev-1
     ```
+	3.1. **MemPool security settings:**
+	Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset to apply)
+	* max_tx_bytes = 524288
+	* max_txs_bytes = 268435456
+	```
+	sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml
+	sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
+	```
+
+     If you are running the binary as a service use:
+    ```bash
+    sudo service bcnad restart
+    ```
+    If you are running the binary without a service (note that it is always advised to run the binary as a service):
+    ```bash
+    bcnad stop (or use CTRL + C in the terminal window where the binary is running)
+    bcnad start
+    ```   
 ## Step 2 - Prepare the node
 To create a validator you need a funded wallet. Once the wallet is created, go to the **#devnet-faucet** channel on [Discord](https://discord.com/channels/805725188355260436/847019574662922260) and claim your devnet coins. For example: `!claim bcna14shzreglay98us0hep44hhhuy7dm43snv38plr`
 

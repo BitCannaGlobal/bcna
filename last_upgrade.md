@@ -1,5 +1,44 @@
 #  MAINNET `bitcanna-1` Upgrades
 
+## v2.0.2 codename `wakeandbake` from v1.7.0
+
+> (Update scheduled for 29th June 2023 ~ 16.20h CEST - 14.20h UTC)
+>
+> Note: this is a planned upgrade, the chain **will halt** at block **[YYYYYYYYYY](https://www.mintscan.io/bitcanna/blocks/YYYYYY)**
+>
+> **Important note: The tag name required for the upgrade is v2.0.2**
+
+On chain proposal: 
+
+After 8 months testing this migration and adding new features (back-ported to v1.x branch) we decided to merge source code to produce a new BCNAD v2 based on Cosmos SDK v0.46.13 & CometBFT v0.34.28. This is a bridge to reach in a near future the SDK v0.47.
+
+Those are the highlighted features/improvements/bug fixes:
+
+- Chore: Lint errors fixing by @RaulBernal in Chore: Lint errors fixing #172
+- Chore: some refactor coding task for BCNA v2 (Cosmos-SDK v0.46.12) for coming merging in main branch (current BCNA v1 repo (Cosmos-SDK v0.45.15))
+- Check and avoid duplicates at Bitcannaid.bcnaid by @RaulBernal in Check and avoid duplicates at Bitcannaid.bcnaid #171
+- New endpoint for BCNA module /BitCannaGlobal/bcna/bcna/bitcannaid/bcnaid/{bcnaid}
+- Code refactor to deprecate Ignite OpenAPIConsole deps
+- Refactor Gov Spam filter to reject v1 proposals, only v1beta1 are allowed for SDK v0.46
+- Ante handler to prevent spam proposals at Gov module
+- Bump IBC go version to v6.1
+- Bump IAVL version to v0.19.5
+- Fixed BCNA module path & bug with CLI
+- Using Cosmos Keyring v1.2.0
+- SDK v0.46 bech32fix
+- Endpoint nodeconfig by @RaulBernal in Sdk46 bech32fix golang19 nodeservice #132
+- Upgrades separated of App.go by @RaulBernal in Upgrades separated of App.go #133
+- Deprecate ignite/cli cosmoscmd package by @RaulBernal in Deprecate ignite/cli cosmoscmd package #102
+- Refactor tests and root & delete comments by @RaulBernal in Refactor tests and root & delete comments #112
+
+### For detailed instructions check the release doc:
+* https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2
+### For detailed Cosmovisor install guide:
+* [Updated guide](https://github.com/BitCannaGlobal/bcna/blob/main/2.3.cosmovisor.md)
+
+
+https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v170-codename-vigorous-grow-huckleberry-from-v163
+
 ## v1.7.0 codename `vigorous-grow-huckleberry` from v1.6.3
 On chain proposal:
 What will be upgrade & implement: 

@@ -1,0 +1,332 @@
+{
+  "peers": {
+    "seeds": [
+      {
+        "id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
+        "address": "seed.bitcanna-dev-1.bitcanna.aviaone.com:20264",
+        "provider": "AVIAONE 🟢"
+      },
+      {
+        "id": "9f7ebc84e78187421e637627bbf608a54040fb17",
+        "address": "seeds.bitcanna-dev.hexnodes.co:04656",
+        "provider": "Hexnodes"
+      },
+      {
+        "id": "2a369fb20a5827104efafa901916e97516e829fb",
+        "address": "testnet-bitcanna-seed.genznodes.dev:50656",
+        "provider": "genznodes"
+      },
+      {
+        "id": "2175709bdd102641e9e4ddd38ba263b7f06214df",
+        "address": "65.109.28.177:26357",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "id": "496ac0ba20188f70f41e0a814dfd4d9a617338f8",
+        "address": "bcnadev-seed.ibs.team:443",
+        "provider": "Inter Blockchain Services"
+      },
+      {
+        "id": "3f472746f46493309650e5a033076689996c8881",
+        "address": "bitcanna-testnet.rpc.kjnodes.com:14259",
+        "provider": "kjnodes"
+      }
+    ],
+    "persistent_peers": [
+      {
+        "id": "80ee9ed689bfb329cf21b94aa12978e073226db4",
+        "address": "81.0.247.144:26656",
+        "provider": "bitcanna-testnet"
+      },
+      {
+        "id": "b0c7e5c69aaf00626baaf7c59370029b587a91a4",
+        "address": "bitcannadev.peers.stavr.tech:30006",
+        "provider": "🔥STAVR🔥"
+      },
+      {
+        "id": "60fae2c5581622bb84eaf95878e85c9f339f1a2a",
+        "address": "212.227.151.106:26656",
+        "provider": "El-Jay"
+      },
+      {
+        "id": "8962e37cb1fd4f871440c9128832ff1f21322e62",
+        "address": "95.214.53.45:1656",
+        "provider": "genznodes"
+      },
+      {
+        "id": "c4277e884bbbf33ef1d8f13cbf26adb3b12336fd",
+        "address": "testnet-bitcanna.konsortech.xyz:26656",
+        "provider": "KonsorTech"
+      },
+      {
+        "id": "0044946a4ba72e44fbe044cd0ce7661a35e7308f",
+        "address": "seeds-4.anode.team:10259",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "id": "570affccbeada2771a8209a238e0dd69b8753536",
+        "address": "194.163.174.231:26666",
+        "provider": "AVIAONE 🟢"
+      },
+      {
+        "id": "d5519e378247dfb61dfe90652d1fe3e2b3005a5b",
+        "address": "bitcanna-testnet.rpc.kjnodes.com:14256",
+        "provider": "kjnodes"
+      },
+      {
+        "id": "74b83fd6b6661cc9c910b5c0dd5842843a62a3e5",
+        "address": "bitcanna-testnet.peers.l0vd.com:30656",
+        "provider": "L0vd.com ❤️"
+      }
+    ]
+  },
+  "apis": {
+    "rpc": [
+      {
+        "address": "https://rpc-testnet.bitcanna.io:443",
+        "provider": "bitcanna-testnet"
+      },
+      {
+        "address": "http://212.227.151.106:26657",
+        "provider": "El-Jay"
+      },
+      {
+        "address": "https://rpc.bitcanna-dev.hexnodes.co:443",
+        "provider": "Hexnodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-rpc.genznodes.dev",
+        "provider": "genznodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-rpc.konsortech.xyz",
+        "provider": "KonsorTech"
+      },
+      {
+        "address": "https://bitcanna.rpc.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "https://bcnadev-rpc.ibs.team",
+        "provider": "Inter Blockchain Services"
+      },
+      {
+        "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com",
+        "provider": "AVIAONE 🟢"
+      },
+      {
+        "address": "https://bitcanna-testnet.nodejumper.io:443",
+        "provider": "NODEJUMPER"
+      },
+      {
+        "address": "https://bitcanna-testnet.rpc.kjnodes.com",
+        "provider": "kjnodes"
+      },
+      {
+        "address": "https://rpc-bcna-testnet.kjinc.io:443",
+        "provider": "KJINC.io"       
+      },
+      {
+        "address": "https://bitcanna-testnet.rpc.l0vd.com:443",
+        "provider": "L0vd.com ❤️"       
+      }
+    ],
+    "grpc": [
+      {
+        "address": "grpc-testnet.bitcanna.io:443",
+        "provider": "bitcanna"
+      },
+      {
+        "address": "212.227.151.106:9090",
+        "provider": "El-Jay"
+      },
+      {
+        "address": "grpc.bitcanna-dev.hexnodes.co:4090",
+        "provider": "Hexnodes"
+      },
+      {
+        "address": "testnet-bitcanna-grpc.genznodes.dev:1090",
+        "provider": "genznodes"
+      },
+      {
+        "address": "testnet-bitcanna-grpc.konsortech.xyz:9090",
+        "provider": "KonsorTech"
+      },
+      {
+        "address": "bitcanna.rpc.t.anode.team:443",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "grpc.bitcanna-dev-1.bitcanna.aviaone.com:9092",
+        "provider": "AVIAONE 🟢"
+      },
+      {
+        "address": "bitcanna-testnet.nodejumper.io:9090",
+        "provider": "NODEJUMPER"
+      },
+      {
+        "address": "bitcanna-testnet.grpc.kjnodes.com:443",
+        "provider": "kjnodes"
+      },
+      {
+        "address": "bitcanna-testnet.grpc.l0vd.com:80",
+        "provider": "L0vd.com ❤️"
+      }
+    ],
+    "rest": [
+      {
+        "address": "https://lcd-testnet.bitcanna.io",
+        "provider": "bitcanna"
+      },
+      {
+        "address": "http://212.227.151.106:1317",
+        "provider": "El-Jay"
+      },
+      {
+        "address": "https://bitcanna.api.dev.stavr.tech",
+        "provider": "🔥STAVR🔥"
+      },
+      {
+        "address": "https://lcd.bitcanna-dev.hexnodes.co",
+        "provider": "Hexnodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-api.genznodes.dev",
+        "provider": "genznodes"
+      },
+      {
+        "address": "https://testnet-bitcanna-api.konsortech.xyz",
+        "provider": "KonsorTech"
+      },
+      {
+        "address": "https://bitcanna.api.t.anode.team",
+        "provider": "AlxVoy ⚡ ANODE.TEAM"
+      },
+      {
+        "address": "https://bcnadev-api.ibs.team",
+        "provider": "Inter Blockchain Services"
+      },
+      {
+        "address": "https://api.bitcanna-dev-1.bitcanna.aviaone.com",
+        "provider": "AVIAONE 🟢"
+      },
+      {
+        "address": "https://bitcanna-testnet.nodejumper.io:1317",
+        "provider": "NODEJUMPER"
+      },
+      {
+        "address": "https://bitcanna-testnet.api.kjnodes.com",
+        "provider": "kjnodes"
+      },
+      {
+        "address": "https://api-bcna-testnet.kjinc.io",
+        "provider": "KJINC.io"
+      },
+      {
+        "address": "https://bitcanna-testnet.api.l0vd.com:443",
+        "provider": "L0vd.com ❤️"
+      }
+    ]
+  },
+  "explorers": [
+    {
+      "kind": "Ping.pub",
+      "url": "https://testnet.ping.pub/bitcanna",
+      "tx_page": "https://testnet.ping.pub/bitcanna/tx/${txHash}",
+      "account_page": "https://testnet.ping.pub/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "🔥STAVR🔥",
+      "url": "https://explorer.stavr.tech/Bitcanna-DEV",
+      "tx_page": "https://explorer.stavr.tech/Bitcanna-DEV/tx/${txHash}",
+      "account_page": "https://explorer.stavr.tech/Bitcanna-DEV/account/${accountAddress}"
+    },
+    {
+      "kind": "Hexnodes",
+      "url": "https://explorer.hexnodes.co/bitcanna-testnet",
+      "tx_page": "https://explorer.hexnodes.co/bitcanna-testnet/tx/${txHash}",
+      "account_page": "hthttps://explorer.hexnodes.co/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "KonsorTech",
+      "url": "https://testnet-explorer.konsortech.xyz/bitcanna",
+      "tx_page": "https://testnet-explorer.konsortech.xyz/bitcanna/tx/${txHash}",
+      "account_page": "https://testnet-explorer.konsortech.xyz/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "AlxVoy ⚡ ANODE.TEAM",
+      "url": "https://test.anode.team/bitcanna-devnet",
+      "tx_page": "https://test.anode.team/bitcanna-devnet/tx/${txHash}",
+      "account_page": "https://test.anode.team/bitcanna-devnet/account/${accountAddress}"
+    },
+    {
+      "kind": "kjnodes",
+      "url": "https://explorer.kjnodes.com/bitcanna-testnet",
+      "tx_page": "https://explorer.kjnodes.com/bitcanna-testnet/tx/${txHash}",
+      "account_page": "https://explorer.kjnodes.com/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "L0vd.com ❤️",
+      "url": "https://explorers.l0vd.com/bitcanna-testnet",
+      "tx_page": "https://explorers.l0vd.com/bitcanna-testnet/tx/${txHash}",
+      "account_page": "https://explorers.l0vd.com/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "",
+      "url": "",
+      "tx_page": "/tx/${txHash}"
+    }
+  ],
+  "archive_nodes": [
+    {
+      "address": "RPC url",
+      "provider": "validator"
+    },
+    {
+      "address": "https://rpc.example.com/",
+      "provider": "Example"
+    }
+  ],
+  "state_sync": [
+    {
+      "address": "https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/",
+      "url_doc": "https://aviaone.com/blockchains-service/bitcanna-testnet-bitcanna-dev-1.html",
+      "provider": "AVIAONE 🟢"
+    },
+    {
+      "address": "https://rpc.bitcanna-de.hexnodes.co",
+      "url_doc": "https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna",
+      "provider": "Hexnodes"
+    },
+    {
+      "address": "https://testnet-bitcanna-rpc.genznodes.dev",
+      "url_doc": "https://genznodes.dev/testnet_services/#bitcanna",
+      "provider": "genznodes"
+    },
+    {
+      "address": "https://testnet-bitcanna-rpc.konsortech.xyz",
+      "url_doc": "https://docs.konsortech.xyz/node/Testnet/Bitcanna/statesync",
+      "provider": "KonsorTech"
+    },
+    {
+      "address": "https://bitcanna.rpc.t.anode.team",
+      "url_doc": "https://anode.team/BitCanna/#State-Sync_t",
+      "provider": "AlxVoy ⚡ ANODE.TEAM"
+    },
+    {
+      "address": "https://bcnadev-rpc.ibs.team",
+      "url_doc": "https://github.com/Inter-Blockchain-Service/Cosmos-StateSync/tree/main/Testnet/Bitcanna",
+      "provider": "Inter Blockchain Services"
+    },
+    {
+      "address": "https://bitcanna-testnet.nodejumper.io:443",
+      "url_doc": "https://app.nodejumper.io/bitcanna-testnet/sync",
+      "provider": "NODEJUMPER"
+    },
+    {
+      "address": "https://bitcanna-testnet.rpc.kjnodes.com",
+      "url_doc": "https://services.kjnodes.com/testnet/bitcanna/state-sync/",
+      "provider": "kjnodes"
+    }
+  ]
+}

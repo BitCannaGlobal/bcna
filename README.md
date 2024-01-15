@@ -2,10 +2,7 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> Current version (v1.6.3) of our development uses Cosmos SDK v0.45.14 & Tendermint v0.34.26 & IBC-go v3.4.0
-
-> New version info: [Update scheduled for 30th May 2023](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) v1.7.0
-
+> [Current version (v2.0.3)](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.3) of our development uses Cosmos SDK v0.46.14 & CometBFT v0.34.29 & IBC-go v6.1.1
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -21,12 +18,12 @@ Here are the minimal hardware configs required for running a validator/sentry no
 
 ## Software Requirements
 * Linux server (Ubuntu 20/22 server recommended)
-* Go version v1.19.5
+* Go version v1.20.5
 
 > Please avoid cheap VPS providers as a main validator (we suggest using it as a cheap backup). We advise to use a shared dedicated server or a high-end NVMe VPS.
 
 ## Genesis file
-* [Link to Genesis file](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/devnets/bitcanna-dev-1/genesis.json)
+* [Link to Genesis file](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json)
 
 ## Binary / Upgrades table
 
@@ -35,9 +32,10 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 7th Nov 2022 15.00h CET    | 5.787.420    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v153-codename-trichomemonster-ica---from-v145) |
 | 2nd Mar 2023 16.20h CET    | 7.467.420   | [v1.6.0-fix](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-fix/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-fix) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v160-fix-codename-vigorous-grow---from-v153) |
 | 10th Mar 2023 18.40h CET    | 7.585.420   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v161-codename-vigorous-grow-fix---from-v161) |
-| 30th May 2023 15.40h CEST    | 8.771.420   | [v1.7.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.7.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.7.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
+| 30th May 2023 15.40h CEST    | 8.771.420   | [v1.7.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.7.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.7.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v170-codename-vigorous-grow-huckleberry-from-v163) |
+| 29th Jun 2023 16.20h CEST    | 9.209.420   | [v2.0.2](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 
-
+> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.3
 
 # How to join `bitcanna-1` chain
 > Tip: At the end of this doc, you will find links with important info
@@ -71,7 +69,6 @@ Your node must be fully synced in order to send the TX of validator creation and
 Send coins to your new address, you will need roughly 2 BCNA to run the validator (1 BCNA for self-delegation and a bit more for transactions).
 * https://app.osmosis.zone/
 * https://app.rango.exchange/
-* https://coindeal.com/
 * https://coinmerce.io/
 
 
@@ -80,7 +77,27 @@ Send coins to your new address, you will need roughly 2 BCNA to run the validato
 ```
     bcnad config chain-id bitcanna-1
 ```
-2.  **Create a wallet**:
+2. **MemPool custom settings**
+    Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset the binary to apply)
+   * max_tx_bytes = 524288
+   * max_txs_bytes = 268435456
+     
+    ```bash
+    sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml && \
+    sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
+    ```
+
+    If you are running the binary as a service use:
+    ```bash
+    sudo service bcnad restart
+    ```
+    If you are running the binary without a service (note that it is always advised to run the binary as a service):
+    ```bash
+    bcnad stop (or use CTRL + C in the terminal window where the binary is running)
+    bcnad start
+    ```   
+   
+4.  **Create a wallet**:
 You may create a wallet with one or more keys (addresses) using `bcnad`; you can choose a name of your own liking (we strongly advice you use one word)
 ```
     bcnad keys add MyFirstAddress
@@ -102,7 +119,7 @@ It is the only way to recover your account if you ever forget/lose your password
     deposit daring slim glide hello dolphin expire stoner cluster vivid orphan work pond section client friend yellow west hamster torch settle island opinion gloom
 ```
 
-3. **Send the _Create validator_ TX:**
+4. **Send the _Create validator_ TX:**
 
 > We recommend you read the [FAQ Chain's guide](https://github.com/BitCannaGlobal/bcna/blob/main/faq_chain.md) to understand all parameters - be aware that some values are permanent and cannot be changed at a later date.
 
@@ -175,7 +192,6 @@ Follow this guide to install Cosmovisor on your node.
 * [BitCanna based on Forbole](https://explorer.bitcanna.io)
 * [MintScan based on Cosmostation](https://www.mintscan.io/bitcanna)
 * [Ping-Pub explorer](https://ping.pub/bitcanna/uptime)
-* [Old chain explorer](https://old-explorer.bitcanna.io)
 * [ATOMScan explorer](https://atomscan.com/bitcanna)
 
 ## Wallets
@@ -188,15 +204,16 @@ Follow this guide to install Cosmovisor on your node.
 * [bitcanna-1](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/genesis.json)
 
 ## Peer, seeds and public service providers
-* [BitCanna service providers](https://github.com/BitCannaGlobal/bcna/blob/main/peers_seeds_and_services.md)
+* [BitCanna Chain Registry](https://github.com/BitCannaGlobal/bcna/blob/main/chain-registry.json) (Mandatory for Team's Delegation Program)
+* [BitCanna DEVET-1 Chain Registry](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/chain-registry.json) (Mandatory for Team's Delegation Program)
 * [Cosmos Chain Registry](https://github.com/cosmos/chain-registry/tree/master/bitcanna)
 
 ## Archived Guides, FAQs & docs
 * [BitCanna Docs](https://docs.bitcanna.io)
 * [GitHub Testnet & DevNet archive](https://github.com/BitCannaGlobal/testnet-bcna-cosmos/tree/main/instructions)
-* [Current DevNet](https://github.com/BitCannaGlobal/testnet-bcna-cosmos/tree/main/instructions/bitcanna-dev-4)
+* [Current DevNet](https://github.com/BitCannaGlobal/bcna/tree/main/devnets/bitcanna-dev-1)
 * [Old Instructions guide](https://github.com/BitCannaGlobal/bcna/blob/main/archived_guides/instructions.md)
 * [How to perform a manual upgrade](https://github.com/BitCannaGlobal/bcna/blob/main/archived_guides/manual_update.md)
-* [How to perform an upgrade with Cosmovisor (v.1.1)](https://github.com/BitCannaGlobal/bcna/blob/main/archived_guides/cosmovisor_config.md)
+* [How to perform an upgrade with Cosmovisor (v5.0)](https://github.com/BitCannaGlobal/bcna/blob/main/5.cosmovisor.md)
 
 ###### tags: `doc` `github`
