@@ -8,24 +8,25 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/types/query"
+	"github.com/cosmos/gogoproto/proto"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
 
-func (k Keeper) SupplychainAll(c context.Context, req *types.QueryAllSupplychainRequest) (*types.QueryAllSupplychainResponse, error) {
+func (k Keeper) SupplychainAll(GoCtx context.Context, req *types.QueryAllSupplychainRequest) (*types.QueryAllSupplychainResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
 	var supplychains []types.Supplychain
-	ctx := sdk.UnwrapSDKContext(c)
+	ctx := sdk.UnwrapSDKContext(GoCtx)
 
 	store := ctx.KVStore(k.storeKey)
 	supplychainStore := prefix.NewStore(store, types.KeyPrefix(types.SupplychainKey))
 
 	pageRes, err := query.Paginate(supplychainStore, req.Pagination, func(key []byte, value []byte) error {
 		var supplychain types.Supplychain
-		if err := k.cdc.Unmarshal(value, &supplychain); err != nil {
+		if err := proto.Unmarshal(value, &supplychain); err != nil {
 			return err
 		}
 
@@ -40,12 +41,12 @@ func (k Keeper) SupplychainAll(c context.Context, req *types.QueryAllSupplychain
 	return &types.QueryAllSupplychainResponse{Supplychain: supplychains, Pagination: pageRes}, nil
 }
 
-func (k Keeper) Supplychain(c context.Context, req *types.QueryGetSupplychainRequest) (*types.QueryGetSupplychainResponse, error) {
+func (k Keeper) Supplychain(GoCtx context.Context, req *types.QueryGetSupplychainRequest) (*types.QueryGetSupplychainResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
-	ctx := sdk.UnwrapSDKContext(c)
+	ctx := sdk.UnwrapSDKContext(GoCtx)
 	supplychain, found := k.GetSupplychain(ctx, req.Id)
 	if !found {
 		return nil, sdkerrors.ErrKeyNotFound

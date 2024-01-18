@@ -1,22 +1,24 @@
 package app
 
 import (
-	"github.com/BitCannaGlobal/bcna/app/params"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/std"
 	"github.com/cosmos/cosmos-sdk/x/auth/tx"
+
+	"github.com/BitCannaGlobal/bcna/app/params"
 )
 
 // makeEncodingConfig creates an EncodingConfig for an amino based test configuration.
 func makeEncodingConfig() params.EncodingConfig {
 	amino := codec.NewLegacyAmino()
 	interfaceRegistry := types.NewInterfaceRegistry()
-	marshaler := codec.NewProtoCodec(interfaceRegistry)
-	txCfg := tx.NewTxConfig(marshaler, tx.DefaultSignModes)
+	cdc := codec.NewProtoCodec(interfaceRegistry)
+	txCfg := tx.NewTxConfig(cdc, tx.DefaultSignModes)
+
 	return params.EncodingConfig{
 		InterfaceRegistry: interfaceRegistry,
-		Marshaler:         marshaler,
+		Codec:             cdc,
 		TxConfig:          txCfg,
 		Amino:             amino,
 	}

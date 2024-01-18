@@ -1,8 +1,8 @@
 syntax = "proto3";
 package bitcannaglobal.bcna.bcna;
 
-import "bcna/bcna/bitcannaid.proto";
-import "bcna/bcna/supplychain.proto";
+import "bitcannaglobal/bcna/bcna/bitcannaid.proto";
+import "bitcannaglobal/bcna/bcna/supplychain.proto";
 
 option go_package = "github.com/BitCannaGlobal/bcna/x/bcna/types";
 

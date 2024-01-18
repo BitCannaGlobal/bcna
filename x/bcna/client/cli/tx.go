@@ -6,8 +6,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/client"
+
+	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 )
 
 var (

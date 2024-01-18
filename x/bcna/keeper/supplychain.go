@@ -2,10 +2,12 @@ package keeper
 
 import (
 	"encoding/binary"
+	"fmt"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/gogoproto/proto"
 )
 
 // GetSupplychainCount get the total number of supplychain
@@ -44,20 +46,29 @@ func (k Keeper) AppendSupplychain(
 	supplychain.Id = count
 
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.SupplychainKey))
-	appendedValue := k.cdc.MustMarshal(&supplychain)
-	store.Set(GetSupplychainIDBytes(supplychain.Id), appendedValue)
+	appendedValue, err := proto.Marshal(&supplychain)
+	if err == nil {
+		store.Set(GetSupplychainIDBytes(supplychain.Id), appendedValue)
 
-	// Update supplychain count
-	k.SetSupplychainCount(ctx, count+1)
+		// Update supplychain count
+		k.SetSupplychainCount(ctx, count+1)
 
-	return count
+		return count
+	} else {
+		fmt.Println("DEBUG: err marshaling SupplyChainID")
+		return count
+	}
 }
 
 // SetSupplychain set a specific supplychain in the store
 func (k Keeper) SetSupplychain(ctx sdk.Context, supplychain types.Supplychain) {
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.SupplychainKey))
-	b := k.cdc.MustMarshal(&supplychain)
-	store.Set(GetSupplychainIDBytes(supplychain.Id), b)
+	b, err := proto.Marshal(&supplychain)
+	if err == nil {
+		store.Set(GetSupplychainIDBytes(supplychain.Id), b)
+	} else {
+		fmt.Println("DEBUG: err setting SupplyChainID")
+	}
 }
 
 // GetSupplychain returns a supplychain from its id
@@ -67,7 +78,11 @@ func (k Keeper) GetSupplychain(ctx sdk.Context, id uint64) (val types.Supplychai
 	if b == nil {
 		return val, false
 	}
-	k.cdc.MustUnmarshal(b, &val)
+	err := proto.Unmarshal(b, &val)
+	if err != nil {
+		fmt.Printf("Error getting the SupplyChain with ID %d: %v\n", id, err)
+		return types.Supplychain{}, false
+	}
 	return val, true
 }
 
@@ -86,7 +101,10 @@ func (k Keeper) GetAllSupplychain(ctx sdk.Context) (list []types.Supplychain) {
 
 	for ; iterator.Valid(); iterator.Next() {
 		var val types.Supplychain
-		k.cdc.MustUnmarshal(iterator.Value(), &val)
+		if err := proto.Unmarshal(iterator.Value(), &val); err != nil {
+			fmt.Printf("failed to deserialize SupplyChainID: %v\n", err)
+			continue
+		}
 		list = append(list, val)
 	}
 

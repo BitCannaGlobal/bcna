@@ -1,7 +1,6 @@
 package cli
 
 import (
-	"context"
 	"strconv"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
@@ -32,7 +31,7 @@ func CmdListBitcannaid() *cobra.Command {
 				Pagination: pageReq,
 			}
 
-			res, err := queryClient.BitcannaidAll(context.Background(), params)
+			res, err := queryClient.BitcannaidAll(cmd.Context(), params)
 			if err != nil {
 				return err
 			}
@@ -69,7 +68,7 @@ func CmdShowBitcannaid() *cobra.Command {
 				Id: id,
 			}
 
-			res, err := queryClient.Bitcannaid(context.Background(), params)
+			res, err := queryClient.Bitcannaid(cmd.Context(), params)
 			if err != nil {
 				return err
 			}
@@ -102,7 +101,7 @@ func CmdSearchBitcannaidByBcnaid() *cobra.Command {
 				Bcnaid: bcnaid,
 			}
 
-			res, err := queryClient.BitcannaidByBcnaid(context.Background(), params)
+			res, err := queryClient.BitcannaidByBcnaid(cmd.Context(), params)
 			if err != nil {
 				return err
 			}

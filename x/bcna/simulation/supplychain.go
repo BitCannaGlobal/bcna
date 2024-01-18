@@ -6,8 +6,8 @@ import (
 	"github.com/BitCannaGlobal/bcna/x/bcna/keeper"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
-	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 )
@@ -28,7 +28,7 @@ func SimulateMsgCreateSupplychain(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:           moduletestutil.MakeTestTxConfig(),
 			Cdc:             nil,
 			Msg:             msg,
 			MsgType:         msg.Type(),
@@ -73,7 +73,7 @@ func SimulateMsgUpdateSupplychain(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:           moduletestutil.MakeTestTxConfig(),
 			Cdc:             nil,
 			Msg:             msg,
 			MsgType:         msg.Type(),
@@ -118,7 +118,7 @@ func SimulateMsgDeleteSupplychain(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           simappparams.MakeTestEncodingConfig().TxConfig,
+			TxGen:           moduletestutil.MakeTestTxConfig(),
 			Cdc:             nil,
 			Msg:             msg,
 			MsgType:         msg.Type(),

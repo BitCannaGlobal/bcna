@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"testing"
 
+	tmcli "github.com/cometbft/cometbft/libs/cli"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	"github.com/stretchr/testify/require"
-	tmcli "github.com/tendermint/tendermint/libs/cli"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
@@ -21,7 +21,6 @@ func networkWithBitcannaidObjects(t *testing.T, n int) (*network.Network, []type
 	t.Helper()
 	cfg := network.DefaultConfig()
 	state := types.GenesisState{}
-	require.NoError(t, cfg.Codec.UnmarshalJSON(cfg.GenesisState[types.ModuleName], &state))
 
 	for i := 0; i < n; i++ {
 		bitcannaid := types.Bitcannaid{
@@ -43,7 +42,7 @@ func TestShowBitcannaid(t *testing.T) {
 	common := []string{
 		fmt.Sprintf("--%s=json", tmcli.OutputFlag),
 	}
-	for _, tc := range []struct {
+	tests := []struct {
 		desc string
 		id   string
 		args []string
@@ -62,8 +61,8 @@ func TestShowBitcannaid(t *testing.T) {
 			args: common,
 			err:  status.Error(codes.NotFound, "not found"),
 		},
-	} {
-		tc := tc
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
 			args := []string{tc.id}
 			args = append(args, tc.args...)

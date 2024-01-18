@@ -7,7 +7,6 @@ import (
 	bcnasimulation "github.com/BitCannaGlobal/bcna/x/bcna/simulation"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
-	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
@@ -18,9 +17,9 @@ import (
 var (
 	_ = sample.AccAddress
 	_ = bcnasimulation.FindAccount
-	_ = simappparams.StakePerAccount
 	_ = simulation.MsgEntryKind
 	_ = baseapp.Paramspace
+	_ = rand.Rand{}
 )
 
 const (
@@ -84,14 +83,8 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 }
 
 // ProposalContents doesn't return any content functions for governance proposals
-func (AppModule) ProposalContents(_ module.SimulationState) []simtypes.WeightedProposalContent {
+func (AppModule) ProposalContents(_ module.SimulationState) []simtypes.WeightedProposalMsg {
 	return nil
-}
-
-// RandomizedParams creates randomized  param changes for the simulator
-func (am AppModule) RandomizedParams(_ *rand.Rand) []simtypes.ParamChange {
-
-	return []simtypes.ParamChange{}
 }
 
 // RegisterStoreDecoder registers a decoder
@@ -168,4 +161,58 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	return operations
+}
+
+// ProposalMsgs returns msgs used for governance proposals for simulations.
+func (am AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.WeightedProposalMsg {
+	return []simtypes.WeightedProposalMsg{
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgCreateBitcannaid,
+			defaultWeightMsgCreateBitcannaid,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				bcnasimulation.SimulateMsgCreateBitcannaid(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgUpdateBitcannaid,
+			defaultWeightMsgUpdateBitcannaid,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				bcnasimulation.SimulateMsgUpdateBitcannaid(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgDeleteBitcannaid,
+			defaultWeightMsgDeleteBitcannaid,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				bcnasimulation.SimulateMsgDeleteBitcannaid(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgCreateSupplychain,
+			defaultWeightMsgCreateSupplychain,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				bcnasimulation.SimulateMsgCreateSupplychain(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgUpdateSupplychain,
+			defaultWeightMsgUpdateSupplychain,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				bcnasimulation.SimulateMsgUpdateSupplychain(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgDeleteSupplychain,
+			defaultWeightMsgDeleteSupplychain,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				bcnasimulation.SimulateMsgDeleteSupplychain(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+	}
 }

@@ -1,7 +1,6 @@
 package cli
 
 import (
-	"context"
 	"strconv"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
@@ -32,7 +31,7 @@ func CmdListSupplychain() *cobra.Command {
 				Pagination: pageReq,
 			}
 
-			res, err := queryClient.SupplychainAll(context.Background(), params)
+			res, err := queryClient.SupplychainAll(cmd.Context(), params)
 			if err != nil {
 				return err
 			}
@@ -69,7 +68,7 @@ func CmdShowSupplychain() *cobra.Command {
 				Id: id,
 			}
 
-			res, err := queryClient.Supplychain(context.Background(), params)
+			res, err := queryClient.Supplychain(cmd.Context(), params)
 			if err != nil {
 				return err
 			}
