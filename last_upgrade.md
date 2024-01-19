@@ -1,10 +1,39 @@
 #  MAINNET `bitcanna-1` Upgrades
+## v3.0.0 codename `ganjarevolution` from v2.0.3
+
+> (Update scheduled for 25th January 2024 ~ 16.20h CST - 13.20h UTC)
+>
+> Note: this is a planned upgrade, the chain **will halt** at block **[xx.xxx.420](https://www.mintscan.io/bitcanna/blocks/xxxxx420)**
+>
+> **Important note: The tag name required for the upgrade is v3.0.0**
+
+On chain proposal: 
+
+**Title:** Vote `GanjaRevolution` release - v3.0.0 to perform the Cosmos-SDK v0.47 upgrade
+
+**Description:** It is time for our chain to be upgraded to a newer version of the Cosmos SDK. We will migrate from v0.46.14 to v0.47.7. This is a state-breaking upgrade and will therefore need a governance proposal and a chain halt.
+
+With this proposal we set a new upgrade height at block X.XXX.420 (25-01-2024 around 16:20 CET) with the codename `ganjarevolution` (v3.0.0). At the given height the chain will halt and all validators have to change the binary to the new version. After a brief downtime the chain will resume operations.
+
+Upgrade height: XXXXX420 (https://www.mintscan.io/bitcanna/blocks/XXXXX)
+
+What will be upgraded and implemented:
+
+* Upgrade Cosmos-SDK from v0.46.1 to v0.46.13
+* Upgrade CometBFT from v0.34.29 to v0.37.4
+* Upgrade IBC-Go from v6.1.1 to v7.3.1
+* Check for a length limit in custom modules's fields to avoid size-spam
+* Changes in DISTRIBUTION: The proposer receives no extra rewards. All fees are distributed among all the bonded validators, including the proposer, in proportion to their consensus power.
+
+For more information about the upgrade's content:
+https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v300-codename-ganjarevolution-from-v203
+
 
 ## v2.0.2 codename `wakeandbake` from v1.7.0
 
 > (Update scheduled for 29th June 2023 ~ 16.20h CEST - 14.20h UTC)
 >
-> Note: this is a planned upgrade, the chain **will halt** at block **[YYYYYYYYYY](https://www.mintscan.io/bitcanna/blocks/YYYYYY)**
+> Note: this is a planned upgrade, the chain **will halt** at block **[9.209.420](https://www.mintscan.io/bitcanna/blocks/9209420)**
 >
 > **Important note: The tag name required for the upgrade is v2.0.2**
 
