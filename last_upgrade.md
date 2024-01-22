@@ -1,9 +1,9 @@
 #  MAINNET `bitcanna-1` Upgrades
 ## v3.0.0 codename `ganjarevolution` from v2.0.3
 
-> (Update scheduled for 25th January 2024 ~ 16.20h CST - 13.20h UTC)
+> (Update scheduled for 25th January 2024 ~ 16.35h CET - 15.35h UTC)
 >
-> Note: this is a planned upgrade, the chain **will halt** at block **[xx.xxx.420](https://www.mintscan.io/bitcanna/blocks/xxxxx420)**
+> Note: this is a planned upgrade, the chain **will halt** at block **[12.288.420](https://www.mintscan.io/bitcanna/blocks/12288420)**
 >
 > **Important note: The tag name required for the upgrade is v3.0.0**
 
@@ -13,9 +13,9 @@ On chain proposal:
 
 **Description:** It is time for our chain to be upgraded to a newer version of the Cosmos SDK. We will migrate from v0.46.14 to v0.47.7. This is a state-breaking upgrade and will therefore need a governance proposal and a chain halt.
 
-With this proposal we set a new upgrade height at block X.XXX.420 (25-01-2024 around 16:20 CET) with the codename `ganjarevolution` (v3.0.0). At the given height the chain will halt and all validators have to change the binary to the new version. After a brief downtime the chain will resume operations.
+With this proposal we set a new upgrade height at block 12.288.420 (25-01-2024 around 16:35 CET) with the codename `ganjarevolution` (v3.0.0). At the given height the chain will halt and all validators have to change the binary to the new version. After a brief downtime the chain will resume operations.
 
-Upgrade height: XXXXX420 (https://www.mintscan.io/bitcanna/blocks/XXXXX)
+Upgrade height: 12.288.420 (https://www.mintscan.io/bitcanna/blocks/12288420)
 
 What will be upgraded and implemented:
 
