@@ -33,7 +33,7 @@ https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v300-codename-g
 
 > (Update scheduled for 29th June 2023 ~ 16.20h CEST - 14.20h UTC)
 >
-> Note: this is a planned upgrade, the chain **will halt** at block **[YYYYYYYYYY](https://www.mintscan.io/bitcanna/blocks/YYYYYY)**
+> Note: this is a planned upgrade, the chain **will halt** at block **[9.209.420](https://www.mintscan.io/bitcanna/blocks/9209420)**
 >
 > **Important note: The tag name required for the upgrade is v2.0.2**
 

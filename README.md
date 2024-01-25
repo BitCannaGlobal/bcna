@@ -2,7 +2,7 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> [Current version (v2.0.3)](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.3) of our development uses Cosmos SDK v0.46.14 & CometBFT v0.34.29 & IBC-go v6.1.1
+> [Current version (v3.0.0)](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.0) of our development uses Cosmos SDK v0.47.7 & CometBFT v0.37.4 & IBC-go v7.3.1
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -18,7 +18,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 
 ## Software Requirements
 * Linux server (Ubuntu 20/22 server recommended)
-* Go version v1.20.5
+* Go version v1.21.6
 
 > Please avoid cheap VPS providers as a main validator (we suggest using it as a cheap backup). We advise to use a shared dedicated server or a high-end NVMe VPS.
 
@@ -34,8 +34,9 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 10th Mar 2023 18.40h CET    | 7.585.420   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v161-codename-vigorous-grow-fix---from-v161) |
 | 30th May 2023 15.40h CEST    | 8.771.420   | [v1.7.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.7.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.7.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v170-codename-vigorous-grow-huckleberry-from-v163) |
 | 29th Jun 2023 16.20h CEST    | 9.209.420   | [v2.0.2](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
+| 25th Jan 2024 16.35h CET    | 12.288.420   | [v3.0.0](https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 
-> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.3
+> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.0
 
 # How to join `bitcanna-1` chain
 > Tip: At the end of this doc, you will find links with important info
@@ -73,12 +74,13 @@ Send coins to your new address, you will need roughly 2 BCNA to run the validato
 
 
 
-1. **Set the chain-id parameter** 
+### 3.1. **Set the chain-id parameter** 
 ```
     bcnad config chain-id bitcanna-1
 ```
-2. **MemPool custom settings**
-    Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset the binary to apply)
+### 3.2. **MemPool custom settings**
+   
+   Before start you need to set this custom config for MemPool at `.bcna/config/config.toml/` to prevent Spam Storms: (reset the binary to apply)
    * max_tx_bytes = 524288
    * max_txs_bytes = 268435456
      
@@ -86,18 +88,8 @@ Send coins to your new address, you will need roughly 2 BCNA to run the validato
     sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml && \
     sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
     ```
-
-    If you are running the binary as a service use:
-    ```bash
-    sudo service bcnad restart
-    ```
-    If you are running the binary without a service (note that it is always advised to run the binary as a service):
-    ```bash
-    bcnad stop (or use CTRL + C in the terminal window where the binary is running)
-    bcnad start
-    ```   
-   
-4.  **Create a wallet**:
+       
+### 3.3.  **Create a wallet**:
 You may create a wallet with one or more keys (addresses) using `bcnad`; you can choose a name of your own liking (we strongly advice you use one word)
 ```
     bcnad keys add MyFirstAddress
@@ -119,11 +111,21 @@ It is the only way to recover your account if you ever forget/lose your password
     deposit daring slim glide hello dolphin expire stoner cluster vivid orphan work pond section client friend yellow west hamster torch settle island opinion gloom
 ```
 
-4. **Send the _Create validator_ TX:**
+### 3.4. **Start the daemon**
+If you are running the binary as a service use:
+```bash
+sudo service bcnad restart
+```
+If you are running the binary without a service (note that it is always advised to run the binary as a service):
+```bash
+bcnad stop (or use CTRL + C in the terminal window where the binary is running)
+bcnad start
+```  
+### 3.5. **Send the _Create validator_ TX:**
 
 > We recommend you read the [FAQ Chain's guide](https://github.com/BitCannaGlobal/bcna/blob/main/faq_chain.md) to understand all parameters - be aware that some values are permanent and cannot be changed at a later date.
 
-When you have your node synced and your wallet funded with coins, send the TX to become _validator_ (change _wallet_name_ and _moniker_):
+When you have your **node synced** and your **wallet funded with coins**, send the TX to become _validator_ (change _wallet_name_ and _moniker_):
 > You can use quotes to include spaces and more than two words
 `--from "Royal Queen Seeds"`
 
@@ -151,7 +153,7 @@ bcnad query staking validators --output json| jq
 
 ##   4. Backup the keys and config
 Making a backup of the Validator private keys and node keys is very important. Store them encrypted also.
-1. Backup your Validator_priv_key:
+### 4.1. Backup your Validator_priv_key:
 
 ```
 tar -czvf validator_key.tar.gz .bcna/config/*_key.json 
@@ -161,7 +163,7 @@ rm validator_key.tar.gz
 This will create a GPG encrypted file with both key files.
 You can download the `validator_key.tar.gz.gpg`  file to your computer.
 
-2. Export the wallet key (if you have backup the seeds keys is enough)
+### 4.2. Export the wallet key (if you have backup the seeds keys is enough)
 ```
 bcnad keys export MyFisrstAddress
 ```
