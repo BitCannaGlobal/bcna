@@ -30,6 +30,11 @@
         "id": "3f472746f46493309650e5a033076689996c8881",
         "address": "bitcanna-testnet.rpc.kjnodes.com:14259",
         "provider": "kjnodes"
+      },
+      {
+        "id": "d1d43cc7c7aef715957289fd96a114ecaa7ba756",
+        "address": "testnet-seeds.nodex.one:22910",
+        "provider": "NodeX Emperor"
       }
     ],
     "persistent_peers": [
@@ -77,6 +82,11 @@
         "id": "74b83fd6b6661cc9c910b5c0dd5842843a62a3e5",
         "address": "bitcanna-testnet.peers.l0vd.com:30656",
         "provider": "L0vd.com ❤️"
+      },
+      {
+        "id": "bbf8ef70a32c3248a30ab10b2bff399e73c6e03c",
+        "address": "bitcanna-testnet.rpc.nodex.one:22956",
+        "provider": "NodeX Emperor"
       }
     ]
   },
@@ -129,6 +139,10 @@
       {
         "address": "https://bitcanna-testnet.rpc.l0vd.com:443",
         "provider": "L0vd.com ❤️"       
+      },
+      {
+        "address": "https://bitcanna-testnet.rpc.nodex.one",
+        "provider": "NodeX Emperor"       
       }
     ],
     "grpc": [
@@ -171,6 +185,10 @@
       {
         "address": "bitcanna-testnet.grpc.l0vd.com:80",
         "provider": "L0vd.com ❤️"
+      },
+      {
+        "address": "bitcanna-testnet.grpc.nodex.one:443",
+        "provider": "NodeX Emperor"
       }
     ],
     "rest": [
@@ -225,6 +243,10 @@
       {
         "address": "https://bitcanna-testnet.api.l0vd.com:443",
         "provider": "L0vd.com ❤️"
+      },
+      {
+        "address": "https://bitcanna-testnet.api.nodex.one",
+        "provider": "NodeX Emperor"
       }
     ]
   },
@@ -270,6 +292,12 @@
       "url": "https://explorers.l0vd.com/bitcanna-testnet",
       "tx_page": "https://explorers.l0vd.com/bitcanna-testnet/tx/${txHash}",
       "account_page": "https://explorers.l0vd.com/bitcanna-testnet/account/${accountAddress}"
+    },
+    {
+      "kind": "NodeX Emperor",
+      "url": "https://explorer.nodex.one/bitcanna-testnet",
+      "tx_page": "https://explorer.nodex.one/bitcanna-testnet/tx/${txHash}",
+      "account_page": "https://explorer.nodex.one/bitcanna-testnet/account/${accountAddress}"
     },
     {
       "kind": "",
@@ -327,6 +355,11 @@
       "address": "https://bitcanna-testnet.rpc.kjnodes.com",
       "url_doc": "https://services.kjnodes.com/testnet/bitcanna/state-sync/",
       "provider": "kjnodes"
+    },
+    {
+      "address": "https://bitcanna-testnet.rpc.nodex.one",
+      "url_doc": "https://docs.nodex.one/networks/testnet/bitcanna/statesync",
+      "provider": "NodeX Emperor"
     }
   ]
 }
