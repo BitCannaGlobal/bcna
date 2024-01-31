@@ -367,7 +367,7 @@
         "provider": "KonsorTech"
       },
       {
-        "address": "https://bitcanna.grpc.m.anode.team:443",
+        "address": "bitcanna.grpc.m.anode.team:443",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
@@ -375,7 +375,7 @@
         "provider": "KJINC.io"        
       },
       {
-        "address": "https://bitcanna.grpc.nodex.one:443",
+        "address": "bitcanna.grpc.nodex.one:443",
         "provider": "NodeX Emperor ⚡ Bitcanna"    
       },
       {
