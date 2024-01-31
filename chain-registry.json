@@ -389,6 +389,10 @@
       {
         "address": "grpc.bitcanna.indonode.net:11090",
         "provider": "Indonode"
+      },
+      {
+        "address": "bitcanna-grpc.panthea.eu:16710",
+        "provider": "Panthea EU"
       }
     ],
     "rest": [
