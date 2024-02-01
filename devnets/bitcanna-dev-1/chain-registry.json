@@ -12,11 +12,6 @@
         "provider": "Hexnodes"
       },
       {
-        "id": "2a369fb20a5827104efafa901916e97516e829fb",
-        "address": "testnet-bitcanna-seed.genznodes.dev:50656",
-        "provider": "genznodes"
-      },
-      {
         "id": "2175709bdd102641e9e4ddd38ba263b7f06214df",
         "address": "65.109.28.177:26357",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
@@ -54,8 +49,8 @@
         "provider": "El-Jay"
       },
       {
-        "id": "8962e37cb1fd4f871440c9128832ff1f21322e62",
-        "address": "95.214.53.45:1656",
+        "id": "60420e78044377c49d19d891cbf32eb712030678",
+        "address": "213.246.39.89:54656",
         "provider": "genznodes"
       },
       {
@@ -159,7 +154,7 @@
         "provider": "Hexnodes"
       },
       {
-        "address": "testnet-bitcanna-grpc.genznodes.dev:1090",
+        "address": "testnet-bitcanna-grpc.genznodes.dev:54090",
         "provider": "genznodes"
       },
       {
