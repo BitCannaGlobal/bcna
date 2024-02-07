@@ -622,8 +622,8 @@
       "provider": "AVIAONE 🟢"
     },
     {
-      "address": "http://rpc.bitcanna.safeblock.space:26657",
-      "url_doc": "https://safeblock.space/?elementor_library=bcna-statesync",
+      "address": "https://rpc.bitcanna.safeblock.space:443",
+      "url_doc": "https://safeblock.space/bitcanna-statesync",
       "provider": "Safe Block"
     },    
     {
