@@ -57,3 +57,26 @@ func TestBitcannaidCount(t *testing.T) {
 	count := uint64(len(items))
 	require.Equal(t, count, keeper.GetBitcannaidCount(ctx))
 }
+
+func TestHasBitcannaidWithBcnaid(t *testing.T) {
+	keeper, ctx := keepertest.BcnaKeeper(t)
+
+	// Defines a BitCannaID sample
+	exampleBitcannaid := types.Bitcannaid{
+		Creator: "creator_address",
+		Id:      1,
+		Bcnaid:  "test_bcnaid",
+	}
+
+	// Saves BitCannaID sample in store
+	keeper.SetBitcannaid(ctx, exampleBitcannaid)
+
+	// Test 1: Verify if BitCannaID with the BcnaID of the sample exist
+	exist := keeper.HasBitcannaidWithBcnaid(ctx, exampleBitcannaid.Bcnaid)
+	require.True(t, exist, "BitCannaID with given BcnaID should exist")
+
+	// Test 2: Verificar si un BitCannaID con un BcnaID diferente no existe
+	nonExistingBcnaid := "invented"
+	exist = keeper.HasBitcannaidWithBcnaid(ctx, nonExistingBcnaid)
+	require.False(t, exist, "BitCannaID with non-existing BcnaID should not exist")
+}
