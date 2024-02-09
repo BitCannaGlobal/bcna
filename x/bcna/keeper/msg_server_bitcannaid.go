@@ -2,28 +2,17 @@ package keeper
 
 import (
 	"context"
+	"fmt"
 
+	errorsmod "cosmossdk.io/errors"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
 func (k msgServer) CreateBitcannaid(goCtx context.Context, msg *types.MsgCreateBitcannaid) (*types.MsgCreateBitcannaidResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	// Checks if field Bcnaid exceeds 256 chars.
-	if len(msg.Bcnaid) > 256 {
-		return nil, types.ErrMaxCharacters.Wrapf("Bcnaid exceeds the limit of 256 characters")
-	}
-
-	// Checks if field Address exceeds 256 chars.
-	if len(msg.Address) > 256 {
-		return nil, types.ErrMaxCharacters.Wrapf("Address exceeds the limit of 256 characters")
-	}
-
-	// Checks if a BitCannaID with the same Bcnaid already exists
-	if k.HasBitcannaidWithBcnaid(ctx, msg.Bcnaid) {
-		return nil, types.ErrDuplicateBitcannaid.Wrapf("BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
-	}
 	var bitcannaid = types.Bitcannaid{
 		Creator: msg.Creator,
 		Bcnaid:  msg.Bcnaid,
@@ -43,20 +32,6 @@ func (k msgServer) CreateBitcannaid(goCtx context.Context, msg *types.MsgCreateB
 func (k msgServer) UpdateBitcannaid(goCtx context.Context, msg *types.MsgUpdateBitcannaid) (*types.MsgUpdateBitcannaidResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	// Checks if field Bcnaid exceeds 256 chars.
-	if len(msg.Bcnaid) > 256 {
-		return nil, types.ErrMaxCharacters.Wrapf("Bcnaid exceeds the limit of 256 characters")
-	}
-
-	// Checks if field Address exceeds 256 chars.
-	if len(msg.Address) > 256 {
-		return nil, types.ErrMaxCharacters.Wrapf("Address exceeds the limit of 256 characters")
-	}
-
-	// Check if a BitCannaID with the same Bcnaid already exists
-	if k.HasBitcannaidWithBcnaid(ctx, msg.Bcnaid) {
-		return nil, types.ErrDuplicateBitcannaid.Wrapf("BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
-	}
 	var bitcannaid = types.Bitcannaid{
 		Creator: msg.Creator,
 		Id:      msg.Id,
@@ -67,12 +42,12 @@ func (k msgServer) UpdateBitcannaid(goCtx context.Context, msg *types.MsgUpdateB
 	// Checks that the element exists
 	val, found := k.GetBitcannaid(ctx, msg.Id)
 	if !found {
-		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %d", msg.Id)
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, fmt.Sprintf("key %d doesn't exist", msg.Id))
 	}
 
 	// Checks if the msg creator is the same as the current owner
 	if msg.Creator != val.Creator {
-		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %s,", msg.Creator)
+		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
 	}
 
 	k.SetBitcannaid(ctx, bitcannaid)
@@ -86,12 +61,12 @@ func (k msgServer) DeleteBitcannaid(goCtx context.Context, msg *types.MsgDeleteB
 	// Checks that the element exists
 	val, found := k.GetBitcannaid(ctx, msg.Id)
 	if !found {
-		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %d", msg.Id)
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, fmt.Sprintf("key %d doesn't exist", msg.Id))
 	}
 
 	// Checks if the msg creator is the same as the current owner
 	if msg.Creator != val.Creator {
-		return nil, types.ErrUnauthorized.Wrapf("Unauthorized: %s,", msg.Creator)
+		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "incorrect owner")
 	}
 
 	k.RemoveBitcannaid(ctx, msg.Id)

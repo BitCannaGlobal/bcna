@@ -1,23 +1,22 @@
 package keeper_test
 
 import (
-	"fmt"
-	"strconv"
 	"testing"
 
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 )
 
 func TestBitcannaidMsgServerCreate(t *testing.T) {
-	srv, ctx := setupMsgServer(t)
-	creator := "BCNAID-"
+	_, srv, ctx := setupMsgServer(t)
+	wctx := sdk.UnwrapSDKContext(ctx)
 
+	creator := "A"
 	for i := 0; i < 5; i++ {
-		concatenated := creator + strconv.Itoa(i) // to produce a different Bcnaid each time
-		fmt.Println(concatenated)
-		resp, err := srv.CreateBitcannaid(ctx, &types.MsgCreateBitcannaid{Creator: creator, Bcnaid: concatenated})
+		resp, err := srv.CreateBitcannaid(wctx, &types.MsgCreateBitcannaid{Creator: creator})
 		require.NoError(t, err)
 		require.Equal(t, i, int(resp.Id))
 	}
@@ -26,7 +25,7 @@ func TestBitcannaidMsgServerCreate(t *testing.T) {
 func TestBitcannaidMsgServerUpdate(t *testing.T) {
 	creator := "A"
 
-	for _, tc := range []struct {
+	tests := []struct {
 		desc    string
 		request *types.MsgUpdateBitcannaid
 		err     error
@@ -38,21 +37,23 @@ func TestBitcannaidMsgServerUpdate(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateBitcannaid{Creator: "B"},
-			err:     types.ErrUnauthorized,
+			err:     sdkerrors.ErrUnauthorized,
 		},
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateBitcannaid{Creator: creator, Id: 10},
-			err:     types.ErrKeyNotFound,
+			err:     sdkerrors.ErrKeyNotFound,
 		},
-	} {
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
-			srv, ctx := setupMsgServer(t)
-			_, err := srv.CreateBitcannaid(ctx, &types.MsgCreateBitcannaid{Creator: creator, Bcnaid: "updated"})
+			_, srv, ctx := setupMsgServer(t)
+			wctx := sdk.UnwrapSDKContext(ctx)
+
+			_, err := srv.CreateBitcannaid(wctx, &types.MsgCreateBitcannaid{Creator: creator})
 			require.NoError(t, err)
 
-			_, err = srv.UpdateBitcannaid(ctx, tc.request)
-
+			_, err = srv.UpdateBitcannaid(wctx, tc.request)
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
 			} else {
@@ -77,21 +78,22 @@ func TestBitcannaidMsgServerDelete(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgDeleteBitcannaid{Creator: "B"},
-			err:     types.ErrUnauthorized,
+			err:     sdkerrors.ErrUnauthorized,
 		},
 		{
 			desc:    "KeyNotFound",
 			request: &types.MsgDeleteBitcannaid{Creator: creator, Id: 10},
-			err:     types.ErrKeyNotFound,
+			err:     sdkerrors.ErrKeyNotFound,
 		},
 	}
 	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
-			srv, ctx := setupMsgServer(t)
+			_, srv, ctx := setupMsgServer(t)
+			wctx := sdk.UnwrapSDKContext(ctx)
 
-			_, err := srv.CreateBitcannaid(ctx, &types.MsgCreateBitcannaid{Creator: creator})
+			_, err := srv.CreateBitcannaid(wctx, &types.MsgCreateBitcannaid{Creator: creator})
 			require.NoError(t, err)
-			_, err = srv.DeleteBitcannaid(ctx, tc.request)
+			_, err = srv.DeleteBitcannaid(wctx, tc.request)
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
 			} else {

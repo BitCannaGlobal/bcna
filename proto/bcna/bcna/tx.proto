@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package bcna.bcna;
+
+import "amino/amino.proto";
+import "cosmos/msg/v1/msg.proto";
+import "cosmos_proto/cosmos.proto";
+import "gogoproto/gogo.proto";
+import "bcna/bcna/params.proto";
+import "bcna/bcna/bitcannaid.proto";
+import "bcna/bcna/supplychain.proto";
+
+option go_package = "github.com/BitCannaGlobal/bcna/x/bcna/types";
+
+// Msg defines the Msg service.
+service Msg {
+  option (cosmos.msg.v1.service) = true;
+  
+  // UpdateParams defines a (governance) operation for updating the module
+  // parameters. The authority defaults to the x/gov module account.
+  rpc UpdateParams      (MsgUpdateParams     ) returns (MsgUpdateParamsResponse     );
+  rpc CreateBitcannaid  (MsgCreateBitcannaid ) returns (MsgCreateBitcannaidResponse );
+  rpc UpdateBitcannaid  (MsgUpdateBitcannaid ) returns (MsgUpdateBitcannaidResponse );
+  rpc DeleteBitcannaid  (MsgDeleteBitcannaid ) returns (MsgDeleteBitcannaidResponse );
+  rpc CreateSupplychain (MsgCreateSupplychain) returns (MsgCreateSupplychainResponse);
+  rpc UpdateSupplychain (MsgUpdateSupplychain) returns (MsgUpdateSupplychainResponse);
+  rpc DeleteSupplychain (MsgDeleteSupplychain) returns (MsgDeleteSupplychainResponse);
+}
+// MsgUpdateParams is the Msg/UpdateParams request type.
+message MsgUpdateParams {
+  option (cosmos.msg.v1.signer) =                   "authority";
+  option           (amino.name) = "bcna/x/bcna/MsgUpdateParams";
+  
+  // authority is the address that controls the module (defaults to x/gov unless overwritten).
+  string authority = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+
+  // params defines the module parameters to update.
+  
+  // NOTE: All parameters must be supplied.
+  Params params = 2 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+}
+
+// MsgUpdateParamsResponse defines the response structure for executing a
+// MsgUpdateParams message.
+message MsgUpdateParamsResponse {}
+
+message MsgCreateBitcannaid {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  string bcnaid  = 2;
+  string address = 3;
+}
+
+message MsgCreateBitcannaidResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateBitcannaid {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 id      = 2;
+  string bcnaid  = 3;
+  string address = 4;
+}
+
+message MsgUpdateBitcannaidResponse {}
+
+message MsgDeleteBitcannaid {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 id      = 2;
+}
+
+message MsgDeleteBitcannaidResponse {}
+
+message MsgCreateSupplychain {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator     = 1;
+  string product     = 2;
+  string info        = 3;
+  string supplyinfo  = 4;
+  string supplyextra = 5;
+}
+
+message MsgCreateSupplychainResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateSupplychain {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator     = 1;
+  uint64 id          = 2;
+  string product     = 3;
+  string info        = 4;
+  string supplyinfo  = 5;
+  string supplyextra = 6;
+}
+
+message MsgUpdateSupplychainResponse {}
+
+message MsgDeleteSupplychain {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 id      = 2;
+}
+
+message MsgDeleteSupplychainResponse {}
+

@@ -7,11 +7,12 @@ const (
 	// StoreKey defines the primary module store key
 	StoreKey = ModuleName
 
-	// RouterKey defines the module's message routing key
-	RouterKey = ModuleName
-
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_bcna"
+)
+
+var (
+	ParamsKey = []byte("p_bcna")
 )
 
 func KeyPrefix(p string) []byte {
@@ -19,11 +20,11 @@ func KeyPrefix(p string) []byte {
 }
 
 const (
-	BitcannaidKey      = "Bitcannaid-value-"
-	BitcannaidCountKey = "Bitcannaid-count-"
+	BitcannaidKey      = "Bitcannaid/value/"
+	BitcannaidCountKey = "Bitcannaid/count/"
 )
 
 const (
-	SupplychainKey      = "Supplychain-value-"
-	SupplychainCountKey = "Supplychain-count-"
+	SupplychainKey      = "Supplychain/value/"
+	SupplychainCountKey = "Supplychain/count/"
 )

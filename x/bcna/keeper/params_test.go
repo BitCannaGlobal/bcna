@@ -3,16 +3,16 @@ package keeper_test
 import (
 	"testing"
 
-	testkeeper "github.com/BitCannaGlobal/bcna/testutil/keeper"
-	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/stretchr/testify/require"
+
+	keepertest "github.com/BitCannaGlobal/bcna/testutil/keeper"
+	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 )
 
 func TestGetParams(t *testing.T) {
-	k, ctx := testkeeper.BcnaKeeper(t)
+	k, ctx := keepertest.BcnaKeeper(t)
 	params := types.DefaultParams()
 
-	k.SetParams(ctx, params)
-
+	require.NoError(t, k.SetParams(ctx, params))
 	require.EqualValues(t, params, k.GetParams(ctx))
 }

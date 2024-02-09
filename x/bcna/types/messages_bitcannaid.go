@@ -1,16 +1,9 @@
 package types
 
 import (
-	"errors"
-	"fmt"
-
+	errorsmod "cosmossdk.io/errors"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-)
-
-const (
-	TypeMsgCreateBitcannaid = "create_bitcannaid"
-	TypeMsgUpdateBitcannaid = "update_bitcannaid"
-	TypeMsgDeleteBitcannaid = "delete_bitcannaid"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
 var _ sdk.Msg = &MsgCreateBitcannaid{}
@@ -23,32 +16,10 @@ func NewMsgCreateBitcannaid(creator string, bcnaid string, address string) *MsgC
 	}
 }
 
-func (msg *MsgCreateBitcannaid) Route() string {
-	return RouterKey
-}
-
-func (msg *MsgCreateBitcannaid) Type() string {
-	return TypeMsgCreateBitcannaid
-}
-
-func (msg *MsgCreateBitcannaid) GetSigners() []sdk.AccAddress {
-	creator, err := sdk.AccAddressFromBech32(msg.Creator)
-	if err != nil {
-		panic(err)
-	}
-	return []sdk.AccAddress{creator}
-}
-
-func (msg *MsgCreateBitcannaid) GetSignBytes() []byte {
-	bz := ModuleCdc.MustMarshalJSON(msg)
-	return sdk.MustSortJSON(bz)
-}
-
 func (msg *MsgCreateBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address")) //test
-		//return fmt.Errorf("invalid creator address: %v: %s", err, "invalid address")
+		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
 	}
 	return nil
 }
@@ -64,31 +35,10 @@ func NewMsgUpdateBitcannaid(creator string, id uint64, bcnaid string, address st
 	}
 }
 
-func (msg *MsgUpdateBitcannaid) Route() string {
-	return RouterKey
-}
-
-func (msg *MsgUpdateBitcannaid) Type() string {
-	return TypeMsgUpdateBitcannaid
-}
-
-func (msg *MsgUpdateBitcannaid) GetSigners() []sdk.AccAddress {
-	creator, err := sdk.AccAddressFromBech32(msg.Creator)
-	if err != nil {
-		panic(err)
-	}
-	return []sdk.AccAddress{creator}
-}
-
-func (msg *MsgUpdateBitcannaid) GetSignBytes() []byte {
-	bz := ModuleCdc.MustMarshalJSON(msg)
-	return sdk.MustSortJSON(bz)
-}
-
 func (msg *MsgUpdateBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
+		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
 	}
 	return nil
 }
@@ -101,31 +51,11 @@ func NewMsgDeleteBitcannaid(creator string, id uint64) *MsgDeleteBitcannaid {
 		Creator: creator,
 	}
 }
-func (msg *MsgDeleteBitcannaid) Route() string {
-	return RouterKey
-}
-
-func (msg *MsgDeleteBitcannaid) Type() string {
-	return TypeMsgDeleteBitcannaid
-}
-
-func (msg *MsgDeleteBitcannaid) GetSigners() []sdk.AccAddress {
-	creator, err := sdk.AccAddressFromBech32(msg.Creator)
-	if err != nil {
-		panic(err)
-	}
-	return []sdk.AccAddress{creator}
-}
-
-func (msg *MsgDeleteBitcannaid) GetSignBytes() []byte {
-	bz := ModuleCdc.MustMarshalJSON(msg)
-	return sdk.MustSortJSON(bz)
-}
 
 func (msg *MsgDeleteBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
+		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
 	}
 	return nil
 }

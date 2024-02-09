@@ -3,16 +3,20 @@ package keeper_test
 import (
 	"testing"
 
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 )
 
 func TestSupplychainMsgServerCreate(t *testing.T) {
-	srv, ctx := setupMsgServer(t)
+	_, srv, ctx := setupMsgServer(t)
+	wctx := sdk.UnwrapSDKContext(ctx)
+
 	creator := "A"
 	for i := 0; i < 5; i++ {
-		resp, err := srv.CreateSupplychain(ctx, &types.MsgCreateSupplychain{Creator: creator})
+		resp, err := srv.CreateSupplychain(wctx, &types.MsgCreateSupplychain{Creator: creator})
 		require.NoError(t, err)
 		require.Equal(t, i, int(resp.Id))
 	}
@@ -21,7 +25,7 @@ func TestSupplychainMsgServerCreate(t *testing.T) {
 func TestSupplychainMsgServerUpdate(t *testing.T) {
 	creator := "A"
 
-	for _, tc := range []struct {
+	tests := []struct {
 		desc    string
 		request *types.MsgUpdateSupplychain
 		err     error
@@ -33,20 +37,23 @@ func TestSupplychainMsgServerUpdate(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateSupplychain{Creator: "B"},
-			err:     types.ErrUnauthorized,
+			err:     sdkerrors.ErrUnauthorized,
 		},
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateSupplychain{Creator: creator, Id: 10},
-			err:     types.ErrKeyNotFound,
+			err:     sdkerrors.ErrKeyNotFound,
 		},
-	} {
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
-			srv, ctx := setupMsgServer(t)
-			_, err := srv.CreateSupplychain(ctx, &types.MsgCreateSupplychain{Creator: creator})
+			_, srv, ctx := setupMsgServer(t)
+			wctx := sdk.UnwrapSDKContext(ctx)
+
+			_, err := srv.CreateSupplychain(wctx, &types.MsgCreateSupplychain{Creator: creator})
 			require.NoError(t, err)
 
-			_, err = srv.UpdateSupplychain(ctx, tc.request)
+			_, err = srv.UpdateSupplychain(wctx, tc.request)
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
 			} else {
@@ -59,7 +66,7 @@ func TestSupplychainMsgServerUpdate(t *testing.T) {
 func TestSupplychainMsgServerDelete(t *testing.T) {
 	creator := "A"
 
-	for _, tc := range []struct {
+	tests := []struct {
 		desc    string
 		request *types.MsgDeleteSupplychain
 		err     error
@@ -71,20 +78,22 @@ func TestSupplychainMsgServerDelete(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgDeleteSupplychain{Creator: "B"},
-			err:     types.ErrUnauthorized,
+			err:     sdkerrors.ErrUnauthorized,
 		},
 		{
 			desc:    "KeyNotFound",
 			request: &types.MsgDeleteSupplychain{Creator: creator, Id: 10},
-			err:     types.ErrKeyNotFound,
+			err:     sdkerrors.ErrKeyNotFound,
 		},
-	} {
+	}
+	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
-			srv, ctx := setupMsgServer(t)
+			_, srv, ctx := setupMsgServer(t)
+			wctx := sdk.UnwrapSDKContext(ctx)
 
-			_, err := srv.CreateSupplychain(ctx, &types.MsgCreateSupplychain{Creator: creator})
+			_, err := srv.CreateSupplychain(wctx, &types.MsgCreateSupplychain{Creator: creator})
 			require.NoError(t, err)
-			_, err = srv.DeleteSupplychain(ctx, tc.request)
+			_, err = srv.DeleteSupplychain(wctx, tc.request)
 			if tc.err != nil {
 				require.ErrorIs(t, err, tc.err)
 			} else {

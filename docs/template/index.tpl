@@ -7,7 +7,6 @@
         <link rel="icon" type="image/png" href="//unpkg.com/swagger-ui-dist@3.40.0/favicon-16x16.png" />
     </head>
     <body>
-      <h5>Welcome to BitCanna LCD</h5>
         <div id="swagger-ui"></div>
 
         <script src="//unpkg.com/swagger-ui-dist@3.40.0/swagger-ui-bundle.js"></script>
@@ -24,3 +23,6 @@
         </script>
     </body>
 </html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation

@@ -28,10 +28,9 @@ func SimulateMsgCreateBitcannaid(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           moduletestutil.MakeTestTxConfig(),
-			Cdc:             nil, // Ensure this is correctly initialized in the updated version
+			TxGen:           moduletestutil.MakeTestEncodingConfig().TxConfig,
+			Cdc:             nil,
 			Msg:             msg,
-			MsgType:         msg.Type(),
 			Context:         ctx,
 			SimAccount:      simAccount,
 			ModuleName:      types.ModuleName,
@@ -65,7 +64,7 @@ func SimulateMsgUpdateBitcannaid(
 			}
 		}
 		if !found {
-			return simtypes.NoOpMsg(types.ModuleName, msg.Type(), "bitcannaid creator not found"), nil, nil
+			return simtypes.NoOpMsg(types.ModuleName, sdk.MsgTypeURL(msg), "bitcannaid creator not found"), nil, nil
 		}
 		msg.Creator = simAccount.Address.String()
 		msg.Id = bitcannaid.Id
@@ -73,10 +72,9 @@ func SimulateMsgUpdateBitcannaid(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           moduletestutil.MakeTestTxConfig(),
+			TxGen:           moduletestutil.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
-			MsgType:         msg.Type(),
 			Context:         ctx,
 			SimAccount:      simAccount,
 			ModuleName:      types.ModuleName,
@@ -110,7 +108,7 @@ func SimulateMsgDeleteBitcannaid(
 			}
 		}
 		if !found {
-			return simtypes.NoOpMsg(types.ModuleName, msg.Type(), "bitcannaid creator not found"), nil, nil
+			return simtypes.NoOpMsg(types.ModuleName, sdk.MsgTypeURL(msg), "bitcannaid creator not found"), nil, nil
 		}
 		msg.Creator = simAccount.Address.String()
 		msg.Id = bitcannaid.Id
@@ -118,10 +116,9 @@ func SimulateMsgDeleteBitcannaid(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           moduletestutil.MakeTestTxConfig(),
+			TxGen:           moduletestutil.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
-			MsgType:         msg.Type(),
 			Context:         ctx,
 			SimAccount:      simAccount,
 			ModuleName:      types.ModuleName,

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package bcna.bcna;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "bcna/bcna/params.proto";
+import "bcna/bcna/bitcannaid.proto";
+import "bcna/bcna/supplychain.proto";
+
+option go_package = "github.com/BitCannaGlobal/bcna/x/bcna/types";
+
+// GenesisState defines the bcna module's genesis state.
+message GenesisState {
+  
+  // params defines all the parameters of the module.
+           Params      params           = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+  repeated Bitcannaid  bitcannaidList   = 2 [(gogoproto.nullable) = false] ;
+           uint64      bitcannaidCount  = 3;
+  repeated Supplychain supplychainList  = 4 [(gogoproto.nullable) = false] ;
+           uint64      supplychainCount = 5;
+}
+
