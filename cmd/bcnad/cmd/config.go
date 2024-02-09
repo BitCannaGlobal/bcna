@@ -24,6 +24,7 @@ func initSDKConfig() {
 	config.Seal()
 }
 
+// TODO: RBG: compare with previous version BCNAD v3
 // initCometBFTConfig helps to override default CometBFT Config values.
 // return cmtcfg.DefaultConfig if no custom configuration is required for the application.
 func initCometBFTConfig() *cmtcfg.Config {

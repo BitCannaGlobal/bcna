@@ -6,6 +6,7 @@ import (
 	"cosmossdk.io/store/prefix"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/runtime"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"google.golang.org/grpc/codes"
@@ -50,4 +51,21 @@ func (k Keeper) Bitcannaid(ctx context.Context, req *types.QueryGetBitcannaidReq
 	}
 
 	return &types.QueryGetBitcannaidResponse{Bitcannaid: bitcannaid}, nil
+}
+
+func (k Keeper) BitcannaidByBcnaid(c context.Context, req *types.QueryGetBitcannaidByBcnaidRequest) (*types.QueryGetBitcannaidByBcnaidResponse, error) {
+	if req == nil {
+		return nil, status.Error(codes.InvalidArgument, "invalid request")
+	}
+
+	var bitcannaid *types.Bitcannaid
+	ctx := sdk.UnwrapSDKContext(c)
+
+	if found := k.HasBitcannaidWithBcnaid(ctx, req.Bcnaid); found {
+		bitcannaid, _ = k.GetBitcannaidByBcnaid(ctx, req.Bcnaid)
+	} else {
+		return nil, status.Error(codes.NotFound, "bitcannaid not found")
+	}
+
+	return &types.QueryGetBitcannaidByBcnaidResponse{Bitcannaid: bitcannaid}, nil
 }

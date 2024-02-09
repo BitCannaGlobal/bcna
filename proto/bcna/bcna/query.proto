@@ -26,6 +26,13 @@ service Query {
     option (google.api.http).get = "/BitCannaGlobal/bcna/bcna/bitcannaid/{id}";
   
   }
+
+  	// Queries a Bitcannaid by bcnaid.
+	rpc BitcannaidByBcnaid(QueryGetBitcannaidByBcnaidRequest) returns (QueryGetBitcannaidByBcnaidResponse) {
+	option (google.api.http).get = "/BitCannaGlobal/bcna/bcna/bitcannaid/bcnaid/{bcnaid}";
+	}
+
+
   rpc BitcannaidAll (QueryAllBitcannaidRequest) returns (QueryAllBitcannaidResponse) {
     option (google.api.http).get = "/BitCannaGlobal/bcna/bcna/bitcannaid";
   
@@ -49,6 +56,14 @@ message QueryParamsResponse {
   
   // params holds all the parameters of this module.
   Params params = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+}
+
+message QueryGetBitcannaidByBcnaidRequest {
+  string bcnaid = 1;
+}
+
+message QueryGetBitcannaidByBcnaidResponse {
+  Bitcannaid Bitcannaid = 1 [(gogoproto.nullable) = true];
 }
 
 message QueryGetBitcannaidRequest {

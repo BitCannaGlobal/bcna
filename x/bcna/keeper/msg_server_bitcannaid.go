@@ -13,6 +13,11 @@ import (
 func (k msgServer) CreateBitcannaid(goCtx context.Context, msg *types.MsgCreateBitcannaid) (*types.MsgCreateBitcannaidResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
+	// Check if a BitCannaID with the same Bcnaid already exists
+	if k.HasBitcannaidWithBcnaid(ctx, msg.Bcnaid) {
+		return nil, errorsmod.Wrapf(types.ErrDuplicateBitcannaid, "BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
+	}
+
 	var bitcannaid = types.Bitcannaid{
 		Creator: msg.Creator,
 		Bcnaid:  msg.Bcnaid,
@@ -31,6 +36,11 @@ func (k msgServer) CreateBitcannaid(goCtx context.Context, msg *types.MsgCreateB
 
 func (k msgServer) UpdateBitcannaid(goCtx context.Context, msg *types.MsgUpdateBitcannaid) (*types.MsgUpdateBitcannaidResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
+
+	// Check if a BitCannaID with the same Bcnaid already exists
+	if k.HasBitcannaidWithBcnaid(ctx, msg.Bcnaid) {
+		return nil, errorsmod.Wrapf(types.ErrDuplicateBitcannaid, "BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
+	}
 
 	var bitcannaid = types.Bitcannaid{
 		Creator: msg.Creator,

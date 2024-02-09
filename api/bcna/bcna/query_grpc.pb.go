@@ -19,11 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Query_Params_FullMethodName         = "/bcna.bcna.Query/Params"
-	Query_Bitcannaid_FullMethodName     = "/bcna.bcna.Query/Bitcannaid"
-	Query_BitcannaidAll_FullMethodName  = "/bcna.bcna.Query/BitcannaidAll"
-	Query_Supplychain_FullMethodName    = "/bcna.bcna.Query/Supplychain"
-	Query_SupplychainAll_FullMethodName = "/bcna.bcna.Query/SupplychainAll"
+	Query_Params_FullMethodName             = "/bcna.bcna.Query/Params"
+	Query_Bitcannaid_FullMethodName         = "/bcna.bcna.Query/Bitcannaid"
+	Query_BitcannaidByBcnaid_FullMethodName = "/bcna.bcna.Query/BitcannaidByBcnaid"
+	Query_BitcannaidAll_FullMethodName      = "/bcna.bcna.Query/BitcannaidAll"
+	Query_Supplychain_FullMethodName        = "/bcna.bcna.Query/Supplychain"
+	Query_SupplychainAll_FullMethodName     = "/bcna.bcna.Query/SupplychainAll"
 )
 
 // QueryClient is the client API for Query service.
@@ -34,6 +35,8 @@ type QueryClient interface {
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
 	// Queries a list of Bitcannaid items.
 	Bitcannaid(ctx context.Context, in *QueryGetBitcannaidRequest, opts ...grpc.CallOption) (*QueryGetBitcannaidResponse, error)
+	// Queries a Bitcannaid by bcnaid.
+	BitcannaidByBcnaid(ctx context.Context, in *QueryGetBitcannaidByBcnaidRequest, opts ...grpc.CallOption) (*QueryGetBitcannaidByBcnaidResponse, error)
 	BitcannaidAll(ctx context.Context, in *QueryAllBitcannaidRequest, opts ...grpc.CallOption) (*QueryAllBitcannaidResponse, error)
 	// Queries a list of Supplychain items.
 	Supplychain(ctx context.Context, in *QueryGetSupplychainRequest, opts ...grpc.CallOption) (*QueryGetSupplychainResponse, error)
@@ -60,6 +63,15 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 func (c *queryClient) Bitcannaid(ctx context.Context, in *QueryGetBitcannaidRequest, opts ...grpc.CallOption) (*QueryGetBitcannaidResponse, error) {
 	out := new(QueryGetBitcannaidResponse)
 	err := c.cc.Invoke(ctx, Query_Bitcannaid_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) BitcannaidByBcnaid(ctx context.Context, in *QueryGetBitcannaidByBcnaidRequest, opts ...grpc.CallOption) (*QueryGetBitcannaidByBcnaidResponse, error) {
+	out := new(QueryGetBitcannaidByBcnaidResponse)
+	err := c.cc.Invoke(ctx, Query_BitcannaidByBcnaid_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,6 +113,8 @@ type QueryServer interface {
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
 	// Queries a list of Bitcannaid items.
 	Bitcannaid(context.Context, *QueryGetBitcannaidRequest) (*QueryGetBitcannaidResponse, error)
+	// Queries a Bitcannaid by bcnaid.
+	BitcannaidByBcnaid(context.Context, *QueryGetBitcannaidByBcnaidRequest) (*QueryGetBitcannaidByBcnaidResponse, error)
 	BitcannaidAll(context.Context, *QueryAllBitcannaidRequest) (*QueryAllBitcannaidResponse, error)
 	// Queries a list of Supplychain items.
 	Supplychain(context.Context, *QueryGetSupplychainRequest) (*QueryGetSupplychainResponse, error)
@@ -117,6 +131,9 @@ func (UnimplementedQueryServer) Params(context.Context, *QueryParamsRequest) (*Q
 }
 func (UnimplementedQueryServer) Bitcannaid(context.Context, *QueryGetBitcannaidRequest) (*QueryGetBitcannaidResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Bitcannaid not implemented")
+}
+func (UnimplementedQueryServer) BitcannaidByBcnaid(context.Context, *QueryGetBitcannaidByBcnaidRequest) (*QueryGetBitcannaidByBcnaidResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BitcannaidByBcnaid not implemented")
 }
 func (UnimplementedQueryServer) BitcannaidAll(context.Context, *QueryAllBitcannaidRequest) (*QueryAllBitcannaidResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BitcannaidAll not implemented")
@@ -172,6 +189,24 @@ func _Query_Bitcannaid_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Bitcannaid(ctx, req.(*QueryGetBitcannaidRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_BitcannaidByBcnaid_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetBitcannaidByBcnaidRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).BitcannaidByBcnaid(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_BitcannaidByBcnaid_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).BitcannaidByBcnaid(ctx, req.(*QueryGetBitcannaidByBcnaidRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -244,6 +279,10 @@ var Query_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Bitcannaid",
 			Handler:    _Query_Bitcannaid_Handler,
+		},
+		{
+			MethodName: "BitcannaidByBcnaid",
+			Handler:    _Query_BitcannaidByBcnaid_Handler,
 		},
 		{
 			MethodName: "BitcannaidAll",

@@ -10,6 +10,43 @@ import (
 	"github.com/cosmos/cosmos-sdk/runtime"
 )
 
+// Check if the BitCannaID exist previously
+func (k Keeper) HasBitcannaidWithBcnaid(ctx context.Context, bcnaid string) bool {
+	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
+	store := prefix.NewStore(storeAdapter, types.KeyPrefix(types.BitcannaidKey))
+	iterator := storetypes.KVStorePrefixIterator(store, []byte(types.BitcannaidKey))
+
+	defer iterator.Close()
+	for ; iterator.Valid(); iterator.Next() {
+		var bitcannaid types.Bitcannaid
+		k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
+
+		if bitcannaid.Bcnaid == bcnaid {
+			return true
+		}
+	}
+
+	return false
+}
+
+func (k Keeper) GetBitcannaidByBcnaid(ctx context.Context, bcnaid string) (val *types.Bitcannaid, found bool) {
+	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
+	store := prefix.NewStore(storeAdapter, types.KeyPrefix(types.BitcannaidKey))
+	iterator := storetypes.KVStorePrefixIterator(store, []byte(types.BitcannaidKey))
+
+	defer iterator.Close()
+	for ; iterator.Valid(); iterator.Next() {
+		var bitcannaid types.Bitcannaid
+		k.cdc.MustUnmarshal(iterator.Value(), &bitcannaid)
+
+		if bitcannaid.Bcnaid == bcnaid {
+			return &bitcannaid, true
+		}
+	}
+
+	return nil, false
+}
+
 // GetBitcannaidCount get the total number of bitcannaid
 func (k Keeper) GetBitcannaidCount(ctx context.Context) uint64 {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))

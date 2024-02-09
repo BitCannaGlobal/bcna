@@ -29,6 +29,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
 				},
 				{
+					RpcMethod:      "BitcannaidByBcnaid",
+					Use:            "search-bitcannaid [bcnaid]",
+					Short:          "Search a bitcannaid by bcnaid",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "bcnaid"}},
+				},
+				{
 					RpcMethod: "SupplychainAll",
 					Use:       "list-supplychain",
 					Short:     "List all supplychain",
