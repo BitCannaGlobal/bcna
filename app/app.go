@@ -319,8 +319,10 @@ func New(
 
 	app.App = appBuilder.Build(db, traceStore, baseAppOptions...)
 
-	// Register legacy modules
-	app.registerIBCModules()
+	// Register legacy modules: https://github.com/ignite/cli/pull/3956
+	if err := app.registerIBCModules(appOpts); err != nil {
+		return nil, err
+	}
 
 	// register streaming services
 	if err := app.RegisterStreamingServices(appOpts, app.kvStoreKeys()); err != nil {

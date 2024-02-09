@@ -4,6 +4,7 @@ import (
 	"cosmossdk.io/core/appmodule"
 	storetypes "cosmossdk.io/store/types"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
+	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	govv1beta1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
@@ -37,7 +38,7 @@ import (
 )
 
 // registerIBCModules register IBC keepers and non dependency inject modules.
-func (app *App) registerIBCModules() {
+func (app *App) registerIBCModules(_ servertypes.AppOptions) error {
 	// set up non depinject support modules store keys
 	if err := app.RegisterStores(
 		storetypes.NewKVStoreKey(capabilitytypes.StoreKey),
@@ -49,7 +50,7 @@ func (app *App) registerIBCModules() {
 		storetypes.NewMemoryStoreKey(capabilitytypes.MemStoreKey),
 		storetypes.NewTransientStoreKey(paramstypes.TStoreKey),
 	); err != nil {
-		panic(err)
+		return err
 	}
 
 	// register the key tables for legacy param subspaces
@@ -175,8 +176,10 @@ func (app *App) registerIBCModules() {
 		ibctm.AppModule{},
 		solomachine.AppModule{},
 	); err != nil {
-		panic(err)
+		return err
 	}
+
+	return nil
 }
 
 // Since the IBC modules don't support dependency injection, we need to
