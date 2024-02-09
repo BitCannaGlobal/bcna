@@ -13,6 +13,23 @@ import (
 func (k msgServer) CreateSupplychain(goCtx context.Context, msg *types.MsgCreateSupplychain) (*types.MsgCreateSupplychainResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
+	// Checks if field Product exceeds 256 chars.
+	if len(msg.Product) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Product exceeds the limit of 256 characters")
+	}
+	// Checks if field Info exceeds 256 chars.
+	if len(msg.Info) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Info exceeds the limit of 256 characters")
+	}
+	// Checks if field Supplyinfo exceeds 256 chars.
+	if len(msg.Supplyinfo) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Supplyinfo exceeds the limit of 256 characters")
+	}
+	// Checks if field Supplyextra exceeds 256 chars.
+	if len(msg.Supplyextra) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Supplyextra exceeds the limit of 256 characters")
+	}
+
 	var supplychain = types.Supplychain{
 		Creator:     msg.Creator,
 		Product:     msg.Product,
@@ -33,6 +50,23 @@ func (k msgServer) CreateSupplychain(goCtx context.Context, msg *types.MsgCreate
 
 func (k msgServer) UpdateSupplychain(goCtx context.Context, msg *types.MsgUpdateSupplychain) (*types.MsgUpdateSupplychainResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
+
+	// Checks if field Product exceeds 256 chars.
+	if len(msg.Product) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Product exceeds the limit of 256 characters")
+	}
+	// Checks if field Info exceeds 256 chars.
+	if len(msg.Info) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Info exceeds the limit of 256 characters")
+	}
+	// Checks if field Supplyinfo exceeds 256 chars.
+	if len(msg.Supplyinfo) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Supplyinfo exceeds the limit of 256 characters")
+	}
+	// Checks if field Supplyextra exceeds 256 chars.
+	if len(msg.Supplyextra) > 256 {
+		return nil, types.ErrMaxCharacters.Wrapf("Supplyextra exceeds the limit of 256 characters")
+	}
 
 	var supplychain = types.Supplychain{
 		Creator:     msg.Creator,
