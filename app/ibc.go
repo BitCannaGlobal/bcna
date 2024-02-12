@@ -27,7 +27,7 @@ import (
 	ibctransferkeeper "github.com/cosmos/ibc-go/v8/modules/apps/transfer/keeper"
 	ibctransfertypes "github.com/cosmos/ibc-go/v8/modules/apps/transfer/types"
 	ibc "github.com/cosmos/ibc-go/v8/modules/core"
-	ibcclienttypes "github.com/cosmos/ibc-go/v8/modules/core/02-client/types" //nolint:staticcheck
+	ibcclienttypes "github.com/cosmos/ibc-go/v8/modules/core/02-client/types"
 	ibcconnectiontypes "github.com/cosmos/ibc-go/v8/modules/core/03-connection/types"
 	porttypes "github.com/cosmos/ibc-go/v8/modules/core/05-port/types"
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
@@ -89,8 +89,8 @@ func (app *App) registerIBCModules(_ servertypes.AppOptions) error {
 	// Deprecated: Avoid adding new handlers, instead use the new proposal flow
 	// by granting the governance module the right to execute the message.
 	// See: https://docs.cosmos.network/main/modules/gov#proposal-messages
-	govRouter := govv1beta1.NewRouter()                                // nolint:staticcheck
-	govRouter.AddRoute(govtypes.RouterKey, govv1beta1.ProposalHandler) // nolint:staticcheck
+	govRouter := govv1beta1.NewRouter()
+	govRouter.AddRoute(govtypes.RouterKey, govv1beta1.ProposalHandler)
 
 	app.IBCFeeKeeper = ibcfeekeeper.NewKeeper(
 		app.appCodec, app.GetKey(ibcfeetypes.StoreKey),
