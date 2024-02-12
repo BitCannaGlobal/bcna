@@ -89,8 +89,8 @@ func (app *App) registerIBCModules(_ servertypes.AppOptions) error {
 	// Deprecated: Avoid adding new handlers, instead use the new proposal flow
 	// by granting the governance module the right to execute the message.
 	// See: https://docs.cosmos.network/main/modules/gov#proposal-messages
-	govRouter := govv1beta1.NewRouter()
-	govRouter.AddRoute(govtypes.RouterKey, govv1beta1.ProposalHandler)
+	govRouter := govv1beta1.NewRouter()                                // nolint:staticcheck
+	govRouter.AddRoute(govtypes.RouterKey, govv1beta1.ProposalHandler) // nolint:staticcheck
 
 	app.IBCFeeKeeper = ibcfeekeeper.NewKeeper(
 		app.appCodec, app.GetKey(ibcfeetypes.StoreKey),

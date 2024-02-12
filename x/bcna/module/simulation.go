@@ -89,9 +89,10 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 func (am AppModule) RegisterStoreDecoder(_ simtypes.StoreDecoderRegistry) {}
 
 // ProposalContents doesn't return any content functions for governance proposals.
-func (AppModule) ProposalContents(_ module.SimulationState) []simtypes.WeightedProposalMsg { // changed by LINT
-	return nil
-}
+// https://github.com/ignite/cli/pull/3958/files#diff-52bfe394ecf429e97096e1d7d9d39978463f972e9a474ce423edca1279c4bd31L46
+// func (AppModule) ProposalContents(_ module.SimulationState) []simtypes.WeightedProposalMsg {
+//	return nil
+//}
 
 // WeightedOperations returns the all the gov module operations with their respective weights.
 func (am AppModule) WeightedOperations(simState module.SimulationState) []simtypes.WeightedOperation {
