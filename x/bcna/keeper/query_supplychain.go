@@ -6,7 +6,6 @@ import (
 	"cosmossdk.io/store/prefix"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/runtime"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -46,7 +45,7 @@ func (k Keeper) Supplychain(ctx context.Context, req *types.QueryGetSupplychainR
 
 	supplychain, found := k.GetSupplychain(ctx, req.Id)
 	if !found {
-		return nil, sdkerrors.ErrKeyNotFound
+		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %d", req.Id)
 	}
 
 	return &types.QueryGetSupplychainResponse{Supplychain: supplychain}, nil

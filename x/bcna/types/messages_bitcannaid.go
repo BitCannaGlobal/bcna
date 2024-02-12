@@ -38,7 +38,7 @@ func NewMsgUpdateBitcannaid(creator string, id uint64, bcnaid string, address st
 func (msg *MsgUpdateBitcannaid) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err) // TODO types.ErrInvalidAddress
 	}
 	return nil
 }

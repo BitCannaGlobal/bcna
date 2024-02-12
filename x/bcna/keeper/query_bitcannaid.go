@@ -7,7 +7,6 @@ import (
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	"github.com/cosmos/cosmos-sdk/runtime"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -47,7 +46,7 @@ func (k Keeper) Bitcannaid(ctx context.Context, req *types.QueryGetBitcannaidReq
 
 	bitcannaid, found := k.GetBitcannaid(ctx, req.Id)
 	if !found {
-		return nil, sdkerrors.ErrKeyNotFound
+		return nil, types.ErrKeyNotFound.Wrapf("key doesn't exist: %d", req.Id)
 	}
 
 	return &types.QueryGetBitcannaidResponse{Bitcannaid: bitcannaid}, nil

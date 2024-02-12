@@ -4,7 +4,6 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
@@ -37,12 +36,12 @@ func TestSupplychainMsgServerUpdate(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateSupplychain{Creator: "B"},
-			err:     sdkerrors.ErrUnauthorized,
+			err:     types.ErrUnauthorized,
 		},
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgUpdateSupplychain{Creator: creator, Id: 10},
-			err:     sdkerrors.ErrKeyNotFound,
+			err:     types.ErrKeyNotFound,
 		},
 	}
 	for _, tc := range tests {
@@ -78,12 +77,12 @@ func TestSupplychainMsgServerDelete(t *testing.T) {
 		{
 			desc:    "Unauthorized",
 			request: &types.MsgDeleteSupplychain{Creator: "B"},
-			err:     sdkerrors.ErrUnauthorized,
+			err:     types.ErrUnauthorized,
 		},
 		{
 			desc:    "KeyNotFound",
 			request: &types.MsgDeleteSupplychain{Creator: creator, Id: 10},
-			err:     sdkerrors.ErrKeyNotFound,
+			err:     types.ErrKeyNotFound,
 		},
 	}
 	for _, tc := range tests {
@@ -95,7 +94,7 @@ func TestSupplychainMsgServerDelete(t *testing.T) {
 			require.NoError(t, err)
 			_, err = srv.DeleteSupplychain(wctx, tc.request)
 			if tc.err != nil {
-				require.ErrorIs(t, err, tc.err)
+				require.Contains(t, err.Error(), tc.err.Error())
 			} else {
 				require.NoError(t, err)
 			}

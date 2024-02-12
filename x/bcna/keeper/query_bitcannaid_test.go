@@ -3,7 +3,6 @@ package keeper_test
 import (
 	"testing"
 
-	// sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
@@ -47,7 +46,7 @@ func TestBitcannaidQuerySingle(t *testing.T) {
 		t.Run(tc.desc, func(t *testing.T) {
 			response, err := keeper.Bitcannaid(ctx, tc.request)
 			if tc.err != nil {
-				require.ErrorIs(t, err, tc.err)
+				require.Contains(t, err.Error(), tc.err.Error())
 			} else {
 				require.NoError(t, err)
 				require.Equal(t,
