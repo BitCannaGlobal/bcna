@@ -3,6 +3,7 @@ package keeper
 import (
 	"context"
 
+	errorsmod "cosmossdk.io/errors"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
@@ -20,10 +21,11 @@ func (k msgServer) CreateBitcannaid(goCtx context.Context, msg *types.MsgCreateB
 		return nil, types.ErrMaxCharacters.Wrapf("Address exceeds the limit of 256 characters")
 	}
 
-	// Checks if a BitCannaID with the same Bcnaid already exists
+	// Check if a BitCannaID with the same Bcnaid already exists
 	if k.HasBitcannaidWithBcnaid(ctx, msg.Bcnaid) {
-		return nil, types.ErrDuplicateBitcannaid.Wrapf("BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
+		return nil, errorsmod.Wrapf(types.ErrDuplicateBitcannaid, "BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
 	}
+
 	var bitcannaid = types.Bitcannaid{
 		Creator: msg.Creator,
 		Bcnaid:  msg.Bcnaid,
@@ -55,8 +57,9 @@ func (k msgServer) UpdateBitcannaid(goCtx context.Context, msg *types.MsgUpdateB
 
 	// Check if a BitCannaID with the same Bcnaid already exists
 	if k.HasBitcannaidWithBcnaid(ctx, msg.Bcnaid) {
-		return nil, types.ErrDuplicateBitcannaid.Wrapf("BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
+		return nil, errorsmod.Wrapf(types.ErrDuplicateBitcannaid, "BitCannaID with Bcnaid %s already exists", msg.Bcnaid)
 	}
+
 	var bitcannaid = types.Bitcannaid{
 		Creator: msg.Creator,
 		Id:      msg.Id,

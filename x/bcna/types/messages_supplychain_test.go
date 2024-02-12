@@ -31,7 +31,7 @@ func TestMsgCreateSupplychain_ValidateBasic(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			err := tt.msg.ValidateBasic()
 			if tt.err != nil {
-				require.Contains(t, err.Error(), tt.err.Error())
+				require.ErrorIs(t, err, tt.err)
 				return
 			}
 			require.NoError(t, err)
@@ -62,7 +62,7 @@ func TestMsgUpdateSupplychain_ValidateBasic(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			err := tt.msg.ValidateBasic()
 			if tt.err != nil {
-				require.Contains(t, err.Error(), tt.err.Error())
+				require.ErrorIs(t, err, tt.err)
 				return
 			}
 			require.NoError(t, err)
@@ -93,7 +93,7 @@ func TestMsgDeleteSupplychain_ValidateBasic(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			err := tt.msg.ValidateBasic()
 			if tt.err != nil {
-				require.Contains(t, err.Error(), tt.err.Error())
+				require.ErrorIs(t, err, tt.err)
 				return
 			}
 			require.NoError(t, err)

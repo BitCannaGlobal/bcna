@@ -1,17 +1,17 @@
 package keeper_test
 
 import (
+	"context"
 	"testing"
 
 	keepertest "github.com/BitCannaGlobal/bcna/testutil/keeper"
 	"github.com/BitCannaGlobal/bcna/testutil/nullify"
 	"github.com/BitCannaGlobal/bcna/x/bcna/keeper"
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )
 
-func createNSupplychain(keeper *keeper.Keeper, ctx sdk.Context, n int) []types.Supplychain {
+func createNSupplychain(keeper keeper.Keeper, ctx context.Context, n int) []types.Supplychain {
 	items := make([]types.Supplychain, n)
 	for i := range items {
 		items[i].Id = keeper.AppendSupplychain(ctx, items[i])

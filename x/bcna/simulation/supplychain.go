@@ -28,10 +28,9 @@ func SimulateMsgCreateSupplychain(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           moduletestutil.MakeTestTxConfig(),
+			TxGen:           moduletestutil.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
-			MsgType:         msg.Type(),
 			Context:         ctx,
 			SimAccount:      simAccount,
 			ModuleName:      types.ModuleName,
@@ -65,7 +64,7 @@ func SimulateMsgUpdateSupplychain(
 			}
 		}
 		if !found {
-			return simtypes.NoOpMsg(types.ModuleName, msg.Type(), "supplychain creator not found"), nil, nil
+			return simtypes.NoOpMsg(types.ModuleName, sdk.MsgTypeURL(msg), "supplychain creator not found"), nil, nil
 		}
 		msg.Creator = simAccount.Address.String()
 		msg.Id = supplychain.Id
@@ -73,10 +72,9 @@ func SimulateMsgUpdateSupplychain(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           moduletestutil.MakeTestTxConfig(),
+			TxGen:           moduletestutil.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
-			MsgType:         msg.Type(),
 			Context:         ctx,
 			SimAccount:      simAccount,
 			ModuleName:      types.ModuleName,
@@ -110,7 +108,7 @@ func SimulateMsgDeleteSupplychain(
 			}
 		}
 		if !found {
-			return simtypes.NoOpMsg(types.ModuleName, msg.Type(), "supplychain creator not found"), nil, nil
+			return simtypes.NoOpMsg(types.ModuleName, sdk.MsgTypeURL(msg), "supplychain creator not found"), nil, nil
 		}
 		msg.Creator = simAccount.Address.String()
 		msg.Id = supplychain.Id
@@ -118,10 +116,9 @@ func SimulateMsgDeleteSupplychain(
 		txCtx := simulation.OperationInput{
 			R:               r,
 			App:             app,
-			TxGen:           moduletestutil.MakeTestTxConfig(),
+			TxGen:           moduletestutil.MakeTestEncodingConfig().TxConfig,
 			Cdc:             nil,
 			Msg:             msg,
-			MsgType:         msg.Type(),
 			Context:         ctx,
 			SimAccount:      simAccount,
 			ModuleName:      types.ModuleName,

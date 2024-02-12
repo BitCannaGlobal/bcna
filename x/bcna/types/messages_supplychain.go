@@ -1,16 +1,9 @@
 package types
 
 import (
-	"errors"
-	"fmt"
-
+	errorsmod "cosmossdk.io/errors"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-)
-
-const (
-	TypeMsgCreateSupplychain = "create_supplychain"
-	TypeMsgUpdateSupplychain = "update_supplychain"
-	TypeMsgDeleteSupplychain = "delete_supplychain"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
 var _ sdk.Msg = &MsgCreateSupplychain{}
@@ -25,31 +18,10 @@ func NewMsgCreateSupplychain(creator string, product string, info string, supply
 	}
 }
 
-func (msg *MsgCreateSupplychain) Route() string {
-	return RouterKey
-}
-
-func (msg *MsgCreateSupplychain) Type() string {
-	return TypeMsgCreateSupplychain
-}
-
-func (msg *MsgCreateSupplychain) GetSigners() []sdk.AccAddress {
-	creator, err := sdk.AccAddressFromBech32(msg.Creator)
-	if err != nil {
-		panic(err)
-	}
-	return []sdk.AccAddress{creator}
-}
-
-func (msg *MsgCreateSupplychain) GetSignBytes() []byte {
-	bz := ModuleCdc.MustMarshalJSON(msg)
-	return sdk.MustSortJSON(bz)
-}
-
 func (msg *MsgCreateSupplychain) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
+		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
 	}
 	return nil
 }
@@ -67,31 +39,10 @@ func NewMsgUpdateSupplychain(creator string, id uint64, product string, info str
 	}
 }
 
-func (msg *MsgUpdateSupplychain) Route() string {
-	return RouterKey
-}
-
-func (msg *MsgUpdateSupplychain) Type() string {
-	return TypeMsgUpdateSupplychain
-}
-
-func (msg *MsgUpdateSupplychain) GetSigners() []sdk.AccAddress {
-	creator, err := sdk.AccAddressFromBech32(msg.Creator)
-	if err != nil {
-		panic(err)
-	}
-	return []sdk.AccAddress{creator}
-}
-
-func (msg *MsgUpdateSupplychain) GetSignBytes() []byte {
-	bz := ModuleCdc.MustMarshalJSON(msg)
-	return sdk.MustSortJSON(bz)
-}
-
 func (msg *MsgUpdateSupplychain) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
+		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
 	}
 	return nil
 }
@@ -104,31 +55,11 @@ func NewMsgDeleteSupplychain(creator string, id uint64) *MsgDeleteSupplychain {
 		Creator: creator,
 	}
 }
-func (msg *MsgDeleteSupplychain) Route() string {
-	return RouterKey
-}
-
-func (msg *MsgDeleteSupplychain) Type() string {
-	return TypeMsgDeleteSupplychain
-}
-
-func (msg *MsgDeleteSupplychain) GetSigners() []sdk.AccAddress {
-	creator, err := sdk.AccAddressFromBech32(msg.Creator)
-	if err != nil {
-		panic(err)
-	}
-	return []sdk.AccAddress{creator}
-}
-
-func (msg *MsgDeleteSupplychain) GetSignBytes() []byte {
-	bz := ModuleCdc.MustMarshalJSON(msg)
-	return sdk.MustSortJSON(bz)
-}
 
 func (msg *MsgDeleteSupplychain) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
+		return errorsmod.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
 	}
 	return nil
 }

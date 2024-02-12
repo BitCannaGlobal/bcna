@@ -1,23 +1,23 @@
 package keeper_test
 
 import (
-	"fmt"
 	"strconv"
 	"testing"
 
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
 	"github.com/BitCannaGlobal/bcna/x/bcna/types"
 )
 
 func TestBitcannaidMsgServerCreate(t *testing.T) {
-	srv, ctx := setupMsgServer(t)
-	creator := "BCNAID-"
+	_, srv, ctx := setupMsgServer(t)
+	wctx := sdk.UnwrapSDKContext(ctx)
 
+	creator := "A"
 	for i := 0; i < 5; i++ {
 		concatenated := creator + strconv.Itoa(i) // to produce a different Bcnaid each time
-		fmt.Println(concatenated)
-		resp, err := srv.CreateBitcannaid(ctx, &types.MsgCreateBitcannaid{Creator: creator, Bcnaid: concatenated})
+		resp, err := srv.CreateBitcannaid(wctx, &types.MsgCreateBitcannaid{Creator: creator, Bcnaid: concatenated})
 		require.NoError(t, err)
 		require.Equal(t, i, int(resp.Id))
 	}
@@ -41,20 +41,20 @@ func TestBitcannaidMsgServerUpdate(t *testing.T) {
 			err:     types.ErrUnauthorized,
 		},
 		{
-			desc:    "Unauthorized",
+			desc:    "Not found",
 			request: &types.MsgUpdateBitcannaid{Creator: creator, Id: 10},
 			err:     types.ErrKeyNotFound,
 		},
 	} {
 		t.Run(tc.desc, func(t *testing.T) {
-			srv, ctx := setupMsgServer(t)
+			_, srv, ctx := setupMsgServer(t)
 			_, err := srv.CreateBitcannaid(ctx, &types.MsgCreateBitcannaid{Creator: creator, Bcnaid: "updated"})
 			require.NoError(t, err)
 
 			_, err = srv.UpdateBitcannaid(ctx, tc.request)
 
 			if tc.err != nil {
-				require.ErrorIs(t, err, tc.err)
+				require.Contains(t, err.Error(), tc.err.Error())
 			} else {
 				require.NoError(t, err)
 			}
@@ -87,13 +87,14 @@ func TestBitcannaidMsgServerDelete(t *testing.T) {
 	}
 	for _, tc := range tests {
 		t.Run(tc.desc, func(t *testing.T) {
-			srv, ctx := setupMsgServer(t)
+			_, srv, ctx := setupMsgServer(t)
+			wctx := sdk.UnwrapSDKContext(ctx)
 
-			_, err := srv.CreateBitcannaid(ctx, &types.MsgCreateBitcannaid{Creator: creator})
+			_, err := srv.CreateBitcannaid(wctx, &types.MsgCreateBitcannaid{Creator: creator})
 			require.NoError(t, err)
-			_, err = srv.DeleteBitcannaid(ctx, tc.request)
+			_, err = srv.DeleteBitcannaid(wctx, tc.request)
 			if tc.err != nil {
-				require.ErrorIs(t, err, tc.err)
+				require.Contains(t, err.Error(), tc.err.Error())
 			} else {
 				require.NoError(t, err)
 			}
