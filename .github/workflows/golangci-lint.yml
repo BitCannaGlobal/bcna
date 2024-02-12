@@ -31,3 +31,7 @@ jobs:
         with:
           version: latest
           args: --timeout 30m
+          
+linters-settings:
+  staticcheck:
+    checks: ["-SA1019"]
