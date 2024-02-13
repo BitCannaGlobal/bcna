@@ -594,17 +594,17 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_Query_Params_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 2, 2}, []string{"BitCannaGlobal", "bcna", "params"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_Params_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 0, 2, 1}, []string{"bcna", "params"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_Bitcannaid_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"BitCannaGlobal", "bcna", "bitcannaid", "id"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_Bitcannaid_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"bcna", "bitcannaid", "id"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_BitcannaidByBcnaid_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 3}, []string{"BitCannaGlobal", "bcna", "bitcannaid", "bcnaid"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_BitcannaidByBcnaid_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 2}, []string{"bcna", "bitcannaid", "bcnaid"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_BitcannaidAll_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 2, 2}, []string{"BitCannaGlobal", "bcna", "bitcannaid"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_BitcannaidAll_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 0, 2, 1}, []string{"bcna", "bitcannaid"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_Supplychain_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"BitCannaGlobal", "bcna", "supplychain", "id"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_Supplychain_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"bcna", "supplychain", "id"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_SupplychainAll_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 2, 2}, []string{"BitCannaGlobal", "bcna", "supplychain"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_SupplychainAll_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 0, 2, 1}, []string{"bcna", "supplychain"}, "", runtime.AssumeColonVerbOpt(false)))
 )
 
 var (
