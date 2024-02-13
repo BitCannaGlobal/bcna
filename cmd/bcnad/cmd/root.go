@@ -160,6 +160,7 @@ func ProvideClientContext(
 		WithViper(app.Name) // env variable prefix
 
 	// Read the config again to overwrite the default values with the values from the config file
+	// TODO https://github.com/cosmos/cosmos-sdk/pull/19399/files#diff-6865cb5364d315116bfa72800afd80318624fdbca4f0e727dc22e0ef6196332bR112
 	clientCtx, _ = config.ReadFromClientConfig(clientCtx)
 
 	return clientCtx
