@@ -123,7 +123,13 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 
 			}
 
-			return app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
+			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
+			if err != nil {
+				return nil, err
+			}
+			app.Logger().Info(fmt.Sprintf("post migrate version map: %v", versionMap))
+
+			return versionMap, err
 		},
 	)
 	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
