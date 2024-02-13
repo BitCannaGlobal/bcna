@@ -8,7 +8,8 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 	circuittypes "cosmossdk.io/x/circuit/types"
-	nft "cosmossdk.io/x/nft"
+
+	// nft "cosmossdk.io/x/nft"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 )
 
@@ -47,7 +48,7 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 			Added: []string{
 				circuittypes.ModuleName,
 				"feeibc",
-				nft.ModuleName,
+				// nft.ModuleName,
 			},
 		}
 
