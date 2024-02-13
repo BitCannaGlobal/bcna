@@ -31,6 +31,9 @@ import (
 
 	// "github.com/cosmos/cosmos-sdk/x/nft"
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
+
+	"github.com/cosmos/cosmos-sdk/runtime"
+	consensuskeeper "github.com/cosmos/cosmos-sdk/x/consensus/keeper"
 )
 
 var keyTableAssigned = false
@@ -122,7 +125,26 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 				app.Logger().Info(fmt.Sprintf("Module: %s, Version: %d", moduleName, version))
 
 			}
+			// DEVNET-6 FIX: new consensus params keeper using the wrong key again and move the data into the consensus params keeper with the right key
+			storesvc := runtime.NewKVStoreService(app.GetKey("upgrade"))
+			consensuskeeper := consensuskeeper.NewKeeper(
+				app.appCodec,
+				storesvc,
+				app.AccountKeeper.GetAuthority(),
+				runtime.EventService{},
+			)
 
+			params, err := consensuskeeper.ParamsStore.Get(ctx)
+			app.Logger().Info("Getting the params into the Consensus params keeper...")
+			if err != nil {
+				return nil, err
+			}
+
+			err = app.ConsensusParamsKeeper.ParamsStore.Set(ctx, params)
+			app.Logger().Info("Setting the params into the Consensus params keeper...")
+			if err != nil {
+				return nil, err
+			}
 			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
 			if err != nil {
 				return nil, err
