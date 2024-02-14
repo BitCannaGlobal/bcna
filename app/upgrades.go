@@ -11,32 +11,7 @@ import (
 
 	// nft "cosmossdk.io/x/nft"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
-
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	crisistypes "github.com/cosmos/cosmos-sdk/x/crisis/types"
-	distrtypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
-	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
-	govv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
-	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-
-	bcnamoduletypes "github.com/BitCannaGlobal/bcna/x/bcna/types"
-
-	icacontrollertypes "github.com/cosmos/ibc-go/v8/modules/apps/27-interchain-accounts/controller/types"
-	icahosttypes "github.com/cosmos/ibc-go/v8/modules/apps/27-interchain-accounts/host/types"
-	ibctransfertypes "github.com/cosmos/ibc-go/v8/modules/apps/transfer/types"
-
-	// "github.com/cosmos/cosmos-sdk/x/nft"
-	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
-
-	"github.com/cosmos/cosmos-sdk/runtime"
-	consensuskeeper "github.com/cosmos/cosmos-sdk/x/consensus/keeper"
 )
-
-var keyTableAssigned = false
 
 // RegisterUpgradeHandlers registers upgrade handlers.
 
@@ -50,72 +25,6 @@ func (app App) RegisterUpgradeHandlers() {
 }
 func (app *App) StickyFingers(_ upgradetypes.Plan) {
 	planName := "StickyFingers"
-	// Set param key table for params module migration
-	for _, subspace := range app.ParamsKeeper.GetSubspaces() {
-		subspace := subspace
-
-		var keyTable paramstypes.KeyTable
-
-		switch subspace.Name() {
-		case authtypes.ModuleName:
-			keyTable = authtypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-		case banktypes.ModuleName:
-			keyTable = banktypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-		case stakingtypes.ModuleName:
-			keyTable = stakingtypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-		case minttypes.ModuleName:
-			keyTable = minttypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-		case distrtypes.ModuleName:
-			keyTable = distrtypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-		case slashingtypes.ModuleName:
-			keyTable = slashingtypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-		case govtypes.ModuleName:
-			keyTable = govv1.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-		case crisistypes.ModuleName:
-			keyTable = crisistypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-
-		// ibc types
-		case ibcexported.ModuleName:
-			keyTable = icacontrollertypes.ParamKeyTable()
-			keyTableAssigned = true
-		case ibctransfertypes.ModuleName:
-			keyTable = ibctransfertypes.ParamKeyTable()
-			keyTableAssigned = true
-		case icahosttypes.SubModuleName:
-			keyTable = icahosttypes.ParamKeyTable()
-			keyTableAssigned = true
-		case icacontrollertypes.SubModuleName:
-			keyTable = icacontrollertypes.ParamKeyTable()
-			keyTableAssigned = true
-
-		// Bitcanna types
-		case bcnamoduletypes.ModuleName:
-			keyTable = bcnamoduletypes.ParamKeyTable() //nolint:staticcheck
-			keyTableAssigned = true
-
-		// Debug:
-		default:
-			fmt.Println("No matching subspace found:", subspace.Name())
-			keyTableAssigned = false
-		}
-
-		if !subspace.HasKeyTable() {
-			if !keyTableAssigned {
-				fmt.Println("KeyTable is not assigned for subspace:", subspace.Name())
-			} else {
-				subspace.WithKeyTable(keyTable)
-			}
-		}
-	}
-
 	app.UpgradeKeeper.SetUpgradeHandler(
 		planName,
 		func(ctx context.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
@@ -125,33 +34,8 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 				app.Logger().Info(fmt.Sprintf("Module: %s, Version: %d", moduleName, version))
 
 			}
-			// DEVNET-6 FIX: new consensus params keeper using the wrong key again and move the data into the consensus params keeper with the right key
-			storesvc := runtime.NewKVStoreService(app.GetKey("upgrade"))
-			consensuskeeper := consensuskeeper.NewKeeper(
-				app.appCodec,
-				storesvc,
-				app.AccountKeeper.GetAuthority(),
-				runtime.EventService{},
-			)
 
-			params, err := consensuskeeper.ParamsStore.Get(ctx)
-			app.Logger().Info("Getting the params into the Consensus params keeper...")
-			if err != nil {
-				return nil, err
-			}
-
-			err = app.ConsensusParamsKeeper.ParamsStore.Set(ctx, params)
-			app.Logger().Info("Setting the params into the Consensus params keeper...")
-			if err != nil {
-				return nil, err
-			}
-			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
-			if err != nil {
-				return nil, err
-			}
-			app.Logger().Info(fmt.Sprintf("post migrate version map: %v", versionMap))
-
-			return versionMap, err
+			return app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
 		},
 	)
 	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
@@ -160,7 +44,6 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 	}
 
 	if upgradeInfo.Name == planName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
-		fmt.Printf("Starting storeUpgrades")
 		storeUpgrades := storetypes.StoreUpgrades{
 			Added: []string{
 				circuittypes.ModuleName,
@@ -168,7 +51,6 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 				// nft.ModuleName,
 			},
 		}
-		fmt.Printf("Done storeUpgrades: %+v", storeUpgrades)
 
 		// configure store loader that checks if version == upgradeHeight and applies store upgrades
 		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
