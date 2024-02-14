@@ -411,7 +411,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -456,7 +459,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -466,7 +469,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -496,6 +499,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -661,7 +665,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -706,7 +713,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -716,7 +723,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -746,6 +753,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -851,7 +859,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -896,7 +907,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -906,7 +917,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -936,6 +947,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -1068,7 +1080,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -1113,7 +1128,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -1123,7 +1138,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -1153,6 +1168,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -1262,7 +1278,10 @@ paths:
                           protobuf release, and it is not used for type URLs
                           beginning with
 
-                          type.googleapis.com.
+                          type.googleapis.com. As of May 2023, there are no
+                          widely used type server
+
+                          implementations and no plans to implement one.
 
 
                           Schemes other than `http`, `https` (or the empty
@@ -1307,7 +1326,7 @@ paths:
                             foo = any.unpack(Foo.getDefaultInstance());
                           }
 
-                      Example 3: Pack and unpack a message in Python.
+                       Example 3: Pack and unpack a message in Python.
 
                           foo = Foo(...)
                           any = Any()
@@ -1317,7 +1336,7 @@ paths:
                             any.Unpack(foo)
                             ...
 
-                      Example 4: Pack and unpack a message in Go
+                       Example 4: Pack and unpack a message in Go
 
                            foo := &pb.Foo{...}
                            any, err := anypb.New(foo)
@@ -1347,6 +1366,7 @@ paths:
 
                       JSON
 
+                      ====
 
                       The JSON representation of an `Any` value uses the regular
 
@@ -1484,7 +1504,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -1529,7 +1552,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -1539,7 +1562,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -1569,6 +1592,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -2250,6 +2274,132 @@ paths:
             description: MsgUpdateParams is the Msg/UpdateParams request type.
       tags:
         - Msg
+  /cosmos.crisis.v1beta1.Msg/UpdateParams:
+    post:
+      summary: >-
+        UpdateParams defines a governance operation for updating the x/crisis
+        module
+
+        parameters. The authority is defined in the keeper.
+      description: 'Since: cosmos-sdk 0.47'
+      operationId: CosmosCrisisV1Beta1Msg_UpdateParams
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            description: >-
+              MsgUpdateParamsResponse defines the response structure for
+              executing a
+
+              MsgUpdateParams message.
+
+
+              Since: cosmos-sdk 0.47
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          description: |-
+            MsgUpdateParams is the Msg/UpdateParams request type.
+
+            Since: cosmos-sdk 0.47
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              authority:
+                type: string
+                description: >-
+                  authority is the address that controls the module (defaults to
+                  x/gov unless overwritten).
+              constant_fee:
+                description: constant_fee defines the x/crisis parameter.
+                type: object
+                properties:
+                  denom:
+                    type: string
+                  amount:
+                    type: string
+            description: |-
+              MsgUpdateParams is the Msg/UpdateParams request type.
+
+              Since: cosmos-sdk 0.47
+      tags:
+        - Msg
+  /cosmos.crisis.v1beta1.Msg/VerifyInvariant:
+    post:
+      summary: VerifyInvariant defines a method to verify a particular invariant.
+      operationId: CosmosCrisisV1Beta1Msg_VerifyInvariant
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            description: >-
+              MsgVerifyInvariantResponse defines the Msg/VerifyInvariant
+              response type.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          description: >-
+            MsgVerifyInvariant represents a message to verify a particular
+            invariance.
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              sender:
+                type: string
+                description: >-
+                  sender is the account address of private key to send coins to
+                  fee collector account.
+              invariant_module_name:
+                type: string
+                description: name of the invariant module.
+              invariant_route:
+                type: string
+                description: invariant_route is the msg's invariant route.
+            description: >-
+              MsgVerifyInvariant represents a message to verify a particular
+              invariance.
+      tags:
+        - Msg
   /cosmos.distribution.v1beta1.Msg/CommunityPoolSpend:
     post:
       summary: >-
@@ -2873,7 +3023,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -2918,7 +3071,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -2928,7 +3081,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -2958,6 +3111,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -3064,7 +3218,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -3160,7 +3317,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -3205,7 +3365,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -3215,7 +3375,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -3245,6 +3405,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -3359,7 +3520,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -3458,7 +3622,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -3503,7 +3670,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -3513,7 +3680,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -3543,6 +3710,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -3679,7 +3847,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -3724,7 +3895,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -3734,7 +3905,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -3764,6 +3935,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -3924,7 +4096,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -3969,7 +4144,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -3979,7 +4154,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -4009,6 +4184,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -4145,7 +4321,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -4190,7 +4369,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -4200,7 +4379,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -4230,6 +4409,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -4386,7 +4566,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -4431,7 +4614,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -4441,7 +4624,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -4471,6 +4654,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -4573,7 +4757,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -4677,7 +4864,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -4722,7 +4912,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -4732,7 +4922,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -4762,6 +4952,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -4866,7 +5057,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -4911,7 +5105,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -4921,7 +5115,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -4951,6 +5145,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -5125,7 +5320,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -5170,7 +5368,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -5180,7 +5378,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -5210,6 +5408,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -5476,7 +5675,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -5521,7 +5723,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -5531,7 +5733,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -5561,6 +5763,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -5708,7 +5911,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -5753,7 +5959,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -5763,7 +5969,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -5793,6 +5999,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -5952,7 +6159,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -5997,7 +6207,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -6007,7 +6217,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -6037,6 +6247,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -6196,7 +6407,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -6241,7 +6455,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -6251,7 +6465,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -6281,6 +6495,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -6383,7 +6598,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -6497,7 +6715,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -6542,7 +6763,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -6552,7 +6773,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -6582,6 +6803,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -6730,7 +6952,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -6775,7 +7000,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -6785,7 +7010,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -6815,6 +7040,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -7321,7 +7547,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -7366,7 +7595,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -7376,7 +7605,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -7406,6 +7635,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -7566,7 +7796,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -7611,7 +7844,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -7621,7 +7854,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -7651,6 +7884,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -7805,7 +8039,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -7850,7 +8087,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -7860,7 +8097,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -7890,6 +8127,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -8049,7 +8287,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -8094,7 +8335,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -8104,7 +8345,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -8134,6 +8375,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -8265,7 +8507,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -8310,7 +8555,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -8320,7 +8565,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -8350,6 +8595,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -8502,7 +8748,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -8547,7 +8796,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -8557,7 +8806,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -8587,6 +8836,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -8775,7 +9025,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -8820,7 +9073,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -8830,7 +9083,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -8860,6 +9113,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -9020,7 +9274,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -9065,7 +9322,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -9075,7 +9332,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -9105,6 +9362,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -9286,7 +9544,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -9331,7 +9592,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -9341,7 +9602,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -9371,6 +9632,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -9582,7 +9844,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -9627,7 +9892,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -9637,7 +9902,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -9667,6 +9932,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -9901,7 +10167,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -9946,7 +10215,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -9956,7 +10225,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -9986,6 +10255,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -10137,7 +10407,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -10182,7 +10455,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -10192,7 +10465,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -10222,6 +10495,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -14645,7 +14919,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -14690,7 +14967,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -14700,7 +14977,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -14730,6 +15007,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -14827,7 +15105,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -14872,7 +15153,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -14882,7 +15163,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -14912,6 +15193,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -15003,7 +15285,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -15097,7 +15382,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -15142,7 +15430,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -15152,7 +15440,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -15182,6 +15470,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -15333,7 +15622,10 @@ paths:
                           protobuf release, and it is not used for type URLs
                           beginning with
 
-                          type.googleapis.com.
+                          type.googleapis.com. As of May 2023, there are no
+                          widely used type server
+
+                          implementations and no plans to implement one.
 
 
                           Schemes other than `http`, `https` (or the empty
@@ -15420,7 +15712,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -15514,7 +15809,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -15559,7 +15857,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -15569,7 +15867,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -15599,6 +15897,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -15747,7 +16046,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -15792,7 +16094,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -15802,7 +16104,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -15832,6 +16134,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -15939,7 +16242,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -15984,7 +16290,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -15994,7 +16300,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -16024,6 +16330,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -16147,7 +16454,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -16192,7 +16502,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -16202,7 +16512,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -16232,6 +16542,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -16337,7 +16648,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -16382,7 +16696,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -16392,7 +16706,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -16422,6 +16736,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -16541,7 +16856,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -16586,7 +16904,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -16596,7 +16914,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -16626,6 +16944,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -16778,7 +17097,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -16823,7 +17145,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -16833,7 +17155,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -16863,6 +17185,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -16963,7 +17286,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -17008,7 +17334,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -17018,7 +17344,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -17048,6 +17374,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -17139,7 +17466,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -17184,7 +17514,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -17194,7 +17524,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -17224,6 +17554,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -17353,7 +17684,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -17398,7 +17732,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -17408,7 +17742,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -17438,6 +17772,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -17557,7 +17892,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -17602,7 +17940,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -17612,7 +17950,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -17642,6 +17980,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -17856,7 +18195,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -17901,7 +18243,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -17911,7 +18253,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -17941,6 +18283,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -18123,7 +18466,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -18168,7 +18514,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -18178,7 +18524,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -18208,6 +18554,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -18398,7 +18745,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -18443,7 +18793,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -18453,7 +18803,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -18483,6 +18833,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -18591,7 +18942,10 @@ paths:
                       protobuf release, and it is not used for type URLs
                       beginning with
 
-                      type.googleapis.com.
+                      type.googleapis.com. As of May 2023, there are no widely
+                      used type server
+
+                      implementations and no plans to implement one.
 
 
                       Schemes other than `http`, `https` (or the empty scheme)
@@ -18636,7 +18990,7 @@ paths:
                         foo = any.unpack(Foo.getDefaultInstance());
                       }
 
-                  Example 3: Pack and unpack a message in Python.
+                   Example 3: Pack and unpack a message in Python.
 
                       foo = Foo(...)
                       any = Any()
@@ -18646,7 +19000,7 @@ paths:
                         any.Unpack(foo)
                         ...
 
-                  Example 4: Pack and unpack a message in Go
+                   Example 4: Pack and unpack a message in Go
 
                        foo := &pb.Foo{...}
                        any, err := anypb.New(foo)
@@ -18676,6 +19030,7 @@ paths:
 
                   JSON
 
+                  ====
 
                   The JSON representation of an `Any` value uses the regular
 
@@ -18945,7 +19300,10 @@ paths:
                         protobuf release, and it is not used for type URLs
                         beginning with
 
-                        type.googleapis.com.
+                        type.googleapis.com. As of May 2023, there are no widely
+                        used type server
+
+                        implementations and no plans to implement one.
 
 
                         Schemes other than `http`, `https` (or the empty scheme)
@@ -18990,7 +19348,7 @@ paths:
                           foo = any.unpack(Foo.getDefaultInstance());
                         }
 
-                    Example 3: Pack and unpack a message in Python.
+                     Example 3: Pack and unpack a message in Python.
 
                         foo = Foo(...)
                         any = Any()
@@ -19000,7 +19358,7 @@ paths:
                           any.Unpack(foo)
                           ...
 
-                    Example 4: Pack and unpack a message in Go
+                     Example 4: Pack and unpack a message in Go
 
                          foo := &pb.Foo{...}
                          any, err := anypb.New(foo)
@@ -19030,6 +19388,7 @@ paths:
 
                     JSON
 
+                    ====
 
                     The JSON representation of an `Any` value uses the regular
 
@@ -19256,7 +19615,10 @@ definitions:
 
           protobuf release, and it is not used for type URLs beginning with
 
-          type.googleapis.com.
+          type.googleapis.com. As of May 2023, there are no widely used type
+          server
+
+          implementations and no plans to implement one.
 
 
           Schemes other than `http`, `https` (or the empty scheme) might be
@@ -19298,7 +19660,7 @@ definitions:
             foo = any.unpack(Foo.getDefaultInstance());
           }
 
-      Example 3: Pack and unpack a message in Python.
+       Example 3: Pack and unpack a message in Python.
 
           foo = Foo(...)
           any = Any()
@@ -19308,7 +19670,7 @@ definitions:
             any.Unpack(foo)
             ...
 
-      Example 4: Pack and unpack a message in Go
+       Example 4: Pack and unpack a message in Go
 
            foo := &pb.Foo{...}
            any, err := anypb.New(foo)
@@ -19334,6 +19696,7 @@ definitions:
 
       JSON
 
+      ====
 
       The JSON representation of an `Any` value uses the regular
 
@@ -19425,7 +19788,10 @@ definitions:
                 protobuf release, and it is not used for type URLs beginning
                 with
 
-                type.googleapis.com.
+                type.googleapis.com. As of May 2023, there are no widely used
+                type server
+
+                implementations and no plans to implement one.
 
 
                 Schemes other than `http`, `https` (or the empty scheme) might
@@ -19470,7 +19836,7 @@ definitions:
                   foo = any.unpack(Foo.getDefaultInstance());
                 }
 
-            Example 3: Pack and unpack a message in Python.
+             Example 3: Pack and unpack a message in Python.
 
                 foo = Foo(...)
                 any = Any()
@@ -19480,7 +19846,7 @@ definitions:
                   any.Unpack(foo)
                   ...
 
-            Example 4: Pack and unpack a message in Go
+             Example 4: Pack and unpack a message in Go
 
                  foo := &pb.Foo{...}
                  any, err := anypb.New(foo)
@@ -19506,6 +19872,7 @@ definitions:
 
             JSON
 
+            ====
 
             The JSON representation of an `Any` value uses the regular
 
@@ -19649,7 +20016,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -19692,7 +20062,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -19702,7 +20072,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -19728,6 +20098,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -19829,7 +20200,10 @@ definitions:
                 protobuf release, and it is not used for type URLs beginning
                 with
 
-                type.googleapis.com.
+                type.googleapis.com. As of May 2023, there are no widely used
+                type server
+
+                implementations and no plans to implement one.
 
 
                 Schemes other than `http`, `https` (or the empty scheme) might
@@ -19874,7 +20248,7 @@ definitions:
                   foo = any.unpack(Foo.getDefaultInstance());
                 }
 
-            Example 3: Pack and unpack a message in Python.
+             Example 3: Pack and unpack a message in Python.
 
                 foo = Foo(...)
                 any = Any()
@@ -19884,7 +20258,7 @@ definitions:
                   any.Unpack(foo)
                   ...
 
-            Example 4: Pack and unpack a message in Go
+             Example 4: Pack and unpack a message in Go
 
                  foo := &pb.Foo{...}
                  any, err := anypb.New(foo)
@@ -19910,6 +20284,7 @@ definitions:
 
             JSON
 
+            ====
 
             The JSON representation of an `Any` value uses the regular
 
@@ -20022,7 +20397,10 @@ definitions:
                   protobuf release, and it is not used for type URLs beginning
                   with
 
-                  type.googleapis.com.
+                  type.googleapis.com. As of May 2023, there are no widely used
+                  type server
+
+                  implementations and no plans to implement one.
 
 
                   Schemes other than `http`, `https` (or the empty scheme) might
@@ -20067,7 +20445,7 @@ definitions:
                     foo = any.unpack(Foo.getDefaultInstance());
                   }
 
-              Example 3: Pack and unpack a message in Python.
+               Example 3: Pack and unpack a message in Python.
 
                   foo = Foo(...)
                   any = Any()
@@ -20077,7 +20455,7 @@ definitions:
                     any.Unpack(foo)
                     ...
 
-              Example 4: Pack and unpack a message in Go
+               Example 4: Pack and unpack a message in Go
 
                    foo := &pb.Foo{...}
                    any, err := anypb.New(foo)
@@ -20104,6 +20482,7 @@ definitions:
 
               JSON
 
+              ====
 
               The JSON representation of an `Any` value uses the regular
 
@@ -20701,6 +21080,26 @@ definitions:
     description: |-
       ValidatorParams restrict the public key types validators can use.
       NOTE: uses ABCI pubkey naming, not Amino names.
+  cosmos.crisis.v1beta1.MsgUpdateParams:
+    type: object
+    properties:
+      authority:
+        type: string
+        description: >-
+          authority is the address that controls the module (defaults to x/gov
+          unless overwritten).
+      constant_fee:
+        description: constant_fee defines the x/crisis parameter.
+        type: object
+        properties:
+          denom:
+            type: string
+          amount:
+            type: string
+    description: |-
+      MsgUpdateParams is the Msg/UpdateParams request type.
+
+      Since: cosmos-sdk 0.47
   cosmos.crisis.v1beta1.MsgUpdateParamsResponse:
     type: object
     description: |-
@@ -20708,6 +21107,21 @@ definitions:
       MsgUpdateParams message.
 
       Since: cosmos-sdk 0.47
+  cosmos.crisis.v1beta1.MsgVerifyInvariant:
+    type: object
+    properties:
+      sender:
+        type: string
+        description: >-
+          sender is the account address of private key to send coins to fee
+          collector account.
+      invariant_module_name:
+        type: string
+        description: name of the invariant module.
+      invariant_route:
+        type: string
+        description: invariant_route is the msg's invariant route.
+    description: MsgVerifyInvariant represents a message to verify a particular invariance.
   cosmos.crisis.v1beta1.MsgVerifyInvariantResponse:
     type: object
     description: MsgVerifyInvariantResponse defines the Msg/VerifyInvariant response type.
@@ -21012,7 +21426,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -21093,7 +21510,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -21263,7 +21683,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -21338,7 +21761,10 @@ definitions:
                 protobuf release, and it is not used for type URLs beginning
                 with
 
-                type.googleapis.com.
+                type.googleapis.com. As of May 2023, there are no widely used
+                type server
+
+                implementations and no plans to implement one.
 
 
                 Schemes other than `http`, `https` (or the empty scheme) might
@@ -21383,7 +21809,7 @@ definitions:
                   foo = any.unpack(Foo.getDefaultInstance());
                 }
 
-            Example 3: Pack and unpack a message in Python.
+             Example 3: Pack and unpack a message in Python.
 
                 foo = Foo(...)
                 any = Any()
@@ -21393,7 +21819,7 @@ definitions:
                   any.Unpack(foo)
                   ...
 
-            Example 4: Pack and unpack a message in Go
+             Example 4: Pack and unpack a message in Go
 
                  foo := &pb.Foo{...}
                  any, err := anypb.New(foo)
@@ -21419,6 +21845,7 @@ definitions:
 
             JSON
 
+            ====
 
             The JSON representation of an `Any` value uses the regular
 
@@ -21957,7 +22384,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -22523,7 +22953,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -22566,7 +22999,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -22576,7 +23009,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -22602,6 +23035,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -24762,7 +25196,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -24825,7 +25262,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -24868,7 +25308,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -24878,7 +25318,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -24904,6 +25344,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -24987,7 +25428,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -25108,7 +25552,10 @@ definitions:
                   protobuf release, and it is not used for type URLs beginning
                   with
 
-                  type.googleapis.com.
+                  type.googleapis.com. As of May 2023, there are no widely used
+                  type server
+
+                  implementations and no plans to implement one.
 
 
                   Schemes other than `http`, `https` (or the empty scheme) might
@@ -25191,7 +25638,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -25289,7 +25739,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -25332,7 +25785,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -25342,7 +25795,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -25368,6 +25821,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -25467,7 +25921,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -25510,7 +25967,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -25520,7 +25977,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -25546,6 +26003,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -25672,7 +26130,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -25715,7 +26176,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -25725,7 +26186,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -25751,6 +26212,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -25836,7 +26298,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -25879,7 +26344,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -25889,7 +26354,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -25915,6 +26380,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -26097,7 +26563,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -26140,7 +26609,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -26150,7 +26619,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -26176,6 +26645,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
@@ -26487,7 +26957,10 @@ definitions:
 
               protobuf release, and it is not used for type URLs beginning with
 
-              type.googleapis.com.
+              type.googleapis.com. As of May 2023, there are no widely used type
+              server
+
+              implementations and no plans to implement one.
 
 
               Schemes other than `http`, `https` (or the empty scheme) might be
@@ -26530,7 +27003,7 @@ definitions:
                 foo = any.unpack(Foo.getDefaultInstance());
               }
 
-          Example 3: Pack and unpack a message in Python.
+           Example 3: Pack and unpack a message in Python.
 
               foo = Foo(...)
               any = Any()
@@ -26540,7 +27013,7 @@ definitions:
                 any.Unpack(foo)
                 ...
 
-          Example 4: Pack and unpack a message in Go
+           Example 4: Pack and unpack a message in Go
 
                foo := &pb.Foo{...}
                any, err := anypb.New(foo)
@@ -26566,6 +27039,7 @@ definitions:
 
           JSON
 
+          ====
 
           The JSON representation of an `Any` value uses the regular
 
