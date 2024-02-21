@@ -35,6 +35,7 @@ In the next section you will find the params for P2P and a *step by step* guide 
 | 19th Apr 2023 14h UTC   | 1.831.901   | v2.0.1-rc6   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.1-rc6/bcna_linux_amd64.tar.gz) | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.1-rc6) |
 | 9th Nov 2023 14h UTC   | xxxxxxx420   | v3.0.0-rc3   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.0-rc3/bcna_linux_amd64.tar.gz) | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.0-rc3) |
 | No break consensus   | x   | v3.0.1-rc1   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.1-rc1/bcna_linux_amd64.tar.gz) | x |
+| No break consensus   | x   | v3.0.2-rc1   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.2-rc1/bcna_linux_amd64.tar.gz) | x |
 
 #### More DEVNET-1 resources
 * [Link to AWESOME doc](awesome.md)
