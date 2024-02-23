@@ -81,13 +81,13 @@ This guide explains how to download the pre-compiled binary. If you want to buil
 ```
 cd ~
 rm -f bcnad #remove the previous downloads
-wget https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.0-rc3/bcna_linux_amd64.tar.gz
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.2/bcna_linux_amd64.tar.gz
 ```
 Check the sha256sum.
 ```
 sha256sum ./bcna_linux_amd64.tar.gz
 ```
-> It must return: `68764582fea71f3ff721a69fe760cbbfb22941df229b9230989e667f0c94f183`
+> It must return: `92547040144107bd71a20f7b6455ca4117f4fbd4476ad25c94721339b94fbd9a`
 
 Verify that you have the correct version.
 ```
@@ -96,7 +96,7 @@ rm bcna_linux_amd64.tar.gz
 chmod +x ./bcnad
 ./bcnad version
 ```
-> It must return: **`v3.0.0-rc3`**
+> It must return: **`v3.0.2`**
 
 Move the newly built binary to the designated upgrade directory.
 > If you have build the binary from the source, replace `./bcnad` with the correct path.
@@ -172,7 +172,7 @@ Show Cosmovisor's version.
 ```
 cosmovisor run version
 ``` 
-This will be **`v2.0.1` before** the upgrade and **`v3.0.0-rc3` after** the upgrade.
+This will be **`v2.0.1` before** the upgrade and **`v3.0.2` after** the upgrade.
 
 The output should look like this:
  ```
