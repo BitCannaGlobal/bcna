@@ -119,6 +119,9 @@ import (
 	bcnamodule "github.com/BitCannaGlobal/bcna/x/bcna"
 	bcnamodulekeeper "github.com/BitCannaGlobal/bcna/x/bcna/keeper"
 	bcnamoduletypes "github.com/BitCannaGlobal/bcna/x/bcna/types"
+	burnmodule "github.com/BitCannaGlobal/bcna/x/burn"
+	burnmodulekeeper "github.com/BitCannaGlobal/bcna/x/burn/keeper"
+	burnmoduletypes "github.com/BitCannaGlobal/bcna/x/burn/types"
 
 	appparams "github.com/BitCannaGlobal/bcna/app/params"
 	"github.com/BitCannaGlobal/bcna/docs"
@@ -176,6 +179,7 @@ var (
 		vesting.AppModuleBasic{},
 		consensus.AppModuleBasic{},
 		bcnamodule.AppModuleBasic{},
+		burnmodule.AppModuleBasic{},
 	)
 
 	// module account permissions
@@ -188,6 +192,7 @@ var (
 		stakingtypes.NotBondedPoolName: {authtypes.Burner, authtypes.Staking},
 		govtypes.ModuleName:            {authtypes.Burner},
 		ibctransfertypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
+		burnmoduletypes.ModuleName:     {authtypes.Minter, authtypes.Burner, authtypes.Staking},
 		// nft.ModuleName:                 nil,
 	}
 )
@@ -253,6 +258,7 @@ type App struct {
 
 	// Custom module keepers
 	BcnaKeeper bcnamodulekeeper.Keeper
+	BurnKeeper burnmodulekeeper.Keeper
 
 	// mm is the module manager
 	mm *module.Manager
@@ -315,6 +321,7 @@ func New(
 		// nftkeeper.StoreKey,
 		consensusparamtypes.StoreKey,
 		bcnamoduletypes.StoreKey,
+		burnmoduletypes.StoreKey,
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey)
 	memKeys := sdk.NewMemoryStoreKeys(capabilitytypes.MemStoreKey)
@@ -568,6 +575,16 @@ func New(
 	)
 	bcnaModule := bcnamodule.NewAppModule(appCodec, app.BcnaKeeper, app.AccountKeeper, app.BankKeeper)
 
+	app.BurnKeeper = *burnmodulekeeper.NewKeeper(
+		appCodec,
+		keys[burnmoduletypes.StoreKey],
+		keys[burnmoduletypes.MemStoreKey],
+		app.GetSubspace(burnmoduletypes.ModuleName),
+
+		app.BankKeeper,
+	)
+	burnModule := burnmodule.NewAppModule(appCodec, app.BurnKeeper, app.AccountKeeper, app.BankKeeper)
+
 	// Create static IBC router, add transfer route, then set and seal it
 	ibcRouter := ibcporttypes.NewRouter()
 	ibcRouter.AddRoute(icahosttypes.SubModuleName, icaHostIBCModule).
@@ -625,6 +642,7 @@ func New(
 		icaModule,
 		consensus.NewAppModule(appCodec, app.ConsensusParamsKeeper),
 		bcnaModule,
+		burnModule,
 	)
 
 	// During begin block slashing happens after distr.BeginBlocker so that
@@ -656,6 +674,7 @@ func New(
 		vestingtypes.ModuleName,
 		consensusparamtypes.ModuleName,
 		bcnamoduletypes.ModuleName,
+		burnmoduletypes.ModuleName,
 	)
 
 	app.mm.SetOrderEndBlockers(
@@ -682,6 +701,7 @@ func New(
 		vestingtypes.ModuleName,
 		consensusparamtypes.ModuleName,
 		bcnamoduletypes.ModuleName,
+		burnmoduletypes.ModuleName,
 	)
 
 	// NOTE: The genutils module must occur after staking so that pools are
@@ -713,6 +733,7 @@ func New(
 		vestingtypes.ModuleName,
 		consensusparamtypes.ModuleName,
 		bcnamoduletypes.ModuleName,
+		burnmoduletypes.ModuleName,
 	}
 	app.mm.SetOrderInitGenesis(genesisModuleOrder...)
 	app.mm.SetOrderExportGenesis(genesisModuleOrder...)
@@ -942,6 +963,7 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(icacontrollertypes.SubModuleName)
 	paramsKeeper.Subspace(icahosttypes.SubModuleName)
 	paramsKeeper.Subspace(bcnamoduletypes.ModuleName)
+	paramsKeeper.Subspace(burnmoduletypes.ModuleName)
 	// paramsKeeper.Subspace(nft.ModuleName)
 
 	return paramsKeeper
