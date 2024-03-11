@@ -1,8 +1,10 @@
 package types
 
 import (
+	"errors"
+	"fmt"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
 const TypeMsgBurnCoinsAction = "burn_coins_action"
@@ -40,7 +42,7 @@ func (msg *MsgBurnCoinsAction) GetSignBytes() []byte {
 func (msg *MsgBurnCoinsAction) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
 	return nil
 }
