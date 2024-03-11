@@ -30,6 +30,11 @@
         "id": "d1d43cc7c7aef715957289fd96a114ecaa7ba756",
         "address": "testnet-seeds.nodex.one:22910",
         "provider": "NodeX Emperor"
+      },
+      {
+        "id": "496ac0ba20188f70f41e0a814dfd4d9a617338f8",
+        "address": "bcnadev-seed.ibs.team:16656",
+        "provider": "Inter Blockchain Services"
       }
     ],
     "persistent_peers": [
@@ -112,7 +117,7 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "https://bcnadev-rpc.ibs.team",
+        "address": "https://bcna-testnet-rpc.ibs.team",
         "provider": "Inter Blockchain Services"
       },
       {
@@ -216,7 +221,7 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "https://bcnadev-api.ibs.team",
+        "address": "https://bcna-testnet-api.ibs.team",
         "provider": "Inter Blockchain Services"
       },
       {
