@@ -3,10 +3,10 @@ package types
 // DONTCOVER
 
 import (
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	sdkioerrors "cosmossdk.io/errors"
 )
 
 // x/burn module sentinel errors
 var (
-	ErrSample = sdkerrors.Register(ModuleName, 1100, "sample error")
+	ErrSample = sdkioerrors.Register(ModuleName, 1101, "Custom error")
 )
