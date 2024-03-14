@@ -24,6 +24,7 @@ import (
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
 	bcnamoduletypes "github.com/BitCannaGlobal/bcna/x/bcna/types"
+	burnmoduletypes "github.com/BitCannaGlobal/bcna/x/burn/types"
 
 	icacontrollertypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/controller/types"
 	icahosttypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/host/types"
@@ -98,6 +99,11 @@ func (app *App) GanjaRevolution47(_ upgradetypes.Plan) {
 
 		// Bitcanna types
 		case bcnamoduletypes.ModuleName:
+			keyTable = bcnamoduletypes.ParamKeyTable() //nolint:staticcheck
+			keyTableAssigned = true
+
+		// BurnModule types
+		case burnmoduletypes.ModuleName:
 			keyTable = bcnamoduletypes.ParamKeyTable() //nolint:staticcheck
 			keyTableAssigned = true
 
