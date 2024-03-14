@@ -46,7 +46,45 @@ func (app App) RegisterUpgradeHandlers() {
 	}
 
 	app.GanjaRevolution47(upgradeInfo)
+	app.GanjaRevolution47_burn(upgradeInfo)
 
+}
+
+func (app *App) GanjaRevolution47_burn(_ upgradetypes.Plan) {
+	planName := "ganjarevolutionburn"
+	app.UpgradeKeeper.SetUpgradeHandler(planName, func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
+		ctx.Logger().Info("start to run module migrations...adding x/burn module...")
+		logger := ctx.Logger().With("upgrade", planName)
+
+		// Run migrations
+		logger.Info(fmt.Sprintf("pre migrate version map: %v", fromVM))
+		versionMap, err := app.mm.RunMigrations(ctx, app.configurator, fromVM)
+		if err != nil {
+			return nil, err
+		}
+		logger.Info(fmt.Sprintf("post migrate version map: %v", versionMap))
+
+		return versionMap, err
+		// return app.mm.RunMigrations(ctx, app.configurator, fromVM)
+	})
+
+	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
+	if err != nil {
+		panic(err)
+	}
+
+	if upgradeInfo.Name == planName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
+		storeUpgrades := storetypes.StoreUpgrades{
+			Added: []string{
+
+				burnmoduletypes.ModuleName,
+				// nft.ModuleName,
+			},
+		}
+
+		// Configure store loader that checks if version == upgradeHeight and applies store upgrades
+		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
+	}
 }
 
 func (app *App) GanjaRevolution47(_ upgradetypes.Plan) {
