@@ -11,8 +11,6 @@ import (
 	burnmoduletypes "github.com/BitCannaGlobal/bcna/x/burn/types"
 )
 
-var keyTableAssigned = false
-
 // RegisterUpgradeHandlers registers upgrade handlers.
 
 func (app App) RegisterUpgradeHandlers() {
@@ -61,5 +59,3 @@ func (app *App) GanjaRevolution47_burn(_ upgradetypes.Plan) {
 		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
 	}
 }
-
-// app.IBCKeeper.ClientKeeper
