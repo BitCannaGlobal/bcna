@@ -42,6 +42,8 @@ func (k msgServer) BurnCoinsAction(goCtx context.Context, msg *types.MsgBurnCoin
 	if err := k.bankKeeper.BurnCoins(ctx, types.ModuleName, msg.Coins); err != nil {
 		return nil, err
 	}
+	// Log the successful burn operation
+	k.Logger(ctx).Info("Burning coins!! ", "signer", msg.Creator, "amount", msg.Coins)
 
 	return &types.MsgBurnCoinsActionResponse{}, nil
 }
