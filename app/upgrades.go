@@ -54,11 +54,6 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 			Added: []string{
 				circuittypes.ModuleName,
 				ibcfeetypes.ModuleName,
-				// ibctm.ModuleName,
-				// solomachine.ModuleName,
-				// runtime.ModuleName,
-				// "ibc-interchainaccounts",
-				// nft.ModuleName,
 			},
 		}
 

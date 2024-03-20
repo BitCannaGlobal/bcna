@@ -334,6 +334,7 @@ func New(
 
 	app.ModuleManager.RegisterInvariants(app.CrisisKeeper)
 
+	app.RegisterUpgradeHandlers()
 	// create the simulation manager and define the order of the modules for deterministic simulations
 	//
 	// NOTE: this is not required apps that don't use the simulator for fuzz testing transactions
@@ -357,7 +358,7 @@ func New(
 	if err := app.Load(loadLatest); err != nil {
 		return nil, err
 	}
-
+	app.logStoreKeys()
 	return app, nil
 }
 
@@ -412,6 +413,31 @@ func (app *App) kvStoreKeys() map[string]*storetypes.KVStoreKey {
 func (app *App) GetSubspace(moduleName string) paramstypes.Subspace {
 	subspace, _ := app.ParamsKeeper.GetSubspace(moduleName)
 	return subspace
+}
+
+// memStoreKeys returns all the memory store keys registered inside App.
+func (app *App) memStoreKeys() map[string]*storetypes.MemoryStoreKey {
+	keys := make(map[string]*storetypes.MemoryStoreKey)
+	for _, k := range app.GetStoreKeys() {
+		if memKey, ok := k.(*storetypes.MemoryStoreKey); ok {
+			keys[memKey.Name()] = memKey
+		}
+	}
+	return keys
+}
+func (app *App) logStoreKeys() {
+	kvStoreKeys := app.kvStoreKeys()
+	memStoreKeys := app.memStoreKeys() // Ahora usando la nueva función memStoreKeys()
+
+	app.Logger().Info("Listando KVStoreKeys registradas:")
+	for name := range kvStoreKeys {
+		app.Logger().Info("KVStoreKey registrada", "nombre", name)
+	}
+
+	app.Logger().Info("Listando MemoryStoreKeys registradas:")
+	for name := range memStoreKeys {
+		app.Logger().Info("MemoryStoreKey registrada", "nombre", name)
+	}
 }
 
 // GetIBCKeeper returns the IBC keeper.
