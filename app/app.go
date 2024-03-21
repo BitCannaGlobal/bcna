@@ -358,7 +358,7 @@ func New(
 	if err := app.Load(loadLatest); err != nil {
 		return nil, err
 	}
-	app.logStoreKeys()
+	// app.logStoreKeys()  <- Only for Debug
 	return app, nil
 }
 
@@ -415,30 +415,30 @@ func (app *App) GetSubspace(moduleName string) paramstypes.Subspace {
 	return subspace
 }
 
-// memStoreKeys returns all the memory store keys registered inside App.
-func (app *App) memStoreKeys() map[string]*storetypes.MemoryStoreKey {
-	keys := make(map[string]*storetypes.MemoryStoreKey)
-	for _, k := range app.GetStoreKeys() {
-		if memKey, ok := k.(*storetypes.MemoryStoreKey); ok {
-			keys[memKey.Name()] = memKey
-		}
-	}
-	return keys
-}
-func (app *App) logStoreKeys() {
-	kvStoreKeys := app.kvStoreKeys()
-	memStoreKeys := app.memStoreKeys() // Ahora usando la nueva función memStoreKeys()
+// memStoreKeys returns all the memory store keys registered inside App. Only for DEBUG
+// func (app *App) memStoreKeys() map[string]*storetypes.MemoryStoreKey {
+// 	keys := make(map[string]*storetypes.MemoryStoreKey)
+// 	for _, k := range app.GetStoreKeys() {
+// 		if memKey, ok := k.(*storetypes.MemoryStoreKey); ok {
+// 			keys[memKey.Name()] = memKey
+// 		}
+// 	}
+// 	return keys
+// }
+// func (app *App) logStoreKeys() {
+// 	kvStoreKeys := app.kvStoreKeys()
+// 	memStoreKeys := app.memStoreKeys() // Ahora usando la nueva función memStoreKeys()
 
-	app.Logger().Info("Listando KVStoreKeys registradas:")
-	for name := range kvStoreKeys {
-		app.Logger().Info("KVStoreKey registrada", "nombre", name)
-	}
+// 	app.Logger().Info("Listando KVStoreKeys registradas:")
+// 	for name := range kvStoreKeys {
+// 		app.Logger().Info("KVStoreKey registrada", "nombre", name)
+// 	}
 
-	app.Logger().Info("Listando MemoryStoreKeys registradas:")
-	for name := range memStoreKeys {
-		app.Logger().Info("MemoryStoreKey registrada", "nombre", name)
-	}
-}
+// 	app.Logger().Info("Listando MemoryStoreKeys registradas:")
+// 	for name := range memStoreKeys {
+// 		app.Logger().Info("MemoryStoreKey registrada", "nombre", name)
+// 	}
+// }
 
 // GetIBCKeeper returns the IBC keeper.
 func (app *App) GetIBCKeeper() *ibckeeper.Keeper {
