@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"fmt"
 	"strconv"
 
 	"github.com/BitCannaGlobal/bcna/x/burn/types"
@@ -19,14 +20,14 @@ func CmdBurnCoinsAction() *cobra.Command {
 		Short: "Broadcast message BurnCoinsAction",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) (err error) {
-			argCoins, err := sdk.ParseCoinsNormalized(args[0])
+			argCoins, err := sdk.ParseCoinNormalized(args[0])
 			if err != nil {
-				return err
+				return fmt.Errorf("failed to parse coin: %w", err)
 			}
 
 			clientCtx, err := client.GetClientTxContext(cmd)
 			if err != nil {
-				return err
+				return fmt.Errorf("failed to get client context: %w", err)
 			}
 
 			msg := types.NewMsgBurnCoinsAction(
@@ -34,7 +35,7 @@ func CmdBurnCoinsAction() *cobra.Command {
 				argCoins,
 			)
 			if err := msg.ValidateBasic(); err != nil {
-				return err
+				return fmt.Errorf("message validation failed: %w", err)
 			}
 			return tx.GenerateOrBroadcastTxCLI(clientCtx, cmd.Flags(), msg)
 		},

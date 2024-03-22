@@ -11,10 +11,10 @@ const TypeMsgBurnCoinsAction = "burn_coins_action"
 
 var _ sdk.Msg = &MsgBurnCoinsAction{}
 
-func NewMsgBurnCoinsAction(creator string, coins sdk.Coins) *MsgBurnCoinsAction {
+func NewMsgBurnCoinsAction(creator string, amount sdk.Coin) *MsgBurnCoinsAction {
 	return &MsgBurnCoinsAction{
 		Creator: creator,
-		Coins:   coins,
+		Amount:  amount,
 	}
 }
 
@@ -39,10 +39,13 @@ func (msg *MsgBurnCoinsAction) GetSignBytes() []byte {
 	return sdk.MustSortJSON(bz)
 }
 
-func (msg *MsgBurnCoinsAction) ValidateBasic() error {
+func (msg *MsgBurnCoinsAction) ValidateBasic() error { // TODO call IsValid and IsAllPositive
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
 		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
+	}
+	if msg.Amount.IsNegative() || msg.Amount.IsZero() {
+		return fmt.Errorf("amount must be positive")
 	}
 	return nil
 }
