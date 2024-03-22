@@ -29,7 +29,7 @@ func (k msgServer) BurnCoinsAction(goCtx context.Context, msg *types.MsgBurnCoin
 	// Gets the balance of the sender to check if are there enough coins.
 	balance := k.bankKeeper.GetBalance(ctx, creatorAddr, msg.Amount.Denom)
 	if balance.Amount.LT(msg.Amount.Amount) {
-		return nil, fmt.Errorf("insufficient balance for %s", msg.Amount.Denom)
+		return nil, fmt.Errorf("insufficient balance for %s", creatorAddr)
 	}
 
 	// Send the coins from the creator to the module and later it burns
