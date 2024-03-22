@@ -39,13 +39,13 @@ func (msg *MsgBurnCoinsAction) GetSignBytes() []byte {
 	return sdk.MustSortJSON(bz)
 }
 
-func (msg *MsgBurnCoinsAction) ValidateBasic() error { // TODO call IsValid and IsAllPositive
+func (msg *MsgBurnCoinsAction) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
 		return fmt.Errorf("invalid creator address: %v: %w", err, errors.New("invalid address"))
 	}
-	if msg.Amount.IsNegative() || msg.Amount.IsZero() {
-		return fmt.Errorf("amount must be positive")
+	if msg.Amount.IsNegative() || msg.Amount.IsZero() || !msg.Amount.IsValid() {
+		return fmt.Errorf("amount must be positive or valid")
 	}
 	return nil
 }
