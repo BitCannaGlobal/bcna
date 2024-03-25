@@ -12,8 +12,8 @@ service Msg {
   rpc BurnCoinsAction (MsgBurnCoinsAction) returns (MsgBurnCoinsActionResponse);
 }
 message MsgBurnCoinsAction {
-           string                   creator = 1;
-  repeated cosmos.base.v1beta1.Coin coins   = 2 [(gogoproto.nullable) = false];
+  string                            creator = 1;
+  cosmos.base.v1beta1.Coin amount = 2 [(gogoproto.nullable) = false]; // Now is only one coin not a list of coins
 }
 
 message MsgBurnCoinsActionResponse {}

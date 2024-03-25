@@ -8,5 +8,6 @@ option go_package = "github.com/BitCannaGlobal/bcna/x/burn/types";
 // Params defines the parameters for the module.
 message Params {
   option (gogoproto.goproto_stringer) = false;
+  string burn_denom = 1; // denom allowed to be burned
   
 }

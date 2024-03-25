@@ -19,14 +19,14 @@ func TestMsgBurnCoinsAction_ValidateBasic(t *testing.T) {
 			name: "invalid address",
 			msg: MsgBurnCoinsAction{
 				Creator: "invalid_address",
-				Coins:   sdk.Coins{sdk.NewInt64Coin("testcoin", 1000)},
+				Amount:  sdk.NewInt64Coin("testcoin", 1000),
 			},
 			err: sdkerrors.ErrInvalidAddress,
 		}, {
 			name: "valid address",
 			msg: MsgBurnCoinsAction{
 				Creator: sample.AccAddress(),
-				Coins:   sdk.Coins{sdk.NewInt64Coin("testcoin", 1000)},
+				Amount:  sdk.NewInt64Coin("testcoin", 1000),
 			},
 		},
 	}
