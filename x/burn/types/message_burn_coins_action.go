@@ -47,5 +47,10 @@ func (msg *MsgBurnCoinsAction) ValidateBasic() error {
 	if msg.Amount.IsNegative() || msg.Amount.IsZero() || !msg.Amount.IsValid() {
 		return fmt.Errorf("amount must be positive or valid")
 	}
+	// Let's filter the length in the amount (max digits or bigger possible number )
+	maxDigits := 18
+	if len(msg.Amount.Amount.String()) > maxDigits {
+		return fmt.Errorf("token amount exceeds maximum length of %d digits", maxDigits)
+	}
 	return nil
 }
