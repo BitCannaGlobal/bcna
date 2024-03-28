@@ -4,6 +4,46 @@ info:
   name: ''
   description: ''
 paths:
+  /BitCannaGlobal/bcna/burn/params:
+    get:
+      summary: Parameters queries the parameters of the module.
+      operationId: BcnaBurnParams
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              params:
+                description: params holds all the parameters of this module.
+                type: object
+                properties:
+                  burn_denom:
+                    type: string
+                    title: denom allowed to be burned
+            description: >-
+              QueryParamsResponse is response type for the Query/Params RPC
+              method.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
   /BitCannaGlobal/bcna/bcna/bitcannaid:
     get:
       summary: Queries a list of Bitcannaid items.
@@ -46883,280 +46923,38 @@ paths:
       tags:
         - Query
 definitions:
-  bitcannaglobal.bcna.bcna.Bitcannaid:
+  bcna.burn.MsgBurnCoinsActionResponse:
+    type: object
+  bcna.burn.Params:
     type: object
     properties:
-      id:
+      burn_denom:
         type: string
-        format: uint64
-      bcnaid:
-        type: string
-      address:
-        type: string
-      creator:
-        type: string
-  bitcannaglobal.bcna.bcna.MsgCreateBitcannaidResponse:
-    type: object
-    properties:
-      id:
-        type: string
-        format: uint64
-  bitcannaglobal.bcna.bcna.MsgCreateSupplychainResponse:
-    type: object
-    properties:
-      id:
-        type: string
-        format: uint64
-  bitcannaglobal.bcna.bcna.MsgDeleteBitcannaidResponse:
-    type: object
-  bitcannaglobal.bcna.bcna.MsgDeleteSupplychainResponse:
-    type: object
-  bitcannaglobal.bcna.bcna.MsgUpdateBitcannaidResponse:
-    type: object
-  bitcannaglobal.bcna.bcna.MsgUpdateSupplychainResponse:
-    type: object
-  bitcannaglobal.bcna.bcna.Params:
-    type: object
+        title: denom allowed to be burned
     description: Params defines the parameters for the module.
-  bitcannaglobal.bcna.bcna.QueryAllBitcannaidResponse:
-    type: object
-    properties:
-      Bitcannaid:
-        type: array
-        items:
-          type: object
-          properties:
-            id:
-              type: string
-              format: uint64
-            bcnaid:
-              type: string
-            address:
-              type: string
-            creator:
-              type: string
-      pagination:
-        type: object
-        properties:
-          next_key:
-            type: string
-            format: byte
-            description: |-
-              next_key is the key to be passed to PageRequest.key to
-              query the next page most efficiently. It will be empty if
-              there are no more results.
-          total:
-            type: string
-            format: uint64
-            title: >-
-              total is total number of results available if
-              PageRequest.count_total
-
-              was set, its value is undefined otherwise
-        description: |-
-          PageResponse is to be embedded in gRPC response messages where the
-          corresponding request message has used PageRequest.
-
-           message SomeResponse {
-                   repeated Bar results = 1;
-                   PageResponse page = 2;
-           }
-  bitcannaglobal.bcna.bcna.QueryAllSupplychainResponse:
-    type: object
-    properties:
-      Supplychain:
-        type: array
-        items:
-          type: object
-          properties:
-            id:
-              type: string
-              format: uint64
-            product:
-              type: string
-            info:
-              type: string
-            supplyinfo:
-              type: string
-            supplyextra:
-              type: string
-            creator:
-              type: string
-      pagination:
-        type: object
-        properties:
-          next_key:
-            type: string
-            format: byte
-            description: |-
-              next_key is the key to be passed to PageRequest.key to
-              query the next page most efficiently. It will be empty if
-              there are no more results.
-          total:
-            type: string
-            format: uint64
-            title: >-
-              total is total number of results available if
-              PageRequest.count_total
-
-              was set, its value is undefined otherwise
-        description: |-
-          PageResponse is to be embedded in gRPC response messages where the
-          corresponding request message has used PageRequest.
-
-           message SomeResponse {
-                   repeated Bar results = 1;
-                   PageResponse page = 2;
-           }
-  bitcannaglobal.bcna.bcna.QueryGetBitcannaidByBcnaidResponse:
-    type: object
-    properties:
-      Bitcannaid:
-        type: object
-        properties:
-          id:
-            type: string
-            format: uint64
-          bcnaid:
-            type: string
-          address:
-            type: string
-          creator:
-            type: string
-  bitcannaglobal.bcna.bcna.QueryGetBitcannaidResponse:
-    type: object
-    properties:
-      Bitcannaid:
-        type: object
-        properties:
-          id:
-            type: string
-            format: uint64
-          bcnaid:
-            type: string
-          address:
-            type: string
-          creator:
-            type: string
-  bitcannaglobal.bcna.bcna.QueryGetSupplychainResponse:
-    type: object
-    properties:
-      Supplychain:
-        type: object
-        properties:
-          id:
-            type: string
-            format: uint64
-          product:
-            type: string
-          info:
-            type: string
-          supplyinfo:
-            type: string
-          supplyextra:
-            type: string
-          creator:
-            type: string
-  bitcannaglobal.bcna.bcna.QueryParamsResponse:
+  bcna.burn.QueryParamsResponse:
     type: object
     properties:
       params:
         description: params holds all the parameters of this module.
         type: object
+        properties:
+          burn_denom:
+            type: string
+            title: denom allowed to be burned
     description: QueryParamsResponse is response type for the Query/Params RPC method.
-  bitcannaglobal.bcna.bcna.Supplychain:
+  cosmos.base.v1beta1.Coin:
     type: object
     properties:
-      id:
+      denom:
         type: string
-        format: uint64
-      product:
+      amount:
         type: string
-      info:
-        type: string
-      supplyinfo:
-        type: string
-      supplyextra:
-        type: string
-      creator:
-        type: string
-  cosmos.base.query.v1beta1.PageRequest:
-    type: object
-    properties:
-      key:
-        type: string
-        format: byte
-        description: |-
-          key is a value returned in PageResponse.next_key to begin
-          querying the next page most efficiently. Only one of offset or key
-          should be set.
-      offset:
-        type: string
-        format: uint64
-        description: |-
-          offset is a numeric offset that can be used when key is unavailable.
-          It is less efficient than using key. Only one of offset or key should
-          be set.
-      limit:
-        type: string
-        format: uint64
-        description: >-
-          limit is the total number of results to be returned in the result
-          page.
-
-          If left empty it will default to a value to be set by each app.
-      count_total:
-        type: boolean
-        description: >-
-          count_total is set to true  to indicate that the result set should
-          include
-
-          a count of the total number of items available for pagination in UIs.
-
-          count_total is only respected when offset is used. It is ignored when
-          key
-
-          is set.
-      reverse:
-        type: boolean
-        description: >-
-          reverse is set to true if results are to be returned in the descending
-          order.
-
-
-          Since: cosmos-sdk 0.43
     description: |-
-      message SomeRequest {
-               Foo some_parameter = 1;
-               PageRequest pagination = 2;
-       }
-    title: |-
-      PageRequest is to be embedded in gRPC request messages for efficient
-      pagination. Ex:
-  cosmos.base.query.v1beta1.PageResponse:
-    type: object
-    properties:
-      next_key:
-        type: string
-        format: byte
-        description: |-
-          next_key is the key to be passed to PageRequest.key to
-          query the next page most efficiently. It will be empty if
-          there are no more results.
-      total:
-        type: string
-        format: uint64
-        title: |-
-          total is total number of results available if PageRequest.count_total
-          was set, its value is undefined otherwise
-    description: |-
-      PageResponse is to be embedded in gRPC response messages where the
-      corresponding request message has used PageRequest.
+      Coin defines a token with a denomination and an amount.
 
-       message SomeResponse {
-               repeated Bar results = 1;
-               PageResponse page = 2;
-       }
+      NOTE: The amount field is an Int which implements the custom method
+      signatures required by gogoproto.
   google.protobuf.Any:
     type: object
     properties:
@@ -47480,6 +47278,280 @@ definitions:
                   "@type": "type.googleapis.com/google.protobuf.Duration",
                   "value": "1.212s"
                 }
+  bitcannaglobal.bcna.bcna.Bitcannaid:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+      bcnaid:
+        type: string
+      address:
+        type: string
+      creator:
+        type: string
+  bitcannaglobal.bcna.bcna.MsgCreateBitcannaidResponse:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+  bitcannaglobal.bcna.bcna.MsgCreateSupplychainResponse:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+  bitcannaglobal.bcna.bcna.MsgDeleteBitcannaidResponse:
+    type: object
+  bitcannaglobal.bcna.bcna.MsgDeleteSupplychainResponse:
+    type: object
+  bitcannaglobal.bcna.bcna.MsgUpdateBitcannaidResponse:
+    type: object
+  bitcannaglobal.bcna.bcna.MsgUpdateSupplychainResponse:
+    type: object
+  bitcannaglobal.bcna.bcna.Params:
+    type: object
+    description: Params defines the parameters for the module.
+  bitcannaglobal.bcna.bcna.QueryAllBitcannaidResponse:
+    type: object
+    properties:
+      Bitcannaid:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uint64
+            bcnaid:
+              type: string
+            address:
+              type: string
+            creator:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            description: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently. It will be empty if
+              there are no more results.
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  bitcannaglobal.bcna.bcna.QueryAllSupplychainResponse:
+    type: object
+    properties:
+      Supplychain:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uint64
+            product:
+              type: string
+            info:
+              type: string
+            supplyinfo:
+              type: string
+            supplyextra:
+              type: string
+            creator:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            description: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently. It will be empty if
+              there are no more results.
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  bitcannaglobal.bcna.bcna.QueryGetBitcannaidByBcnaidResponse:
+    type: object
+    properties:
+      Bitcannaid:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uint64
+          bcnaid:
+            type: string
+          address:
+            type: string
+          creator:
+            type: string
+  bitcannaglobal.bcna.bcna.QueryGetBitcannaidResponse:
+    type: object
+    properties:
+      Bitcannaid:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uint64
+          bcnaid:
+            type: string
+          address:
+            type: string
+          creator:
+            type: string
+  bitcannaglobal.bcna.bcna.QueryGetSupplychainResponse:
+    type: object
+    properties:
+      Supplychain:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uint64
+          product:
+            type: string
+          info:
+            type: string
+          supplyinfo:
+            type: string
+          supplyextra:
+            type: string
+          creator:
+            type: string
+  bitcannaglobal.bcna.bcna.QueryParamsResponse:
+    type: object
+    properties:
+      params:
+        description: params holds all the parameters of this module.
+        type: object
+    description: QueryParamsResponse is response type for the Query/Params RPC method.
+  bitcannaglobal.bcna.bcna.Supplychain:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uint64
+      product:
+        type: string
+      info:
+        type: string
+      supplyinfo:
+        type: string
+      supplyextra:
+        type: string
+      creator:
+        type: string
+  cosmos.base.query.v1beta1.PageRequest:
+    type: object
+    properties:
+      key:
+        type: string
+        format: byte
+        description: |-
+          key is a value returned in PageResponse.next_key to begin
+          querying the next page most efficiently. Only one of offset or key
+          should be set.
+      offset:
+        type: string
+        format: uint64
+        description: |-
+          offset is a numeric offset that can be used when key is unavailable.
+          It is less efficient than using key. Only one of offset or key should
+          be set.
+      limit:
+        type: string
+        format: uint64
+        description: >-
+          limit is the total number of results to be returned in the result
+          page.
+
+          If left empty it will default to a value to be set by each app.
+      count_total:
+        type: boolean
+        description: >-
+          count_total is set to true  to indicate that the result set should
+          include
+
+          a count of the total number of items available for pagination in UIs.
+
+          count_total is only respected when offset is used. It is ignored when
+          key
+
+          is set.
+      reverse:
+        type: boolean
+        description: >-
+          reverse is set to true if results are to be returned in the descending
+          order.
+
+
+          Since: cosmos-sdk 0.43
+    description: |-
+      message SomeRequest {
+               Foo some_parameter = 1;
+               PageRequest pagination = 2;
+       }
+    title: |-
+      PageRequest is to be embedded in gRPC request messages for efficient
+      pagination. Ex:
+  cosmos.base.query.v1beta1.PageResponse:
+    type: object
+    properties:
+      next_key:
+        type: string
+        format: byte
+        description: |-
+          next_key is the key to be passed to PageRequest.key to
+          query the next page most efficiently. It will be empty if
+          there are no more results.
+      total:
+        type: string
+        format: uint64
+        title: |-
+          total is total number of results available if PageRequest.count_total
+          was set, its value is undefined otherwise
+    description: |-
+      PageResponse is to be embedded in gRPC response messages where the
+      corresponding request message has used PageRequest.
+
+       message SomeResponse {
+               repeated Bar results = 1;
+               PageResponse page = 2;
+       }
   cosmos.auth.v1beta1.AddressBytesToStringResponse:
     type: object
     properties:
@@ -50363,18 +50435,6 @@ definitions:
     description: |-
       SendEnabled maps coin denom to a send_enabled status (whether a denom is
       sendable).
-  cosmos.base.v1beta1.Coin:
-    type: object
-    properties:
-      denom:
-        type: string
-      amount:
-        type: string
-    description: |-
-      Coin defines a token with a denomination and an amount.
-
-      NOTE: The amount field is an Int which implements the custom method
-      signatures required by gogoproto.
   cosmos.base.node.v1beta1.ConfigResponse:
     type: object
     properties:
