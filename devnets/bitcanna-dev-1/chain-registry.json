@@ -30,6 +30,11 @@
         "id": "d1d43cc7c7aef715957289fd96a114ecaa7ba756",
         "address": "testnet-seeds.nodex.one:22910",
         "provider": "NodeX Emperor"
+      },
+      {
+        "id": "bb1b2586469b22d0e3a9e32b968f23dbeb1a4de7",
+        "address": "testnet-seed.konsortech.xyz:26156",
+        "provider": "KonsorTech"
       }
     ],
     "persistent_peers": [
