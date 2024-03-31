@@ -75,6 +75,11 @@
         "id": "1531b73fed2ad4eb55ea537fa7fd66f137c12934",
         "address": "seeds.blockhunters.org:38656",
         "provider": "BlockHunters 🎯"
+      },
+      {
+        "id": "80f05ef09003f3303a4529a8a42e87562dd218cb",
+        "address": "bitcanna-mainnet.seed.l0vd.com:57656",
+        "provider": "L0vd.com ❤️"
       }
     ],
     "persistent_peers": [
