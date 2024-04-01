@@ -32,6 +32,11 @@
         "provider": "NodeX Emperor"
       },
       {
+        "id": "462d2746985cbffd78a669408387c5e6a6025344",
+        "address": "bitcanna-testnet.seed.l0vd.com:58656",
+        "provider": "L0vd.com ❤️"
+      },
+      {
         "id": "bb1b2586469b22d0e3a9e32b968f23dbeb1a4de7",
         "address": "testnet-seed.konsortech.xyz:26156",
         "provider": "KonsorTech"
@@ -365,6 +370,11 @@
       "address": "https://bitcanna-testnet.rpc.nodex.one",
       "url_doc": "https://docs.nodex.one/networks/testnet/bitcanna/statesync",
       "provider": "NodeX Emperor"
+    },
+    {
+      "address": "https://bitcanna-testnet.rpc.l0vd.com:443",
+      "url_doc": "https://chain-services.l0vd.com/testnets/bitcanna/state-sync",
+      "provider": "L0vd.com ❤️"
     }
   ]
 }
