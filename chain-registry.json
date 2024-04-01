@@ -28,7 +28,7 @@
       },
       {
       "id": "33ab202dfef5e08d5d0346e7b3cfaab2a946198a",
-      "address": "seeds.bitcanna-mainnet.hexnodes.co:27656",
+      "address": "seeds.bitcanna-mainnet.hexnodes.one:27656",
         "provider": "Hexnodes"
       },
       {
@@ -80,6 +80,11 @@
         "id": "80f05ef09003f3303a4529a8a42e87562dd218cb",
         "address": "bitcanna-mainnet.seed.l0vd.com:57656",
         "provider": "L0vd.com ❤️"
+      },
+      {
+        "id": "71df77a8f57af72a4d2b4e842c9ac7eaec31cc09",
+        "address": "mainnet-seed.konsortech.xyz:27156",
+        "provider": "KonsorTech°"
       }
     ],
     "persistent_peers": [
@@ -192,6 +197,11 @@
         "id": "7fef7708e4eb2f3a1245f00ca42ad56e446b3d66",
         "address": "rpc.bitcanna.bh.rocks:42656",
         "provider": "BlockHunters 🎯"
+      },
+      {
+        "id": "bf47ac16ca517beca4ba5ba2e4a92798cf9409c0",
+        "address": "104.207.129.116:26656",
+        "provider": "Validatornode"
       }
     ]
   },
@@ -246,7 +256,7 @@
         "provider": "AVIAONE 🟢"
       },
       {
-        "address": "https://rpc.bitcanna-mainnet.hexnodes.co",
+        "address": "https://rpc.bitcanna-mainnet.hexnodes.one",
         "provider": "Hexnodes"
       },
       {
@@ -332,7 +342,7 @@
         "provider": "🔥STAVR🔥"
       },
       {
-        "address": "grpc.bitcanna-mainnet.hexnodes.co:27090",
+        "address": "grpc.bitcanna-mainnet.hexnodes.one:27090",
         "provider": "HexNodes"
       },
       {
@@ -398,6 +408,10 @@
       {
         "address": "bitcanna-grpc.panthea.eu:16710",
         "provider": "Panthea EU"
+      },
+      {
+        "address": "bitcanna-grpc.validatornode.com:443",
+        "provider": "ValidatorNode"
       }
     ],
     "rest": [
@@ -454,7 +468,7 @@
         "provider": "AVIAONE 🟢"
       },
       {
-        "address": "https://lcd.bitcanna-mainnet.hexnodes.co",
+        "address": "https://lcd.bitcanna-mainnet.hexnodes.one",
         "provider": "Hexnodes"
       },
       {
@@ -642,8 +656,8 @@
       "provider": "AlxVoy ⚡ ANODE.TEAM"
     },
     {
-      "address": "http://team.bonded.zone:21957",
-      "url_doc": "https://www.bonded.zone/mainnets/bitcanna/state-sync",
+      "address": "http://65.108.131.190:21957",
+      "url_doc": "https://bonded-zone.gitbook.io/bonded.zone/mainnets/bitcanna/state-sync",
       "provider": "bonded.zone ⚡"
     },
     {
@@ -675,6 +689,11 @@
       "address": "https://rpc.bitcanna.indonode.net:443",
       "url_doc": "https://indonode.net/services/mainnet/bitcanna/sync#statesync",
       "provider": "Indonode"      
+    },
+    {
+      "address": "https://explorer.validatornode.com:443",
+      "url_doc": "https://explorer.validatornode.com/bitcanna/statesync",
+      "provider": "ValidatorNode"      
     }
   ]
 }
