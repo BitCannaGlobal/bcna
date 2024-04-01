@@ -192,6 +192,11 @@
         "id": "7fef7708e4eb2f3a1245f00ca42ad56e446b3d66",
         "address": "rpc.bitcanna.bh.rocks:42656",
         "provider": "BlockHunters 🎯"
+      },
+      {
+        "id": "bf47ac16ca517beca4ba5ba2e4a92798cf9409c0",
+        "address": "104.207.129.116:26656",
+        "provider": "Validatornode"
       }
     ]
   },
@@ -398,6 +403,10 @@
       {
         "address": "bitcanna-grpc.panthea.eu:16710",
         "provider": "Panthea EU"
+      },
+      {
+        "address": "bitcanna-grpc.validatornode.com:443",
+        "provider": "ValidatorNode"
       }
     ],
     "rest": [
@@ -675,6 +684,11 @@
       "address": "https://rpc.bitcanna.indonode.net:443",
       "url_doc": "https://indonode.net/services/mainnet/bitcanna/sync#statesync",
       "provider": "Indonode"      
+    },
+    {
+      "address": "https://explorer.validatornode.com:443",
+      "url_doc": "https://explorer.validatornode.com/bitcanna/statesync",
+      "provider": "ValidatorNode"      
     }
   ]
 }
