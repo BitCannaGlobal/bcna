@@ -18,7 +18,8 @@ import (
 	govmodulev1 "cosmossdk.io/api/cosmos/gov/module/v1"
 	groupmodulev1 "cosmossdk.io/api/cosmos/group/module/v1"
 	mintmodulev1 "cosmossdk.io/api/cosmos/mint/module/v1"
-	nftmodulev1 "cosmossdk.io/api/cosmos/nft/module/v1"
+
+	// nftmodulev1 "cosmossdk.io/api/cosmos/nft/module/v1"
 	paramsmodulev1 "cosmossdk.io/api/cosmos/params/module/v1"
 	slashingmodulev1 "cosmossdk.io/api/cosmos/slashing/module/v1"
 	stakingmodulev1 "cosmossdk.io/api/cosmos/staking/module/v1"
@@ -29,7 +30,8 @@ import (
 	circuittypes "cosmossdk.io/x/circuit/types"
 	evidencetypes "cosmossdk.io/x/evidence/types"
 	"cosmossdk.io/x/feegrant"
-	"cosmossdk.io/x/nft"
+
+	// "cosmossdk.io/x/nft"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 	"github.com/cosmos/cosmos-sdk/runtime"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
@@ -89,7 +91,7 @@ var (
 		upgradetypes.ModuleName,
 		vestingtypes.ModuleName,
 		circuittypes.ModuleName,
-		nft.ModuleName,
+		// nft.ModuleName,
 		group.ModuleName,
 		consensustypes.ModuleName,
 		circuittypes.ModuleName,
@@ -155,7 +157,7 @@ var (
 		{Account: stakingtypes.BondedPoolName, Permissions: []string{authtypes.Burner, stakingtypes.ModuleName}},
 		{Account: stakingtypes.NotBondedPoolName, Permissions: []string{authtypes.Burner, stakingtypes.ModuleName}},
 		{Account: govtypes.ModuleName, Permissions: []string{authtypes.Burner}},
-		{Account: nft.ModuleName},
+		// {Account: nft.ModuleName},
 		{Account: ibctransfertypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner}},
 		{Account: ibcfeetypes.ModuleName},
 		{Account: icatypes.ModuleName},
@@ -169,7 +171,7 @@ var (
 		minttypes.ModuleName,
 		stakingtypes.BondedPoolName,
 		stakingtypes.NotBondedPoolName,
-		nft.ModuleName,
+		// nft.ModuleName,
 		// We allow the following module accounts to receive funds:
 		// govtypes.ModuleName
 	}
@@ -208,10 +210,10 @@ var (
 					// Authority: "cosmos1cwwv22j5ca08ggdv9c2uky355k908694z577tv", // or a specific address
 				}),
 			},
-			{
-				Name:   nft.ModuleName,
-				Config: appconfig.WrapAny(&nftmodulev1.Module{}),
-			},
+			// {
+			// 	Name:   nft.ModuleName,
+			// 	Config: appconfig.WrapAny(&nftmodulev1.Module{}),
+			// },
 			{
 				Name:   vestingtypes.ModuleName,
 				Config: appconfig.WrapAny(&vestingmodulev1.Module{}),

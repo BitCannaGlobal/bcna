@@ -8,7 +8,9 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 	circuittypes "cosmossdk.io/x/circuit/types"
-	nft "cosmossdk.io/x/nft"
+	ibcfeetypes "github.com/cosmos/ibc-go/v8/modules/apps/29-fee/types"
+
+	// nft "cosmossdk.io/x/nft"
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 )
 
@@ -33,8 +35,13 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 				app.Logger().Info(fmt.Sprintf("Module: %s, Version: %d", moduleName, version))
 
 			}
-
-			return app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
+			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
+			if err != nil {
+				return nil, err
+			}
+			app.Logger().Info(fmt.Sprintf("post migrate version map: %v", versionMap))
+			// return app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
+			return versionMap, err
 		},
 	)
 	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
@@ -46,8 +53,7 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 		storeUpgrades := storetypes.StoreUpgrades{
 			Added: []string{
 				circuittypes.ModuleName,
-				"feeibc",
-				nft.ModuleName,
+				ibcfeetypes.ModuleName,
 			},
 		}
 

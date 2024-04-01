@@ -15,9 +15,10 @@ import (
 	evidencekeeper "cosmossdk.io/x/evidence/keeper"
 	feegrantkeeper "cosmossdk.io/x/feegrant/keeper"
 	_ "cosmossdk.io/x/feegrant/module" // import for side-effects
-	nftkeeper "cosmossdk.io/x/nft/keeper"
-	_ "cosmossdk.io/x/nft/module" // import for side-effects
-	_ "cosmossdk.io/x/upgrade"    // import for side-effects
+
+	// nftkeeper "cosmossdk.io/x/nft/keeper"
+	// _ "cosmossdk.io/x/nft/module" // import for side-effects
+	_ "cosmossdk.io/x/upgrade" // import for side-effects
 	upgradekeeper "cosmossdk.io/x/upgrade/keeper"
 	dbm "github.com/cosmos/cosmos-db"
 	"github.com/cosmos/cosmos-sdk/baseapp"
@@ -113,17 +114,17 @@ type App struct {
 	DistrKeeper           distrkeeper.Keeper
 	ConsensusParamsKeeper consensuskeeper.Keeper
 
-	SlashingKeeper       slashingkeeper.Keeper
-	MintKeeper           mintkeeper.Keeper
-	GovKeeper            *govkeeper.Keeper
-	CrisisKeeper         *crisiskeeper.Keeper
-	UpgradeKeeper        *upgradekeeper.Keeper
-	ParamsKeeper         paramskeeper.Keeper
-	AuthzKeeper          authzkeeper.Keeper
-	EvidenceKeeper       evidencekeeper.Keeper
-	FeeGrantKeeper       feegrantkeeper.Keeper
-	GroupKeeper          groupkeeper.Keeper
-	NFTKeeper            nftkeeper.Keeper
+	SlashingKeeper slashingkeeper.Keeper
+	MintKeeper     mintkeeper.Keeper
+	GovKeeper      *govkeeper.Keeper
+	CrisisKeeper   *crisiskeeper.Keeper
+	UpgradeKeeper  *upgradekeeper.Keeper
+	ParamsKeeper   paramskeeper.Keeper
+	AuthzKeeper    authzkeeper.Keeper
+	EvidenceKeeper evidencekeeper.Keeper
+	FeeGrantKeeper feegrantkeeper.Keeper
+	GroupKeeper    groupkeeper.Keeper
+	// NFTKeeper            nftkeeper.Keeper
 	CircuitBreakerKeeper circuitkeeper.Keeper
 
 	// IBC
@@ -276,7 +277,7 @@ func New(
 		&app.AuthzKeeper,
 		&app.EvidenceKeeper,
 		&app.FeeGrantKeeper,
-		&app.NFTKeeper,
+		// &app.NFTKeeper,
 		&app.GroupKeeper,
 		&app.CircuitBreakerKeeper,
 		&app.BcnaKeeper,
@@ -333,6 +334,7 @@ func New(
 
 	app.ModuleManager.RegisterInvariants(app.CrisisKeeper)
 
+	app.RegisterUpgradeHandlers()
 	// create the simulation manager and define the order of the modules for deterministic simulations
 	//
 	// NOTE: this is not required apps that don't use the simulator for fuzz testing transactions
@@ -356,7 +358,7 @@ func New(
 	if err := app.Load(loadLatest); err != nil {
 		return nil, err
 	}
-
+	// app.logStoreKeys()  <- Only for Debug
 	return app, nil
 }
 
@@ -412,6 +414,31 @@ func (app *App) GetSubspace(moduleName string) paramstypes.Subspace {
 	subspace, _ := app.ParamsKeeper.GetSubspace(moduleName)
 	return subspace
 }
+
+// memStoreKeys returns all the memory store keys registered inside App. Only for DEBUG
+// func (app *App) memStoreKeys() map[string]*storetypes.MemoryStoreKey {
+// 	keys := make(map[string]*storetypes.MemoryStoreKey)
+// 	for _, k := range app.GetStoreKeys() {
+// 		if memKey, ok := k.(*storetypes.MemoryStoreKey); ok {
+// 			keys[memKey.Name()] = memKey
+// 		}
+// 	}
+// 	return keys
+// }
+// func (app *App) logStoreKeys() {
+// 	kvStoreKeys := app.kvStoreKeys()
+// 	memStoreKeys := app.memStoreKeys() // Ahora usando la nueva función memStoreKeys()
+
+// 	app.Logger().Info("Listando KVStoreKeys registradas:")
+// 	for name := range kvStoreKeys {
+// 		app.Logger().Info("KVStoreKey registrada", "nombre", name)
+// 	}
+
+// 	app.Logger().Info("Listando MemoryStoreKeys registradas:")
+// 	for name := range memStoreKeys {
+// 		app.Logger().Info("MemoryStoreKey registrada", "nombre", name)
+// 	}
+// }
 
 // GetIBCKeeper returns the IBC keeper.
 func (app *App) GetIBCKeeper() *ibckeeper.Keeper {
