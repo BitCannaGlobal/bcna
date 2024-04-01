@@ -694,6 +694,11 @@
       "address": "https://explorer.validatornode.com:443",
       "url_doc": "https://explorer.validatornode.com/bitcanna/statesync",
       "provider": "ValidatorNode"      
+    },
+    {
+      "address": "https://bitcanna-rpc.panthea.eu:443",
+      "url_doc": "https://docs.panthea.eu/cosmos-blockchains/bitcanna-bcna#state-sync",
+      "provider": "Panthea EU"
     }
   ]
 }
