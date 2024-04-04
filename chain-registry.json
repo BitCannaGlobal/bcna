@@ -326,6 +326,10 @@
       {
         "address": "https://rpc.bitcanna.bh.rocks",
         "provider": "BlockHunters 🎯"
+      },
+      {
+        "address": "https://bitcanna-rpc.bluestake.net",
+        "provider": "BlueStake"
       }
     ],
     "grpc": [
@@ -530,6 +534,10 @@
       {
         "address": "https://api.bitcanna.indonode.net",
         "provider": "Indonode"
+      },
+      {
+        "address": "https://bitcanna-api.bluestake.net",
+        "provider": "BlueStake"
       }
     ]
   },
