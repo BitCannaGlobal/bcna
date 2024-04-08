@@ -3,12 +3,11 @@ package app
 import (
 	"fmt"
 
+	burnmoduletypes "github.com/BitCannaGlobal/bcna/x/burn/types"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-
-	burnmoduletypes "github.com/BitCannaGlobal/bcna/x/burn/types"
 )
 
 // RegisterUpgradeHandlers registers upgrade handlers.
@@ -37,6 +36,28 @@ func (app *App) GanjaRevolution47_burn(_ upgradetypes.Plan) {
 		}
 		logger.Info(fmt.Sprintf("post migrate version map: %v", versionMap))
 
+		// Inflation control mechanism - TBD
+		// // Get the current params from Mint module
+		// mintParams := app.MintKeeper.GetParams(ctx)
+
+		// // Log the params BEFORE apply the new values
+		// logger.Info(fmt.Sprintf("Current values for Mint value: InflationMax: %s, InflationMin: %s, InflationRateChange: %s",
+		// 	mintParams.InflationMax.String(), mintParams.InflationMin.String(), mintParams.InflationRateChange.String()))
+
+		// // Reduce to half the value of inflation_max, inflation_min and inflation_rate_change
+		// mintParams.InflationMax = mintParams.InflationMax.Quo(sdk.NewDec(2))
+		// mintParams.InflationMin = mintParams.InflationMin.Quo(sdk.NewDec(2))
+		// mintParams.InflationRateChange = mintParams.InflationRateChange.Quo(sdk.NewDec(2))
+
+		// // Set the new values at Mint module
+		// if err := app.MintKeeper.SetParams(ctx, mintParams); err != nil {
+		// 	return nil, err
+		// }
+
+		// // Log the values after apply the changes
+		// logger.Info(fmt.Sprintf("New values for Mint value: InflationMax: %s, InflationMin: %s, InflationRateChange: %s",
+		// 	mintParams.InflationMax.String(), mintParams.InflationMin.String(), mintParams.InflationRateChange.String()))
+
 		return versionMap, err
 		// return app.mm.RunMigrations(ctx, app.configurator, fromVM)
 	})
@@ -50,7 +71,7 @@ func (app *App) GanjaRevolution47_burn(_ upgradetypes.Plan) {
 		storeUpgrades := storetypes.StoreUpgrades{
 			Added: []string{
 
-				burnmoduletypes.ModuleName,
+				burnmoduletypes.ModuleName, // Create the Store for the new module: burn
 				// nft.ModuleName,
 			},
 		}
