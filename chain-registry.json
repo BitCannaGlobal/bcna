@@ -202,6 +202,11 @@
         "id": "bf47ac16ca517beca4ba5ba2e4a92798cf9409c0",
         "address": "104.207.129.116:26656",
         "provider": "Validatornode"
+      },
+      {
+        "id": "fe587eb0d37cabb9b8089ec8899cf32ee2870994",
+        "address": "185.144.99.40:46656",
+        "provider": "CrypTech"
       }
     ]
   },
@@ -330,6 +335,10 @@
       {
         "address": "https://bitcanna-rpc.bluestake.net",
         "provider": "BlueStake"
+      },
+      {
+        "address": "https://rpc-bitcanna.cryptech.com.ua",
+        "provider": "CrypTech"
       }
     ],
     "grpc": [
@@ -416,6 +425,10 @@
       {
         "address": "bitcanna-grpc.validatornode.com:443",
         "provider": "ValidatorNode"
+      },
+      {
+        "address": "https://grpc-bitcanna.cryptech.com.ua",
+        "provider": "CrypTech"
       }
     ],
     "rest": [
@@ -538,6 +551,10 @@
       {
         "address": "https://bitcanna-api.bluestake.net",
         "provider": "BlueStake"
+      },
+      {
+        "address": "https://api-bitcanna.cryptech.com.ua",
+        "provider": "CrypTech"
       }
     ]
   },
@@ -625,6 +642,11 @@
       "kind": "Indonode",
       "url": "https://explorer.indonode.net/bitcanna",
       "tx_page": "https://explorer.indonode.net/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "CrypTech Explorer",
+      "url": "https://explorers.cryptech.com.ua/bitcanna",
+      "tx_page": "https://explorers.cryptech.com.ua/bitcanna/txs/${txHash}",
     }
   ],
   "archive_nodes": [
@@ -707,6 +729,11 @@
       "address": "https://bitcanna-rpc.panthea.eu:443",
       "url_doc": "https://docs.panthea.eu/cosmos-blockchains/bitcanna-bcna#state-sync",
       "provider": "Panthea EU"
+    },
+    {
+      "address": "https://rpc-bitcanna.cryptech.com.ua",
+      "url_doc": "https://services.cryptech.com.ua/mainnet/bitcanna/state-sync/README/",
+      "provider": "CrypTech"      
     }
   ]
 }
