@@ -85,6 +85,11 @@
         "id": "71df77a8f57af72a4d2b4e842c9ac7eaec31cc09",
         "address": "mainnet-seed.konsortech.xyz:27156",
         "provider": "KonsorTech°"
+      },
+      {
+        "id": "9e2b0de599e1b0b69fe156d783a5365858c43027",
+        "address": "bitcanna-seed.kalia.network:12656",
+        "provider": "Kalia Network"
       }
     ],
     "persistent_peers": [
@@ -339,6 +344,10 @@
       {
         "address": "https://rpc-bitcanna.cryptech.com.ua",
         "provider": "CrypTech"
+      },
+      {
+        "address": "https://bitcanna-rpc.kalia.network/",
+        "provider": "Kalia Network"
       }
     ],
     "grpc": [
@@ -429,6 +438,10 @@
       {
         "address": "https://grpc-bitcanna.cryptech.com.ua",
         "provider": "CrypTech"
+      },
+      {
+        "address": "bitcanna-grpc.kalia.network:443",
+        "provider": "Kalia Network"
       }
     ],
     "rest": [
@@ -555,6 +568,10 @@
       {
         "address": "https://api-bitcanna.cryptech.com.ua",
         "provider": "CrypTech"
+      },
+      {
+        "address": "https://bitcanna-api.kalia.network",
+        "provider": "Kalia Network"
       }
     ]
   },
@@ -647,6 +664,12 @@
       "kind": "CrypTech Explorer",
       "url": "https://explorers.cryptech.com.ua/bitcanna",
       "tx_page": "https://explorers.cryptech.com.ua/bitcanna/txs/${txHash}"
+    },
+    {
+      "kind": "Kalia Network",
+      "url": "https://explorer.kalia.network/bitcanna",
+      "tx_page": "https://explorer.kalia.network/bitcanna/tx/${txHash}",
+      "account_page": "https://explorer.kalia.network/bitcanna/account/${accountAddress}"
     }
   ],
   "archive_nodes": [
@@ -729,6 +752,11 @@
       "address": "https://rpc-bitcanna.cryptech.com.ua",
       "url_doc": "https://services.cryptech.com.ua/mainnet/bitcanna/state-sync/README/",
       "provider": "CrypTech"      
+    },
+    {
+      "address": "https://bitcanna-rpc.kalia.network:443",
+      "url_doc": "https://docs.kalia.network/mainnet/bitcanna/statesync",
+      "provider": "Kalia Network"
     }
   ]
 }
