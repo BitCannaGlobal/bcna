@@ -11,12 +11,14 @@ import (
 
 // List of auth. addresses (whitelist)
 var authorizedAddresses = map[string]bool{
-	"bcna1tdpec339xrucmmr4x73teu3lc2phq45mv07z9n": true, // Vesting account
-	"bcna1465kg4xaa5sl3vlm02zwe6y7jqltyncvcsygxr": true, // Business Development
-	"bcna16pczhqlsglmjyyap3785cqnpq30q430jkgw4gk": true, // Marketing
+	// "bcna1tdpec339xrucmmr4x73teu3lc2phq45mv07z9n": true, // Vesting account
+	// "bcna1465kg4xaa5sl3vlm02zwe6y7jqltyncvcsygxr": true, // Business Development
+	// "bcna16pczhqlsglmjyyap3785cqnpq30q430jkgw4gk": true, // Marketing
+	"bcna14zzg8gnzmss09jvwldrcg2f85prwwg38fnwjda": true, // BitCore > Cosmos swap leftovers
 	"bcna1rp6fpd8lry8kgmxaermw8eqlkgr4q9lv3u0eae": true, // Test1
 	"bcna1h2sz97wffluqtt07zmkky3cvuywv6dzq38zr9r": true, // Test2
 	"bcna1zvxldjgetj5u9wah0t8fnz229533xzsmz8y5js": true, // Test3
+	"bcna1tqywev6xmvrnagfq57c0h5susdy3l789rumufz": true, // Test4
 }
 
 // Move coins from sender to Bank account module and then the module burns the coins.
