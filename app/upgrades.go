@@ -36,27 +36,26 @@ func (app *App) GanjaRevolution47_burn(_ upgradetypes.Plan) {
 		}
 		logger.Info(fmt.Sprintf("post migrate version map: %v", versionMap))
 
-		// Inflation control mechanism - TBD
-		// // Get the current params from Mint module
-		// mintParams := app.MintKeeper.GetParams(ctx)
+		// Inflation control mechanism
+		// Get the current params from Mint module
+		mintParams := app.MintKeeper.GetParams(ctx)
 
-		// // Log the params BEFORE apply the new values
-		// logger.Info(fmt.Sprintf("Current values for Mint value: InflationMax: %s, InflationMin: %s, InflationRateChange: %s",
-		// 	mintParams.InflationMax.String(), mintParams.InflationMin.String(), mintParams.InflationRateChange.String()))
+		// Log the params BEFORE apply the new values
+		logger.Info(fmt.Sprintf("Current values for Mint value: InflationMax: %s, InflationMin: %s",
+			mintParams.InflationMax.String(), mintParams.InflationMin.String()))
 
-		// // Reduce to half the value of inflation_max, inflation_min and inflation_rate_change
-		// mintParams.InflationMax = mintParams.InflationMax.Quo(sdk.NewDec(2))
-		// mintParams.InflationMin = mintParams.InflationMin.Quo(sdk.NewDec(2))
-		// mintParams.InflationRateChange = mintParams.InflationRateChange.Quo(sdk.NewDec(2))
+		// Set fixed values for InflationMax and InflationMin
+		mintParams.InflationMin = sdk.NewDec(0)            // 0%
+		mintParams.InflationMax = sdk.NewDecWithPrec(7, 2) // 7%
 
-		// // Set the new values at Mint module
-		// if err := app.MintKeeper.SetParams(ctx, mintParams); err != nil {
-		// 	return nil, err
-		// }
+		// Set the new values at Mint module
+		if err := app.MintKeeper.SetParams(ctx, mintParams); err != nil {
+			return nil, err
+		}
 
-		// // Log the values after apply the changes
-		// logger.Info(fmt.Sprintf("New values for Mint value: InflationMax: %s, InflationMin: %s, InflationRateChange: %s",
-		// 	mintParams.InflationMax.String(), mintParams.InflationMin.String(), mintParams.InflationRateChange.String()))
+		// Log the values after apply the changes
+		logger.Info(fmt.Sprintf("New values for Mint value: InflationMax: %s, InflationMin: %s",
+			mintParams.InflationMax.String(), mintParams.InflationMin.String()))
 
 		return versionMap, err
 		// return app.mm.RunMigrations(ctx, app.configurator, fromVM)
