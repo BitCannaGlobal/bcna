@@ -38,24 +38,24 @@ func (app *App) GanjaRevolution47_burn(_ upgradetypes.Plan) {
 
 		// Inflation control mechanism
 		// Get the current params from Mint module
-		mintParams := app.MintKeeper.GetParams(ctx)
+		// mintParams := app.MintKeeper.GetParams(ctx)
 
-		// Log the params BEFORE apply the new values
-		logger.Info(fmt.Sprintf("Current values for Mint value: InflationMax: %s, InflationMin: %s",
-			mintParams.InflationMax.String(), mintParams.InflationMin.String()))
+		// // Log the params BEFORE apply the new values
+		// logger.Info(fmt.Sprintf("Current values for Mint value: InflationMax: %s, InflationMin: %s",
+		// 	mintParams.InflationMax.String(), mintParams.InflationMin.String()))
 
-		// Set fixed values for InflationMax and InflationMin
-		mintParams.InflationMin = sdk.NewDec(0)            // 0%
-		mintParams.InflationMax = sdk.NewDecWithPrec(7, 2) // 7%
+		// // Set fixed values for InflationMax and InflationMin
+		// mintParams.InflationMin = sdk.NewDec(0)            // 0%
+		// mintParams.InflationMax = sdk.NewDecWithPrec(7, 2) // 7%
 
-		// Set the new values at Mint module
-		if err := app.MintKeeper.SetParams(ctx, mintParams); err != nil {
-			return nil, err
-		}
+		// // Set the new values at Mint module
+		// if err := app.MintKeeper.SetParams(ctx, mintParams); err != nil {
+		// 	return nil, err
+		// }
 
-		// Log the values after apply the changes
-		logger.Info(fmt.Sprintf("New values for Mint value: InflationMax: %s, InflationMin: %s",
-			mintParams.InflationMax.String(), mintParams.InflationMin.String()))
+		// // Log the values after apply the changes
+		// logger.Info(fmt.Sprintf("New values for Mint value: InflationMax: %s, InflationMin: %s",
+		// 	mintParams.InflationMax.String(), mintParams.InflationMin.String()))
 
 		return versionMap, err
 		// return app.mm.RunMigrations(ctx, app.configurator, fromVM)
