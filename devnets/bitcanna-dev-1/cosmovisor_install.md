@@ -81,13 +81,13 @@ This guide explains how to download the pre-compiled binary. If you want to buil
 ```
 cd ~
 rm -f bcnad #remove the previous downloads
-wget https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.0-rc3/bcna_linux_amd64.tar.gz
+wget https://github.com/BitCannaGlobal/bcna/releases/download/v3.1.0-rc2/bcna_linux_amd64.tar.gz
 ```
 Check the sha256sum.
 ```
 sha256sum ./bcna_linux_amd64.tar.gz
 ```
-> It must return: `68764582fea71f3ff721a69fe760cbbfb22941df229b9230989e667f0c94f183`
+> It must return: `d4e92b5fe4091f710df54840ff462c05897c4b886418ac84cb76e1eaeb5950a0`
 
 Verify that you have the correct version.
 ```
@@ -96,13 +96,19 @@ rm bcna_linux_amd64.tar.gz
 chmod +x ./bcnad
 ./bcnad version
 ```
-> It must return: **`v3.0.0-rc3`**
+> It must return: **`v3.1.0-rc2`**
+
+Create a new directory for the upgraded version.
+```
+mkdir -p ${HOME}/.bcna/cosmovisor/upgrades/ganjarevolutionburn/bin/
+```
 
 Move the newly built binary to the designated upgrade directory.
 > If you have build the binary from the source, replace `./bcnad` with the correct path.
 ```
-cosmovisor add-upgrade ganjarevolution ./bcnad
+cp -r ./bcnad ${HOME}/.bcna/cosmovisor/upgrades/ganjarevolutionburn/bin/
 ```
+
 ### 4.) Setup Cosmovisor's current version link.
 
 Next step is to let Cosmovisor know in which directory the current version of `bcnad` software is located.
@@ -172,8 +178,6 @@ Show Cosmovisor's version.
 ```
 cosmovisor run version
 ``` 
-This will be **`v2.0.1` before** the upgrade and **`v3.0.0-rc3` after** the upgrade.
-
 The output should look like this:
  ```
 20:27PM INF running app args=["version"] module=cosmovisor path=/home/ljn/.bcna/cosmovisor/genesis/bin/bcnad

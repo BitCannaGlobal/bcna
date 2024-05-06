@@ -11,7 +11,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - 471341f9befeab582e845d5e9987b7a4889c202f@144.91.89.66:26656
 - 3f472746f46493309650e5a033076689996c8881@bitcanna-testnet.rpc.kjnodes.com:42659
 - 2a369fb20a5827104efafa901916e97516e829fb@testnet-bitcanna-seed.genznodes.dev:50656
-- 496ac0ba20188f70f41e0a814dfd4d9a617338f8@bcnadev-seed.ibs.team:443
+- 496ac0ba20188f70f41e0a814dfd4d9a617338f8@bcnadev-seed.ibs.team:16656
 
 ## Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
@@ -25,7 +25,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://rpc.bitcanna-dev-1.bitcanna.aviaone.com/ (TX index = off)
 - https://testnet-bitcanna-rpc.konsortech.xyz/
 - https://bitcanna-testnet.rpc.kjnodes.com
-- https://bcnadev-rpc.ibs.team ( StateSync enable)
+- https://bcna-testnet-rpc.ibs.team ( StateSync enable)
 - https://testnet-bitcanna-rpc.konsortech.xyz
 
 
@@ -39,7 +39,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://bitcanna.api.dev.stavr.tech/
 - https://testnet-bitcanna-api.konsortech.xyz/
 - https://bitcanna-testnet.api.kjnodes.com
-- https://bcnadev-api.ibs.team
+- https://bcna-testnet-api.ibs.team
 - https://testnet-bitcanna-api.konsortech.xyz
 
 
@@ -57,6 +57,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 ## Snapshots
 - https://services.kjnodes.com/testnet/bitcanna/snapshot
 - https://docs.konsortech.xyz/node/Testnet/Bitcanna/snapshot
+- https://testnet-snapshot.ibs.team/Bitcanna/
 
 ## Docs
 - [Automatic StateSync Join `bitcanna-dev-1`](README.md)
