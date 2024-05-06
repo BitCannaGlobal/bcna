@@ -30,6 +30,21 @@
         "id": "d1d43cc7c7aef715957289fd96a114ecaa7ba756",
         "address": "testnet-seeds.nodex.one:22910",
         "provider": "NodeX Emperor"
+      },
+      {
+        "id": "462d2746985cbffd78a669408387c5e6a6025344",
+        "address": "bitcanna-testnet.seed.l0vd.com:58656",
+        "provider": "L0vd.com ❤️"
+      },
+      {
+        "id": "bb1b2586469b22d0e3a9e32b968f23dbeb1a4de7",
+        "address": "testnet-seed.konsortech.xyz:26156",
+        "provider": "KonsorTech"
+      },
+      {
+        "id": "496ac0ba20188f70f41e0a814dfd4d9a617338f8",
+        "address": "bcnadev-seed.ibs.team:16656",
+        "provider": "Inter Blockchain Services"
       }
     ],
     "persistent_peers": [
@@ -112,7 +127,7 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "https://bcnadev-rpc.ibs.team",
+        "address": "https://bcna-testnet-rpc.ibs.team",
         "provider": "Inter Blockchain Services"
       },
       {
@@ -216,7 +231,7 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "https://bcnadev-api.ibs.team",
+        "address": "https://bcna-testnet-api.ibs.team",
         "provider": "Inter Blockchain Services"
       },
       {
@@ -355,6 +370,11 @@
       "address": "https://bitcanna-testnet.rpc.nodex.one",
       "url_doc": "https://docs.nodex.one/networks/testnet/bitcanna/statesync",
       "provider": "NodeX Emperor"
+    },
+    {
+      "address": "https://bitcanna-testnet.rpc.l0vd.com:443",
+      "url_doc": "https://chain-services.l0vd.com/testnets/bitcanna/state-sync",
+      "provider": "L0vd.com ❤️"
     }
   ]
 }

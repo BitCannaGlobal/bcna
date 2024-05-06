@@ -2,7 +2,7 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> [Current version (v3.0.1)](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.1) of our development uses Cosmos SDK v0.47.8 & CometBFT v0.37.4 & IBC-go v7.3.2
+> [Current version (v3.0.2)](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.2) of our development uses Cosmos SDK v0.47.9 & CometBFT v0.37.4 & IBC-go v7.3.2
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -34,9 +34,9 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 10th Mar 2023 18.40h CET    | 7.585.420   | [v1.6.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.1/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v161-codename-vigorous-grow-fix---from-v161) |
 | 30th May 2023 15.40h CEST    | 8.771.420   | [v1.7.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.7.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.7.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v170-codename-vigorous-grow-huckleberry-from-v163) |
 | 29th Jun 2023 16.20h CEST    | 9.209.420   | [v2.0.2](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
-| 25th Jan 2024 16.35h CET    | 12.288.420   | [v3.0.0](https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
+| 25th Jan 2024 16.35h CET    | 12.288.420   | [v3.0.2](https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 
-> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.1
+> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.2
 
 # How to join `bitcanna-1` chain
 > Tip: At the end of this doc, you will find links with important info
