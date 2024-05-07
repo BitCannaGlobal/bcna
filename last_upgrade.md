@@ -1,4 +1,29 @@
 #  MAINNET `bitcanna-1` Upgrades
+## v3.1.0 codename `ganjarevolutionburn` from v3.0.2
+
+> (Update scheduled for 10th May 2024 ~ 16.55h CET - 14.55h UTC)
+>
+> Note: this is a planned upgrade, the chain **will halt** at block **[13.846.420](https://www.mintscan.io/bitcanna/blocks/13846420)**
+>
+> **Important note: The tag name required for the upgrade is v3.1.0**
+
+On chain proposal:
+
+**Title:** Add Burn mechanism
+
+**Description:** Vote this upgrade to install the new custom module: Burn
+
+**What will be upgraded and implemented:**
+* New burn module.
+* Discussion about this new module: [ignite/cli#4022](https://github.com/ignite/cli/discussions/4022)
+* Whitelist of hardcoded addresses that could be burned (protocol level)
+* Bump ibc/go from v7.3.2 to v7.4.0 (security advisory) - [V047 burn module bump deps #352](https://github.com/BitCannaGlobal/bcna/pull/352)
+* Bump Cosmos-sdk from v0.47.9 to v0.47.11
+* Bump CometBFT from v0.37.4 to v0.37.5
+
+Thanks to @locky10loumpi & @atmoner for their huge contribution with the initial release of the Burn module.
+
+
 ## v3.0.0 codename `ganjarevolution` from v2.0.3
 
 > (Update scheduled for 25th January 2024 ~ 16.35h CET - 15.35h UTC)
