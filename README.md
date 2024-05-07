@@ -2,7 +2,7 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> [Current version (v3.0.2)](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.2) of our development uses Cosmos SDK v0.47.9 & CometBFT v0.37.4 & IBC-go v7.3.2
+> [Current version (v3.1.0)](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.1.0) of our development uses Cosmos SDK v0.47.11 & CometBFT v0.37.5 & IBC-go v7.4.0
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -35,8 +35,9 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 30th May 2023 15.40h CEST    | 8.771.420   | [v1.7.0](https://github.com/BitCannaGlobal/bcna/releases/download/v1.7.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.7.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v170-codename-vigorous-grow-huckleberry-from-v163) |
 | 29th Jun 2023 16.20h CEST    | 9.209.420   | [v2.0.2](https://github.com/BitCannaGlobal/bcna/releases/download/v2.0.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v2.0.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 | 25th Jan 2024 16.35h CET    | 12.288.420   | [v3.0.2](https://github.com/BitCannaGlobal/bcna/releases/download/v3.0.2/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.2) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
+| 10th May 2024 16.55h CET    | 13.846.420   | [v3.1.0](https://github.com/BitCannaGlobal/bcna/releases/download/v3.1.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.1.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 
-> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v3.0.2
+> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v3.1.0
 
 # How to join `bitcanna-1` chain
 > Tip: At the end of this doc, you will find links with important info
@@ -191,13 +192,13 @@ Follow this guide to install Cosmovisor on your node.
 # Links to important info
 
 ## Explorers:
-* [BitCanna based on Forbole](https://explorer.bitcanna.io)
 * [MintScan based on Cosmostation](https://www.mintscan.io/bitcanna)
 * [Ping-Pub explorer](https://ping.pub/bitcanna/uptime)
 * [ATOMScan explorer](https://atomscan.com/bitcanna)
 
 ## Wallets
 * [BitCanna web wallet](https://wallet.bitcanna.io)
+* [BitCanna Mobile Android](https://play.google.com/store/search?q=bitcanna&c=apps)
 * [Ping-Pub web wallet](https://ping.pub/wallet/accounts)
 * [Cosmostation iOS](https://apps.apple.com/kr/app/cosmostation/id1459830339)
 * [Cosmostation Android](https://play.google.com/store/apps/details?id=wannabit.io.cosmostaion)
