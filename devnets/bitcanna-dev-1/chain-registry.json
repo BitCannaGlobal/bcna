@@ -310,6 +310,12 @@
       "account_page": "https://explorer.nodex.one/bitcanna-testnet/account/${accountAddress}"
     },
     {
+      "kind": "AVIAONE",
+      "url": "https://testnet.explorer.aviaone.com/bitcanna",
+      "tx_page": "https://testnet.explorer.aviaone.com/bitcanna/tx/${txHash}",
+      "account_page": "https://testnet.explorer.aviaone.com/bitcanna/account/${accountAddress}"
+    },    
+    {
       "kind": "",
       "url": "",
       "tx_page": "/tx/${txHash}"
