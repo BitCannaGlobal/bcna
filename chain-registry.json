@@ -670,7 +670,7 @@
       "url": "https://explorer.kalia.network/bitcanna",
       "tx_page": "https://explorer.kalia.network/bitcanna/tx/${txHash}",
       "account_page": "https://explorer.kalia.network/bitcanna/account/${accountAddress}"
-    }
+    },
     {
       "kind": "AVIAONE",
       "url": "https://mainnet.explorer.aviaone.com/bitcanna",
