@@ -29,7 +29,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 
 | Upgrade Date | Upgrade Height | Binary Path | Release GitHub | Release notes |
 | -------- | -------- | -------- | ------- | ------- |
-| 11th Aug 2022 15.00h CET    | 2.092.453    | [v1.3.1](https://github.com/BitCannaGlobal/bcna/releases/download/v.1.3.1/bcnad)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.3.1) | [Doc](-NA-) |
+| 11th Aug 2022 15.00h CET    | 2.092.453    | [v1.3.1](https://github.com/BitCannaGlobal/bcna/releases/download/v.1.3.1/bcnad)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v.1.3.1) | [-NA-]() |
 | 11th Aug 2022 15.00h CET    | 4.490.420    | [v1.4.1](https://github.com/BitCannaGlobal/bcna/releases/download/v1.4.1/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.4.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v141-codename-strangebuddheads-halt-chain-on-11th-of-august-2022) |
 | 7th Nov 2022 15.00h CET    | 5.787.420    | [v1.5.3](https://github.com/BitCannaGlobal/bcna/releases/download/v1.5.3/bcna_linux_amd64.tar.gz)    | [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.5.3) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v153-codename-trichomemonster-ica---from-v145) |
 | 2nd Mar 2023 16.20h CET    | 7.467.420   | [v1.6.0-fix](https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.0-fix/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v1.6.0-fix) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md#v160-fix-codename-vigorous-grow---from-v153) |
