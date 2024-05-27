@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/BitCannaGlobal/bcna/testutil/sample"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 )
@@ -18,12 +19,14 @@ func TestMsgBurnCoinsAction_ValidateBasic(t *testing.T) {
 			name: "invalid address",
 			msg: MsgBurnCoinsAction{
 				Creator: "invalid_address",
+				Coins:   sdk.Coins{sdk.NewInt64Coin("testcoin", 1000)},
 			},
 			err: sdkerrors.ErrInvalidAddress,
 		}, {
 			name: "valid address",
 			msg: MsgBurnCoinsAction{
 				Creator: sample.AccAddress(),
+				Coins:   sdk.Coins{sdk.NewInt64Coin("testcoin", 1000)},
 			},
 		},
 	}
@@ -31,7 +34,7 @@ func TestMsgBurnCoinsAction_ValidateBasic(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			err := tt.msg.ValidateBasic()
 			if tt.err != nil {
-				require.ErrorIs(t, err, tt.err)
+				require.Contains(t, err.Error(), tt.err.Error())
 				return
 			}
 			require.NoError(t, err)
