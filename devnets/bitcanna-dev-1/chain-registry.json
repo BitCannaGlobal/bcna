@@ -45,6 +45,11 @@
         "id": "496ac0ba20188f70f41e0a814dfd4d9a617338f8",
         "address": "bcnadev-seed.ibs.team:16656",
         "provider": "Inter Blockchain Services"
+      },
+      {
+        "id": "b85358e035343a3b15e77e1102857dcdaf70053b",
+        "address": "seeds.bluestake.net:44356",
+        "provider": "BlueStake 🚀"
       }
     ],
     "persistent_peers": [
@@ -153,6 +158,10 @@
       {
         "address": "https://bitcanna-testnet.rpc.nodex.one",
         "provider": "NodeX Emperor"       
+      },
+      {
+        "address": "https://bitcanna-testnet-rpc.bluestake.net",
+        "provider": "BlueStake 🚀"
       }
     ],
     "grpc": [
@@ -257,6 +266,10 @@
       {
         "address": "https://bitcanna-testnet.api.nodex.one",
         "provider": "NodeX Emperor"
+      },
+      {
+        "address": "https://bitcanna-testnet-api.bluestake.net",
+        "provider": "BlueStake 🚀"
       }
     ]
   },
@@ -381,6 +394,11 @@
       "address": "https://bitcanna-testnet.rpc.l0vd.com:443",
       "url_doc": "https://chain-services.l0vd.com/testnets/bitcanna/state-sync",
       "provider": "L0vd.com ❤️"
+    },
+    {
+      "address": "https://bitcanna-testnet-rpc.bluestake.net:443",
+      "url_doc": "https://bluestake.net/bitcanna/testnet/statesync",
+      "provider": "BlueStake 🚀"
     }
   ]
 }
