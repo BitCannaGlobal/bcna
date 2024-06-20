@@ -212,6 +212,11 @@
         "id": "fe587eb0d37cabb9b8089ec8899cf32ee2870994",
         "address": "185.144.99.40:46656",
         "provider": "CrypTech"
+      },
+      {
+        "id": "b85358e035343a3b15e77e1102857dcdaf70053b",
+        "address": "seeds.bluestake.net:24356",
+        "provider": "provider": "BlueStake 🚀"
       }
     ]
   },
