@@ -17,11 +17,6 @@
         "provider": "Panthea EU"
       },
       {
-        "id": "20e1000e88125698264454a884812746c2eb4807",
-        "address": "seeds.lavenderfive.com:13056",
-        "provider": "Lavender.Five Nodes 🐝"
-      },
-      {
         "id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
         "address": "seed.bitcanna-1.bitcanna.aviaone.com:10263",
         "provider": "AVIAONE 🟢"
@@ -97,21 +92,6 @@
         "id": "a4c1e46441164c350f721cf142d52c136215e05c",
         "address": "65.108.43.170:26656",
         "provider": "BitCanna"
-      },
-      {
-        "id": "8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7",
-        "address": "65.108.142.81:26682",
-        "provider": "Stakely"
-      },
-      {
-        "id": "ad820cb2fa85e525538207bb24ee49a61a74eb45",
-        "address": "93.115.25.15:26656",
-        "provider": "Stakely"
-      },
-      {
-        "id": "df99de6cec9152c517990317b340b8b9a307493c",
-        "address": "bcna.paranorm.pro:26656",
-        "provider": "Paranormal Bros."
       },
       {
         "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
@@ -227,10 +207,6 @@
         "provider": "bitcanna"
       },
       {
-        "address": "https://rpc.bcna.paranorm.pro/",
-        "provider": "Paranormal Bros."
-      },
-      {
         "address": "https://bcna-rpc.ibs.team/",
         "provider": "Inter Blockchain Services"
       },
@@ -311,20 +287,8 @@
         "provider": "Citizen Cosmos"
       },
       {
-        "address": "http://65.108.142.81:26683",
-        "provider": "Stakely"
-      },
-      {
-        "address": "http://93.115.25.15:26657",
-        "provider": "Stakely"
-      },
-      {
         "address": "https://bitcanna-rpc.validatornode.com",
         "provider": "ValidatorNode"
-      }, 
-      {
-        "address": "https://bitcanna-rpc.kitkat.zone/",
-        "provider": "KitKat"
       },
       {
         "address": "https://bitcanna.rpc.nodex.one",
@@ -361,10 +325,6 @@
         "provider": "bitcanna"
       },
       {
-        "address": "bitcanna-grpc.lavenderfive.com:443",
-        "provider": "Lavender.Five Nodes 🐝"
-      },
-      {
         "address": "bitcanna.grpc.m.stavr.tech:9081",
         "provider": "🔥STAVR🔥"
       },
@@ -399,10 +359,6 @@
       {
         "address": "grpc.bitcanna.safeblock.space:9090",
         "provider": "Safe Block"
-      },
-      {
-        "address": "bitcanna-grpc.kitkat.zone:13090",
-        "provider": "KitKat"
       },
       {
         "address": "mainnet-bitcanna-grpc.konsortech.xyz:27090",
@@ -463,10 +419,6 @@
         "provider": "SGTstake"
       },
       {
-        "address": "https://api.bcna.paranorm.pro/",
-        "provider": "Paranormal Bros."
-      },
-      {
         "address": "https://bitcanna.api.m.stavr.tech",
         "provider": "🔥STAVR🔥"
       },
@@ -489,10 +441,6 @@
       {
         "address": "https://bitcanna.api.kjnodes.com",
         "provider": "kjnodes"
-      },
-      {
-        "address": "https://bitcanna-api.lavenderfive.com/",
-        "provider": "Lavender.Five Nodes 🐝"
       },
       {
         "address": "https://bitcanna-api.genznodes.dev",
@@ -531,20 +479,8 @@
         "provider": "MMS"
       },
       {
-        "address": "http://65.108.142.81:1325",
-        "provider": "Stakely"
-      },
-      {
-        "address": "http://93.115.25.15:1317",
-        "provider": "Stakely"
-      },
-      {
         "address": "https://bitcanna-api.validatornode.com",
         "provider": "ValidatorNode"
-      },
-      {
-        "address": "https://bitcanna-api.kitkat.zone",
-        "provider": "KitKat"
       },
       {
         "address": "https://bitcanna.api.nodex.one",
@@ -626,11 +562,6 @@
       "tx_page": "https://explorer.safeblock.space/bitcanna/tx/${txHash}"
     },
     {
-      "kind": "KitKat Explorer",
-      "url": "https://explorer.kitkat.zone/bitcanna",
-      "tx_page": "https://explorer.kitkat.zone/bitcanna/tx/${txHash}"
-    },
-    {
       "kind": "AlxVoy ⚡ ANODE.TEAM",
       "url": "https://main.anode.team/bitcanna",
       "tx_page": "https://main.anode.team/bitcanna/tx/${txHash}"
@@ -695,11 +626,6 @@
   ],
   "state_sync": [
     {
-      "address": "https://rpc.bcna.paranorm.pro:443",
-      "url_doc": "https://bc.paranorm.pro/#statesync",
-      "provider": "Paranormal Bros."
-    },
-    {
       "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com:443",
       "url_doc": "https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html",
       "provider": "AVIAONE 🟢"
@@ -708,11 +634,6 @@
       "address": "https://rpc.bitcanna.safeblock.space:443",
       "url_doc": "https://safeblock.space/bitcanna-statesync",
       "provider": "Safe Block"
-    },    
-    {
-      "address": "https://bitcanna-rpc.kitkat.zone:443",
-      "url_doc": "https://docs.kitkat.zone/chains/bitcanna/bitcanna-node-state-sync",
-      "provider": "KitKat"
     },
     {
       "address": "https://bitcanna.rpc.m.anode.team",
