@@ -771,7 +771,7 @@
     },
     {
       "address": "https://bitcanna-rpc.bluestake.net:443",
-      "url_doc": "bluestake.net/bitcanna/statesync",
+      "url_doc": "https://bluestake.net/bitcanna/statesync",
       "provider": "BlueStake 🚀"
     }
   ]
