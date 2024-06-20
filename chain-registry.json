@@ -768,6 +768,11 @@
       "address": "https://bitcanna-rpc.kalia.network:443",
       "url_doc": "https://docs.kalia.network/mainnet/bitcanna/statesync",
       "provider": "Kalia Network"
+    },
+    {
+      "address": "https://bitcanna-rpc.bluestake.net:443",
+      "url_doc": "bluestake.net/bitcanna/statesync",
+      "provider": "BlueStake 🚀"
     }
   ]
 }
