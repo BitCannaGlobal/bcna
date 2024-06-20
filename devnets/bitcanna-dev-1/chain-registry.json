@@ -8,7 +8,7 @@
       },
       {
         "id": "9f7ebc84e78187421e637627bbf608a54040fb17",
-        "address": "seeds.bitcanna-dev.hexnodes.co:04656",
+        "address": "seeds.bitcanna-dev.hexnodes.one:04656",
         "provider": "Hexnodes"
       },
       {
@@ -116,7 +116,7 @@
         "provider": "El-Jay"
       },
       {
-        "address": "https://rpc.bitcanna-dev.hexnodes.co:443",
+        "address": "https://rpc.bitcanna-dev.hexnodes.one:443",
         "provider": "Hexnodes"
       },
       {
@@ -174,7 +174,7 @@
         "provider": "El-Jay"
       },
       {
-        "address": "grpc.bitcanna-dev.hexnodes.co:4090",
+        "address": "grpc.bitcanna-dev.hexnodes.one:4090",
         "provider": "Hexnodes"
       },
       {
@@ -224,7 +224,7 @@
         "provider": "🔥STAVR🔥"
       },
       {
-        "address": "https://lcd.bitcanna-dev.hexnodes.co",
+        "address": "https://lcd.bitcanna-dev.hexnodes.one",
         "provider": "Hexnodes"
       },
       {
@@ -288,9 +288,9 @@
     },
     {
       "kind": "Hexnodes",
-      "url": "https://explorer.hexnodes.co/bitcanna-testnet",
-      "tx_page": "https://explorer.hexnodes.co/bitcanna-testnet/tx/${txHash}",
-      "account_page": "hthttps://explorer.hexnodes.co/bitcanna-testnet/account/${accountAddress}"
+      "url": "https://explorer.hexnodes.one/BITCANNA-TESTNET",
+      "tx_page": "https://explorer.hexnodes.one/BITCANNA-TESTNET/tx/${txHash}",
+      "account_page": "hthttps://explorer.hexnodes.one/BITCANNA-TESTNET/account/${accountAddress}"
     },
     {
       "kind": "KonsorTech",
@@ -351,7 +351,7 @@
       "provider": "AVIAONE 🟢"
     },
     {
-      "address": "https://rpc.bitcanna-de.hexnodes.co",
+      "address": "https://rpc.bitcanna-dev.hexnodes.one",
       "url_doc": "https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna",
       "provider": "Hexnodes"
     },
