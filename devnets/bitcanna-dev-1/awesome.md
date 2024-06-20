@@ -13,6 +13,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - 2a369fb20a5827104efafa901916e97516e829fb@testnet-bitcanna-seed.genznodes.dev:50656
 - 496ac0ba20188f70f41e0a814dfd4d9a617338f8@bcnadev-seed.ibs.team:16656
 - b85358e035343a3b15e77e1102857dcdaf70053b@seeds.bluestake.net:44356
+- 9f7ebc84e78187421e637627bbf608a54040fb17@seeds.bitcanna-dev.hexnodes.one:04656
 
 ## Explorers
 - https://testnets-cosmos.mintthemoon.xyz/bitcanna/staking
@@ -20,6 +21,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://explorer.stavr.tech/Bitcanna-DEV
 - https://explorer.kjnodes.com/bitcanna-testnet
 - https://testnet-explorer.konsortech.xyz/bitcanna
+- https://explorer.hexnodes.one/BITCANNA-TESTNET
 
 ## RPC endpoints
 - https://rpc-testnet.bitcanna.io
@@ -29,10 +31,12 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://bcna-testnet-rpc.ibs.team ( StateSync enable)
 - https://testnet-bitcanna-rpc.konsortech.xyz
 - https://bitcanna-testnet-rpc.bluestake.net
+- https://rpc.bitcanna-dev.hexnodes.one:443
 
 ## GRPC endpoints
 - bitcanna-testnet.grpc.kjnodes.com:42090
 - testnet-bitcanna-grpc.konsortech.xyz:9090
+- grpc.bitcanna-dev.hexnodes.one:4090
 
 ## LCD Enpoints
 - http://lcd-testnet.bitcanna.io
@@ -43,6 +47,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://bcna-testnet-api.ibs.team
 - https://testnet-bitcanna-api.konsortech.xyz
 - https://bitcanna-testnet-api.bluestake.net
+- https://lcd.bitcanna-dev.hexnodes.one
 
 ## Wallets / Dashboard
 - https://wallet-testnet.bitcanna.io
@@ -55,12 +60,14 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - https://docs.konsortech.xyz/node/Testnet/Bitcanna/statesync
 - https://github.com/Inter-Blockchain-Service/Cosmos-StateSync/tree/main/Testnet/Bitcanna
 - https://bluestake.net/bitcanna/testnet/statesync
+- https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna
 
 ## Snapshots
 - https://services.kjnodes.com/testnet/bitcanna/snapshot
 - https://docs.konsortech.xyz/node/Testnet/Bitcanna/snapshot
 - https://testnet-snapshot.ibs.team/Bitcanna/
 - https://bluestake.net/bitcanna/testnet/snapshots
+- https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna
 
 ## Docs
 - [Automatic StateSync Join `bitcanna-dev-1`](README.md)
@@ -73,6 +80,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - [Useful commands for node and wallet operation by kjnodes](https://services.kjnodes.com/testnet/bitcanna/useful-commands)
 - [Testnet Service by genznodes](https://genznodes.dev/testnet_services/#bitcanna)
 - [Node Installation Guide Devnet by KonsorTech](https://docs.konsortech.xyz/node/Testnet/Bitcanna)
+- [Node Installation/Automatic Installation Cosmovisor](https://github.com/hexskrt/testnet_installation/tree/main/Bitcanna)
 
 ### Manual-setup
 > This instructions was written by Avione Validators, thanks a lot!
