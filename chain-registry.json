@@ -223,7 +223,7 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "http://bitcanna.rpc.m.stavr.tech:21327",
+        "address": "https://bitcanna.rpc.m.stavr.tech:443",
         "provider": "🔥STAVR🔥"
       },
       {
@@ -689,6 +689,11 @@
       "address": "https://bitcanna-rpc.kalia.network:443",
       "url_doc": "https://docs.kalia.network/mainnet/bitcanna/statesync",
       "provider": "Kalia Network"
+    },
+    {
+      "address": "https://bitcanna.rpc.m.stavr.tech:443",
+      "url_doc": "https://stavr-team.gitbook.io/nodes-guides/mainnets/bitcanna/statesync-snapshot",
+      "provider": "🔥STAVR🔥"
     },
     {
       "address": "https://bitcanna-rpc.bluestake.net:443",
