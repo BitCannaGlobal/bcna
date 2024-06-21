@@ -37,6 +37,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - bitcanna-testnet.grpc.kjnodes.com:42090
 - testnet-bitcanna-grpc.konsortech.xyz:9090
 - grpc.bitcanna-dev.hexnodes.one:4090
+- bitcanna.grpc.dev.stavr.tech:2901
 
 ## LCD Enpoints
 - http://lcd-testnet.bitcanna.io
@@ -75,7 +76,7 @@ This will disconnect after passing P2P info so not include in your _persistent_p
 - [Upgrades - Last Upgrade](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/upgrade_v1.6.0-rc2.md)
 - [Setup Cosmovisor from zero](https://github.com/BitCannaGlobal/bcna/blob/main/devnets/bitcanna-dev-1/cosmovisor_install.md)
 - [Node installation instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/installation)
-- [Node installation instructions Mainnet/DEVNET by 🔥STAVR🔥](https://github.com/obajay/nodes-Guides/tree/main/Projects/Bitcanna)
+- [Node installation instructions Mainnet/DEVNET by 🔥STAVR🔥](https://stavr-team.gitbook.io/nodes-guides/testnets/bitcanna/node-installation)
 - [Node upgrade instructions by kjnodes](https://services.kjnodes.com/testnet/bitcanna/upgrade)
 - [Useful commands for node and wallet operation by kjnodes](https://services.kjnodes.com/testnet/bitcanna/useful-commands)
 - [Testnet Service by genznodes](https://genznodes.dev/testnet_services/#bitcanna)
