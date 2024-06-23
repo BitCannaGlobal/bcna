@@ -1,6 +1,6 @@
 # Devnet-1: Setup up your validator and join *bitcanna-dev-1*
 
-## Target of this DevNet.
+## Target of this DevNet..
 We created a new testnet that follows the exact upgrade cycle as the current Mainnet. Our target is to test new features here before apply them at MainNet.
 
 ### We are going to work in three new testnets: 
