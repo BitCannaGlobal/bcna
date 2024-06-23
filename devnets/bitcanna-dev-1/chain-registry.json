@@ -346,11 +346,6 @@
       "account_page": "https://testnet.explorer.aviaone.com/bitcanna/account/${accountAddress}"
     },    
     {
-      "kind": "",
-      "url": "",
-      "tx_page": "/tx/${txHash}"
-    },
-    {
       "kind": "Nodes Hub 🛡️ 100% Slash Protected 🛡️",
       "url": "https://explorer.testnet.nodeshub.online/bitcanna/",
       "tx_page": "https://explorer.testnet.nodeshub.online/bitcanna/tx/${txHash}",
