@@ -97,6 +97,11 @@
         "id": "bbf8ef70a32c3248a30ab10b2bff399e73c6e03c",
         "address": "bitcanna-testnet.rpc.nodex.one:22956",
         "provider": "NodeX Emperor"
+      },
+      {
+        "id": "637077d431f618181597706810a65c826524fd74",
+        "address": "bitcanna.test.rpc.nodeshub.online:13056",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ]
   },
@@ -153,6 +158,10 @@
       {
         "address": "https://bitcanna-testnet-rpc.bluestake.net",
         "provider": "BlueStake 🚀"
+      },
+      {
+        "address": "https://bitcanna.test.rpc.nodeshub.online:443",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
     "grpc": [
@@ -199,6 +208,10 @@
       {
         "address": "bitcanna-testnet.grpc.nodex.one:443",
         "provider": "NodeX Emperor"
+      },
+      {
+        "address": "bitcanna.test.grpc.nodeshub.online",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
     "rest": [
@@ -257,6 +270,10 @@
       {
         "address": "https://bitcanna-testnet-api.bluestake.net",
         "provider": "BlueStake 🚀"
+      },
+      {
+        "address": "https://bitcanna.test.api.nodeshub.online:443",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ]
   },
@@ -314,7 +331,13 @@
       "url": "https://testnet.explorer.aviaone.com/bitcanna",
       "tx_page": "https://testnet.explorer.aviaone.com/bitcanna/tx/${txHash}",
       "account_page": "https://testnet.explorer.aviaone.com/bitcanna/account/${accountAddress}"
-    },    
+    },
+    {
+      "kind": "Nodes Hub 🛡️ 100% Slash Protected 🛡️",
+      "url": "https://explorer.testnet.nodeshub.online/bitcanna/",
+      "tx_page": "https://explorer.testnet.nodeshub.online/bitcanna/tx/${txHash}",
+      "account_page": "https://explorer.testnet.nodeshub.online/bitcanna/accounts/${accountAddress}"
+    },
     {
       "kind": "",
       "url": "",
@@ -381,6 +404,11 @@
       "address": "https://bitcanna-testnet-rpc.bluestake.net:443",
       "url_doc": "https://bluestake.net/bitcanna/testnet/statesync",
       "provider": "BlueStake 🚀"
+    },
+    {
+      "address": "https://bitcanna.test.rpc.nodeshub.online:443",
+      "url_doc": "https://services.nodeshub.online/testnet-networks/bitcanna/state-sync",
+      "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
     }
   ]
 }
