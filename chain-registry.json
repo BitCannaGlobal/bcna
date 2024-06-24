@@ -399,7 +399,7 @@
         "provider": "ValidatorNode"
       },
       {
-        "address": "https://grpc-bitcanna.cryptech.com.ua",
+        "address": "grpc-bitcanna.cryptech.com.ua:443",
         "provider": "CrypTech"
       },
       {
@@ -407,7 +407,7 @@
         "provider": "Kalia Network"
       },
       {
-        "address": "bitcanna.grpc.nodeshub.online",
+        "address": "bitcanna.grpc.nodeshub.online:13090",
         "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
