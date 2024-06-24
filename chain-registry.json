@@ -85,6 +85,11 @@
         "id": "9e2b0de599e1b0b69fe156d783a5365858c43027",
         "address": "bitcanna-seed.kalia.network:12656",
         "provider": "Kalia Network"
+      },
+      {
+        "id": "6f6a3a908634b79b6fe7c4988efec2553f188234",
+        "address": "bitcanna.seed.nodeshub.online:13056",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
     "persistent_peers": [
@@ -197,6 +202,11 @@
         "id": "b85358e035343a3b15e77e1102857dcdaf70053b",
         "address": "seeds.bluestake.net:24356",
         "provider": "BlueStake 🚀"
+      },
+      {
+        "id": "637077d431f618181597706810a65c826524fd74",
+        "address": "bitcanna.rpc.nodeshub.online:13056",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ]
   },
@@ -309,6 +319,10 @@
       {
         "address": "https://bitcanna-rpc.kalia.network/",
         "provider": "Kalia Network"
+      },
+      {
+        "address": "https://bitcanna.rpc.nodeshub.online:443",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
     "grpc": [
@@ -391,6 +405,10 @@
       {
         "address": "bitcanna-grpc.kalia.network:443",
         "provider": "Kalia Network"
+      },
+      {
+        "address": "bitcanna.grpc.nodeshub.online",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
     "rest": [
@@ -501,6 +519,10 @@
       {
         "address": "https://api.bitcanna.citizenweb3.com",
         "provider": "Citizen Web3"
+      },
+      {
+        "address": "https://bitcanna.api.nodeshub.online",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ]
   },
@@ -600,6 +622,12 @@
       "url": "https://mainnet.explorer.aviaone.com/bitcanna",
       "tx_page": "https://mainnet.explorer.aviaone.com/bitcanna/tx/${txHash}",
       "account_page": "https://mainnet.explorer.aviaone.com/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "Nodes Hub 🛡️ 100% Slash Protected 🛡️",
+      "url": "https://explorer.nodeshub.online/bitcanna/",
+      "tx_page": "https://explorer.nodeshub.online/bitcanna/tx/${txHash}",
+      "account_page": "https://explorer.nodeshub.online/bitcanna/accounts/${accountAddress}"
     }
   ],
   "archive_nodes": [
@@ -610,6 +638,10 @@
     {
       "address": "https://rpc.example.com/",
       "provider": "Example"
+    },
+    {
+      "address": "https://bitcanna.rpc.nodeshub.online",
+      "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
     }
   ],
   "state_sync": [
@@ -687,6 +719,11 @@
       "address": "https://bitcanna-rpc.bluestake.net:443",
       "url_doc": "https://bluestake.net/bitcanna/statesync",
       "provider": "BlueStake 🚀"
+    },
+    {
+      "address": "https://bitcanna.rpc.nodeshub.online:443",
+      "url_doc": "https://services.nodeshub.online/mainnet-networks/bitcanna/state-sync",
+      "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
     }
   ]
 }
