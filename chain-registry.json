@@ -251,7 +251,7 @@
         "provider": "Hexnodes"
       },
       {
-        "address": "http://rpc.bitcanna.citizencosmos.space/",
+        "address": "https://rpc.bitcanna.citizenweb3.com/",
         "provider": "Citizen Web3"
       },
       {
@@ -281,10 +281,6 @@
       {
         "address": "https://rpc-bitcanna.mms.team:443",
         "provider": "MMS"
-      },
-      {
-        "address": "http://51.159.223.25:33657",
-        "provider": "Citizen Cosmos"
       },
       {
         "address": "https://bitcanna-rpc.validatornode.com",
@@ -513,6 +509,10 @@
       {
         "address": "https://bitcanna-api.kalia.network",
         "provider": "Kalia Network"
+      },
+      {
+        "address": "https://api.bitcanna.citizenweb3.com",
+        "provider": "Citizen Web3"
       }
     ]
   },
