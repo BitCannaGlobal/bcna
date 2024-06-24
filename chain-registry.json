@@ -211,7 +211,7 @@
         "provider": "Inter Blockchain Services"
       },
       {
-        "address": "https://bitcanna-rpc.panthea.eu",
+        "address": "https://bitcanna-rpc.panthea.eu/",
         "provider": "Panthea EU"
       },
       {
@@ -219,11 +219,11 @@
         "provider": "SGTstake"
       },
       {
-        "address": "https://bitcanna.rpc.m.anode.team",
+        "address": "https://bitcanna.rpc.m.anode.team/",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "http://bitcanna.rpc.m.stavr.tech:21327",
+        "address": "https://bitcanna.rpc.m.stavr.tech/",
         "provider": "🔥STAVR🔥"
       },
       {
@@ -231,23 +231,23 @@
         "provider": "KJINC.io"
       },
       {
-        "address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
+        "address": "https://mainnet-bitcanna-rpc.konsortech.xyz/",
         "provider": "KonsorTech"
       },
       {
-        "address": "https://bitcanna.rpc.kjnodes.com",
+        "address": "https://bitcanna.rpc.kjnodes.com/",
         "provider": "kjnodes"
       },
       {
-        "address": "https://bitcanna-rpc.genznodes.dev",
+        "address": "https://bitcanna-rpc.genznodes.dev/",
         "provider": "genznodes"
       },
       {
-        "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com",
+        "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com/",
         "provider": "AVIAONE 🟢"
       },
       {
-        "address": "https://rpc.bitcanna-mainnet.hexnodes.one",
+        "address": "https://rpc.bitcanna-mainnet.hexnodes.one/",
         "provider": "Hexnodes"
       },
       {
@@ -257,10 +257,6 @@
       {
         "address": "https://bitcanna-mainnet.rpc.l0vd.com/",
         "provider": "L0vd.com"
-      },
-      {
-        "address": "https://rpc-bitcanna-ia.cosmosia.notional.ventures",
-        "provider": "Notional"
       },
       {
         "address": "https://bitcanna-rpc.polkachu.com",
@@ -335,10 +331,6 @@
       {
         "address": "bitcanna-mainnet.grpc.l0vd.com:80",
         "provider": "L0vd.com"
-      },
-      {
-        "address": "grpc-bitcanna-ia.cosmosia.notional.ventures:443",
-        "provider": "Notional"
       },
       {
         "address": "bitcanna.grpc.kjnodes.com:14290",
@@ -453,10 +445,6 @@
       {
         "address": "https://bitcanna-mainnet.api.l0vd.com",
         "provider": "L0vd.com"
-      },
-      {
-        "address": "https://api-bitcanna-ia.cosmosia.notional.ventures",
-        "provider": "Notional"
       },
       {
         "address": "https://bitcanna-api.polkachu.com",
@@ -689,6 +677,11 @@
       "address": "https://bitcanna-rpc.kalia.network:443",
       "url_doc": "https://docs.kalia.network/mainnet/bitcanna/statesync",
       "provider": "Kalia Network"
+    },
+    {
+      "address": "https://bitcanna.rpc.m.stavr.tech:443",
+      "url_doc": "https://stavr-team.gitbook.io/nodes-guides/mainnets/bitcanna/statesync-snapshot",
+      "provider": "🔥STAVR🔥"
     },
     {
       "address": "https://bitcanna-rpc.bluestake.net:443",
