@@ -210,7 +210,7 @@
         "provider": "NodeX Emperor"
       },
       {
-        "address": "bitcanna.test.grpc.nodeshub.online",
+        "address": "bitcanna.test.grpc.nodeshub.online:13090",
         "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
