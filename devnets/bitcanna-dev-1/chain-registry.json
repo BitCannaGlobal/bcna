@@ -186,7 +186,7 @@
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "grpc.bitcanna-dev-1.bitcanna.aviaone.com:9092",
+        "address": "grpc.bitcanna-dev-1.bitcanna.aviaone.com:9098",
         "provider": "AVIAONE 🟢"
       },
       {
@@ -327,7 +327,7 @@
       "account_page": "https://explorer.nodex.one/bitcanna-testnet/account/${accountAddress}"
     },
     {
-      "kind": "AVIAONE",
+      "kind": "AVIAONE Explorer 🟢",
       "url": "https://testnet.explorer.aviaone.com/bitcanna",
       "tx_page": "https://testnet.explorer.aviaone.com/bitcanna/tx/${txHash}",
       "account_page": "https://testnet.explorer.aviaone.com/bitcanna/account/${accountAddress}"
