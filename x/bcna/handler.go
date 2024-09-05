@@ -43,7 +43,8 @@ func NewHandler(k keeper.Keeper) sdk.Handler {
 
 		default:
 			errMsg := fmt.Sprintf("unrecognized %s message type: %T", types.ModuleName, msg)
-			return nil, types.ErrUnrecognized.Wrapf(errMsg)
+			return nil, fmt.Errorf(errMsg)
+			// return nil, types.ErrUnrecognized.Wrapf(errMsg)
 		}
 	}
 }
