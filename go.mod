@@ -9,9 +9,9 @@ require (
 	cosmossdk.io/math v1.3.0
 	github.com/cometbft/cometbft v0.37.5
 	github.com/cometbft/cometbft-db v0.11.0
-	github.com/cosmos/cosmos-sdk v0.47.11
+	github.com/cosmos/cosmos-sdk v0.47.13
 	github.com/cosmos/gogoproto v1.4.10
-	github.com/cosmos/ibc-go/v7 v7.5.1
+	github.com/cosmos/ibc-go/v7 v7.8.0
 	github.com/golang/protobuf v1.5.4
 	github.com/gorilla/mux v1.8.0
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
