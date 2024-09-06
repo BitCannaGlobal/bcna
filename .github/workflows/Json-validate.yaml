@@ -3,8 +3,10 @@ name: JSON check
 on:
   push:
     paths:
-      - '**.json'
+      - '**/*.json'
   pull_request:
+    paths:
+      - '**/*.json'
 
 jobs:
   test:
@@ -14,4 +16,4 @@ jobs:
       - name: json-syntax-check
         uses: limitusus/json-syntax-check@v2
         with:
-          pattern: "\\.json$"
+          pattern: "\\.json$"  # Verificación solo en archivos con extensión .json

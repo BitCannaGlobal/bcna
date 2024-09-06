@@ -875,6 +875,7 @@ func _Query_SupplychainAll_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+var Query_serviceDesc = _Query_serviceDesc
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "bitcannaglobal.bcna.bcna.Query",
 	HandlerType: (*QueryServer)(nil),
