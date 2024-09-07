@@ -16,8 +16,6 @@ In the next section you will find the params for P2P and a *step by step* guide 
 
 #### Persistent peers
 * `80ee9ed689bfb329cf21b94aa12978e073226db4@81.0.247.144:26656`
-* `ba6c17d707cb0c4f81e0ef590f2e36152ff7dd1a@212.227.151.106:26656`
-
 
 #### Genesis file
 * [Link to Genesis file](https://raw.githubusercontent.com/BitCannaGlobal/bcna/main/devnets/bitcanna-dev-1/genesis.json)
