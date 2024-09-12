@@ -1,3 +1,9 @@
-config.yml
+vue/node_modules
+vue/dist
+release/
+.idea/
+.vscode/
 .DS_Store
-ts-client/*
+*.dot
+*.log
+*.ign

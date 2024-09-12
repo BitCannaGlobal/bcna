@@ -14,8 +14,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/pruning"
 	"github.com/cosmos/cosmos-sdk/client/rpc"
 	"github.com/cosmos/cosmos-sdk/client/snapshot"
-	"github.com/cosmos/cosmos-sdk/codec"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/server"
 	servertypes "github.com/cosmos/cosmos-sdk/server/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
@@ -26,17 +24,18 @@ import (
 	"github.com/spf13/viper"
 
 	"github.com/BitCannaGlobal/bcna/app"
+	"github.com/CosmWasm/wasmd/x/wasm"
+	wasmcli "github.com/CosmWasm/wasmd/x/wasm/client/cli"
 )
 
 func initRootCmd(
 	rootCmd *cobra.Command,
 	txConfig client.TxConfig,
-	interfaceRegistry codectypes.InterfaceRegistry,
-	appCodec codec.Codec,
 	basicManager module.BasicManager,
 ) {
 	rootCmd.AddCommand(
 		genutilcli.InitCmd(basicManager, app.DefaultNodeHome),
+		NewInPlaceTestnetCmd(addModuleInitFlags),
 		debug.Cmd(),
 		confixcmd.ConfigCommand(),
 		pruning.Cmd(newApp, app.DefaultNodeHome),
@@ -53,10 +52,14 @@ func initRootCmd(
 		txCommand(),
 		keys.Commands(),
 	)
+	wasmcli.ExtendUnsafeResetAllCmd(rootCmd)
+
 }
 
 func addModuleInitFlags(startCmd *cobra.Command) {
 	crisis.AddModuleInitFlags(startCmd)
+	wasm.AddModuleInitFlags(startCmd)
+
 }
 
 // genesisCommand builds genesis-related `bcnad genesis` command. Users may provide application specific commands as a parameter
