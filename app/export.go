@@ -178,6 +178,7 @@ func (app *App) prepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []str
 	if err != nil {
 		panic(err)
 	}
+
 	// iterate through unbonding delegations, reset creation height
 	err = app.StakingKeeper.IterateUnbondingDelegations(ctx, func(_ int64, ubd stakingtypes.UnbondingDelegation) (stop bool) {
 		for i := range ubd.Entries {
@@ -211,9 +212,8 @@ func (app *App) prepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []str
 			validator.Jailed = true
 		}
 
-		err = app.StakingKeeper.SetValidator(ctx, validator)
-		if err != nil {
-			panic(fmt.Sprintf("Error setting validator: %v", err))
+		if err := app.StakingKeeper.SetValidator(ctx, validator); err != nil {
+			panic(err)
 		}
 		counter++
 	}

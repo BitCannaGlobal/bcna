@@ -15,6 +15,7 @@ import (
 	"cosmossdk.io/store"
 	storetypes "cosmossdk.io/store/types"
 	"cosmossdk.io/x/feegrant"
+	upgradetypes "cosmossdk.io/x/upgrade/types"
 	abci "github.com/cometbft/cometbft/abci/types"
 	cmtproto "github.com/cometbft/cometbft/proto/tendermint/types"
 	dbm "github.com/cosmos/cosmos-db"
@@ -200,6 +201,9 @@ func TestAppImportExport(t *testing.T) {
 
 	// skip certain prefixes
 	skipPrefixes := map[string][][]byte{
+		upgradetypes.StoreKey: {
+			[]byte{upgradetypes.VersionMapByte},
+		},
 		stakingtypes.StoreKey: {
 			stakingtypes.UnbondingQueueKey, stakingtypes.RedelegationQueueKey, stakingtypes.ValidatorQueueKey,
 			stakingtypes.HistoricalInfoKey, stakingtypes.UnbondingIDKey, stakingtypes.UnbondingIndexKey,
@@ -333,6 +337,7 @@ func TestAppStateDeterminism(t *testing.T) {
 	config.ExportParamsPath = ""
 	config.OnOperation = true
 	config.AllInvariants = true
+	config.ChainID = SimAppChainID
 
 	numSeeds := 3
 	numTimesToRunPerSeed := 3 // This used to be set to 5, but we've temporarily reduced it to 3 for the sake of faster CI.
@@ -372,8 +377,6 @@ func TestAppStateDeterminism(t *testing.T) {
 			} else {
 				logger = log.NewNopLogger()
 			}
-			chainID := fmt.Sprintf("chain-id-%d-%d", i, j)
-			config.ChainID = chainID
 
 			db := dbm.NewMemDB()
 			bApp, err := app.New(
@@ -383,7 +386,7 @@ func TestAppStateDeterminism(t *testing.T) {
 				true,
 				appOptions,
 				interBlockCacheOpt(),
-				baseapp.SetChainID(chainID),
+				baseapp.SetChainID(SimAppChainID),
 			)
 			require.NoError(t, err)
 

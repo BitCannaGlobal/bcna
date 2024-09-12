@@ -71,10 +71,11 @@ ldflags := $(strip $(ldflags))
 BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
 
 check_version:
-ifneq ($(GO_MINOR_VERSION),22)
-	@echo "ERROR: Go version 1.22 is required for building BCNAD."
+ifeq ($(shell expr $(GO_MINOR_VERSION) \< 23), 1)
+	@echo "ERROR: Go version 1.23 or newer is required for building BCNAD."
 	exit 1
 endif
+
 
 build: check_version go.sum
 	@echo "--> Building..."

@@ -1,0 +1,38 @@
+version: 1
+validation: sovereign
+accounts: 
+- name: alice
+  coins:
+  - 300000000ubcna
+- name: bob
+  coins:
+  - 200000000ubcna
+client:
+  openapi:
+    path: docs/static/openapi.yml
+faucet:
+  name: bob
+  coins:
+  - 100000ubcna
+validators:
+- name: alice
+  bonded: 100000000ubcna
+genesis:
+ app_state:
+   staking:
+     params:
+       bond_denom: "ubcna"
+   crisis:
+     constant_fee:
+       denom: "ubcna"
+       amount: "1000"
+   mint:
+     params:
+       mint_denom: "ubcna"
+   gov:
+     deposit_params:
+       min_deposit:
+         - denom: "ubcna"
+           amount: "10000000"
+ keyring-backend: test/os
+
