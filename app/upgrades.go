@@ -14,8 +14,11 @@ import (
 
 	upgradetypes "cosmossdk.io/x/upgrade/types"
 
-	// WASM upgrade/addition
+	// Fix Consensus Params
+	"github.com/cosmos/cosmos-sdk/runtime"
+	consensuskeeper "github.com/cosmos/cosmos-sdk/x/consensus/keeper"
 
+	// WASM upgrade/addition
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 )
 
@@ -34,17 +37,32 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 	app.UpgradeKeeper.SetUpgradeHandler(
 		planName,
 		func(ctx context.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
-			app.Logger().Info("Cosmos-SDK v0.50.x is here...")
+			app.Logger().Info("Cosmos-SDK v0.50 and WASM is here...")
 			// Print the modules with their respective ver.
 			for moduleName, version := range fromVM {
 				app.Logger().Info(fmt.Sprintf("Module: %s, Version: %d", moduleName, version))
 
 			}
+			// New consensus params keeper using the wrong key again and move the data into the consensus params keeper with the right key
+			storesvc := runtime.NewKVStoreService(app.GetKey("upgrade"))
+			consensuskeeper := consensuskeeper.NewKeeper(
+				app.appCodec,
+				storesvc,
+				app.AccountKeeper.GetAuthority(),
+				runtime.EventService{},
+			)
 
-			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
+			params, err := consensuskeeper.ParamsStore.Get(ctx)
+			app.Logger().Info("Getting the params into the Consensus params keeper...")
 			if err != nil {
 				return nil, err
 			}
+			err = app.ConsensusParamsKeeper.ParamsStore.Set(ctx, params)
+			app.Logger().Info("Setting the params into the Consensus params keeper...")
+			if err != nil {
+				return nil, err
+			}
+			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
 			app.Logger().Info(fmt.Sprintf("post migrate version map: %v", versionMap))
 			// return app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
 			return versionMap, err
@@ -64,8 +82,8 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 				wasmtypes.ModuleName,
 			},
 			Deleted: []string{
-				"burn",
-				"bcna",
+				"burn", // commented at v0.50>v0.50 uncomment for v0.47>v0.50
+				"bcna", // commented at v0.50>v0.50 uncomment for v0.47>v0.50
 			},
 		}
 
