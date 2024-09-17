@@ -82,8 +82,8 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 				wasmtypes.ModuleName,
 			},
 			Deleted: []string{
-				"burn",
-				"bcna",
+				"burn", // commented at v0.50>v0.50 uncomment for v0.47>v0.50
+				"bcna", // commented at v0.50>v0.50 uncomment for v0.47>v0.50
 			},
 		}
 
