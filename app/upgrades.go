@@ -32,6 +32,7 @@ func (app App) RegisterUpgradeHandlers() {
 
 	app.StickyFingers(upgradeInfo)
 }
+
 func (app *App) StickyFingers(_ upgradetypes.Plan) {
 	planName := "stickyfingers"
 	app.UpgradeKeeper.SetUpgradeHandler(
@@ -55,11 +56,13 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 			params, err := consensuskeeper.ParamsStore.Get(ctx)
 			app.Logger().Info("Getting the params into the Consensus params keeper...")
 			if err != nil {
+				app.Logger().Error("Error getting the params into the Consensus params keeper...")
 				return nil, err
 			}
 			err = app.ConsensusParamsKeeper.ParamsStore.Set(ctx, params)
 			app.Logger().Info("Setting the params into the Consensus params keeper...")
 			if err != nil {
+				app.Logger().Error("Error setting the params into the Consensus params keeper...")
 				return nil, err
 			}
 			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
