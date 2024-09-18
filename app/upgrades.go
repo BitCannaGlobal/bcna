@@ -65,6 +65,16 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 				app.Logger().Error("Error setting the params into the Consensus params keeper...")
 				return nil, err
 			}
+			// Set CosmWasm params
+			wasmParams := wasmtypes.DefaultParams()
+			wasmParams.CodeUploadAccess = wasmtypes.AllowEverybody //AllowNobody for MainNET
+			wasmParams.InstantiateDefaultPermission = wasmtypes.AccessTypeAnyOfAddresses
+			err = app.WasmKeeper.SetParams(ctx, wasmParams)
+			app.Logger().Info("Setting the params into the Wasm params keeper...")
+			if err != nil {
+				app.Logger().Error("Error setting the params into the Wasm params keeper...")
+				return nil, err
+			}
 			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
 			app.Logger().Info(fmt.Sprintf("post migrate version map: %v", versionMap))
 			// return app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
