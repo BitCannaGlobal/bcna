@@ -87,10 +87,10 @@ Send coins to your new address, you will need roughly 2 BCNA to run the validato
    * max_tx_bytes = 524288
    * max_txs_bytes = 268435456
      
-    ```bash
-    sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml && \
-    sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
-    ```
+```bash
+sed -i 's/^max_tx_bytes =.*/max_tx_bytes = 524288/' $HOME/.bcna/config/config.toml && \
+sed -i 's/^max_txs_bytes =.*/max_txs_bytes = 268435456/' $HOME/.bcna/config/config.toml
+```
        
 ### 3.3.  **Create a wallet**:
 You may create a wallet with one or more keys (addresses) using `bcnad`; you can choose a name of your own liking (we strongly advice you use one word)
