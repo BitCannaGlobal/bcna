@@ -13,6 +13,8 @@ func initCometBFTConfig() *cmtcfg.Config {
 	// these values put a higher strain on node memory
 	// cfg.P2P.MaxNumInboundPeers = 100
 	// cfg.P2P.MaxNumOutboundPeers = 40
+	cfg.Mempool.MaxTxBytes = 524288
+	cfg.Mempool.MaxTxsBytes = 268435456
 
 	return cfg
 }
@@ -40,23 +42,34 @@ func initAppConfig() (string, interface{}) {
 	//   own app.toml to override, or use this default value.
 	//
 	// In tests, we set the min gas prices to 0.
-	// srvCfg.MinGasPrices = "0stake"
+	srvCfg.MinGasPrices = "0.001ubcna"
+	srvCfg.GRPCWeb.Enable = false
+	srvCfg.Mempool.MaxTxs = 5000
+
 	// srvCfg.BaseConfig.IAVLDisableFastNode = true // disable fastnode by default
 
 	customAppConfig := CustomAppConfig{
 		Config: *srvCfg,
 	}
 
-	customAppTemplate := serverconfig.DefaultConfigTemplate
+	// customAppTemplate := serverconfig.DefaultConfigTemplate
 	// Edit the default template file
 	//
-	// customAppTemplate := serverconfig.DefaultConfigTemplate + `
-	// [wasm]
-	// # This is the maximum sdk gas (wasm and storage) that we allow for any x/wasm "smart" queries
-	// query_gas_limit = 300000
-	// # This is the number of wasm vm instances we keep cached in memory for speed-up
-	// # Warning: this is currently unstable and may lead to crashes, best to keep for 0 unless testing locally
-	// lru_size = 0`
+	customAppTemplate := serverconfig.DefaultConfigTemplate + `
+[wasm]
+# This is the maximum sdk gas (wasm and storage) that we allow for any x/wasm "smart" queries
+query_gas_limit = 3000000
+# This is the number of wasm vm instances we keep cached in memory for speed-up
+# Warning: this is currently unstable and may lead to crashes, best to keep for 0 unless testing locally
+lru_size = 0
+# in-memory cache for Wasm contracts. Set to 0 to disable.
+# The value is in MiB not bytes
+memory_cache_size = 300
+
+# Simulation gas limit is the max gas to be used in a tx simulation call.
+# When not set the consensus max block gas is used instead
+# simulation_gas_limit =
+`
 
 	return customAppTemplate, customAppConfig
 }
