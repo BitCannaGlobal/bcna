@@ -1,0 +1,44 @@
+# This is a basic workflow that is manually triggered
+
+name: compile bcna
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on: [push, pull_request, workflow_dispatch]
+
+# This workflow makes x86_64 binaries for mac, windows, and linux.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [amd64, arm64]
+        targetos: [darwin, linux]
+        include:
+          - targetos: windows
+            arch: amd64
+    name: bcna ${{ matrix.arch }} for ${{ matrix.targetos }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: "^1.22"
+        env:
+          GOOS: ${{ matrix.targetos }}
+          GOARCH: ${{ matrix.arch }}
+
+      - name: run tests
+        run: go test ./...
+
+      # we build and install in case we want to run it or capture an artifact as we do in the step below.
+      - name: Compile bcnad
+        run: |
+          go build ./...
+          go install ./...
+
+      # now uploads genesis.json and bin
+      - uses: actions/upload-artifact@v3
+        with:
+          name: bcnad ${{ matrix.targetos }} ${{ matrix.arch }}
+          path: build/bcnad
