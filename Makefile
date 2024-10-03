@@ -117,7 +117,7 @@ build-reproducible-generic: go.sum
 		--build-arg PLATFORM=$(PLATFORM) \
 		--build-arg VERSION="$(VERSION)" \
 		-f Dockerfile .
-	mkdir $(BUILD_DIR)
+	mkdir -p build
 	$(DOCKER) create -ti --name $(subst /,-,latest-build-$(PLATFORM)) latest-build-$(PLATFORM) bcnad
 	$(DOCKER) cp -a $(subst /,-,latest-build-$(PLATFORM)):/usr/local/bin/bcnad $(BUILD_DIR)/bcnad_$(subst /,_,$(PLATFORM))
 	sha256sum $(BUILD_DIR)/bcnad_$(subst /,_,$(PLATFORM)) >> $(BUILD_DIR)/bcnad_sha256.txt
