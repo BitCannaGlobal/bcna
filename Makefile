@@ -101,7 +101,7 @@ build: check-go-version
 
 BUILD_TARGETS := build install
 
-build-reproducible-all: build-reproducible-amd64 build-reproducible-arm64 build-reproducible-darwin/arm64
+build-reproducible-all: build-reproducible-amd64 build-reproducible-arm64
 
 build-reproducible-amd64:
 	ARCH=x86_64 PLATFORM=linux/amd64 $(MAKE) build-reproducible-generic
