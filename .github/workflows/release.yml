@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - v*
+    branches:
+      - v4
 jobs:
   draft-release:
     runs-on: ubuntu-latest
