@@ -22,11 +22,14 @@ jobs:
         run: |
           make build-reproducible-all
 
+      - name: List files
+        run: ls -R
+        
       - name: Draft Release
         uses: softprops/action-gh-release@v1
         with:
           draft: true
           files: |
-            bcnad_linux_arm64
-            bcnad_linux_amd64
-            bcnad_sha256.txt
+            build/bcnad_linux_arm64
+            build/bcnad_linux_amd64
+            build/bcnad_sha256.txt
