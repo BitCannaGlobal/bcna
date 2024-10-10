@@ -29,6 +29,6 @@ jobs:
         with:
           draft: true
           files: |
-            build/bcnad_linux_arm64
-            build/bcnad_linux_amd64
+            build/bcnad_linux_arm64.tar.gz
+            build/bcnad_linux_amd64.tar.gz
             build/bcnad_sha256.txt
