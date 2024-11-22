@@ -17,18 +17,13 @@
         "provider": "Panthea EU"
       },
       {
-        "id": "20e1000e88125698264454a884812746c2eb4807",
-        "address": "seeds.lavenderfive.com:13056",
-        "provider": "Lavender.Five Nodes 🐝"
-      },
-      {
         "id": "258f523c96efde50d5fe0a9faeea8a3e83be22ca",
         "address": "seed.bitcanna-1.bitcanna.aviaone.com:10263",
         "provider": "AVIAONE 🟢"
       },
       {
       "id": "33ab202dfef5e08d5d0346e7b3cfaab2a946198a",
-      "address": "seeds.bitcanna-mainnet.hexnodes.co:27656",
+      "address": "seeds.bitcanna-mainnet.hexnodes.one:27656",
         "provider": "Hexnodes"
       },
       {
@@ -67,37 +62,37 @@
         "provider": "NodeX Emperor ⚡ Bitcanna"
       },
       {
-        "id": "39d10a2e6ba7acbd714d1fde9ba0f2f4b7346f67",
-        "address": "seed-bitcanna.sxlmnwb.xyz:11356",
-        "provider": "makimaprjkt°"
-      },
-      {
         "id": "1531b73fed2ad4eb55ea537fa7fd66f137c12934",
         "address": "seeds.blockhunters.org:38656",
         "provider": "BlockHunters 🎯"
+      },
+      {
+        "id": "80f05ef09003f3303a4529a8a42e87562dd218cb",
+        "address": "bitcanna-mainnet.seed.l0vd.com:57656",
+        "provider": "L0vd.com ❤️"
+      },
+      {
+        "id": "71df77a8f57af72a4d2b4e842c9ac7eaec31cc09",
+        "address": "mainnet-seed.konsortech.xyz:27156",
+        "provider": "KonsorTech°"
+      },
+      {
+        "id": "9e2b0de599e1b0b69fe156d783a5365858c43027",
+        "address": "bitcanna-seed.kalia.network:12656",
+        "provider": "Kalia Network"
+      },
+      {
+        "id": "6f6a3a908634b79b6fe7c4988efec2553f188234",
+        "address": "bitcanna.seed.nodeshub.online:13056",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
+      },
+      {
+        "id": "b85358e035343a3b15e77e1102857dcdaf70053b",
+        "address": "seeds.bluestake.net:24356",
+        "provider": "BlueStake 🚀"
       }
     ],
     "persistent_peers": [
-      {
-        "id": "a4c1e46441164c350f721cf142d52c136215e05c",
-        "address": "65.108.43.170:26656",
-        "provider": "BitCanna"
-      },
-      {
-        "id": "8fa7a04d55ca7d0ab70dc5cbc35d5cf26c5ecfb7",
-        "address": "65.108.142.81:26682",
-        "provider": "Stakely"
-      },
-      {
-        "id": "ad820cb2fa85e525538207bb24ee49a61a74eb45",
-        "address": "93.115.25.15:26656",
-        "provider": "Stakely"
-      },
-      {
-        "id": "df99de6cec9152c517990317b340b8b9a307493c",
-        "address": "bcna.paranorm.pro:26656",
-        "provider": "Paranormal Bros."
-      },
       {
         "id": "0a658df9d9fab096983a12e6f878e87281a15ce6",
         "address": "bitcanna-peer.panthea.eu:27656",
@@ -124,8 +119,8 @@
         "provider": "🔥STAVR🔥"
       },
       {
-        "id": "e69d68eae1f01baac83c1ed321ba1dca2379bdc2",
-        "address": "144.91.65.13:26666",
+        "id": "9ca926169792c5e0dc7cf01520e9bc9a46d62d67",
+        "address": "49.12.86.120:26686",
         "provider": "AVIAONE 🟢"
       },
       {
@@ -164,7 +159,7 @@
         "provider": "MMS"
       },
       {
-        "id": "a70da421632d3dbbb6de3712474bd564ac5653e1",
+        "id": "f28f565a6514340f2506b8f2b4e1d5322c4a26dd",
         "address": "p2p.bitcanna.safeblock.space:26656",
         "provider": "Safe Block"
       },
@@ -179,14 +174,24 @@
         "provider": "NodeX Emperor ⚡ Bitcanna"
       },
       {
-        "id": "1bde35502e91374b5c06b843964c56050455aaef",
-        "address": "rpc-bitcanna.sxlmnwb.xyz:11356",
-        "provider": "makimaprjkt°"
-      },
-      {
         "id": "7fef7708e4eb2f3a1245f00ca42ad56e446b3d66",
         "address": "rpc.bitcanna.bh.rocks:42656",
         "provider": "BlockHunters 🎯"
+      },
+      {
+        "id": "bf47ac16ca517beca4ba5ba2e4a92798cf9409c0",
+        "address": "104.207.129.116:26656",
+        "provider": "Validatornode"
+      },
+      {
+        "id": "fe587eb0d37cabb9b8089ec8899cf32ee2870994",
+        "address": "185.144.99.40:46656",
+        "provider": "CrypTech"
+      },
+      {
+        "id": "637077d431f618181597706810a65c826524fd74",
+        "address": "bitcanna.rpc.nodeshub.online:13056",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ]
   },
@@ -197,15 +202,11 @@
         "provider": "bitcanna"
       },
       {
-        "address": "https://rpc.bcna.paranorm.pro/",
-        "provider": "Paranormal Bros."
-      },
-      {
         "address": "https://bcna-rpc.ibs.team/",
         "provider": "Inter Blockchain Services"
       },
       {
-        "address": "https://bitcanna-rpc.panthea.eu",
+        "address": "https://bitcanna-rpc.panthea.eu/",
         "provider": "Panthea EU"
       },
       {
@@ -213,11 +214,11 @@
         "provider": "SGTstake"
       },
       {
-        "address": "https://bitcanna.rpc.m.anode.team",
+        "address": "https://bitcanna.rpc.m.anode.team/",
         "provider": "AlxVoy ⚡ ANODE.TEAM"
       },
       {
-        "address": "http://bitcanna.rpc.m.stavr.tech:21327",
+        "address": "https://bitcanna.rpc.m.stavr.tech/",
         "provider": "🔥STAVR🔥"
       },
       {
@@ -225,36 +226,32 @@
         "provider": "KJINC.io"
       },
       {
-        "address": "https://mainnet-bitcanna-rpc.konsortech.xyz",
+        "address": "https://mainnet-bitcanna-rpc.konsortech.xyz/",
         "provider": "KonsorTech"
       },
       {
-        "address": "https://bitcanna.rpc.kjnodes.com",
+        "address": "https://bitcanna.rpc.kjnodes.com/",
         "provider": "kjnodes"
       },
       {
-        "address": "https://bitcanna-rpc.genznodes.dev",
+        "address": "https://bitcanna-rpc.genznodes.dev/",
         "provider": "genznodes"
       },
       {
-        "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com",
+        "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com/",
         "provider": "AVIAONE 🟢"
       },
       {
-        "address": "https://rpc.bitcanna-mainnet.hexnodes.co",
+        "address": "https://rpc.bitcanna-mainnet.hexnodes.one/",
         "provider": "Hexnodes"
       },
       {
-        "address": "http://rpc.bitcanna.citizencosmos.space/",
+        "address": "https://rpc.bitcanna.citizenweb3.com/",
         "provider": "Citizen Web3"
       },
       {
         "address": "https://bitcanna-mainnet.rpc.l0vd.com/",
         "provider": "L0vd.com"
-      },
-      {
-        "address": "https://rpc-bitcanna-ia.cosmosia.notional.ventures",
-        "provider": "Notional"
       },
       {
         "address": "https://bitcanna-rpc.polkachu.com",
@@ -277,24 +274,8 @@
         "provider": "MMS"
       },
       {
-        "address": "http://51.159.223.25:33657",
-        "provider": "Citizen Cosmos"
-      },
-      {
-        "address": "http://65.108.142.81:26683",
-        "provider": "Stakely"
-      },
-      {
-        "address": "http://93.115.25.15:26657",
-        "provider": "Stakely"
-      },
-      {
         "address": "https://bitcanna-rpc.validatornode.com",
         "provider": "ValidatorNode"
-      }, 
-      {
-        "address": "https://bitcanna-rpc.kitkat.zone/",
-        "provider": "KitKat"
       },
       {
         "address": "https://bitcanna.rpc.nodex.one",
@@ -305,12 +286,24 @@
         "provider": "Arcturian Tech"
       },
       {
-        "address": "https://rpc-bitcanna.sxlmnwb.xyz",
-        "provider": "makimaprjkt°"
-      },
-      {
         "address": "https://rpc.bitcanna.bh.rocks",
         "provider": "BlockHunters 🎯"
+      },
+      {
+        "address": "https://bitcanna-rpc.bluestake.net",
+        "provider": "BlueStake"
+      },
+      {
+        "address": "https://rpc-bitcanna.cryptech.com.ua",
+        "provider": "CrypTech"
+      },
+      {
+        "address": "https://bitcanna-rpc.kalia.network/",
+        "provider": "Kalia Network"
+      },
+      {
+        "address": "https://bitcanna.rpc.nodeshub.online:443",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
     "grpc": [
@@ -319,15 +312,11 @@
         "provider": "bitcanna"
       },
       {
-        "address": "bitcanna-grpc.lavenderfive.com:443",
-        "provider": "Lavender.Five Nodes 🐝"
-      },
-      {
         "address": "bitcanna.grpc.m.stavr.tech:9081",
         "provider": "🔥STAVR🔥"
       },
       {
-        "address": "grpc.bitcanna-mainnet.hexnodes.co:27090",
+        "address": "grpc.bitcanna-mainnet.hexnodes.one:27090",
         "provider": "HexNodes"
       },
       {
@@ -337,10 +326,6 @@
       {
         "address": "bitcanna-mainnet.grpc.l0vd.com:80",
         "provider": "L0vd.com"
-      },
-      {
-        "address": "grpc-bitcanna-ia.cosmosia.notional.ventures:443",
-        "provider": "Notional"
       },
       {
         "address": "bitcanna.grpc.kjnodes.com:14290",
@@ -359,10 +344,6 @@
         "provider": "Safe Block"
       },
       {
-        "address": "bitcanna-grpc.kitkat.zone:13090",
-        "provider": "KitKat"
-      },
-      {
         "address": "mainnet-bitcanna-grpc.konsortech.xyz:27090",
         "provider": "KonsorTech"
       },
@@ -379,10 +360,6 @@
         "provider": "NodeX Emperor ⚡ Bitcanna"    
       },
       {
-        "address": "grpc-bitcanna.sxlmnwb.xyz:11390",
-        "provider": "makimaprjkt°"        
-      },
-      {
         "address": "grpc.bitcanna.bh.rocks:42090",
         "provider": "BlockHunters 🎯"
       },
@@ -393,6 +370,22 @@
       {
         "address": "bitcanna-grpc.panthea.eu:16710",
         "provider": "Panthea EU"
+      },
+      {
+        "address": "bitcanna-grpc.validatornode.com:443",
+        "provider": "ValidatorNode"
+      },
+      {
+        "address": "grpc-bitcanna.cryptech.com.ua:443",
+        "provider": "CrypTech"
+      },
+      {
+        "address": "bitcanna-grpc.kalia.network:443",
+        "provider": "Kalia Network"
+      },
+      {
+        "address": "bitcanna.grpc.nodeshub.online:13090",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ],
     "rest": [
@@ -407,10 +400,6 @@
       {
         "address": "https://api.bitcanna.sgtstake.com/",
         "provider": "SGTstake"
-      },
-      {
-        "address": "https://api.bcna.paranorm.pro/",
-        "provider": "Paranormal Bros."
       },
       {
         "address": "https://bitcanna.api.m.stavr.tech",
@@ -437,10 +426,6 @@
         "provider": "kjnodes"
       },
       {
-        "address": "https://bitcanna-api.lavenderfive.com/",
-        "provider": "Lavender.Five Nodes 🐝"
-      },
-      {
         "address": "https://bitcanna-api.genznodes.dev",
         "provider": "genznodes"
       },
@@ -449,16 +434,12 @@
         "provider": "AVIAONE 🟢"
       },
       {
-        "address": "https://lcd.bitcanna-mainnet.hexnodes.co",
+        "address": "https://lcd.bitcanna-mainnet.hexnodes.one",
         "provider": "Hexnodes"
       },
       {
         "address": "https://bitcanna-mainnet.api.l0vd.com",
         "provider": "L0vd.com"
-      },
-      {
-        "address": "https://api-bitcanna-ia.cosmosia.notional.ventures",
-        "provider": "Notional"
       },
       {
         "address": "https://bitcanna-api.polkachu.com",
@@ -477,20 +458,8 @@
         "provider": "MMS"
       },
       {
-        "address": "http://65.108.142.81:1325",
-        "provider": "Stakely"
-      },
-      {
-        "address": "http://93.115.25.15:1317",
-        "provider": "Stakely"
-      },
-      {
         "address": "https://bitcanna-api.validatornode.com",
         "provider": "ValidatorNode"
-      },
-      {
-        "address": "https://bitcanna-api.kitkat.zone",
-        "provider": "KitKat"
       },
       {
         "address": "https://bitcanna.api.nodex.one",
@@ -501,16 +470,32 @@
         "provider": "Arcturian Tech"
       },
       {
-        "address": "https://api-bitcanna.sxlmnwb.xyz",
-        "provider": "makimaprjkt°"
-      },
-      {
         "address": "https://api.bitcanna.bh.rocks",
         "provider": "BlockHunters 🎯"
       },
       {
         "address": "https://api.bitcanna.indonode.net",
         "provider": "Indonode"
+      },
+      {
+        "address": "https://bitcanna-api.bluestake.net",
+        "provider": "BlueStake"
+      },
+      {
+        "address": "https://api-bitcanna.cryptech.com.ua",
+        "provider": "CrypTech"
+      },
+      {
+        "address": "https://bitcanna-api.kalia.network",
+        "provider": "Kalia Network"
+      },
+      {
+        "address": "https://api.bitcanna.citizenweb3.com",
+        "provider": "Citizen Web3"
+      },
+      {
+        "address": "https://bitcanna.api.nodeshub.online",
+        "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
       }
     ]
   },
@@ -560,11 +545,6 @@
       "tx_page": "https://explorer.safeblock.space/bitcanna/tx/${txHash}"
     },
     {
-      "kind": "KitKat Explorer",
-      "url": "https://explorer.kitkat.zone/bitcanna",
-      "tx_page": "https://explorer.kitkat.zone/bitcanna/tx/${txHash}"
-    },
-    {
       "kind": "AlxVoy ⚡ ANODE.TEAM",
       "url": "https://main.anode.team/bitcanna",
       "tx_page": "https://main.anode.team/bitcanna/tx/${txHash}"
@@ -598,6 +578,29 @@
       "kind": "Indonode",
       "url": "https://explorer.indonode.net/bitcanna",
       "tx_page": "https://explorer.indonode.net/bitcanna/tx/${txHash}"
+    },
+    {
+      "kind": "CrypTech Explorer",
+      "url": "https://explorers.cryptech.com.ua/bitcanna",
+      "tx_page": "https://explorers.cryptech.com.ua/bitcanna/txs/${txHash}"
+    },
+    {
+      "kind": "Kalia Network",
+      "url": "https://explorer.kalia.network/bitcanna",
+      "tx_page": "https://explorer.kalia.network/bitcanna/tx/${txHash}",
+      "account_page": "https://explorer.kalia.network/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "AVIAONE",
+      "url": "https://mainnet.explorer.aviaone.com/bitcanna",
+      "tx_page": "https://mainnet.explorer.aviaone.com/bitcanna/tx/${txHash}",
+      "account_page": "https://mainnet.explorer.aviaone.com/bitcanna/account/${accountAddress}"
+    },
+    {
+      "kind": "Nodes Hub 🛡️ 100% Slash Protected 🛡️",
+      "url": "https://explorer.nodeshub.online/bitcanna/",
+      "tx_page": "https://explorer.nodeshub.online/bitcanna/tx/${txHash}",
+      "account_page": "https://explorer.nodeshub.online/bitcanna/accounts/${accountAddress}"
     }
   ],
   "archive_nodes": [
@@ -608,14 +611,13 @@
     {
       "address": "https://rpc.example.com/",
       "provider": "Example"
+    },
+    {
+      "address": "https://bitcanna.rpc.nodeshub.online",
+      "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
     }
   ],
   "state_sync": [
-    {
-      "address": "https://rpc.bcna.paranorm.pro:443",
-      "url_doc": "https://bc.paranorm.pro/#statesync",
-      "provider": "Paranormal Bros."
-    },
     {
       "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com:443",
       "url_doc": "https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html",
@@ -625,11 +627,6 @@
       "address": "https://rpc.bitcanna.safeblock.space:443",
       "url_doc": "https://safeblock.space/bitcanna-statesync",
       "provider": "Safe Block"
-    },    
-    {
-      "address": "https://bitcanna-rpc.kitkat.zone:443",
-      "url_doc": "https://docs.kitkat.zone/chains/bitcanna/bitcanna-node-state-sync",
-      "provider": "KitKat"
     },
     {
       "address": "https://bitcanna.rpc.m.anode.team",
@@ -637,8 +634,8 @@
       "provider": "AlxVoy ⚡ ANODE.TEAM"
     },
     {
-      "address": "http://team.bonded.zone:21957",
-      "url_doc": "https://www.bonded.zone/mainnets/bitcanna/state-sync",
+      "address": "http://65.108.131.190:21957",
+      "url_doc": "https://bonded-zone.gitbook.io/bonded.zone/mainnets/bitcanna/state-sync",
       "provider": "bonded.zone ⚡"
     },
     {
@@ -662,14 +659,39 @@
       "provider": "NodeX Emperor ⚡ Bitcanna"
     },
     {
-      "address": "https://rpc-bitcanna.sxlmnwb.xyz:443",
-      "url_doc": "https://makima-services.sxlmnwb.xyz/mainnet/bitcanna/statesync",
-      "provider": "makimaprjkt°"      
-    },
-    {
       "address": "https://rpc.bitcanna.indonode.net:443",
       "url_doc": "https://indonode.net/services/mainnet/bitcanna/sync#statesync",
       "provider": "Indonode"      
+    },
+    {
+      "address": "https://bitcanna-rpc.panthea.eu:443",
+      "url_doc": "https://docs.panthea.eu/cosmos-blockchains/bitcanna-bcna#state-sync",
+      "provider": "Panthea EU"
+    },
+    {
+      "address": "https://rpc-bitcanna.cryptech.com.ua",
+      "url_doc": "https://services.cryptech.com.ua/mainnet/bitcanna/state-sync/README/",
+      "provider": "CrypTech"      
+    },
+    {
+      "address": "https://bitcanna-rpc.kalia.network:443",
+      "url_doc": "https://docs.kalia.network/mainnet/bitcanna/statesync",
+      "provider": "Kalia Network"
+    },
+    {
+      "address": "https://bitcanna.rpc.m.stavr.tech:443",
+      "url_doc": "https://stavr-team.gitbook.io/nodes-guides/mainnets/bitcanna/statesync-snapshot",
+      "provider": "🔥STAVR🔥"
+    },
+    {
+      "address": "https://bitcanna-rpc.bluestake.net:443",
+      "url_doc": "https://bluestake.net/bitcanna/statesync",
+      "provider": "BlueStake 🚀"
+    },
+    {
+      "address": "https://bitcanna.rpc.nodeshub.online:443",
+      "url_doc": "https://services.nodeshub.online/mainnet-networks/bitcanna/state-sync",
+      "provider": "Nodes Hub 🛡️ 100% Slash Protected 🛡️"
     }
   ]
 }
