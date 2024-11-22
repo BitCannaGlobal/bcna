@@ -3,6 +3,8 @@ name: "Release"
 on:
   release:
     types: [published]
+
+jobs:
   draft-release:
     runs-on: ubuntu-latest
     permissions: write-all
@@ -22,7 +24,7 @@ on:
 
       - name: List files
         run: ls -R
-        
+
       - name: Draft Release
         uses: softprops/action-gh-release@v2
         with:
