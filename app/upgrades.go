@@ -69,6 +69,9 @@ func (app *App) StickyFingers(_ upgradetypes.Plan) {
 			}
 
 			versionMap, err := app.ModuleManager.RunMigrations(ctx, app.Configurator(), fromVM)
+			if err != nil {
+				app.Logger().Error("Error running migrations: " + err.Error())
+			}
 
 			app.Logger().Info(fmt.Sprintf("post migrate version map: %v", versionMap))
 
