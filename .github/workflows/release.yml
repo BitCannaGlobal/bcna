@@ -1,0 +1,34 @@
+name: "Release"
+
+on:
+  release:
+    types: [published]
+jobs:
+  draft-release:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Copy Binary
+        run: |
+          make build-reproducible-all
+
+      - name: List files
+        run: ls -R
+        
+      - name: Draft Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          files: |
+            build/bcnad_linux_arm64.tar.gz
+            build/bcnad_linux_amd64.tar.gz
+            build/bcnad_sha256.txt
