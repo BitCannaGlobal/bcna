@@ -133,7 +133,7 @@ check-go-version:
 
 clean:
 	@echo "--> Cleaning..."
-	@rm -rf $(BUILD_DIR)/**  $(DIST_DIR)/**
+	@rm -rf $(BUILD_DIR)/**
 
 ###############################################################################
 ###                                Protobuf                                 ###
