@@ -2,8 +2,7 @@ name: "Release"
 
 on:
   release:
-    types: [created]
-jobs:
+    types: [published]
   draft-release:
     runs-on: ubuntu-latest
     permissions: write-all
@@ -29,6 +28,6 @@ jobs:
         with:
           draft: true
           files: |
-            build/bcnad_linux_arm64
-            build/bcnad_linux_amd64
+            build/bcnad_linux_arm64.tar.gz
+            build/bcnad_linux_amd64.tar.gz
             build/bcnad_sha256.txt

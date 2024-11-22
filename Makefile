@@ -120,7 +120,9 @@ build-reproducible-generic: go.sum
 	mkdir -p build
 	$(DOCKER) create -ti --name $(subst /,-,latest-build-$(PLATFORM)) latest-build-$(PLATFORM) bcnad
 	$(DOCKER) cp -a $(subst /,-,latest-build-$(PLATFORM)):/usr/local/bin/bcnad $(BUILD_DIR)/bcnad_$(subst /,_,$(PLATFORM))
-	sha256sum $(BUILD_DIR)/bcnad_$(subst /,_,$(PLATFORM)) >> $(BUILD_DIR)/bcnad_sha256.txt
+	tar -czvf $(BUILD_DIR)/bcnad_$(subst /,_,$(PLATFORM)).tar.gz -C $(BUILD_DIR) bcnad_$(subst /,_,$(PLATFORM))
+	rm $(BUILD_DIR)/bcnad_$(subst /,_,$(PLATFORM))
+	sha256sum $(BUILD_DIR)/bcnad_$(subst /,_,$(PLATFORM)).tar.gz >> $(BUILD_DIR)/bcnad_sha256.txt
 
 # Add check to make sure we are using the proper Go version before proceeding with anything
 check-go-version:
