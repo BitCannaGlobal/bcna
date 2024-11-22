@@ -1,4 +1,5 @@
 # BitCanna Blockchain
+[![compile bcna](https://github.com/BitCannaGlobal/bcna/actions/workflows/build.yml/badge.svg)](https://github.com/BitCannaGlobal/bcna/actions/workflows/build.yml) [![golangci-lint](https://github.com/BitCannaGlobal/bcna/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/BitCannaGlobal/bcna/actions/workflows/golangci-lint.yml)
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
