@@ -3,6 +3,7 @@ name: "Release"
 on:
   release:
     types: [published]
+
 jobs:
   draft-release:
     runs-on: ubuntu-latest
@@ -23,12 +24,12 @@ jobs:
 
       - name: List files
         run: ls -R
-        
+
       - name: Draft Release
         uses: softprops/action-gh-release@v2
         with:
           draft: true
           files: |
-            build/bcnad_linux_arm64
-            build/bcnad_linux_amd64
+            build/bcnad_linux_arm64.tar.gz
+            build/bcnad_linux_amd64.tar.gz
             build/bcnad_sha256.txt
