@@ -1,4 +1,14 @@
 #  MAINNET `bitcanna-1` Upgrades
+## v4.0.1 codename `stickyfingers` from v3.1.0
+
+> (Update scheduled for 25th Nov 2024 ~ 17.20h CET - 16.20h UTC)
+>
+> Note: this is a planned upgrade, the chain **will halt** at block **[16.782.000](https://explorer2.bitcanna.io/blocks/16782000)**
+>
+> **Important note: The tag name required for the upgrade is v4.0.1**
+
+Instructions and binaries at https://github.com/BitCannaGlobal/bcna/releases/tag/v4.0.1
+
 ## v3.1.0 codename `ganjarevolutionburn` from v3.0.2
 
 > (Update scheduled for 10th May 2024 ~ 16.55h CET - 14.55h UTC)
