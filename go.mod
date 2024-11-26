@@ -42,7 +42,7 @@ require (
 	github.com/stretchr/testify v1.9.0
 	golang.org/x/tools v0.27.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.5.1
-	google.golang.org/protobuf v1.35.1
+	google.golang.org/protobuf v1.35.2
 )
 
 require (
