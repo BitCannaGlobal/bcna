@@ -3,7 +3,7 @@
 
 BitCanna provides a decentralized payment network, supply chain and trust network for the legal cannabis industry by utilizing the BCNA coin.
 
-> [Current version (v4.0.1)](https://github.com/BitCannaGlobal/bcna/releases/tag/v4.0.1) of our development uses Cosmos SDK v0.50.10 & CometBFT v0.38.15 & IBC-go v8.5.2
+> [Current version (v4.0.1)](https://github.com/BitCannaGlobal/bcna/releases/tag/v4.0.2) of our development uses Cosmos SDK v0.50.10 & CometBFT v0.38.15 & IBC-go v8.5.2
 
 These docs at Github are chain related. For more information about our coin, partners and roadmap visit:
 * Our website: https://www.bitcanna.io
@@ -41,7 +41,7 @@ Here are the minimal hardware configs required for running a validator/sentry no
 | 10th May 2024 16.55h CET    | 13.846.420   | [v3.1.0](https://github.com/BitCannaGlobal/bcna/releases/download/v3.1.0/bcna_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v3.1.0) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 | 25th Nov 2024 17.20h CET    | 16.782.000   | [v4.0.1](https://github.com/BitCannaGlobal/bcna/releases/download/v4.0.1/bcnad_linux_amd64.tar.gz)   |  [Link](https://github.com/BitCannaGlobal/bcna/releases/tag/v4.0.1) | [Doc](https://github.com/BitCannaGlobal/bcna/blob/main/last_upgrade.md) |
 
-> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v4.0.1
+> Current version: https://github.com/BitCannaGlobal/bcna/releases/tag/v4.0.2
 
 # How to join `bitcanna-1` chain
 > Tip: At the end of this doc, you will find links with important info
