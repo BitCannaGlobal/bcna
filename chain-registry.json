@@ -159,11 +159,6 @@
         "provider": "MMS"
       },
       {
-        "id": "f28f565a6514340f2506b8f2b4e1d5322c4a26dd",
-        "address": "p2p.bitcanna.safeblock.space:26656",
-        "provider": "Safe Block"
-      },
-      {
         "id": "d9bfa29e0cf9c4ce0cc9c26d98e5d97228f93b0b",
         "address": "bitcanna.rpc.kjnodes.com:14256",
         "provider": "kjnodes"
@@ -258,10 +253,6 @@
         "provider": "Polkachu"
       },
       {
-        "address": "https://rpc.bitcanna.safeblock.space",
-        "provider": "Safe Block"
-      },
-      {
         "address": "https://bitcanna.nodejumper.io:443",
         "provider": "NODEJUMPER"
       },
@@ -338,10 +329,6 @@
       {
         "address": "grpc-bitcanna.mms.team:443",
         "provider": "MMS"
-      },
-      {
-        "address": "grpc.bitcanna.safeblock.space:9090",
-        "provider": "Safe Block"
       },
       {
         "address": "mainnet-bitcanna-grpc.konsortech.xyz:27090",
@@ -446,10 +433,6 @@
         "provider": "Polkachu"
       },
       {
-        "address": "https://api.bitcanna.safeblock.space",
-        "provider": "Safe Block"
-      },
-      {
         "address": "https://bitcanna.nodejumper.io:1317",
         "provider": "NODEJUMPER"
       },
@@ -540,11 +523,6 @@
       "tx_page": "https://explorer.validatornode.com/bitcanna/tx/${txHash}"
     },
     {
-      "kind": "Safe Block Explorer Pruned",
-      "url": "https://explorer.safeblock.space/bitcanna",
-      "tx_page": "https://explorer.safeblock.space/bitcanna/tx/${txHash}"
-    },
-    {
       "kind": "AlxVoy ⚡ ANODE.TEAM",
       "url": "https://main.anode.team/bitcanna",
       "tx_page": "https://main.anode.team/bitcanna/tx/${txHash}"
@@ -622,11 +600,6 @@
       "address": "https://rpc.bitcanna-1.bitcanna.aviaone.com:443",
       "url_doc": "https://aviaone.com/blockchains-service/bitcanna-mainnet-bitcanna-1.html",
       "provider": "AVIAONE 🟢"
-    },
-    {
-      "address": "https://rpc.bitcanna.safeblock.space:443",
-      "url_doc": "https://safeblock.space/bitcanna-statesync",
-      "provider": "Safe Block"
     },
     {
       "address": "https://bitcanna.rpc.m.anode.team",
